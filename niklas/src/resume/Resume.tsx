@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 
 const StyledWrapper = styled.div`
@@ -27,19 +27,19 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const Home = () => {
+const Resume = () => {
   return (
     <StyledWrapper>
       {/*<Column>
-        <ImageWrapper>
-         <ProfileImage src={clearerNiklasFULL} alt="Niklas Rydkvist" />
-        </ImageWrapper>
-      </Column>*/}
+    <ImageWrapper>
+     <ProfileImage src={clearerNiklasFULL} alt="Niklas Rydkvist" />
+    </ImageWrapper>
+  </Column>*/}
       <Column>
-        <Title>Work in progress..</Title>
+        <Title>Resume (in progress..)</Title>
       </Column>
     </StyledWrapper>
   );
 };
 
-export default Home;
+export default Resume;

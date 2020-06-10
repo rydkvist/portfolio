@@ -1,23 +1,45 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useMediaMax } from "../../utils";
 import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
+import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
 
 const StyledHeader = styled.header`
-  background-color: #20232a;
   position: sticky;
   top: 0;
+  padding: 2em 0;
 `;
 
 const StyledNavigation = styled.nav`
   position: relative;
   display: flex;
   justify-content: space-around;
+  margin: 0 auto;
   align-items: center;
-  width: 100%;
-  height: 70px;
+`;
+
+const LogoLink = styled(NavLink)`
+  text-decoration: none;
+  display: inline-flex;
+`;
+
+const LogoImage = styled.img`
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+`;
+
+const LogoText = styled.p`
+  align-self: center;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  color: ${theme.colors.white};
+  text-transform: uppercase;
+  margin: 0;
 `;
 
 const NavigationList = styled.ul<any>`
@@ -30,14 +52,18 @@ const NavigationList = styled.ul<any>`
 
 const NavigationListItem = styled.li`
   margin: 0;
-`;
-
-const NavigationLink = styled(Link)`
+  margin-right: 3em;
   display: inline-flex;
   align-items: center;
+  &:last-child {
+    margin-right: 0px;
+  }
+`;
+
+const NavigationLink = styled(NavLink)`
   color: ${theme.colors.white};
+  padding: 2px;
   text-decoration: none;
-  padding: 0 2px 1px 2px;
   border-bottom: 1px solid transparent;
   &:active,
   &:focus {
@@ -49,27 +75,45 @@ const NavigationLink = styled(Link)`
   }
 `;
 
-const LogoLink = styled(Link)`
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: white;
-  text-decoration: none;
-`;
+const activeStyle = {
+  textShadow: `0 0 1px white, 0 0 1px white`,
+};
 
-const NavigationBar = () => {
+const NavigationBar = ({ onToggle }: any) => {
   const isMobile = useMediaMax(theme.breakpoints.md);
-  const [isOpen, setIsOpen] = useState(false);
 
   return isMobile ? (
-    <MobileNavigationBar />
+    <MobileNavigationBar onToggle={onToggle} />
   ) : (
     <StyledHeader>
       <StyledNavigation role="navigation">
-        <LogoLink to="/">Niklas Rydkvist</LogoLink>
+        <LogoLink to="/" title="Home">
+          <LogoImage src={clearerNiklas} alt="Home" />
+          <LogoText>Niklas Rydkvist</LogoText>
+        </LogoLink>
         <NavigationList>
           <NavigationListItem>
-            <NavigationLink to="/contact">Contact</NavigationLink>
+            <NavigationLink activeStyle={activeStyle} to="/" title="Home">
+              Home
+            </NavigationLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/resume"
+              title="Resume"
+            >
+              Resume
+            </NavigationLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/contact"
+              title="Contact"
+            >
+              Contact
+            </NavigationLink>
           </NavigationListItem>
         </NavigationList>
       </StyledNavigation>

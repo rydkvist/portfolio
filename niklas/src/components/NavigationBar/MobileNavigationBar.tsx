@@ -2,84 +2,163 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { useMediaMax } from "../../utils";
 import theme from "../../styles";
+import { NavLink } from "react-router-dom";
+import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
 
 const StyledHeader = styled.header`
-  background-color: #20232a;
   position: sticky;
   top: 0;
-`;
-
-const StyledNavigation = styled.nav`
-  position: relative;
+  padding: 2em 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 70px;
 `;
 
-const MenuToggler = styled.button`
-  cursor: pointer;
+const MenuBurger = styled.button``;
+
+const LogoLink = styled(NavLink)`
   text-decoration: none;
-  background: none;
-  border: none;
-  padding: 0;
+  display: inline-flex;
+`;
+
+const LogoImage = styled.img`
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+`;
+
+const LogoText = styled.p`
+  align-self: center;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  color: ${theme.colors.white};
+  text-transform: uppercase;
+  margin: 0;
+`;
+
+const StyledNavigation = styled.nav`
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  background-color: #121212;
+  position: sticky;
+  min-height: 90vh;
+  top: 114px;
 `;
 
 const NavigationList = styled.ul<any>`
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   list-style: none;
-  ${(props) => props.isMobile && `flex-direction: column;`}
-  ${(props) =>
-    props.isOpen && props.isMobile
-      ? `visibility:hidden`
-      : `visibility:visible;`}
 `;
 
 const NavigationListItem = styled.li`
   margin: 0;
+  margin-bottom: 3em;
+  display: inline-flex;
+  align-items: center;
+  &:last-child {
+    margin-bottom: 0px;
+  }
 `;
 
-const NavigationLink = styled.a``;
-
-const LogoLink = styled.a`
-  font-size: 32px;
-  font-weight: 700;
-  color: white;
+const NavigationLink = styled(NavLink)`
+  color: ${theme.colors.white};
+  padding: 2px;
+  text-decoration: none;
+  font-size: 1.5em;
+  border-bottom: 1px solid transparent;
+  &:active,
+  &:focus {
+    text-shadow: 0 0 1px white, 0 0 1px white;
+  }
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid white;
+  }
 `;
 
-const MobileNavigationBar = () => {
-  const isMobile = useMediaMax(theme.breakpoints.md);
+const activeStyle = {
+  textShadow: `0 0 1px white, 0 0 1px white`,
+};
+
+const MobileNavigationBar = ({ onToggle }: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <StyledHeader>
-      <StyledNavigation role="navigation">
-        <LogoLink>Niklas Rydkvist</LogoLink>
-        {isMobile && (
-          <MenuToggler
-            aria-label={isOpen ? "Close Menu" : "Open Menu"}
-            aria-expanded={isOpen ? true : false}
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-          >
-            {isOpen ? <p>OPEN</p> : <p>CLOSED</p>}
-          </MenuToggler>
-        )}
-        <NavigationList isMobile={isMobile} isOpen={isOpen}>
-          <NavigationListItem>
-            <NavigationLink href="/about">About Me</NavigationLink>
-          </NavigationListItem>
-          <NavigationListItem>
-            <NavigationLink href="/contact">Contact</NavigationLink>
-          </NavigationListItem>
-        </NavigationList>
-      </StyledNavigation>
-    </StyledHeader>
+    <>
+      <StyledHeader>
+        <LogoLink to="/" title="Home">
+          <LogoImage src={clearerNiklas} alt="Home" />
+          <LogoText>Niklas Rydkvist</LogoText>
+        </LogoLink>
+        <MenuBurger
+          aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          aria-expanded={isOpen ? true : false}
+          aria-controls="navigation"
+          onClick={() => {
+            setIsOpen(!isOpen);
+            onToggle(!isOpen);
+          }}
+          className={`hamburger hamburger--spring ${isOpen ? "is-active" : ""}`}
+          type="button"
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </MenuBurger>
+      </StyledHeader>
+      {isOpen && (
+        <StyledNavigation role="navigation">
+          <NavigationList>
+            <NavigationListItem>
+              <NavigationLink
+                activeStyle={activeStyle}
+                to="/"
+                title="Home"
+                onClick={() => {
+                  setIsOpen(false);
+                  onToggle(false);
+                }}
+              >
+                Home
+              </NavigationLink>
+            </NavigationListItem>
+            <NavigationListItem>
+              <NavigationLink
+                activeStyle={activeStyle}
+                to="/resume"
+                title="Resume"
+                onClick={() => {
+                  setIsOpen(false);
+                  onToggle(false);
+                }}
+              >
+                Resume
+              </NavigationLink>
+            </NavigationListItem>
+            <NavigationListItem>
+              <NavigationLink
+                activeStyle={activeStyle}
+                to="/contact"
+                title="Contact"
+                onClick={() => {
+                  setIsOpen(false);
+                  onToggle(false);
+                }}
+              >
+                Contact
+              </NavigationLink>
+            </NavigationListItem>
+          </NavigationList>
+        </StyledNavigation>
+      )}
+    </>
   );
 };
 
