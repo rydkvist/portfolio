@@ -16,11 +16,7 @@ const StyledHeader = styled.header`
 const NavigationBar = () => {
   return (
     <StyledHeader>
-      <h1>
-        Niklas Rydkvist
-        <br />
-        Software Developer
-      </h1>
+      <h1>Niklas Rydkvist</h1>
       <img src={logo} className="App-logo" alt="logo" />
     </StyledHeader>
   );
