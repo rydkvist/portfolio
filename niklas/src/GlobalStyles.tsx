@@ -11,7 +11,7 @@ export default createGlobalStyle`
 
   body {
 
-  &::before{
+  /*&::before{
   position: fixed;
     top: 300px;
     left: -100px;
@@ -21,7 +21,7 @@ export default createGlobalStyle`
     height: 400px;
     border: 2px solid rgba(255, 255, 255, 0.05);
     transform: rotate(20deg);
-  }
+  }*/
   
   height: 100%;
   margin: 0;
@@ -32,6 +32,9 @@ export default createGlobalStyle`
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 
+  > #root{
+    height:auto;
+  }
   }
   
   a{

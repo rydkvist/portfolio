@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Text } from "../components/Text";
 import clearerNiklasFULL from "../assets/images/clearerNiklasFULL.jpg";
+import { useMediaMax } from "../utils/";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -16,8 +17,10 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: row;
   width: 100%;
+  margin-top: 50px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    margin-top: 0px;
   }
 `;
 
@@ -27,6 +30,7 @@ const LeftColumn = styled.div`
   width: 100%;
   @media screen and (max-width: 768px) {
     justify-content: center;
+    order: 2;
   }
 `;
 
@@ -41,14 +45,13 @@ const RightColumn = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  margin-top: 100px;
   @media screen and (max-width: 768px) {
-    margin-top: 50px;
+    margin-top: 25px;
   }
 `;
 
 const InformationWrapper = styled.div`
-  margin-top: 150px;
+  margin-top: 50px;
   margin-left: 100px;
   @media screen and (max-width: 768px) {
     margin-top: 0px;
@@ -59,21 +62,48 @@ const InformationWrapper = styled.div`
 
 const Title = styled.h1`
   color: #f4f4f4;
-  font-size: 2.5em;
-  letter-spacing: 1.5px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
   font-weight: 500;
 `;
 
+const SocialMediaList = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 25px;
+`;
+
+const SocialMediaItem = styled.li`
+  display: inline-flex;
+  margin: 0;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
+`;
+
+const CircleLink = styled.a`
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Contact = () => {
+  const isMobile = useMediaMax(768);
   return (
     <StyledWrapper>
       <Wrapper>
         <LeftColumn>
           <ImageWrapper>
             <img
-              style={{ borderRadius: "2px" }}
               src={clearerNiklasFULL}
-              width={300}
+              width={isMobile ? 200 : 300}
               height="auto"
               alt="Niklas Rydkvist"
             />
@@ -85,16 +115,28 @@ const Contact = () => {
             <Title>Contact</Title>
             <Text>
               Location:
-              <span style={{ color: "#747474" }}> Stockholm, Sweden</span>
+              <span style={{ color: "#F4F4F4" }}> Stockholm, Sweden</span>
             </Text>
             <Text>
-              <span>Email:</span>
-              <a href="mailto:niklasryd01@gmail.com"> niklasryd01@gmail.com</a>
+              <span>Email: </span>
+              <a href="mailto:niklasryd01@gmail.com">niklasryd01@gmail.com</a>
             </Text>
             <Text>
-              <span>Phone:</span>
-              <a href="tlf://+470703771104"> +46 070 377 11 04</a>
+              <span>Phone: </span>
+              <a href="tlf://+470703771104">+46 070 377 11 04</a>
             </Text>
+            {/*<SocialMediaList>
+              <SocialMediaItem>
+                <CircleLink href="#">
+                  <span>L</span>
+                </CircleLink>
+              </SocialMediaItem>
+              <SocialMediaItem>
+                <CircleLink href="#">
+                  <span>L</span>
+                </CircleLink>
+              </SocialMediaItem>
+            </SocialMediaList>*/}
           </InformationWrapper>
         </RightColumn>
       </Wrapper>

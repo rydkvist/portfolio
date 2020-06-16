@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
+import { useMediaMax } from "../../utils";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
 import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
@@ -56,6 +57,8 @@ const NavigationList = styled.ul<any>`
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-top: 20px;
+  width: 100%;
 `;
 
 const NavigationListItem = styled.li`
@@ -63,6 +66,7 @@ const NavigationListItem = styled.li`
   margin-bottom: 3em;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   &:last-child {
     margin-bottom: 0px;
   }
