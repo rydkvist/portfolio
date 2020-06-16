@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
-import { useMediaMax } from "../../utils";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
 import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
@@ -8,10 +7,12 @@ import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;
-  padding: 2em 0;
+  padding: 1em 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #121212;
+  z-index: 1000;
 `;
 
 const MenuBurger = styled.button``;
@@ -93,8 +94,8 @@ const MobileNavigationBar = ({ onToggle }: any) => {
   return (
     <>
       <StyledHeader>
-        <LogoLink to="/" title="Home">
-          <LogoImage src={clearerNiklas} alt="Home" />
+        <LogoLink to="/home" title="Home">
+          <LogoImage src={clearerNiklas} alt="Niklas Rydkvist" />
           <LogoText>Niklas Rydkvist</LogoText>
         </LogoLink>
         <MenuBurger
@@ -119,7 +120,7 @@ const MobileNavigationBar = ({ onToggle }: any) => {
             <NavigationListItem>
               <NavigationLink
                 activeStyle={activeStyle}
-                to="/"
+                to="/home"
                 title="Home"
                 onClick={() => {
                   setIsOpen(false);
@@ -127,6 +128,19 @@ const MobileNavigationBar = ({ onToggle }: any) => {
                 }}
               >
                 Home
+              </NavigationLink>
+            </NavigationListItem>
+            <NavigationListItem>
+              <NavigationLink
+                activeStyle={activeStyle}
+                to="/stocks"
+                title="Stocks"
+                onClick={() => {
+                  setIsOpen(false);
+                  onToggle(false);
+                }}
+              >
+                Stocks
               </NavigationLink>
             </NavigationListItem>
             <NavigationListItem>

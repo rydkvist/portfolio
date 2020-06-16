@@ -9,7 +9,9 @@ import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;
-  padding: 2em 0;
+  padding: 1.5em 0;
+  background-color: #121212;
+  z-index: 1000;
 `;
 
 const StyledNavigation = styled.nav`
@@ -87,14 +89,23 @@ const NavigationBar = ({ onToggle }: any) => {
   ) : (
     <StyledHeader>
       <StyledNavigation role="navigation">
-        <LogoLink to="/" title="Home">
+        <LogoLink to="/home" title="Niklas Rydkvist">
           <LogoImage src={clearerNiklas} alt="Home" />
           <LogoText>Niklas Rydkvist</LogoText>
         </LogoLink>
         <NavigationList>
           <NavigationListItem>
-            <NavigationLink activeStyle={activeStyle} to="/" title="Home">
+            <NavigationLink activeStyle={activeStyle} to="/home" title="Home">
               Home
+            </NavigationLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/stocks"
+              title="Stocks"
+            >
+              Stocks
             </NavigationLink>
           </NavigationListItem>
           <NavigationListItem>

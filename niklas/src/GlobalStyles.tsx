@@ -5,6 +5,8 @@ export default createGlobalStyle`
     height: 100%;
     scroll-behavior: smooth;
     color: white;
+    margin:0;
+    padding:0;
   }
 
   body {
@@ -30,4 +32,11 @@ export default createGlobalStyle`
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 
-  }`;
+  }
+  
+  a{
+    color: #2f89fc;
+    transition: .5s all ease;
+    text-decoration:none;
+  }
+  `;

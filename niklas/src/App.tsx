@@ -6,6 +6,8 @@ import { Home } from "./home";
 import { Resume } from "./resume";
 import { Contact } from "./contact";
 import { Error } from "./error";
+import { Stocks } from "./stocks";
+import { Footer } from "./components/Footer";
 
 const AppWrapper = styled.div`
   display: flex;
@@ -36,11 +38,14 @@ const App = () => {
       <Main role="main" visible={!isMobileNavigationOpen}>
         <Route component={scrollToTop} />
         <Switch>
-          <Route exact path="/" component={() => <Home />} />
+          <Route exact path="/home" component={() => <Home />} />
+          <Route exact path="/stocks" component={() => <Stocks />} />
           <Route exact path="/resume" component={() => <Resume />} />
           <Route exact path="/contact" component={() => <Contact />} />
           <Route exact path="/404" component={() => <Error />} />
+          <Route exact path="/" component={() => <Home />} />
         </Switch>
+        {!isMobileNavigationOpen && <Footer />}
       </Main>
     </AppWrapper>
   );
