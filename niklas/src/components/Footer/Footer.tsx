@@ -7,11 +7,8 @@ const StyledFooter = styled.footer`
   align-items: center;
   width: 100%;
   height: 80px;
-  margin-top: 100px;
+  margin-top: 50px;
   background-color: #121212;
-  @media screen and (max-width: 768px) {
-    margin-top: 50px;
-  }
 `;
 
 const CopyrightText = styled.p`
