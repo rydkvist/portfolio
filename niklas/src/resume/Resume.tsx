@@ -21,7 +21,7 @@ const Title = styled.h1`
 const Resume = () => {
   return (
     <Container>
-      <Title>Resume (in progress..)</Title>
+      <Title>Resume (work in progress..)</Title>
     </Container>
   );
 };
