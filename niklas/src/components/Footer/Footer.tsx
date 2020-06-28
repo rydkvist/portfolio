@@ -1,12 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 50px;
+  height: 80px;
   margin-top: 100px;
+  background-color: #121212;
   @media screen and (max-width: 768px) {
     margin-top: 50px;
   }
@@ -15,7 +17,8 @@ const StyledFooter = styled.footer`
 const CopyrightText = styled.p`
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 500;
 `;
 
 const Footer = () => {
