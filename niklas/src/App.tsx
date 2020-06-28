@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import styled from "styled-components/macro";
 import { Switch, Route } from "react-router-dom";
-import { NavigationBar } from "./components/NavigationBar";
 import { Home } from "./home";
 import { Resume } from "./resume";
 import { Contact } from "./contact";
@@ -9,17 +8,14 @@ import { Error } from "./error";
 import { Stocks } from "./stocks";
 import { Footer } from "./components/Footer";
 
-const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background-color: #121212;
-`;
+const NavigationBar = lazy(() =>
+  import("./components/NavigationBar/NavigationBar")
+);
 
 const Main = styled.section<any>`
-  display: ${(props) => (props.visible ? "flex" : "none")};
-  flex-direction: column;
-  flex-grow: 1;
+  display: block;
+  height: 100%;
+  background-color: #121212;
 `;
 
 const App = () => {
@@ -28,14 +24,10 @@ const App = () => {
     return null;
   };
 
-  const [isMobileNavigationOpen, setIsMobileNavigationOpen] = useState(false);
-  const handleToggleNavigation = (isOpen: boolean) =>
-    setIsMobileNavigationOpen(isOpen);
-
   return (
-    <AppWrapper>
-      <NavigationBar onToggle={handleToggleNavigation} />
-      <Main role="main" visible={!isMobileNavigationOpen}>
+    <Suspense fallback={"Loading ..."}>
+      <NavigationBar />
+      <Main role="main">
         <Route component={scrollToTop} />
         <Switch>
           <Route exact path="/home" component={() => <Home />} />
@@ -45,9 +37,9 @@ const App = () => {
           <Route exact path="/404" component={() => <Error />} />
           <Route exact path="/" component={() => <Home />} />
         </Switch>
-        {!isMobileNavigationOpen && <Footer />}
+        <Footer />
       </Main>
-    </AppWrapper>
+    </Suspense>
   );
 };
 

@@ -1,44 +1,78 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { SocialMedia } from "../components/SocialMedia";
+import { useMediaMax } from "../utils/";
 
-const StyledWrapper = styled.div`
-  height: 100vh;
+const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 80%;
-  align-self: center;
-`;
-
-const Column = styled.div`
-  &:first-child {
-    justify-content: center;
-  }
+  flex-direction: column;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
+  height: 100%;
 `;
 
-const Title = styled.h1`
+const TextContent = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
   color: #f6f6f6;
-  margin-top: 200px;
-  font-size: 2.5em;
+  font-size: 2rem;
   letter-spacing: 1.5px;
+  line-height: 1.5;
   font-weight: 500;
-  text-align: center;
+  flex-direction: column;
 `;
 
 const Home = () => {
+  const isMobile = useMediaMax(768);
+
   return (
-    <StyledWrapper>
-      {/*<Column>
-        <ImageWrapper>
-         <ProfileImage src={clearerNiklasFULL} alt="Niklas Rydkvist" />
-        </ImageWrapper>
-      </Column>*/}
-      <Column>
-        <Title>Work in progress..</Title>
-      </Column>
-    </StyledWrapper>
+    <Container>
+      <TextContent>
+        <p
+          style={{ fontSize: "1.5rem", textAlign: "center", display: "block" }}
+        >
+          Hey there! I'm Niklas.
+          <br />
+          <span style={{ fontSize: "2rem" }}>I'm a Software Developer</span>
+        </p>
+
+        <p
+          style={{
+            fontSize: "1.2rem",
+            marginTop: 50,
+            width: isMobile ? "80%" : "60%",
+            alignSelf: "center",
+            textAlign: "center",
+            lineHeight: 1.8,
+          }}
+        >
+          There still work to do on the page, but it is cool seing you around
+          here!
+        </p>
+      </TextContent>
+      <SocialMedia marginTop={100}>
+        <SocialMedia.Item
+          key="social-media-linkedin"
+          icon={<i className="fab fa-linkedin fa-lg"></i>}
+          link={"https://www.linkedin.com/in/niklasrydkvist/"}
+          altText="LinkedIn - Niklas Rydkvist"
+        />
+        <SocialMedia.Item
+          key="social-media-github"
+          icon={<i className="fab fa-github fa-lg"></i>}
+          link={"https://github.com/Nojze"}
+          altText="GitHub - Nojze"
+        />
+        <SocialMedia.Item
+          key="social-media-twitter"
+          icon={<i className="fab fa-twitter fa-lg"></i>}
+          link={"https://twitter.com/"}
+          altText="Twitter"
+        />
+      </SocialMedia>
+      {/* Temporal div for spacing */}
+      <div style={{ marginBottom: isMobile ? 160 : 220 }} />
+    </Container>
   );
 };
 

@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 
-const StyledWrapper = styled.div`
-  height: 100vh;
+const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 80%;
-  align-self: center;
-`;
-
-const Column = styled.div`
-  &:first-child {
-    justify-content: center;
-  }
+  flex-direction: column;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
+  height: 100%;
 `;
 
 const Title = styled.h1`
@@ -25,20 +15,14 @@ const Title = styled.h1`
   letter-spacing: 1.5px;
   font-weight: 500;
   text-align: center;
+  margin-bottom: 500px;
 `;
 
 const Resume = () => {
   return (
-    <StyledWrapper>
-      {/*<Column>
-    <ImageWrapper>
-     <ProfileImage src={clearerNiklasFULL} alt="Niklas Rydkvist" />
-    </ImageWrapper>
-  </Column>*/}
-      <Column>
-        <Title>Resume (in progress..)</Title>
-      </Column>
-    </StyledWrapper>
+    <Container>
+      <Title>Resume (in progress..)</Title>
+    </Container>
   );
 };
 

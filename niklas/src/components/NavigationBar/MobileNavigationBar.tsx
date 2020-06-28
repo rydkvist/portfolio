@@ -40,14 +40,14 @@ const LogoText = styled.p`
   margin: 0;
 `;
 
-const StyledNavigation = styled.nav`
-  display: flex;
+const StyledNavigation = styled.nav<any>`
+  display: ${(props) => (props.isOpen ? "flex" : "none")};
   justify-content: center;
   z-index: 1;
   background-color: #121212;
-  position: sticky;
-  min-height: 90vh;
-  top: 114px;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 `;
 
 const NavigationList = styled.ul<any>`
@@ -92,7 +92,7 @@ const activeStyle = {
   textShadow: `0 0 1px white, 0 0 1px white`,
 };
 
-const MobileNavigationBar = ({ onToggle }: any) => {
+const MobileNavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -108,7 +108,6 @@ const MobileNavigationBar = ({ onToggle }: any) => {
           aria-controls="navigation"
           onClick={() => {
             setIsOpen(!isOpen);
-            onToggle(!isOpen);
           }}
           className={`hamburger hamburger--spring ${isOpen ? "is-active" : ""}`}
           type="button"
@@ -118,64 +117,58 @@ const MobileNavigationBar = ({ onToggle }: any) => {
           </span>
         </MenuBurger>
       </StyledHeader>
-      {isOpen && (
-        <StyledNavigation role="navigation">
-          <NavigationList>
-            <NavigationListItem>
-              <NavigationLink
-                activeStyle={activeStyle}
-                to="/home"
-                title="Home"
-                onClick={() => {
-                  setIsOpen(false);
-                  onToggle(false);
-                }}
-              >
-                Home
-              </NavigationLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationLink
-                activeStyle={activeStyle}
-                to="/stocks"
-                title="Stocks"
-                onClick={() => {
-                  setIsOpen(false);
-                  onToggle(false);
-                }}
-              >
-                Stocks
-              </NavigationLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationLink
-                activeStyle={activeStyle}
-                to="/resume"
-                title="Resume"
-                onClick={() => {
-                  setIsOpen(false);
-                  onToggle(false);
-                }}
-              >
-                Resume
-              </NavigationLink>
-            </NavigationListItem>
-            <NavigationListItem>
-              <NavigationLink
-                activeStyle={activeStyle}
-                to="/contact"
-                title="Contact"
-                onClick={() => {
-                  setIsOpen(false);
-                  onToggle(false);
-                }}
-              >
-                Contact
-              </NavigationLink>
-            </NavigationListItem>
-          </NavigationList>
-        </StyledNavigation>
-      )}
+      <StyledNavigation role="navigation" isOpen={isOpen}>
+        <NavigationList>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/home"
+              title="Home"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              Home
+            </NavigationLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/stocks"
+              title="Stocks"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              Stocks
+            </NavigationLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/resume"
+              title="Resume"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              Resume
+            </NavigationLink>
+          </NavigationListItem>
+          <NavigationListItem>
+            <NavigationLink
+              activeStyle={activeStyle}
+              to="/contact"
+              title="Contact"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              Contact
+            </NavigationLink>
+          </NavigationListItem>
+        </NavigationList>
+      </StyledNavigation>
     </>
   );
 };

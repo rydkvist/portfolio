@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import { Text } from "../components/Text";
 import clearerNiklasFULL from "../assets/images/clearerNiklasFULL.jpg";
 import { useMediaMax } from "../utils/";
+import { SocialMedia } from "../components/SocialMedia";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -18,10 +19,11 @@ const Wrapper = styled.div`
   flex-direction: row;
   width: 100%;
   margin-top: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 75px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     margin-top: 0px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -68,31 +70,10 @@ const Title = styled.h1`
   font-weight: 500;
 `;
 
-const SocialMediaList = styled.ul`
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  margin-top: 25px;
-`;
-
-const SocialMediaItem = styled.li`
-  display: inline-flex;
-  margin: 0;
-  margin-right: 10px;
-  &:last-child {
-    margin-right: 0px;
+const StyledLink = styled.a`
+  &:hover {
+    color: #256dc9;
   }
-`;
-
-const CircleLink = styled.a`
-  background-color: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.5);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Contact = () => {
@@ -114,30 +95,46 @@ const Contact = () => {
         <RightColumn>
           <InformationWrapper>
             <Title>Contact</Title>
+
+            <Text>
+              <span>E-mail: </span>
+              <StyledLink
+                href="mailto:niklasryd01@gmail.com"
+                title="niklasryd01@gmail.com"
+              >
+                niklasryd01@gmail.com
+              </StyledLink>
+            </Text>
+            <Text>
+              <span>Phone: </span>
+              <StyledLink href="tlf://+470703771104" title="+46 070 377 11 04">
+                +46 070 377 11 04
+              </StyledLink>
+            </Text>
             <Text>
               Location:
               <span style={{ color: "#F4F4F4" }}> Stockholm, Sweden</span>
             </Text>
-            <Text>
-              <span>Email: </span>
-              <a href="mailto:niklasryd01@gmail.com">niklasryd01@gmail.com</a>
-            </Text>
-            <Text>
-              <span>Phone: </span>
-              <a href="tlf://+470703771104">+46 070 377 11 04</a>
-            </Text>
-            {/*<SocialMediaList>
-              <SocialMediaItem>
-                <CircleLink href="#">
-                  <span>L</span>
-                </CircleLink>
-              </SocialMediaItem>
-              <SocialMediaItem>
-                <CircleLink href="#">
-                  <span>L</span>
-                </CircleLink>
-              </SocialMediaItem>
-            </SocialMediaList>*/}
+            <SocialMedia marginTop={isMobile ? 25 : 50} marginBottom={25}>
+              <SocialMedia.Item
+                key="social-media-linkedin"
+                icon={<i className="fab fa-linkedin fa-lg"></i>}
+                link={"https://www.linkedin.com/in/niklasrydkvist/"}
+                altText="LinkedIn - Niklas Rydkvist"
+              />
+              <SocialMedia.Item
+                key="social-media-github"
+                icon={<i className="fab fa-github fa-lg"></i>}
+                link={"https://github.com/Nojze"}
+                altText="GitHub - Nojze"
+              />
+              <SocialMedia.Item
+                key="social-media-twitter"
+                icon={<i className="fab fa-twitter fa-lg"></i>}
+                link={"https://twitter.com/"}
+                altText="Twitter"
+              />
+            </SocialMedia>
           </InformationWrapper>
         </RightColumn>
       </Wrapper>

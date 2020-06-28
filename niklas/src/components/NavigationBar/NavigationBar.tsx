@@ -81,11 +81,11 @@ const activeStyle = {
   textShadow: `0 0 1px white, 0 0 1px white`,
 };
 
-const NavigationBar = ({ onToggle }: any) => {
+const NavigationBar = () => {
   const isMobile = useMediaMax(theme.breakpoints.md);
 
   return isMobile ? (
-    <MobileNavigationBar onToggle={onToggle} />
+    <MobileNavigationBar />
   ) : (
     <StyledHeader>
       <StyledNavigation role="navigation">
