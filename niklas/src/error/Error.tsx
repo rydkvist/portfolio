@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 
 const Error = () => {
-  return <>Error 404</>;
+  return <>This page does not exist...</>;
 };
 
 export default Error;
