@@ -34,11 +34,12 @@ const CircleLink = styled.a`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #232323;
   color: rgba(255, 255, 255, 0.5);
   &:hover {
     color: rgba(255, 255, 255, 1);
   }
+  transition: 0.25s ease-in-out all;
 `;
 
 type SocialMediaProps = {

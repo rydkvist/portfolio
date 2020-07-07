@@ -7,15 +7,10 @@ const StyledFooter = styled.footer`
   align-items: center;
   width: 100%;
   height: 80px;
-  margin-top: 50px;
-  background-color: #121212;
 `;
 
 const CopyrightText = styled.p`
-  padding: 0;
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.125rem;
 `;
 
 const Footer = () => {

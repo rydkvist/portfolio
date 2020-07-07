@@ -1,11 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`   
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
   html {
     height: 100%;
-    color: white;
-    margin:0;
-    padding:0;
+    color: black;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
   }
 
@@ -18,9 +20,9 @@ export default createGlobalStyle`
     sans-serif;
   }
   
-  a {
-    color: #2f89fc;
-    transition: .5s all ease;
-    text-decoration:none;
-  }
+  // a {
+  //   color: #2f89fc;
+  //   transition: .5s all ease;
+  //   text-decoration:none;
+  // }
   `;

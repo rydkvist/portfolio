@@ -14,7 +14,6 @@ const TextContent = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 100px;
-  color: #f6f6f6;
   font-size: 2rem;
   letter-spacing: 1.5px;
   line-height: 1.5;
