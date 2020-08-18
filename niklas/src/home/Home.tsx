@@ -35,7 +35,7 @@ const Home = () => {
           <span style={{ fontSize: "2rem" }}>I'm a Software Developer</span>
         </p>
 
-        <p
+        {/*<p
           style={{
             fontSize: "1.2rem",
             marginTop: 50,
@@ -47,7 +47,7 @@ const Home = () => {
         >
           There still work to do on the page, but it is cool seing you around
           here!
-        </p>
+        </p>*/}
       </TextContent>
       <SocialMedia marginTop={100}>
         <SocialMedia.Item
