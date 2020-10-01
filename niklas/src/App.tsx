@@ -8,13 +8,13 @@ import { Error } from "./error";
 import { Stocks } from "./stocks";
 import { Footer } from "./components/Footer";
 
-const NavigationBar = lazy(() =>
-  import("./components/NavigationBar/NavigationBar")
+const NavigationBar = lazy(
+  () => import("./components/NavigationBar/NavigationBar")
 );
 
 const Main = styled.section<any>`
+  height: 100vh;
   display: block;
-  height: 100%;
   background-color: #f1f1f1;
 `;
 

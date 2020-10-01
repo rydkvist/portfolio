@@ -49,7 +49,7 @@ const Home = () => {
           here!
         </p>*/}
       </TextContent>
-      <SocialMedia marginTop={100}>
+      <SocialMedia marginTop={50}>
         <SocialMedia.Item
           key="social-media-linkedin"
           icon={<i className="fab fa-linkedin fa-lg"></i>}
@@ -69,8 +69,16 @@ const Home = () => {
           altText="Twitter"
         />
       </SocialMedia>
-      {/* Temporal div for spacing */}
-      <div style={{ marginBottom: isMobile ? 160 : 220 }} />
+      <p
+        style={{
+          marginTop: "100px",
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished. Currently work in progress. <br />
+        <br /> The same thing goes for the other pages! :)
+      </p>
     </Container>
   );
 };

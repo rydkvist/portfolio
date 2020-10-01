@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { useMediaMax } from "../../utils";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
-import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
+import niklasFullPicture from "../../assets/images/niklasFullPicture.jpeg";
 
 const StyledHeader = styled.header`
   position: sticky;
@@ -99,7 +99,7 @@ const MobileNavigationBar = () => {
     <>
       <StyledHeader>
         <LogoLink to="/home" title="Home">
-          <LogoImage src={clearerNiklas} alt="Niklas Rydkvist" />
+          <LogoImage src={niklasFullPicture} alt="Niklas Rydkvist" />
           <LogoText>Niklas Rydkvist</LogoText>
         </LogoLink>
         <MenuBurger
@@ -131,7 +131,7 @@ const MobileNavigationBar = () => {
               Home
             </NavigationLink>
           </NavigationListItem>
-          <NavigationListItem>
+          {/* <NavigationListItem>
             <NavigationLink
               activeStyle={activeStyle}
               to="/stocks"
@@ -142,7 +142,7 @@ const MobileNavigationBar = () => {
             >
               Stocks
             </NavigationLink>
-          </NavigationListItem>
+          </NavigationListItem> */}
           <NavigationListItem>
             <NavigationLink
               activeStyle={activeStyle}

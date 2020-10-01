@@ -4,7 +4,7 @@ export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
   html {
-    height: 100%;
+    height: 100vh;
     color: black;
     margin: 0;
     padding: 0;

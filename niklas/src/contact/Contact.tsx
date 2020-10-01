@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Text } from "../components/Text";
-import clearerNiklasFULL from "../assets/images/clearerNiklasFULL.jpg";
+import niklasFullPicture from "../assets/images/niklasFullPicture.jpeg";
 import { useMediaMax } from "../utils/";
 import { SocialMedia } from "../components/SocialMedia";
 
@@ -19,11 +19,10 @@ const Wrapper = styled.div`
   flex-direction: row;
   width: 100%;
   margin-top: 50px;
-  margin-bottom: 75px;
   @media screen and (max-width: 768px) {
+    justify-content: flex-start;
     flex-direction: column;
     margin-top: 0px;
-    margin-bottom: 0px;
   }
 `;
 
@@ -48,8 +47,26 @@ const RightColumn = styled.div`
 `;
 
 const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  > img {
+    transition: all 0.3s ease-in-out;
+    &:hover  {
+      width: 70%;
+      height: 70%;
+    }
+  }
+
   @media screen and (max-width: 768px) {
-    margin-top: 25px;
+    width: 60%;
+    justify-content: center;
+    margin: 25px 50px 0px 50px;
+    > img {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 `;
 
@@ -64,7 +81,7 @@ const InformationWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #f4f4f4;
+  color: #121212;
   font-size: 2.5rem;
   letter-spacing: 2px;
   font-weight: 500;
@@ -84,9 +101,10 @@ const Contact = () => {
         <LeftColumn>
           <ImageWrapper>
             <img
-              src={clearerNiklasFULL}
-              width={isMobile ? 200 : 300}
-              height="auto"
+              style={{ borderRadius: "1%" }}
+              src={niklasFullPicture}
+              width={isMobile ? "100%" : "60%"}
+              height={isMobile ? "100%" : "60%"}
               alt="Niklas Rydkvist"
             />
           </ImageWrapper>
@@ -113,7 +131,7 @@ const Contact = () => {
             </Text>
             <Text>
               Location:
-              <span style={{ color: "#F4F4F4" }}> Stockholm, Sweden</span>
+              <span style={{ color: "#121212" }}> Stockholm, Sweden</span>
             </Text>
             <SocialMedia marginTop={isMobile ? 25 : 50} marginBottom={25}>
               <SocialMedia.Item

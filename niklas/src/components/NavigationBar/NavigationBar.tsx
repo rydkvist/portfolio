@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useMediaMax } from "../../utils";
 import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
-import clearerNiklas from "../../assets/images/clearerNiklas.jpg";
+import niklasFullPicture from "../../assets/images/niklasFullPicture.jpeg";
 
 const StyledHeader = styled.header`
   position: sticky;
@@ -90,7 +90,7 @@ const NavigationBar = () => {
     <StyledHeader>
       <StyledNavigation role="navigation">
         <LogoLink to="/home" title="Niklas Rydkvist">
-          <LogoImage src={clearerNiklas} alt="Home" />
+          <LogoImage src={niklasFullPicture} alt="Home" />
           <LogoText>Niklas Rydkvist</LogoText>
         </LogoLink>
         <NavigationList>
@@ -99,7 +99,7 @@ const NavigationBar = () => {
               Home
             </NavigationLink>
           </NavigationListItem>
-          <NavigationListItem>
+          {/* <NavigationListItem>
             <NavigationLink
               activeStyle={activeStyle}
               to="/stocks"
@@ -107,7 +107,7 @@ const NavigationBar = () => {
             >
               Stocks
             </NavigationLink>
-          </NavigationListItem>
+          </NavigationListItem> */}
           <NavigationListItem>
             <NavigationLink
               activeStyle={activeStyle}

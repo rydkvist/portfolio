@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 
 const StyledFooter = styled.footer`
   display: flex;
+  background-color: #121212;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -11,6 +12,7 @@ const StyledFooter = styled.footer`
 
 const CopyrightText = styled.p`
   font-size: 1.125rem;
+  color: #f4f4f4;
 `;
 
 const Footer = () => {
