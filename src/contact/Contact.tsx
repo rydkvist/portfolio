@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Text } from "../components/Text";
 import niklasFullPicture from "../assets/images/niklasFullPicture.jpeg";
-import { useMediaMax } from "../utils/";
+import { useMediaMax } from "../utils";
 import { SocialMedia } from "../components/SocialMedia";
 
 const StyledWrapper = styled.div`
