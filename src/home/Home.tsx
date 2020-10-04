@@ -22,7 +22,7 @@ const TextContent = styled.div`
 `;
 
 const Home = () => {
-  const isMobile = useMediaMax(768);
+  // const isMobile = useMediaMax(768);
 
   return (
     <Container>
