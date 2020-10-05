@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { SocialMedia } from "../components/SocialMedia";
-import { useMediaMax } from "../utils/";
+import { useMediaMax } from "../utils";
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const TextContent = styled.div`
 `;
 
 const Home = () => {
-  const isMobile = useMediaMax(768);
+  // const isMobile = useMediaMax(768);
 
   return (
     <Container>
