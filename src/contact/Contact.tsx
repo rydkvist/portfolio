@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Text } from "../components/Text";
-import niklasFullPicture from "../assets/images/niklasFullPicture.jpeg";
 import { useMediaMax } from "../utils";
 import { SocialMedia } from "../components/SocialMedia";
 
@@ -11,6 +10,10 @@ const StyledWrapper = styled.div`
   align-self: center;
   width: 100%;
   height: 100%;
+  margin-bottom: 300px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 100px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -49,24 +52,11 @@ const RightColumn = styled.div`
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 100%;
-  height: auto;
-  > img {
-    transition: all 0.3s ease-in-out;
-    &:hover  {
-      width: 70%;
-      height: 70%;
-    }
-  }
-
+  max-height: 400px;
+  margin-top: 50px;
   @media screen and (max-width: 768px) {
-    width: 60%;
     justify-content: center;
     margin: 25px 50px 0px 50px;
-    > img {
-      width: 100% !important;
-      height: 100% !important;
-    }
   }
 `;
 
@@ -101,10 +91,9 @@ const Contact = () => {
         <LeftColumn>
           <ImageWrapper>
             <img
-              style={{ borderRadius: "1%" }}
-              src={niklasFullPicture}
-              width={isMobile ? "100%" : "60%"}
-              height={isMobile ? "100%" : "60%"}
+              src="/clearerNiklas.jpg"
+              width={300}
+              height="auto"
               alt="Niklas Rydkvist"
             />
           </ImageWrapper>

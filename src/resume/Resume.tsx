@@ -9,19 +9,22 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #f6f6f6;
+  color: black;
   margin-top: 200px;
   font-size: 2.5em;
   letter-spacing: 1.5px;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 500px;
 `;
 
 const Resume = () => {
   return (
     <Container>
-      <Title>Resume (work in progress..)</Title>
+      <Title>
+        Resume <br />
+        <br />
+        (Still work in progress, sorry!)
+      </Title>
     </Container>
   );
 };
