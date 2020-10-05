@@ -6,14 +6,19 @@ import { useMediaMax } from "../utils";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  margin-bottom: 100px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const TextContent = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 100px;
   font-size: 2rem;
   letter-spacing: 1.5px;
   line-height: 1.5;
@@ -27,29 +32,27 @@ const Home = () => {
   return (
     <Container>
       <TextContent>
-        <p
-          style={{ fontSize: "1.5rem", textAlign: "center", display: "block" }}
-        >
+        <p style={{ fontSize: "2rem", textAlign: "center", display: "block" }}>
           Hey there! I'm Niklas.
           <br />
-          <span style={{ fontSize: "2rem" }}>I'm a Software Developer</span>
+          <span style={{ fontSize: "1.5rem" }}>
+            A software developer from Sweden, Stockholm.
+          </span>
         </p>
-
-        {/*<p
-          style={{
-            fontSize: "1.2rem",
-            marginTop: 50,
-            width: isMobile ? "80%" : "60%",
-            alignSelf: "center",
-            textAlign: "center",
-            lineHeight: 1.8,
-          }}
-        >
-          There still work to do on the page, but it is cool seing you around
-          here!
-        </p>*/}
       </TextContent>
-      <SocialMedia marginTop={50}>
+      <div style={{ width: "28rem" }}>
+        <img width="100%" src="/niklasFullPicture.jpeg" alt="Niklas Rydkvist" />
+      </div>
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>
+      <SocialMedia marginTop={10}>
         <SocialMedia.Item
           key="social-media-linkedin"
           icon={<i className="fab fa-linkedin fa-lg"></i>}
@@ -69,16 +72,6 @@ const Home = () => {
           altText="Twitter"
         />
       </SocialMedia>
-      <p
-        style={{
-          marginTop: "100px",
-          fontSize: "1.125rem",
-          textAlign: "center",
-        }}
-      >
-        Page is not finished. Currently work in progress. <br />
-        <br /> The same thing goes for the other pages! :)
-      </p>
     </Container>
   );
 };

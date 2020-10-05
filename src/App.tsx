@@ -13,7 +13,7 @@ const NavigationBar = lazy(
 );
 
 const Main = styled.section<any>`
-  height: 100vh;
+  height: 100%;
   display: block;
   background-color: #f1f1f1;
 `;
