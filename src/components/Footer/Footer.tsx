@@ -1,28 +1,15 @@
 import React from "react";
-import styled from "styled-components/macro";
+import theme from "../../styles";
 
-const StyledFooter = styled.footer`
-  display: flex;
-  background-color: #121212;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 80px;
-`;
-
-const CopyrightText = styled.p`
-  font-size: 1.125rem;
-  color: #f4f4f4;
-`;
-
-const Footer = () => {
-  return (
-    <StyledFooter>
-      <CopyrightText>
-        Niklas Rydkvist © {new Date().getFullYear().toString()}
-      </CopyrightText>
-    </StyledFooter>
-  );
-};
+const Footer = () => (
+  <footer
+    className="flex justify-center items-center w-full h-20 md:h-16"
+    style={{ backgroundColor: theme.colors.customBlack }}
+  >
+    <p className="text-lg text-white">
+      Niklas Rydkvist © {new Date().getFullYear().toString()}
+    </p>
+  </footer>
+);
 
 export default Footer;
