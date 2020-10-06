@@ -41,7 +41,7 @@ const Home = () => {
         </p>
       </TextContent>
       <div style={{ width: "28rem" }}>
-        <img width="100%" src="/niklasFullPicture.jpeg" alt="Niklas Rydkvist" />
+        <img width="100%" src="/favicon.ico" alt="Niklas Rydkvist" />
       </div>
       <p
         style={{

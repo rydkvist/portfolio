@@ -98,7 +98,7 @@ const MobileNavigationBar = () => {
     <>
       <StyledHeader>
         <LogoLink to="/home" title="Home">
-          <LogoImage src="/niklasFullPicture.jpeg" alt="Niklas Rydkvist" />
+          <LogoImage src="/favicon.ico" alt="Niklas Rydkvist" />
           <LogoText>Niklas Rydkvist</LogoText>
         </LogoLink>
         <MenuBurger

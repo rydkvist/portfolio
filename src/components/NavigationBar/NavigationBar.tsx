@@ -89,7 +89,7 @@ const NavigationBar = () => {
     <StyledHeader>
       <StyledNavigation role="navigation">
         <LogoLink to="/home" title="Niklas Rydkvist">
-          <LogoImage src="/niklasFullPicture.jpeg" alt="Home" />
+          <LogoImage src="/favicon.ico" alt="Home" />
           <LogoText>Niklas Rydkvist</LogoText>
         </LogoLink>
         <NavigationList>
