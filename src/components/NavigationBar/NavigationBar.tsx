@@ -37,7 +37,13 @@ const NavigationBar = () => {
         className="relative flex justify-around items-center"
         role="navigation"
       >
-        <NavLink className="inline-flex" to={homeURL} title="Home">
+        <NavLink
+          className="inline-flex"
+          to={homeURL}
+          title="Home"
+          role="img"
+          aria-label="Brand Logo – Niklas Rydkvist"
+        >
           <img
             className="w-12 h-12 border rounded-full mr-4"
             src="/favicon.ico"

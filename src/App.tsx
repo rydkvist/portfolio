@@ -1,12 +1,12 @@
 import React, { useState, Suspense, lazy } from "react";
 import styled from "styled-components/macro";
 import { Switch, Route } from "react-router-dom";
+import { Footer } from "./components/Footer";
 import { Home } from "./home";
-import { Resume } from "./resume";
 import { Contact } from "./contact";
 import { Error } from "./error";
 import { Stocks } from "./stocks";
-import { Footer } from "./components/Footer";
+import { Resume } from "./resume";
 
 const NavigationBar = lazy(
   () => import("./components/NavigationBar/NavigationBar")
@@ -30,11 +30,11 @@ const App = () => {
         <Route component={scrollToTop} />
         <Switch>
           <Route exact path="/home" component={() => <Home />} />
-          {/* <Route exact path="/stocks" component={() => <Stocks />} /> */}
-          {/* <Route exact path="/resume" component={() => <Resume />} /> */}
           <Route exact path="/contact" component={() => <Contact />} />
           <Route exact path="/404" component={() => <Error />} />
           <Route exact path="/" component={() => <Home />} />
+          {/* <Route exact path="/stocks" component={() => <Stocks />} /> */}
+          {/* <Route exact path="/resume" component={() => <Resume />} /> */}
         </Switch>
         <Footer />
       </Main>
