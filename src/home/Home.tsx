@@ -27,7 +27,7 @@ const TextContent = styled.div`
 `;
 
 const Home = () => {
-  // const isMobile = useMediaMax(768);
+  const isMobile = useMediaMax(768);
 
   return (
     <Container>
@@ -41,7 +41,11 @@ const Home = () => {
         </p>
       </TextContent>
       <div style={{ width: "28rem" }}>
-        <img width="100%" src="/favicon.ico" alt="Niklas Rydkvist" />
+        <img
+          width={isMobile ? "80%" : "100%"}
+          src="/favicon.ico"
+          alt="Niklas Rydkvist"
+        />
       </div>
       <p
         style={{

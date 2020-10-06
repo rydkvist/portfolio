@@ -1,173 +1,90 @@
 import React, { useState } from "react";
-import styled from "styled-components/macro";
-import { useMediaMax } from "../../utils";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
-
-const StyledHeader = styled.header`
-  position: sticky;
-  top: 0;
-  padding: 1em 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #121212;
-  z-index: 1000;
-`;
-
-const MenuBurger = styled.button``;
-
-const LogoLink = styled(NavLink)`
-  text-decoration: none;
-  display: inline-flex;
-`;
-
-const LogoImage = styled.img`
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
-`;
-
-const LogoText = styled.p`
-  align-self: center;
-  font-size: 1.25em;
-  font-weight: 400;
-  letter-spacing: 2.5px;
-  color: ${theme.colors.white};
-  text-transform: uppercase;
-  margin: 0;
-`;
-
-const StyledNavigation = styled.nav<any>`
-  display: ${(props) => (props.isOpen ? "flex" : "none")};
-  justify-content: center;
-  z-index: 1;
-  background-color: #121212;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-`;
-
-const NavigationList = styled.ul<any>`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  margin-top: 20px;
-  width: 100%;
-`;
-
-const NavigationListItem = styled.li`
-  margin: 0;
-  margin-bottom: 3em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  &:last-child {
-    margin-bottom: 0px;
-  }
-`;
-
-const NavigationLink = styled(NavLink)`
-  color: ${theme.colors.white};
-  padding: 2px;
-  text-decoration: none;
-  font-size: 1.5em;
-  border-bottom: 1px solid transparent;
-  &:active,
-  &:focus {
-    text-shadow: 0 0 1px white, 0 0 1px white;
-  }
-  &:hover,
-  &:focus {
-    border-bottom: 1px solid white;
-  }
-`;
+import { homeURL, contactURL } from "../../config";
 
 const activeStyle = {
-  textShadow: `0 0 1px white, 0 0 1px white`,
+  fontWeight: 500,
 };
 
 const MobileNavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const onToggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const StyledNavLink = ({ href, title, iconName }: any) => (
+    <li className="inline-flex align-center justify-center m-0">
+      <NavLink
+        className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-white text-center"
+        style={{ fontFamily: "BlinkMacSystemFont" }}
+        activeStyle={activeStyle}
+        to={href}
+        title={title}
+        onClick={closeMenu}
+      >
+        <i className={`${iconName} mr-4 self-center`} />
+        {title}
+      </NavLink>
+    </li>
+  );
+
   return (
     <>
-      <StyledHeader>
-        <LogoLink to="/home" title="Home">
-          <LogoImage src="/favicon.ico" alt="Niklas Rydkvist" />
-          <LogoText>Niklas Rydkvist</LogoText>
-        </LogoLink>
-        <MenuBurger
+      <header
+        className="sticky flex justify-around items-center py-4 px-2 z-10"
+        style={{ backgroundColor: theme.colors.customBlack }}
+      >
+        <NavLink className="inline-flex" to={homeURL} title="Home">
+          <img
+            className="w-12 h-12 border rounded-full mr-4"
+            src="/favicon.ico"
+            alt="Niklas Rydkvist"
+          />
+          <span className="text-xl self-center font-medium text-white uppercase tracking-widest m-0">
+            Niklas Rydkvist
+          </span>
+        </NavLink>
+        <button
           aria-label={isOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={isOpen ? true : false}
           aria-controls="navigation"
-          onClick={() => {
-            setIsOpen(!isOpen);
-          }}
-          className={`hamburger hamburger--spring ${isOpen ? "is-active" : ""}`}
+          onClick={onToggleMenu}
+          className={`hamburger hamburger--spring p-1 ${
+            isOpen ? "is-active" : ""
+          }`}
           type="button"
         >
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
-        </MenuBurger>
-      </StyledHeader>
-      <StyledNavigation role="navigation" isOpen={isOpen}>
-        <NavigationList>
-          <NavigationListItem>
-            <NavigationLink
-              activeStyle={activeStyle}
-              to="/home"
-              title="Home"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              Home
-            </NavigationLink>
-          </NavigationListItem>
-          {/* <NavigationListItem>
-            <NavigationLink
-              activeStyle={activeStyle}
-              to="/stocks"
-              title="Stocks"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              Stocks
-            </NavigationLink>
-          </NavigationListItem> */}
-          <NavigationListItem>
-            <NavigationLink
-              activeStyle={activeStyle}
-              to="/resume"
-              title="Resume"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              Resume
-            </NavigationLink>
-          </NavigationListItem>
-          <NavigationListItem>
-            <NavigationLink
-              activeStyle={activeStyle}
-              to="/contact"
-              title="Contact"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              Contact
-            </NavigationLink>
-          </NavigationListItem>
-        </NavigationList>
-      </StyledNavigation>
+        </button>
+      </header>
+      <nav
+        role="navigation"
+        className="justify-center z-50 absolute bg-white w-full h-full"
+        style={{
+          backgroundColor: theme.colors.lightBlack,
+          transition: "all 0.3s ease",
+          visibility: isOpen ? "visible" : "hidden",
+          height: isOpen ? "100%" : "0%",
+          opacity: isOpen ? "1000%" : "0%",
+        }}
+      >
+        <ul className="relative flex flex-col m-0 p-0 list-none w-full">
+          <StyledNavLink href={homeURL} title="Home" iconName="fa fa-home" />
+          <StyledNavLink
+            href={contactURL}
+            title="Contact"
+            iconName="fa fa-envelope-o"
+          />
+        </ul>
+      </nav>
     </>
   );
 };

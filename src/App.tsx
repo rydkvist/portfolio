@@ -15,7 +15,6 @@ const NavigationBar = lazy(
 const Main = styled.section<any>`
   height: 100%;
   display: block;
-  background-color: #f1f1f1;
 `;
 
 const App = () => {
@@ -25,14 +24,14 @@ const App = () => {
   };
 
   return (
-    <Suspense fallback={"Loading ..."}>
-      <NavigationBar />
+    <Suspense fallback={<></>}>
       <Main role="main">
+        <NavigationBar />
         <Route component={scrollToTop} />
         <Switch>
           <Route exact path="/home" component={() => <Home />} />
           {/* <Route exact path="/stocks" component={() => <Stocks />} /> */}
-          <Route exact path="/resume" component={() => <Resume />} />
+          {/* <Route exact path="/resume" component={() => <Resume />} /> */}
           <Route exact path="/contact" component={() => <Contact />} />
           <Route exact path="/404" component={() => <Error />} />
           <Route exact path="/" component={() => <Home />} />
