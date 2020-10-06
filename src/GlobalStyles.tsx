@@ -5,7 +5,6 @@ export default createGlobalStyle`
 
   html {
     height: 100vh;
-    color: black;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -15,14 +14,9 @@ export default createGlobalStyle`
     height: 100%;
     margin: 0;
     pading: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   }
   
-  // a {
-  //   color: #2f89fc;
-  //   transition: .5s all ease;
-  //   text-decoration:none;
-  // }
   `;
