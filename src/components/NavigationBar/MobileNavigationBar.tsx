@@ -21,7 +21,7 @@ const MobileNavigationBar = () => {
   const StyledNavLink = ({ href, title, iconName }: any) => (
     <li className="inline-flex align-center justify-center m-0">
       <NavLink
-        className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-white text-center"
+        className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-white text-center hover:text-opacity-75"
         style={{ fontFamily: "BlinkMacSystemFont" }}
         activeStyle={activeStyle}
         to={href}
