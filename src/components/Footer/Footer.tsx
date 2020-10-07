@@ -3,7 +3,7 @@ import theme from "../../styles";
 
 const Footer = () => (
   <footer
-    className="flex fixed bottom-0 justify-center items-center w-full h-20 md:h-16"
+    className="flex justify-center items-center w-full h-20 md:h-16"
     style={{ backgroundColor: theme.colors.customBlack }}
   >
     <p className="text-lg text-white">
