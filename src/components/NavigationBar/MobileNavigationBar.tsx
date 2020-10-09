@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
-import { homeURL, contactURL } from "../../config";
-
-const activeStyle = {
-  fontWeight: 600,
-};
+import {
+  homeURL,
+  contactURL,
+  personalEmail,
+  personalPhoneNumber,
+  twitterURL,
+  linkedInURL,
+  gitHubURL,
+} from "../../config";
 
 const MobileNavigationBar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onToggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,17 +22,26 @@ const MobileNavigationBar = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
   const StyledNavLink = ({ href, title, iconName }: any) => (
-    <li className="inline-flex align-center justify-center m-0 border-b hover:bg-gray-100">
+    <li className="inline-flex align-center justify-center m-0 border-b hover:bg-gray-200 hover:underline">
       <NavLink
         className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-center "
-        activeStyle={activeStyle}
         to={href}
+        activeClassName="bg-gray-200 underline"
         title={title}
         onClick={closeMenu}
       >
-        <i className={`${iconName} mr-4 self-center`} />
-        <span className="hover:underline">{title}</span>
+        {/* <i className={`${iconName} mr-4 self-center`} /> */}
+        <span
+          className="text-2xl font-light"
+          style={{ fontFamily: "Source Sans Pro" }}
+        >
+          {title}
+        </span>
       </NavLink>
     </li>
   );
@@ -36,7 +49,7 @@ const MobileNavigationBar = () => {
   return (
     <>
       <header
-        className="sticky flex justify-around items-center py-4 px-2 z-10 border-b"
+        className="sticky flex justify-around items-center top-0 py-4 px-2 z-10 border-b"
         style={{
           backgroundColor: isOpen
             ? theme.colors.white
@@ -76,7 +89,7 @@ const MobileNavigationBar = () => {
           aria-expanded={isOpen ? true : false}
           aria-controls="navigation"
           onClick={onToggleMenu}
-          className={`hamburger hamburger--spring p-1 ${
+          className={`hamburger hamburger--spring px-1 py-2 ${
             isOpen ? "is-active" : ""
           }`}
           style={{
@@ -92,8 +105,9 @@ const MobileNavigationBar = () => {
       </header>
       <nav
         role="navigation"
-        className="flex flex-col items-center z-50 fixed pb-auto bg-white w-full"
+        className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full"
         style={{
+          fontFamily: "Source Sans Pro",
           transition: "all 0.3s ease",
           visibility: isOpen ? "visible" : "hidden",
           height: isOpen ? "100%" : "0%",
@@ -110,11 +124,11 @@ const MobileNavigationBar = () => {
           />
         </ul>
 
-        <ul className="flex flex-row justify-center m-0 mt-12 list-none w-full p-8">
+        <ul className="flex flex-row justify-center m-0 mt-8 list-none w-full p-8">
           <li className="mr-2">
             <a
-              className="p-4 text-2xl"
-              href="https://www.linkedin.com/in/niklasrydkvist/"
+              className="p-4 text-2xl hover:opacity-75"
+              href={linkedInURL}
               title="LinkedIn – Niklas Rydkvist"
               target="_blank"
               rel="noopener noreferrer"
@@ -124,8 +138,8 @@ const MobileNavigationBar = () => {
           </li>
           <li>
             <a
-              className="p-4 text-2xl"
-              href="https://github.com/Nojze"
+              className="p-4 text-2xl hover:opacity-75"
+              href={gitHubURL}
               title="GitHub – Nojze"
               target="_blank"
               rel="noopener noreferrer"
@@ -133,10 +147,10 @@ const MobileNavigationBar = () => {
               <i className="fab fa-github fa-lg" />
             </a>
           </li>
-          <li>
+          <li className="ml-2">
             <a
-              className="p-4 ml-2 text-2xl"
-              href="https://twitter.com/Niklaass"
+              className="p-4 text-2xl hover:opacity-75"
+              href={twitterURL}
               title="Twitter – @Niklaass"
               target="_blank"
               rel="noopener noreferrer"
@@ -148,20 +162,20 @@ const MobileNavigationBar = () => {
         <ul className="flex flex-col items-center justify-center m-0 list-none w-full p-8 pt-0">
           <li className="mb-4">
             <a
-              className="text-lg font-medium"
-              href="mailto:niklasryd01@gmail.com"
-              title="niklasryd01@gmail.com"
+              className="text-2xl p-2 font-light hover:opacity-75"
+              href={`mailto:${personalEmail}`}
+              title={personalEmail}
             >
-              niklasryd01@gmail.com
+              {personalEmail}
             </a>
           </li>
           <li>
             <a
-              className="text-lg font-medium"
-              href="tlf://+470703771104"
-              title="+46 070 377 11 04"
+              className="text-2xl p-2 font-light hover:opacity-75"
+              href={`tlf://${personalPhoneNumber}`}
+              title={personalPhoneNumber}
             >
-              +46 070 377 11 04
+              {personalPhoneNumber}
             </a>
           </li>
         </ul>

@@ -3,6 +3,14 @@ import styled from "styled-components/macro";
 import { Text } from "../components/Text";
 import { useMediaMax } from "../utils";
 import { SocialMedia } from "../components/SocialMedia";
+import {
+  twitterURL,
+  gitHubURL,
+  linkedInURL,
+  personalLocation,
+  personalEmail,
+  personalPhoneNumber,
+} from "../config";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -106,39 +114,44 @@ const Contact = () => {
             <Text>
               <span>E-mail: </span>
               <StyledLink
-                href="mailto:niklasryd01@gmail.com"
-                title="niklasryd01@gmail.com"
+                href={`mailto:${personalEmail}`}
+                title={personalEmail}
+                style={{ color: "#121212" }}
               >
-                niklasryd01@gmail.com
+                {personalEmail}
               </StyledLink>
             </Text>
             <Text>
               <span>Phone: </span>
-              <StyledLink href="tlf://+470703771104" title="+46 070 377 11 04">
-                +46 070 377 11 04
+              <StyledLink
+                href={`tlf://${personalPhoneNumber}`}
+                title={personalPhoneNumber}
+                style={{ color: "#121212" }}
+              >
+                {personalPhoneNumber}
               </StyledLink>
             </Text>
             <Text>
               Location:
-              <span style={{ color: "#121212" }}> Stockholm, Sweden</span>
+              <span style={{ color: "#121212" }}> {personalLocation}</span>
             </Text>
             <SocialMedia marginTop={isMobile ? 25 : 50} marginBottom={25}>
               <SocialMedia.Item
                 key="social-media-linkedin"
                 icon={<i className="fab fa-linkedin fa-lg"></i>}
-                link={"https://www.linkedin.com/in/niklasrydkvist/"}
+                link={linkedInURL}
                 altText="LinkedIn - Niklas Rydkvist"
               />
               <SocialMedia.Item
                 key="social-media-github"
                 icon={<i className="fab fa-github fa-lg"></i>}
-                link={"https://github.com/Nojze"}
+                link={gitHubURL}
                 altText="GitHub - Nojze"
               />
               <SocialMedia.Item
                 key="social-media-twitter"
                 icon={<i className="fab fa-twitter fa-lg"></i>}
-                link={"https://twitter.com/"}
+                link={twitterURL}
                 altText="Twitter"
               />
             </SocialMedia>

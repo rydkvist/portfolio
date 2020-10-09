@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { SocialMedia } from "../components/SocialMedia";
 import { useMediaMax } from "../utils";
+import { twitterURL, linkedInURL, gitHubURL } from "../config";
 
 const Container = styled.div`
   display: flex;
@@ -60,19 +61,19 @@ const Home = () => {
         <SocialMedia.Item
           key="social-media-linkedin"
           icon={<i className="fab fa-linkedin fa-lg"></i>}
-          link={"https://www.linkedin.com/in/niklasrydkvist/"}
+          link={linkedInURL}
           altText="LinkedIn - Niklas Rydkvist"
         />
         <SocialMedia.Item
           key="social-media-github"
           icon={<i className="fab fa-github fa-lg"></i>}
-          link={"https://github.com/Nojze"}
+          link={gitHubURL}
           altText="GitHub - Nojze"
         />
         <SocialMedia.Item
           key="social-media-twitter"
           icon={<i className="fab fa-twitter fa-lg"></i>}
-          link={"https://twitter.com/"}
+          link={twitterURL}
           altText="Twitter"
         />
       </SocialMedia>

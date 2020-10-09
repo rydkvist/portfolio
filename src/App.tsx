@@ -6,6 +6,7 @@ import { Home } from "./home";
 import { Contact } from "./contact";
 import { Stocks } from "./stocks";
 import { Resume } from "./resume";
+import { homeURL, contactURL } from "./config";
 
 const NavigationBar = lazy(
   () => import("./components/NavigationBar/NavigationBar")
@@ -28,9 +29,10 @@ const App = () => {
         <NavigationBar />
         <Route component={scrollToTop} />
         <Switch>
-          <Route exact path="/" component={() => <Home />} />
-          <Route exact path="/contact" component={() => <Contact />} />
-          <Route exact path="*" component={() => <Redirect to="/" />} />
+          <Route exact path={homeURL} component={() => <Home />} />
+          {/* Maybe get creative, and remove contact, have one pager, but with mobile navigation that only show contacts/social media links? */}
+          <Route exact path={contactURL} component={() => <Contact />} />
+          <Route exact path="*" component={() => <Redirect to={homeURL} />} />
           {/* <Route exact path="/stocks" component={() => <Stocks />} /> */}
           {/* <Route exact path="/resume" component={() => <Resume />} /> */}
         </Switch>
