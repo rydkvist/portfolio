@@ -5,10 +5,10 @@ const Footer = () => (
   <footer
     className="flex justify-center items-center w-full h-20 md:h-16"
     style={{
-      backgroundColor: theme.colors.customBlack,
+      color: theme.colors.white,
     }}
   >
-    <p className="text-lg text-white">
+    <p className="text-lg">
       Niklas Rydkvist © {new Date().getFullYear().toString()}
     </p>
   </footer>

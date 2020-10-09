@@ -43,11 +43,65 @@ const Home = () => {
       </TextContent>
       <div style={{ width: "28rem" }}>
         <img
-          width={isMobile ? "80%" : "100%"}
-          // src="/favicon.ico"
+          width={isMobile ? "50%" : "100%"}
+          src="/favicon.ico"
           alt="Niklas Rydkvist"
         />
       </div>
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>{" "}
+      <p
+        style={{
+          fontSize: "1.125rem",
+          textAlign: "center",
+        }}
+      >
+        Page is not finished yet. There is work in progress. <br />
+        <br /> The same thing counts for all the other pages! :)
+      </p>{" "}
       <p
         style={{
           fontSize: "1.125rem",

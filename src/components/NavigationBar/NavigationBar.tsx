@@ -1,37 +1,40 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaMax } from "../../utils";
-import theme from "../../styles";
 import { homeURL, contactURL } from "../../config";
+import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
 
 const activeStyle = {
   fontWeight: 600,
 };
 
-const StyledNavLink = ({ href, title }: any) => (
-  <li className="flex items-center m-0 mr-8">
-    <NavLink
-      className="text-white border-b border-transparent hover:border-white"
-      style={{ padding: "0.125rem", fontFamily: "BlinkMacSystemFont" }}
-      activeStyle={activeStyle}
-      to={href}
-      title={title}
-    >
-      {title}
-    </NavLink>
-  </li>
-);
-
 const NavigationBar = () => {
   const isMobile = useMediaMax(theme.breakpoints.md);
+
+  const StyledNavLink = ({ href, title }: any) => (
+    <li className="flex items-center m-0 mr-8">
+      <NavLink
+        className={`border-b border-transparent hover:border-white`}
+        style={{ padding: "0.125rem", fontFamily: "Source Sans Pro" }}
+        activeStyle={activeStyle}
+        to={href}
+        title={title}
+      >
+        {title}
+      </NavLink>
+    </li>
+  );
 
   return isMobile ? (
     <MobileNavigationBar />
   ) : (
     <header
-      className="sticky py-4 z-50"
-      style={{ backgroundColor: theme.colors.customBlack }}
+      className="m-0 py-4"
+      style={{
+        backgroundColor: theme.colors.transparent,
+        color: theme.colors.white,
+      }}
     >
       <nav
         className="relative flex justify-around items-center"
@@ -49,7 +52,7 @@ const NavigationBar = () => {
             src="/favicon.ico"
             alt="Brand Logo – Niklas Rydkvist"
           />
-          <span className="text-xl self-center font-medium text-white uppercase tracking-widest">
+          <span className="text-xl self-center font-medium uppercase tracking-widest">
             Niklas Rydkvist
           </span>
         </NavLink>

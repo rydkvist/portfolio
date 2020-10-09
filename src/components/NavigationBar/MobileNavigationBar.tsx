@@ -49,7 +49,7 @@ const MobileNavigationBar = () => {
   return (
     <>
       <header
-        className="sticky flex justify-around items-center top-0 py-4 px-2 z-10 border-b"
+        className={`sticky flex justify-around items-center top-0 py-4 px-2 z-50`}
         style={{
           backgroundColor: isOpen
             ? theme.colors.white
@@ -78,7 +78,6 @@ const MobileNavigationBar = () => {
             className="text-xl self-center font-medium uppercase tracking-widest m-0"
             style={{
               color: isOpen ? theme.colors.customBlack : theme.colors.white,
-              transition: "all 0.5s ease",
             }}
           >
             Niklas Rydkvist
