@@ -124,7 +124,7 @@ const Contact = () => {
             <Text>
               <span>Phone: </span>
               <StyledLink
-                href={`tlf://${personalPhoneNumber}`}
+                href={`tel:${personalPhoneNumber}`}
                 title={personalPhoneNumber}
                 style={{ color: "#121212" }}
               >

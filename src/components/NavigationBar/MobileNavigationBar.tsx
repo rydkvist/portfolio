@@ -54,7 +54,7 @@ const MobileNavigationBar = () => {
           backgroundColor: isOpen
             ? theme.colors.white
             : theme.colors.customBlack,
-          transition: "all 0.3s ease",
+          transition: "all 0.5s ease",
         }}
       >
         <NavLink
@@ -69,7 +69,7 @@ const MobileNavigationBar = () => {
               borderColor: isOpen
                 ? theme.colors.customBlack
                 : theme.colors.white,
-              transition: "all 0.3s ease",
+              transition: "all 0.5s ease",
             }}
             src="/favicon.ico"
             alt="Niklas Rydkvist"
@@ -78,7 +78,7 @@ const MobileNavigationBar = () => {
             className="text-xl self-center font-medium uppercase tracking-widest m-0"
             style={{
               color: isOpen ? theme.colors.customBlack : theme.colors.white,
-              transition: "all 0.3s ease",
+              transition: "all 0.5s ease",
             }}
           >
             Niklas Rydkvist
@@ -94,7 +94,7 @@ const MobileNavigationBar = () => {
           }`}
           style={{
             color: isOpen ? theme.colors.customBlack : theme.colors.white,
-            transition: "all 0.3s ease",
+            transition: "all 0.5s ease",
           }}
           type="button"
         >
@@ -108,7 +108,7 @@ const MobileNavigationBar = () => {
         className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full"
         style={{
           fontFamily: "Source Sans Pro",
-          transition: "all 0.3s ease",
+          transition: "all 0.5s ease",
           visibility: isOpen ? "visible" : "hidden",
           height: isOpen ? "100%" : "0%",
           opacity: isOpen ? "100%" : "0%",
@@ -172,7 +172,7 @@ const MobileNavigationBar = () => {
           <li>
             <a
               className="text-2xl p-2 font-light hover:opacity-75"
-              href={`tlf://${personalPhoneNumber}`}
+              href={`tel:${personalPhoneNumber}`}
               title={personalPhoneNumber}
             >
               {personalPhoneNumber}
