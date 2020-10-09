@@ -43,7 +43,7 @@ const Home = () => {
       <div style={{ width: "28rem" }}>
         <img
           width={isMobile ? "80%" : "100%"}
-          src="/favicon.ico"
+          // src="/favicon.ico"
           alt="Niklas Rydkvist"
         />
       </div>

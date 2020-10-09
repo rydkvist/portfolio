@@ -1,2 +1,2 @@
-export const homeURL = "/home";
+export const homeURL = "/";
 export const contactURL = "/contact";

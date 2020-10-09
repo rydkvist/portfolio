@@ -8,7 +8,7 @@ const activeStyle = {
 };
 
 const MobileNavigationBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const onToggleMenu = () => {
     setIsOpen(!isOpen);
@@ -92,12 +92,12 @@ const MobileNavigationBar = () => {
       </header>
       <nav
         role="navigation"
-        className="justify-center z-50 absolute bg-white w-full h-full"
+        className="flex flex-col items-center z-50 fixed pb-auto bg-white w-full"
         style={{
           transition: "all 0.3s ease",
           visibility: isOpen ? "visible" : "hidden",
           height: isOpen ? "100%" : "0%",
-          opacity: isOpen ? "1000%" : "0%",
+          opacity: isOpen ? "100%" : "0%",
           color: isOpen ? theme.colors.customBlack : theme.colors.white,
         }}
       >
@@ -108,6 +108,62 @@ const MobileNavigationBar = () => {
             title="Contact"
             iconName="fa fa-envelope-o"
           />
+        </ul>
+
+        <ul className="flex flex-row justify-center m-0 mt-12 list-none w-full p-8">
+          <li className="mr-2">
+            <a
+              className="p-4 text-2xl"
+              href="https://www.linkedin.com/in/niklasrydkvist/"
+              title="LinkedIn – Niklas Rydkvist"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin fa-lg" />
+            </a>
+          </li>
+          <li>
+            <a
+              className="p-4 text-2xl"
+              href="https://github.com/Nojze"
+              title="GitHub – Nojze"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-github fa-lg" />
+            </a>
+          </li>
+          <li>
+            <a
+              className="p-4 ml-2 text-2xl"
+              href="https://twitter.com/Niklaass"
+              title="Twitter – @Niklaass"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-twitter fa-lg" />
+            </a>
+          </li>
+        </ul>
+        <ul className="flex flex-col items-center justify-center m-0 list-none w-full p-8 pt-0">
+          <li className="mb-4">
+            <a
+              className="text-lg font-medium"
+              href="mailto:niklasryd01@gmail.com"
+              title="niklasryd01@gmail.com"
+            >
+              niklasryd01@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              className="text-lg font-medium"
+              href="tlf://+470703771104"
+              title="+46 070 377 11 04"
+            >
+              +46 070 377 11 04
+            </a>
+          </li>
         </ul>
       </nav>
     </>
