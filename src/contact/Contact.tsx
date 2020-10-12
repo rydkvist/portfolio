@@ -101,7 +101,6 @@ const Contact = () => {
             <img
               src="/clearerNiklas.jpg"
               width={300}
-              height="auto"
               alt="Niklas Rydkvist"
             />
           </ImageWrapper>
