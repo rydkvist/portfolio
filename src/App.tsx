@@ -29,9 +29,9 @@ const App = () => {
         <NavigationBar />
         <Route component={scrollToTop} />
         <Switch>
-          <Route exact path={homeURL} component={() => <Home />} />
+          <Route path={homeURL} component={() => <Home />} />
           {/* Maybe get creative, and remove contact, have one pager, but with mobile navigation that only show contacts/social media links? */}
-          <Route exact path={contactURL} component={() => <Contact />} />
+          <Route path={contactURL} component={() => <Contact />} />
           <Route exact path="*" component={() => <Redirect to={homeURL} />} />
           {/* <Route exact path="/stocks" component={() => <Stocks />} /> */}
           {/* <Route exact path="/resume" component={() => <Resume />} /> */}
