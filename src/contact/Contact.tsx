@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import { Text } from "../components/Text";
 import { useMediaMax } from "../utils";
@@ -12,152 +12,85 @@ import {
   personalPhoneNumber,
 } from "../config";
 
-const StyledWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 300px;
-  @media screen and (max-width: 768px) {
-    margin-bottom: 100px;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 50px;
-  @media screen and (max-width: 768px) {
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-top: 0px;
-  }
-`;
-
-const LeftColumn = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  @media screen and (max-width: 768px) {
-    justify-content: center;
-    order: 2;
-  }
-`;
-
-const RightColumn = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  width: 100%;
-  @media screen and (max-width: 768px) {
-    justify-content: center;
-  }
-`;
-
-const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  max-height: 400px;
-  margin-top: 50px;
-  @media screen and (max-width: 768px) {
-    justify-content: center;
-    margin: 25px 50px 0px 50px;
-  }
-`;
-
-const InformationWrapper = styled.div`
-  margin-top: 50px;
-  margin-left: 100px;
-  @media screen and (max-width: 768px) {
-    margin-top: 0px;
-    margin-left: 0px;
-    text-align: center;
-  }
-`;
-
-const Title = styled.h1`
-  color: #121212;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  font-weight: 500;
-`;
-
-const StyledLink = styled.a`
-  &:hover {
-    color: #256dc9;
-  }
-`;
+const Item = ({ title, value, href, iconName }: any) => (
+  <div
+    className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mr-12"
+    style={{ fontFamily: "Source Sans Pro" }}
+  >
+    <div className="text-4xl -mb-2">
+      <ion-icon name={iconName}></ion-icon>
+    </div>
+    <div className="text-center">
+      <h6 className="text-3xl text-white">{title}</h6>
+      <a
+        href={href}
+        title={value}
+        className="text-xl text-white mt-2 text-opacity-50 hover:text-opacity-100"
+      >
+        {value}
+      </a>
+    </div>
+  </div>
+);
 
 const Contact = () => {
-  const isMobile = useMediaMax(768);
   return (
-    <StyledWrapper>
-      <Wrapper>
-        <LeftColumn>
-          <ImageWrapper>
-            <img
-              src="/clearerNiklas.jpg"
-              width={300}
-              alt="Niklas Rydkvist"
-            />
-          </ImageWrapper>
-        </LeftColumn>
-
-        <RightColumn>
-          <InformationWrapper>
-            <Title>Contact</Title>
-
-            <Text>
-              <span>E-mail: </span>
-              <StyledLink
-                href={`mailto:${personalEmail}`}
-                title={personalEmail}
-                style={{ color: "#121212" }}
-              >
-                {personalEmail}
-              </StyledLink>
-            </Text>
-            <Text>
-              <span>Phone: </span>
-              <StyledLink
-                href={`tel:${personalPhoneNumber}`}
-                title={personalPhoneNumber}
-                style={{ color: "#121212" }}
-              >
-                {personalPhoneNumber}
-              </StyledLink>
-            </Text>
-            <Text>
-              Location:
-              <span style={{ color: "#121212" }}> {personalLocation}</span>
-            </Text>
-            <SocialMedia marginTop={isMobile ? 25 : 50} marginBottom={25}>
-              <SocialMedia.Item
-                key="social-media-linkedin"
-                icon={<i className="fab fa-linkedin fa-lg"></i>}
-                link={linkedInURL}
-                altText="LinkedIn - Niklas Rydkvist"
-              />
-              <SocialMedia.Item
-                key="social-media-github"
-                icon={<i className="fab fa-github fa-lg"></i>}
-                link={gitHubURL}
-                altText="GitHub - Nojze"
-              />
-              <SocialMedia.Item
-                key="social-media-twitter"
-                icon={<i className="fab fa-twitter fa-lg"></i>}
-                link={twitterURL}
-                altText="Twitter"
-              />
-            </SocialMedia>
-          </InformationWrapper>
-        </RightColumn>
-      </Wrapper>
-    </StyledWrapper>
+    <div className="container max-w-screen-lg mx-auto">
+      <div className="flex flex-col md:flex-row justify-center max-w-screen-md mx-auto items-center mt-8 md:mt-12">
+        <Item
+          title="E-mail"
+          value={personalEmail}
+          href={`mailto:${personalEmail}`}
+          iconName="mail-outline"
+        />
+        <Item
+          title="Phone"
+          value={personalPhoneNumber}
+          href={`tel:${personalPhoneNumber}`}
+          iconName="call-outline"
+        />
+        <Item
+          title="Location"
+          value={personalLocation}
+          iconName="location-outline"
+        />
+      </div>
+      <ul className="flex flex-row justify-center m-0 mt-4 md:mt-12 list-none w-full p-8">
+        <li className="mr-2">
+          <a
+            className="p-4 text-2xl hover:opacity-75"
+            href={linkedInURL}
+            title="LinkedIn – Niklas Rydkvist"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin fa-lg" />
+          </a>
+        </li>
+        <li>
+          <a
+            className="p-4 text-2xl hover:opacity-75"
+            href={gitHubURL}
+            title="GitHub – Nojze"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-github fa-lg" />
+          </a>
+        </li>
+        <li className="ml-2">
+          <a
+            className="p-4 text-2xl hover:opacity-75"
+            href={twitterURL}
+            title="Twitter – @Niklaass"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter fa-lg" />
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 

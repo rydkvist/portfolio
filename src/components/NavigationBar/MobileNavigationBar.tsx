@@ -27,11 +27,11 @@ const MobileNavigationBar = () => {
   }, [isOpen]);
 
   const StyledNavLink = ({ href, title, iconName }: any) => (
-    <li className="inline-flex align-center justify-center m-0 border-b hover:bg-gray-200 hover:underline">
+    <li className="inline-flex align-center justify-center m-0 border-b hover:bg-blue-200 hover:underline">
       <NavLink
         className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-center "
         to={href}
-        activeClassName="bg-gray-200 underline"
+        activeClassName="bg-blue-200 underline"
         title={title}
         onClick={closeMenu}
       >
