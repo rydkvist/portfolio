@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaMax } from "../../utils";
-import { homeURL, contactURL } from "../../config";
+import { homeURL, contactURL, experienceURL } from "../../config";
 import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
 
@@ -59,6 +59,7 @@ const NavigationBar = () => {
 
         <ul className="flex flex-row m-0 p-0 list-none">
           <StyledNavLink href={homeURL} title="Home" />
+          <StyledNavLink href={experienceURL} title="Experience" />
           <StyledNavLink href={contactURL} title="Contact" />
         </ul>
       </nav>
