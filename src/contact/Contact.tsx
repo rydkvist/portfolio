@@ -1,8 +1,4 @@
 import React from "react";
-import styled from "styled-components/macro";
-import { Text } from "../components/Text";
-import { useMediaMax } from "../utils";
-import { SocialMedia } from "../components/SocialMedia";
 import {
   twitterURL,
   gitHubURL,

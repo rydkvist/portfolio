@@ -9,6 +9,7 @@ import {
   twitterURL,
   linkedInURL,
   gitHubURL,
+  experienceURL,
 } from "../../config";
 
 const MobileNavigationBar = () => {
@@ -116,6 +117,11 @@ const MobileNavigationBar = () => {
       >
         <ul className="relative flex flex-col m-0 p-0 list-none w-full">
           <StyledNavLink href={homeURL} title="Home" iconName="fa fa-home" />
+          <StyledNavLink
+            href={experienceURL}
+            title="Experience"
+            iconName="fa fa-home"
+          />
           <StyledNavLink
             href={contactURL}
             title="Contact"

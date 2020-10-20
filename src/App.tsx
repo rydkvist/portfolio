@@ -4,9 +4,10 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Home } from "./home";
 import { Contact } from "./contact";
+import { Experience } from "./experience";
 import { Stocks } from "./stocks";
 import { Resume } from "./resume";
-import { homeURL, contactURL } from "./config";
+import { homeURL, contactURL, experienceURL } from "./config";
 
 const NavigationBar = lazy(
   () => import("./components/NavigationBar/NavigationBar")
@@ -30,6 +31,7 @@ const App = () => {
         <Route component={scrollToTop} />
         <Switch>
           <Route path={homeURL} component={() => <Home />} />
+          <Route path={experienceURL} component={() => <Experience />} />
           {/* Maybe get creative, and remove contact, have one pager, but with mobile navigation that only show contacts/social media links? */}
           <Route path={contactURL} component={() => <Contact />} />
           <Route exact path="*" component={() => <Redirect to={homeURL} />} />
