@@ -76,7 +76,7 @@ const MobileNavigationBar = () => {
             alt="Niklas Rydkvist"
           />
           <span
-            className="text-xl self-center font-medium uppercase tracking-widest m-0"
+            className="text-xl self-center uppercase tracking-widest m-0"
             style={{
               color: isOpen ? theme.colors.customBlack : theme.colors.white,
             }}

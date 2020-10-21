@@ -6,7 +6,7 @@ import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
 
 const activeStyle = {
-  fontWeight: 600,
+  borderColor: "white",
 };
 
 const NavigationBar = () => {
@@ -16,7 +16,7 @@ const NavigationBar = () => {
     <li className="flex items-center m-0 mr-8">
       <NavLink
         className={`border-b border-transparent hover:border-white`}
-        style={{ padding: "0.125rem", fontFamily: "Source Sans Pro" }}
+        style={{ padding: "0rem 0.125rem", fontFamily: "Source Sans Pro" }}
         activeStyle={activeStyle}
         to={href}
         title={title}
@@ -52,7 +52,7 @@ const NavigationBar = () => {
             src="/favicon.ico"
             alt="Brand Logo – Niklas Rydkvist"
           />
-          <span className="text-xl self-center font-medium uppercase tracking-widest">
+          <span className="text-xl self-center uppercase tracking-widest">
             Niklas Rydkvist
           </span>
         </NavLink>
