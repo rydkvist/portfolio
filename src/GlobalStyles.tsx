@@ -3,8 +3,8 @@ import theme from "./styles/";
 
 export default createGlobalStyle`   
 html {
-  background-color: ${theme.colors.customBlack};
-  color: ${theme.colors.white};
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.customBlack};
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;

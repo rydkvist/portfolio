@@ -6,7 +6,7 @@ import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
 
 const activeStyle = {
-  borderColor: "white",
+  borderColor: theme.colors.white,
 };
 
 const NavigationBar = () => {
@@ -32,8 +32,9 @@ const NavigationBar = () => {
     <header
       className="m-0 py-4"
       style={{
-        backgroundColor: theme.colors.transparent,
+        backgroundColor: theme.colors.cyan,
         color: theme.colors.white,
+        borderBottom: `1px solid ${theme.colors.darkCyan}`,
       }}
     >
       <nav
@@ -41,18 +42,18 @@ const NavigationBar = () => {
         role="navigation"
       >
         <NavLink
-          className="inline-flex"
+          className="inline-flex text-white hover:text-opacity-75"
           to={homeURL}
           title="Home"
           role="img"
           aria-label="Brand Logo – Niklas Rydkvist"
         >
           <img
-            className="w-12 h-12 border rounded-full mr-4"
+            className="w-12 h-12 border rounded-full mr-4 "
             src="/favicon.ico"
             alt="Brand Logo – Niklas Rydkvist"
           />
-          <span className="text-xl self-center uppercase tracking-widest">
+          <span className="text-xl self-center uppercase tracking-widest ">
             Niklas Rydkvist
           </span>
         </NavLink>

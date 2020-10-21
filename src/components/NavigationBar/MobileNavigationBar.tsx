@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 import {
   homeURL,
   contactURL,
@@ -11,6 +12,12 @@ import {
   gitHubURL,
   experienceURL,
 } from "../../config";
+
+const StyledListItem = styled.li`
+  &:hover {
+    background-color: ${theme.colors.lightCyan};
+  }
+`;
 
 const MobileNavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +35,12 @@ const MobileNavigationBar = () => {
   }, [isOpen]);
 
   const StyledNavLink = ({ href, title, iconName }: any) => (
-    <li className="inline-flex align-center justify-center m-0 border-b hover:bg-blue-200 hover:underline">
+    <StyledListItem className="inline-flex align-center justify-center m-0 border-b hover:underline">
       <NavLink
         className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-center "
         to={href}
-        activeClassName="bg-blue-200 underline"
+        activeStyle={{ backgroundColor: theme.colors.lightCyan }}
+        activeClassName="underline"
         title={title}
         onClick={closeMenu}
       >
@@ -44,7 +52,7 @@ const MobileNavigationBar = () => {
           {title}
         </span>
       </NavLink>
-    </li>
+    </StyledListItem>
   );
 
   return (
@@ -52,14 +60,15 @@ const MobileNavigationBar = () => {
       <header
         className={`sticky flex justify-around items-center top-0 py-4 px-2 z-50`}
         style={{
-          backgroundColor: isOpen
-            ? theme.colors.white
-            : theme.colors.customBlack,
+          backgroundColor: isOpen ? theme.colors.white : theme.colors.cyan,
           transition: "all 0.5s ease",
+          borderBottom: `1px solid ${
+            isOpen ? theme.colors.customWhite : theme.colors.darkCyan
+          }`,
         }}
       >
         <NavLink
-          className="inline-flex"
+          className="inline-flex text-white hover:text-opacity-75"
           to={homeURL}
           onClick={closeMenu}
           title="Home"

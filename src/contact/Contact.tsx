@@ -10,18 +10,20 @@ import {
 
 const Item = ({ title, value, href, iconName }: any) => (
   <div
-    className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mr-12"
-    style={{ fontFamily: "Source Sans Pro" }}
+    className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mx-6"
+    style={{
+      fontFamily: "Source Sans Pro",
+    }}
   >
-    <div className="text-4xl -mb-2">
+    <div className="text-4xl -mb-2 md:-mb-4">
       <ion-icon name={iconName}></ion-icon>
     </div>
     <div className="text-center">
-      <h6 className="text-3xl text-white">{title}</h6>
+      <h6 className="text-2xl hidden md:block">{title}</h6>
       <a
         href={href}
         title={value}
-        className="text-xl text-white mt-2 text-opacity-75 hover:text-opacity-100 focus:text-opacity-100"
+        className="text-2xl mt-2 text-black text-opacity-50 hover:text-opacity-100 focus:text-opacity-100"
       >
         {value}
       </a>
@@ -51,7 +53,7 @@ const Contact = () => {
           iconName="location-outline"
         />
       </div>
-      <ul className="flex flex-row justify-center m-0 mt-4 md:mt-12 list-none w-full p-8">
+      <ul className="flex flex-row justify-center m-0 mt-2 md:mt-8 list-none w-full p-8">
         <li className="mr-2">
           <a
             className="p-4 text-2xl hover:opacity-75"

@@ -3,9 +3,10 @@ import theme from "../../styles";
 
 const Footer = () => (
   <footer
-    className="flex justify-center items-center w-full h-20 md:h-16"
+    className="flex justify-center items-center w-full h-20 md:h-16 border-t mt-12"
     style={{
-      color: theme.colors.white,
+      color: theme.colors.customBlack,
+      borderColor: theme.colors.customWhite,
     }}
   >
     <p className="text-lg">
