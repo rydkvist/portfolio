@@ -106,10 +106,6 @@ const TechLink = ({ spin, children, href, delay }: any) => {
 const Experience = () => {
   return (
     <div className="container max-w-screen-lg mx-auto">
-      <h1 className="text-4xl text-center mt-8">Work Experience (WIP)</h1>
-      <div className="w-full h-full flex flex-col items-center justify-center">
-        <Item />
-      </div>
       <div className="mt-8">
         <h1 className="text-3xl text-center mb-6">
           Tech I'm currently working with
@@ -196,6 +192,10 @@ const Experience = () => {
           React, TypeScript, NodeJS, HTML, CSS, JavaScript, Java, C#, NextJS,
           TailwindCSS, Bootstrap, Redux, ExpressJS, Styled Components, Jest,
           Cypress */}
+      </div>
+      <h1 className="text-4xl text-center mt-8">Work Experience (WIP)</h1>
+      <div className="w-full h-full flex flex-col items-center justify-center">
+        <Item />
       </div>
     </div>
   );
