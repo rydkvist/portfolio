@@ -60,11 +60,12 @@ const MobileNavigationBar = () => {
       <header
         className={`sticky flex justify-around items-center top-0 py-4 px-2 z-50`}
         style={{
-          backgroundColor: isOpen ? theme.colors.white : theme.colors.cyan,
           transition: "all 0.5s ease",
           borderBottom: `1px solid ${
             isOpen ? theme.colors.customWhite : theme.colors.darkCyan
           }`,
+          background:
+            "linear-gradient(90deg, rgba(58,180,128,1) 0%, rgba(69,157,252,1) 100%)",
         }}
       >
         <NavLink
