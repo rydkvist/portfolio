@@ -20,6 +20,11 @@ body {
   );
 }  
 
+canvas {
+  display: block !important;
+  vertical-align: bottom !important;
+}
+
 #tsparticles {
   bottom: 0;
   left: 0;
@@ -27,6 +32,8 @@ body {
   position: fixed;
   right: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 `;

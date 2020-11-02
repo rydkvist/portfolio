@@ -14,7 +14,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
     "particle.js": "^1.0.7",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-particles-js": "^3.4.0",
     "react-router-dom": "^5.2.0",
@@ -23,7 +23,7 @@
     "serve": "^11.3.2",
     "styled-components": "^5.1.1",
     "tsparticles": "^1.18.8",
-    "typescript": "^3.7.5"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",

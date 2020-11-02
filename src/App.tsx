@@ -27,14 +27,10 @@ const App = () => {
     return null;
   };
 
-  useEffect(() => {}, []);
-
   return (
     <Suspense fallback={<></>}>
       <Main role="main">
         <Particles />
-        <div id="particles-js"></div>
-
         <NavigationBar />
         <Route component={scrollToTop} />
         <Switch>
