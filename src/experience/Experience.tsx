@@ -2,55 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import ReactLogo from "../assets/icons/ReactLogo";
 import NextJS from "../assets/icons/NextJS";
-import * as CSharpLogo from "../assets/images/CSharpLogo.svg";
-
-// const AnimationDiv = styled.div`
-// animation: move 15s linear infinite;
-// position:fixed;
-
-// @keyframes move {
-//   0% {
-//     right: 10%;
-//   }
-//   25% {
-//     right: 20%;
-//   }
-//   50% {
-//     // transform: translateX(0%);
-//     right: 30%;
-//   }
-//   75% {
-//     // transform: translateX(20%);
-//     right: 40%
-//   }
-//   100% {
-//     // translateX(40%);
-//     right: 50%
-
-//   }
-// `;
 
 const StyledItem = styled.a<any>`
-  // animation: move 5s linear infinite;
-
-  // @keyframes move {
-  //   0% {
-  //     transform: translateX(50%);
-  //   }
-  //   25% {
-  //     transform: translateX(100%);
-  //   }
-  //   50% {
-  //     transform: translateX(-100%);
-  //   }
-  //   75% {
-  //     transform: translateX(-50%);
-  //   }
-  //   100% {
-  //     translateX(0);
-  //   }
-  //}
-
   ${(props) =>
     props.spin &&
     css`
@@ -74,6 +27,7 @@ const TechList = styled.div`
   overflow: hidden;
   text-align: center;
 `;
+
 const Item = () => {
   return (
     <div

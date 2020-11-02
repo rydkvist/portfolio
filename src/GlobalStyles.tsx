@@ -1,10 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import theme from "./styles/";
 
 export default createGlobalStyle`   
 html {
-  background-color: ${theme.colors.white};
-  color: ${theme.colors.customBlack};
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -24,11 +21,12 @@ body {
 }  
 
 #tsparticles {
-  position:absolute;
-  top:0;
-  width: 100%;
-  height: 100%;
-  pointer-events:none;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 `;

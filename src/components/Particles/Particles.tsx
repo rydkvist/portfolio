@@ -4,6 +4,8 @@ import Particles from "react-tsparticles";
 const ParticlesComponent = () => (
   <Particles
     id="tsparticles"
+    width="100%"
+    height="100vh"
     options={{
       fpsLimit: 60,
       particles: {
@@ -72,10 +74,10 @@ const ParticlesComponent = () => (
       interactivity: {
         detect_on: "canvas",
         events: {
-          //   onhover: {
-          //     enable: true,
-          //     mode: "repulse",
-          //   },
+          // onhover: {
+          //   enable: true,
+          //   mode: "repulse",
+          // },
           // onclick: {
           //   enable: true,
           //   mode: "push",

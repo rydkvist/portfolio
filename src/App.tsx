@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { useState, Suspense, lazy, useEffect } from "react";
 import styled from "styled-components/macro";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Footer } from "./components/Footer";
@@ -8,7 +8,7 @@ import { Experience } from "./experience";
 import { Stocks } from "./stocks";
 import { Resume } from "./resume";
 import { homeURL, contactURL, experienceURL } from "./config";
-import Particles from "./components/Particles/Particles";
+import { Particles } from "./components/Particles";
 
 const NavigationBar = lazy(
   () => import("./components/NavigationBar/NavigationBar")
@@ -27,10 +27,13 @@ const App = () => {
     return null;
   };
 
+  useEffect(() => {}, []);
+
   return (
     <Suspense fallback={<></>}>
       <Main role="main">
         <Particles />
+        <div id="particles-js"></div>
 
         <NavigationBar />
         <Route component={scrollToTop} />
