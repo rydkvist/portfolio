@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import ReactLogo from "../assets/icons/ReactLogo";
 import NextJS from "../assets/icons/NextJS";
+import * as CSharpLogo from "../assets/images/CSharpLogo.svg";
 
 // const AnimationDiv = styled.div`
 // animation: move 15s linear infinite;
@@ -90,15 +91,14 @@ const Item = () => {
   );
 };
 
-const TechLink = ({ spin, children, href, delay }: any) => {
+const TechLink = ({ spin, children, href }: any) => {
   return (
     <StyledItem
       spin={spin}
-      delay={delay}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex flex-col w-12 h-12 m-4 mx-6 items-center justify-center`}
+      className={`inline-flex flex-col h-full m-4 mx-6 items-center justify-center`}
     >
       {children}
     </StyledItem>
@@ -119,70 +119,87 @@ const Experience = () => {
           className="block flex-col w-full justify-center items-center mx-auto"
         >
           {/* <AnimationDiv> */}
-          <TechLink spin={true} href="https://reactjs.org/" delay={9}>
-            <ReactLogo />
+          <TechLink spin={true} href="https://reactjs.org/">
+            <ReactLogo width="w-12" height="h-full" />
           </TechLink>
 
-          <TechLink href="https://nodejs.org/en/" delay={8}>
+          <TechLink href="https://nodejs.org/en/">
             <img
               alt="NodeJS"
               src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg"
-              className="w-full h-full"
+              className="w-12 h-full"
             />
           </TechLink>
 
-          <TechLink href="https://redux.js.org/" delay={7}>
+          <TechLink href="https://redux.js.org/">
             <img
               alt="Redux"
               src="https://redux.js.org/img/redux.svg"
-              className="w-full h-full"
+              className="w-12 h-full"
             />
           </TechLink>
 
-          <TechLink href="https://nextjs.org/" delay={6}>
-            <NextJS />
+          <TechLink href="https://nextjs.org/">
+            <NextJS width="w-12" height="h-full" />
           </TechLink>
-          <TechLink href="https://www.typescriptlang.org/" delay={5}>
+          <TechLink href="https://www.typescriptlang.org/">
             <img
               src="https://www.typescriptlang.org/icons/icon-72x72.png?v=e0cca9b778c3248c7434bc3c68c0e8b2"
               alt="TypeScript"
-              className="w-full h-full"
+              className="w-12 h-full"
             />
           </TechLink>
-          <TechLink href="https://en.wikipedia.org/wiki/JavaScript" delay={4}>
+          <TechLink href="https://en.wikipedia.org/wiki/JavaScript">
             <img
               alt="JavaScript ES5/ES6"
               src="/images/JavaScript.svg"
-              className="w-full h-full"
+              className="w-12 h-full"
             />
           </TechLink>
-          <TechLink href="https://en.wikipedia.org/wiki/HTML5" delay={3}>
+          <TechLink href="https://en.wikipedia.org/wiki/HTML5">
+            <img alt="HTML5" src="/images/HTML5.svg" className="w-12 h-full" />
+          </TechLink>
+          <TechLink href="https://en.wikipedia.org/wiki/CSS">
+            <img alt="CSS3" src="/images/CSS3.svg" className="w-12 h-12" />
+          </TechLink>
+          <TechLink href="https://sass-lang.com/">
+            <img alt="SASS" src="/images/SASS.svg" className="w-12 h-full" />
+          </TechLink>
+          <TechLink href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)">
             <img
-              alt="HTML5"
-              src="/images/HTML5.svg"
-              className="w-full h-full"
+              alt="C#"
+              src="/images/CSharpLogo.svg"
+              className="w-12 h-full"
             />
           </TechLink>
-          <TechLink href="https://en.wikipedia.org/wiki/CSS" delay={2}>
-            <img alt="CSS3" src="/images/CSS3.svg" className="w-full h-full" />
+          <TechLink href="https://getbootstrap.com/">
+            <img
+              alt="Bootstrap"
+              src="/images/Bootstrap.svg"
+              className="w-12 h-full"
+            />
           </TechLink>
-          <TechLink href="https://sass-lang.com/" delay={1}>
-            <img alt="SASS" src="/images/SASS.svg" className="w-full h-full" />
+
+          <TechLink href="https://styled-components.com/">
+            <img
+              alt="Styled Components"
+              src="/images/StyledComponents.png"
+              className="w-32"
+            />
           </TechLink>
-          {/* <TechLink href="https://storybook.js.org/">
-              <img
-                alt="StorybookJS"
-                src="/images/Storybook.png"
-                className="w-full h-full"
-              />
-            </TechLink> */}
-          {/* <TechLink href="https://www.cypress.io/">
-              <img
-                alt="Cypress.io"
-                src="/images/Cypress.png"
-                className="w-full h-full"
-              />
-            </TechLink> */}
+
+          <TechLink href="https://storybook.js.org/">
+            <img
+              alt="StorybookJS"
+              src="/images/Storybook.png"
+              className="w-32"
+            />
+          </TechLink>
+          <TechLink href="https://www.cypress.io/">
+            <img alt="Cypress.io" src="/images/Cypress.png" className="w-32" />
+          </TechLink>
+          <TechLink>Jest..</TechLink>
+          <TechLink>TailwindCSS..</TechLink>
           {/* </AnimationDiv> */}
         </TechList>
         {/* <p className="text-xl mt-4 md:mt-2 w-1/2 text-center font-light leading-relaxed">
