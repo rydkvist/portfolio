@@ -57,7 +57,7 @@ class ParticlesComponent extends Component {
               enable: true,
               outMode: "bounce",
               random: false,
-              speed: 6,
+              speed: 5,
               straight: false,
             },
             number: {
@@ -65,7 +65,7 @@ class ParticlesComponent extends Component {
                 enable: true,
                 value_area: 800,
               },
-              value: 80,
+              value: 50,
             },
             opacity: {
               value: 0.5,
@@ -75,7 +75,7 @@ class ParticlesComponent extends Component {
             },
             size: {
               random: true,
-              value: 5,
+              value: 4,
             },
           },
           detectRetina: true,
