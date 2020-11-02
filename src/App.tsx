@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { useState, Suspense, lazy, useEffect } from "react";
 import styled from "styled-components/macro";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Footer } from "./components/Footer";
@@ -8,6 +8,7 @@ import { Experience } from "./experience";
 import { Stocks } from "./stocks";
 import { Resume } from "./resume";
 import { homeURL, contactURL, experienceURL } from "./config";
+import { Particles } from "./components/Particles";
 
 const NavigationBar = lazy(
   () => import("./components/NavigationBar/NavigationBar")
@@ -15,7 +16,9 @@ const NavigationBar = lazy(
 
 const Main = styled.section<any>`
   height: 100%;
+  min-height: 100vh;
   display: block;
+  color: #ffffff;
 `;
 
 const App = () => {
@@ -27,6 +30,7 @@ const App = () => {
   return (
     <Suspense fallback={<></>}>
       <Main role="main">
+        <Particles />
         <NavigationBar />
         <Route component={scrollToTop} />
         <Switch>

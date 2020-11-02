@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import theme from "../../styles";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 import {
   homeURL,
   contactURL,
@@ -11,6 +12,13 @@ import {
   gitHubURL,
   experienceURL,
 } from "../../config";
+
+const StyledListItem = styled.li`
+  &:hover {
+    background-color: ${theme.colors.cyanGreen30};
+    color: ${theme.colors.white};
+  }
+`;
 
 const MobileNavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +36,15 @@ const MobileNavigationBar = () => {
   }, [isOpen]);
 
   const StyledNavLink = ({ href, title, iconName }: any) => (
-    <li className="inline-flex align-center justify-center m-0 border-b hover:bg-blue-200 hover:underline">
+    <StyledListItem className="inline-flex align-center justify-center m-0 border-b hover:underline">
       <NavLink
         className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-center "
         to={href}
-        activeClassName="bg-blue-200 underline"
+        activeStyle={{
+          backgroundColor: theme.colors.cyanGreen30,
+          color: theme.colors.white,
+        }}
+        activeClassName="underline"
         title={title}
         onClick={closeMenu}
       >
@@ -44,7 +56,7 @@ const MobileNavigationBar = () => {
           {title}
         </span>
       </NavLink>
-    </li>
+    </StyledListItem>
   );
 
   return (
@@ -52,14 +64,22 @@ const MobileNavigationBar = () => {
       <header
         className={`sticky flex justify-around items-center top-0 py-4 px-2 z-50`}
         style={{
-          backgroundColor: isOpen
+          background: isOpen
             ? theme.colors.white
-            : theme.colors.customBlack,
+            : `linear-gradient(
+            90deg,
+            rgba(66, 171, 232, 1) 0%,
+            rgba(58, 168, 180, 1) 50%,
+            rgba(58, 180, 151, 1) 100%
+          )`,
           transition: "all 0.5s ease",
+          borderBottom: `1px solid ${
+            isOpen ? theme.colors.customWhite : theme.colors.transparent
+          }`,
         }}
       >
         <NavLink
-          className="inline-flex"
+          className="inline-flex text-white hover:text-opacity-75"
           to={homeURL}
           onClick={closeMenu}
           title="Home"
@@ -76,7 +96,7 @@ const MobileNavigationBar = () => {
             alt="Niklas Rydkvist"
           />
           <span
-            className="text-xl self-center font-medium uppercase tracking-widest m-0"
+            className="text-xl self-center uppercase tracking-widest m-0"
             style={{
               color: isOpen ? theme.colors.customBlack : theme.colors.white,
             }}
@@ -105,7 +125,7 @@ const MobileNavigationBar = () => {
       </header>
       <nav
         role="navigation"
-        className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full"
+        className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full z-50"
         style={{
           fontFamily: "Source Sans Pro",
           transition: "all 0.5s ease",

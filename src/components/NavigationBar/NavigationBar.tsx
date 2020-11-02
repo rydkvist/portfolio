@@ -6,7 +6,7 @@ import theme from "../../styles";
 import MobileNavigationBar from "./MobileNavigationBar";
 
 const activeStyle = {
-  fontWeight: 600,
+  borderColor: theme.colors.white,
 };
 
 const NavigationBar = () => {
@@ -16,7 +16,7 @@ const NavigationBar = () => {
     <li className="flex items-center m-0 mr-8">
       <NavLink
         className={`border-b border-transparent hover:border-white`}
-        style={{ padding: "0.125rem", fontFamily: "Source Sans Pro" }}
+        style={{ padding: "0rem 0.125rem", fontFamily: "Source Sans Pro" }}
         activeStyle={activeStyle}
         to={href}
         title={title}
@@ -32,7 +32,6 @@ const NavigationBar = () => {
     <header
       className="m-0 py-4"
       style={{
-        backgroundColor: theme.colors.transparent,
         color: theme.colors.white,
       }}
     >
@@ -41,18 +40,18 @@ const NavigationBar = () => {
         role="navigation"
       >
         <NavLink
-          className="inline-flex"
+          className="inline-flex text-white hover:text-opacity-75"
           to={homeURL}
           title="Home"
           role="img"
           aria-label="Brand Logo – Niklas Rydkvist"
         >
           <img
-            className="w-12 h-12 border rounded-full mr-4"
+            className="w-12 h-12 border rounded-full mr-4 "
             src="/favicon.ico"
             alt="Brand Logo – Niklas Rydkvist"
           />
-          <span className="text-xl self-center font-medium uppercase tracking-widest">
+          <span className="text-xl self-center uppercase tracking-widest ">
             Niklas Rydkvist
           </span>
         </NavLink>
