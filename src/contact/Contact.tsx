@@ -23,7 +23,7 @@ const Item = ({ title, value, href, iconName }: any) => (
       <a
         href={href}
         title={value}
-        className="text-2xl mt-2 text-black text-opacity-50 hover:text-opacity-100 focus:text-opacity-100"
+        className="text-2xl mt-2 text-white text-opacity-75 md-text-opacity-50 hover:text-opacity-100 focus:text-opacity-100"
       >
         {value}
       </a>

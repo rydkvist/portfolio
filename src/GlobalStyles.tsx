@@ -14,6 +14,21 @@ html {
 
 body {
   margin: 0;
-  pading: 0;
+  padding: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(66, 171, 232, 1) 0%,
+    rgba(58, 168, 180, 1) 50%,
+    rgba(58, 180, 151, 1) 100%
+  );
 }  
+
+#tsparticles {
+  position:absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  pointer-events:none;
+}
+
 `;

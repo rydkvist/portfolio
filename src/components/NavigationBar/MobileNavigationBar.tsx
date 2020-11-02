@@ -15,7 +15,8 @@ import {
 
 const StyledListItem = styled.li`
   &:hover {
-    background-color: ${theme.colors.lightCyan};
+    background-color: ${theme.colors.cyanGreen30};
+    color: ${theme.colors.white};
   }
 `;
 
@@ -39,7 +40,10 @@ const MobileNavigationBar = () => {
       <NavLink
         className="flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-center "
         to={href}
-        activeStyle={{ backgroundColor: theme.colors.lightCyan }}
+        activeStyle={{
+          backgroundColor: theme.colors.cyanGreen30,
+          color: theme.colors.white,
+        }}
         activeClassName="underline"
         title={title}
         onClick={closeMenu}
@@ -60,12 +64,18 @@ const MobileNavigationBar = () => {
       <header
         className={`sticky flex justify-around items-center top-0 py-4 px-2 z-50`}
         style={{
+          background: isOpen
+            ? theme.colors.white
+            : `linear-gradient(
+            90deg,
+            rgba(66, 171, 232, 1) 0%,
+            rgba(58, 168, 180, 1) 50%,
+            rgba(58, 180, 151, 1) 100%
+          )`,
           transition: "all 0.5s ease",
           borderBottom: `1px solid ${
-            isOpen ? theme.colors.customWhite : theme.colors.darkCyan
+            isOpen ? theme.colors.customWhite : theme.colors.transparent
           }`,
-          background:
-            "linear-gradient(90deg, rgba(58,180,128,1) 0%, rgba(69,157,252,1) 100%)",
         }}
       >
         <NavLink
@@ -115,7 +125,7 @@ const MobileNavigationBar = () => {
       </header>
       <nav
         role="navigation"
-        className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full"
+        className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full z-50"
         style={{
           fontFamily: "Source Sans Pro",
           transition: "all 0.5s ease",

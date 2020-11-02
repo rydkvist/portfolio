@@ -33,9 +33,6 @@ const NavigationBar = () => {
       className="m-0 py-4"
       style={{
         color: theme.colors.white,
-        borderBottom: `1px solid ${theme.colors.darkCyan}`,
-        background:
-          "linear-gradient(90deg, rgba(58,180,128,1) 0%, rgba(69,157,252,1) 100%)",
       }}
     >
       <nav
