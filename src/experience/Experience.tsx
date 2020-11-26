@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import ReactLogo from "../assets/icons/ReactLogo";
 import NextJS from "../assets/icons/NextJS";
+import { appTitle } from "../config";
 
 const StyledItem = styled.a<any>`
   ${(props) =>
@@ -60,6 +61,8 @@ const TechLink = ({ spin, children, href }: any) => {
 };
 
 const Experience = () => {
+  window.document.title = `${appTitle}: Experience`;
+
   return (
     <div className="container max-w-screen-lg mx-auto">
       <div className="mt-8">

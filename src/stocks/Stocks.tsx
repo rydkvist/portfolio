@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components/macro";
 import { ChevronIcon } from "../assets/icons/Chevron";
-
+import { appTitle } from "../config";
 const StyledWrapper = styled.div`
   display: flex;
   height: 100%;
@@ -125,6 +125,8 @@ const StockItem = ({ stockName, stockValue, stockValuta }: any) => {
 };
 
 const Stocks = () => {
+  window.document.title = `${appTitle}: Contact`;
+
   return (
     <StyledWrapper>
       <Wrapper>

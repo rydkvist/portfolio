@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
+import { appTitle } from "../config";
 
 const Container = styled.div`
   display: flex;
@@ -18,6 +19,8 @@ const Title = styled.h1`
 `;
 
 const Resume = () => {
+  window.document.title = `${appTitle}: Resume`;
+
   return (
     <Container>
       <Title>
