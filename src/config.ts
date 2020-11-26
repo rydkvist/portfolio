@@ -7,3 +7,4 @@ export const personalLocation = "Stockholm, Sweden";
 export const linkedInURL = "https://www.linkedin.com/in/niklasrydkvist/";
 export const gitHubURL = "https://github.com/Nojze";
 export const twitterURL = "https://twitter.com/Niklaass";
+export const appTitle = "Niklas Rydkvist";

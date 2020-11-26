@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { appTitle } from "../config";
 
 const Home = () => {
+  window.document.title = `${appTitle}: Contact`;
   return (
     <>
       <div className="container max-w-screen-lg mx-auto">

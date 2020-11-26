@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import ReactLogo from "../assets/icons/ReactLogo";
 import NextJS from "../assets/icons/NextJS";
+import { appTitle } from "../config";
 
 const StyledItem = styled.a<any>`
   ${(props) =>
@@ -22,7 +23,6 @@ const StyledItem = styled.a<any>`
 
 const TechList = styled.div`
   position: relative;
-  display: none;
   width: 100%;
   padding: 0 2rem;
   overflow: hidden;
@@ -61,12 +61,13 @@ const TechLink = ({ spin, children, href }: any) => {
 };
 
 const Experience = () => {
+  window.document.title = `${appTitle}: Experience`;
+
   return (
     <div className="container max-w-screen-lg mx-auto">
       <div className="mt-8">
         <h1 className="text-3xl text-center mb-6 z-50">
-          {/* Tech I work with (not done) */}
-          Work in progress..
+          Tech I work with (not done)
           {/* the moment (Add more, not done yet, maybe add
             skill level under?) */}
         </h1>

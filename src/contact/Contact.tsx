@@ -6,6 +6,7 @@ import {
   personalLocation,
   personalEmail,
   personalPhoneNumber,
+  appTitle,
 } from "../config";
 
 const Item = ({ title, value, href, iconName }: any) => (
@@ -32,6 +33,8 @@ const Item = ({ title, value, href, iconName }: any) => (
 );
 
 const Contact = () => {
+  window.document.title = `${appTitle}: Contact`;
+
   return (
     <div className="container max-w-screen-lg mx-auto">
       <div className="flex flex-col md:flex-row justify-center max-w-screen-md mx-auto items-center mt-8 md:mt-12">
