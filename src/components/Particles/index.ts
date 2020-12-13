@@ -1,1 +1,1 @@
-export { default as Particles } from "./Particles";
+export { ParticlesComponent as Particles } from './Particles';

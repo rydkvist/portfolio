@@ -1,9 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useMediaMax } from "../../utils";
-import { homeURL, contactURL, experienceURL } from "../../config";
-import theme from "../../styles";
-import MobileNavigationBar from "./MobileNavigationBar";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useMediaMax } from '../../utils';
+import { homeURL, contactURL, experienceURL } from '../../config';
+import theme from '../../styles';
+import MobileNavigationBar from './MobileNavigationBar';
 
 const activeStyle = {
   borderColor: theme.colors.white,
@@ -16,7 +16,7 @@ const NavigationBar = () => {
     <li className="flex items-center m-0 mr-8">
       <NavLink
         className={`border-b border-transparent hover:border-white`}
-        style={{ padding: "0rem 0.125rem", fontFamily: "Source Sans Pro" }}
+        style={{ padding: '0rem 0.125rem', fontFamily: 'Source Sans Pro' }}
         activeStyle={activeStyle}
         to={href}
         title={title}
@@ -35,10 +35,7 @@ const NavigationBar = () => {
         color: theme.colors.white,
       }}
     >
-      <nav
-        className="relative flex justify-around items-center"
-        role="navigation"
-      >
+      <nav className="relative flex justify-around items-center" role="navigation">
         <NavLink
           className="inline-flex text-white hover:text-opacity-75"
           to={homeURL}
@@ -46,14 +43,8 @@ const NavigationBar = () => {
           role="img"
           aria-label="Brand Logo – Niklas Rydkvist"
         >
-          <img
-            className="w-12 h-12 border rounded-full mr-4 "
-            src="/favicon.ico"
-            alt="Brand Logo – Niklas Rydkvist"
-          />
-          <span className="text-xl self-center uppercase tracking-widest ">
-            Niklas Rydkvist
-          </span>
+          <img className="w-12 h-12 border rounded-full mr-4 " src="/favicon.ico" alt="Brand Logo – Niklas Rydkvist" />
+          <span className="text-xl self-center uppercase tracking-widest ">Niklas Rydkvist</span>
         </NavLink>
 
         <ul className="flex flex-row m-0 p-0 list-none">

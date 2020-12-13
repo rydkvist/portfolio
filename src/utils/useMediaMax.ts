@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useMediaMax = (breakpoint: number): boolean => {
   const query = `(max-width: ${breakpoint}px)`;

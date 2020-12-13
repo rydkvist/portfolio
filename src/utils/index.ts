@@ -1,1 +1,1 @@
-export { default as useMediaMax } from "./useMediaMax";
+export { default as useMediaMax } from './useMediaMax';

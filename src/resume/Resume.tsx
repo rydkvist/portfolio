@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components/macro";
-import { appTitle } from "../config";
+import React, { useState } from 'react';
+import styled from 'styled-components/macro';
+import { appTitle } from '../config';
 
 const Container = styled.div`
   display: flex;

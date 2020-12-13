@@ -1,18 +1,16 @@
-import React, { useState, Suspense, lazy, useEffect } from "react";
-import styled from "styled-components/macro";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { Footer } from "./components/Footer";
-import { Home } from "./home";
-import { Contact } from "./contact";
-import { Experience } from "./experience";
-import { Stocks } from "./stocks";
-import { Resume } from "./resume";
-import { homeURL, contactURL, experienceURL } from "./config";
-import { Particles } from "./components/Particles";
+import React, { useState, Suspense, lazy, useEffect } from 'react';
+import styled from 'styled-components/macro';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Footer } from './components/Footer';
+import { Home } from './home';
+import { Contact } from './contact';
+import { Experience } from './experience';
+import { Stocks } from './stocks';
+import { Resume } from './resume';
+import { homeURL, contactURL, experienceURL } from './config';
+import { Particles } from './components/Particles';
 
-const NavigationBar = lazy(
-  () => import("./components/NavigationBar/NavigationBar")
-);
+const NavigationBar = lazy(() => import('./components/NavigationBar/NavigationBar'));
 
 const Main = styled.section<any>`
   height: 100%;

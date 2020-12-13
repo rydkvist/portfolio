@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import theme from "../../styles";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import theme from '../../styles';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import {
   homeURL,
   contactURL,
@@ -11,7 +11,7 @@ import {
   linkedInURL,
   gitHubURL,
   experienceURL,
-} from "../../config";
+} from '../../config';
 
 const StyledListItem = styled.li`
   &:hover {
@@ -32,7 +32,7 @@ const MobileNavigationBar = () => {
   };
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
 
   const StyledNavLink = ({ href, title, iconName }: any) => (
@@ -49,10 +49,7 @@ const MobileNavigationBar = () => {
         onClick={closeMenu}
       >
         {/* <i className={`${iconName} mr-4 self-center`} /> */}
-        <span
-          className="text-2xl font-light"
-          style={{ fontFamily: "Source Sans Pro" }}
-        >
+        <span className="text-2xl font-light" style={{ fontFamily: 'Source Sans Pro' }}>
           {title}
         </span>
       </NavLink>
@@ -72,25 +69,16 @@ const MobileNavigationBar = () => {
             rgba(58, 168, 180, 1) 50%,
             rgba(58, 180, 151, 1) 100%
           )`,
-          transition: "all 0.5s ease",
-          borderBottom: `1px solid ${
-            isOpen ? theme.colors.customWhite : theme.colors.transparent
-          }`,
+          transition: 'all 0.5s ease',
+          borderBottom: `1px solid ${isOpen ? theme.colors.customWhite : theme.colors.transparent}`,
         }}
       >
-        <NavLink
-          className="inline-flex text-white hover:text-opacity-75"
-          to={homeURL}
-          onClick={closeMenu}
-          title="Home"
-        >
+        <NavLink className="inline-flex text-white hover:text-opacity-75" to={homeURL} onClick={closeMenu} title="Home">
           <img
             className="w-12 h-12 border rounded-full mr-4"
             style={{
-              borderColor: isOpen
-                ? theme.colors.customBlack
-                : theme.colors.white,
-              transition: "all 0.5s ease",
+              borderColor: isOpen ? theme.colors.customBlack : theme.colors.white,
+              transition: 'all 0.5s ease',
             }}
             src="/favicon.ico"
             alt="Niklas Rydkvist"
@@ -105,16 +93,14 @@ const MobileNavigationBar = () => {
           </span>
         </NavLink>
         <button
-          aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
           aria-expanded={isOpen ? true : false}
           aria-controls="navigation"
           onClick={onToggleMenu}
-          className={`hamburger hamburger--spring px-1 py-2 ${
-            isOpen ? "is-active" : ""
-          }`}
+          className={`hamburger hamburger--spring px-1 py-2 ${isOpen ? 'is-active' : ''}`}
           style={{
             color: isOpen ? theme.colors.customBlack : theme.colors.white,
-            transition: "all 0.5s ease",
+            transition: 'all 0.5s ease',
           }}
           type="button"
         >
@@ -127,26 +113,18 @@ const MobileNavigationBar = () => {
         role="navigation"
         className="flex flex-col items-center z-50 fixed overflow-y-hidden pb-auto bg-white w-full z-50"
         style={{
-          fontFamily: "Source Sans Pro",
-          transition: "all 0.5s ease",
-          visibility: isOpen ? "visible" : "hidden",
-          height: isOpen ? "100%" : "0%",
-          opacity: isOpen ? "100%" : "0%",
+          fontFamily: 'Source Sans Pro',
+          transition: 'all 0.5s ease',
+          visibility: isOpen ? 'visible' : 'hidden',
+          height: isOpen ? '100%' : '0%',
+          opacity: isOpen ? '100%' : '0%',
           color: isOpen ? theme.colors.customBlack : theme.colors.white,
         }}
       >
         <ul className="relative flex flex-col m-0 p-0 list-none w-full">
           <StyledNavLink href={homeURL} title="Home" iconName="fa fa-home" />
-          <StyledNavLink
-            href={experienceURL}
-            title="Experience"
-            iconName="fa fa-home"
-          />
-          <StyledNavLink
-            href={contactURL}
-            title="Contact"
-            iconName="fa fa-envelope-o"
-          />
+          <StyledNavLink href={experienceURL} title="Experience" iconName="fa fa-home" />
+          <StyledNavLink href={contactURL} title="Contact" iconName="fa fa-envelope-o" />
         </ul>
 
         <ul className="flex flex-row justify-center m-0 mt-8 list-none w-full p-8">

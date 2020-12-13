@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components/macro";
-import { ChevronIcon } from "../assets/icons/Chevron";
-import { appTitle } from "../config";
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components/macro';
+import { ChevronIcon } from '../assets/icons/Chevron';
+import { appTitle } from '../config';
 const StyledWrapper = styled.div`
   display: flex;
   height: 100%;
@@ -78,7 +78,7 @@ const StockButton = styled.button<any>`
       margin-bottom: 10px;
     }
   }
-  ${(props) =>
+  ${props =>
     props.isOpen &&
     css`
       padding: 40px;
@@ -86,17 +86,17 @@ const StockButton = styled.button<any>`
 `;
 
 const stockList = [
-  { name: "Aker BP", currentValue: "184,20", valuta: "SEK" },
-  { name: "Astra Zeneca", currentValue: "1013,00", valuta: "SEK" },
-  { name: "Avanza Bank Holding", currentValue: "134,20", valuta: "SEK" },
-  { name: "Industrivärden C", currentValue: "211,50", valuta: "SEK" },
-  { name: "Investor B", currentValue: "512,20", valuta: "SEK" },
-  { name: "Lundin Energy", currentValue: "232,10", valuta: "SEK" },
-  { name: "Norwegian Air Shuttle", currentValue: "3,011", valuta: "NOK" },
-  { name: "Paradox Interactive", currentValue: "188,00", valuta: "SEK" },
-  { name: "SAS", currentValue: "8,96", valuta: "SEK" },
-  { name: "Slack Technologies Inc", currentValue: "32,36", valuta: "USD" },
-  { name: "Warner Music Group Corp", currentValue: "31,98", valuta: "USD" },
+  { name: 'Aker BP', currentValue: '184,20', valuta: 'SEK' },
+  { name: 'Astra Zeneca', currentValue: '1013,00', valuta: 'SEK' },
+  { name: 'Avanza Bank Holding', currentValue: '134,20', valuta: 'SEK' },
+  { name: 'Industrivärden C', currentValue: '211,50', valuta: 'SEK' },
+  { name: 'Investor B', currentValue: '512,20', valuta: 'SEK' },
+  { name: 'Lundin Energy', currentValue: '232,10', valuta: 'SEK' },
+  { name: 'Norwegian Air Shuttle', currentValue: '3,011', valuta: 'NOK' },
+  { name: 'Paradox Interactive', currentValue: '188,00', valuta: 'SEK' },
+  { name: 'SAS', currentValue: '8,96', valuta: 'SEK' },
+  { name: 'Slack Technologies Inc', currentValue: '32,36', valuta: 'USD' },
+  { name: 'Warner Music Group Corp', currentValue: '31,98', valuta: 'USD' },
 ];
 
 const StockItem = ({ stockName, stockValue, stockValuta }: any) => {
@@ -114,11 +114,7 @@ const StockItem = ({ stockName, stockValue, stockValuta }: any) => {
         <StockValue>
           {stockValue} {stockValuta}
         </StockValue>
-        <ChevronIcon
-          width={15}
-          variant="fat"
-          direction={isOpen ? "upward" : "downward"}
-        />
+        <ChevronIcon width={15} variant="fat" direction={isOpen ? 'upward' : 'downward'} />
       </StockButton>
     </StockListItem>
   );
@@ -133,12 +129,7 @@ const Stocks = () => {
         <Title>Current Stocks (on work)</Title>
         <StockList>
           {stockList.map((stock, index) => (
-            <StockItem
-              key={index}
-              stockName={stock.name}
-              stockValue={stock.currentValue}
-              stockValuta={stock.valuta}
-            />
+            <StockItem key={index} stockName={stock.name} stockValue={stock.currentValue} stockValuta={stock.valuta} />
           ))}
         </StockList>
       </Wrapper>

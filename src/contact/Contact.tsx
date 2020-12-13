@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   twitterURL,
   gitHubURL,
@@ -7,13 +7,13 @@ import {
   personalEmail,
   personalPhoneNumber,
   appTitle,
-} from "../config";
+} from '../config';
 
 const Item = ({ title, value, href, iconName }: any) => (
   <div
     className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mx-6"
     style={{
-      fontFamily: "Source Sans Pro",
+      fontFamily: 'Source Sans Pro',
     }}
   >
     <div className="text-4xl -mb-2 md:-mb-4">
@@ -38,23 +38,9 @@ const Contact = () => {
   return (
     <div className="container max-w-screen-lg mx-auto">
       <div className="flex flex-col md:flex-row justify-center max-w-screen-md mx-auto items-center mt-8 md:mt-12">
-        <Item
-          title="E-mail"
-          value={personalEmail}
-          href={`mailto:${personalEmail}`}
-          iconName="mail-outline"
-        />
-        <Item
-          title="Phone"
-          value={personalPhoneNumber}
-          href={`tel:${personalPhoneNumber}`}
-          iconName="call-outline"
-        />
-        <Item
-          title="Location"
-          value={personalLocation}
-          iconName="location-outline"
-        />
+        <Item title="E-mail" value={personalEmail} href={`mailto:${personalEmail}`} iconName="mail-outline" />
+        <Item title="Phone" value={personalPhoneNumber} href={`tel:${personalPhoneNumber}`} iconName="call-outline" />
+        <Item title="Location" value={personalLocation} iconName="location-outline" />
       </div>
       <ul className="flex flex-row justify-center m-0 mt-2 md:mt-8 list-none w-full p-8">
         <li className="mr-2">

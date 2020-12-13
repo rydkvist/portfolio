@@ -1,11 +1,11 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import ReactLogo from "../assets/icons/ReactLogo";
-import NextJS from "../assets/icons/NextJS";
-import { appTitle } from "../config";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import ReactLogo from '../assets/icons/ReactLogo';
+import NextJS from '../assets/icons/NextJS';
+import { appTitle } from '../config';
 
 const StyledItem = styled.a<any>`
-  ${(props) =>
+  ${props =>
     props.spin &&
     css`
       animation: spin 2.5s linear infinite;
@@ -32,10 +32,7 @@ const TechList = styled.div`
 
 const Item = () => {
   return (
-    <div
-      className="container w-1/2 h-auto bg-blue-100 px-4 py-2 rounded"
-      style={{ fontFamily: "Source Sans Pro" }}
-    >
+    <div className="container w-1/2 h-auto bg-blue-100 px-4 py-2 rounded" style={{ fontFamily: 'Source Sans Pro' }}>
       <div className="flex flex-row justify-between items-center">
         <h2 className="text-lg text-black font-semibold uppercase">Founder</h2>
         <h3 className="text-sm text-gray-500">apr 2014 - may 2015</h3>
@@ -72,10 +69,7 @@ const Experience = () => {
           {/* the moment (Add more, not done yet, maybe add
             skill level under?) */}
         </h1>
-        <TechList
-          id="tech-list"
-          className="block flex-col w-full justify-center items-center mx-auto"
-        >
+        <TechList id="tech-list" className="block flex-col w-full justify-center items-center mx-auto">
           {/* <AnimationDiv> */}
           <TechLink spin={true} href="https://reactjs.org/">
             <ReactLogo width="w-12" height="h-full" />
@@ -90,11 +84,7 @@ const Experience = () => {
           </TechLink>
 
           <TechLink href="https://redux.js.org/">
-            <img
-              alt="Redux"
-              src="https://redux.js.org/img/redux.svg"
-              className="w-12 h-full"
-            />
+            <img alt="Redux" src="https://redux.js.org/img/redux.svg" className="w-12 h-full" />
           </TechLink>
 
           <TechLink href="https://nextjs.org/">
@@ -108,11 +98,7 @@ const Experience = () => {
             />
           </TechLink>
           <TechLink href="https://en.wikipedia.org/wiki/JavaScript">
-            <img
-              alt="JavaScript ES5/ES6"
-              src="/images/JavaScript.svg"
-              className="w-12 h-full"
-            />
+            <img alt="JavaScript ES5/ES6" src="/images/JavaScript.svg" className="w-12 h-full" />
           </TechLink>
           <TechLink href="https://en.wikipedia.org/wiki/HTML5">
             <img alt="HTML5" src="/images/HTML5.svg" className="w-12 h-full" />
@@ -124,34 +110,18 @@ const Experience = () => {
             <img alt="SASS" src="/images/SASS.svg" className="w-12 h-full" />
           </TechLink>
           <TechLink href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)">
-            <img
-              alt="C#"
-              src="/images/CSharpLogo.svg"
-              className="w-12 h-full"
-            />
+            <img alt="C#" src="/images/CSharpLogo.svg" className="w-12 h-full" />
           </TechLink>
           <TechLink href="https://getbootstrap.com/">
-            <img
-              alt="Bootstrap"
-              src="/images/Bootstrap.svg"
-              className="w-12 h-full"
-            />
+            <img alt="Bootstrap" src="/images/Bootstrap.svg" className="w-12 h-full" />
           </TechLink>
 
           <TechLink href="https://styled-components.com/">
-            <img
-              alt="Styled Components"
-              src="/images/StyledComponents.png"
-              className="w-32"
-            />
+            <img alt="Styled Components" src="/images/StyledComponents.png" className="w-32" />
           </TechLink>
 
           <TechLink href="https://storybook.js.org/">
-            <img
-              alt="StorybookJS"
-              src="/images/Storybook.png"
-              className="w-32"
-            />
+            <img alt="StorybookJS" src="/images/Storybook.png" className="w-32" />
           </TechLink>
           <TechLink href="https://www.cypress.io/">
             <img alt="Cypress.io" src="/images/Cypress.png" className="w-32" />
@@ -171,9 +141,7 @@ const Experience = () => {
           Cypress */}
       </div>
       {/* <h1 className="text-4xl text-center mt-8">Work Experience (WIP)</h1> */}
-      <div className="w-full h-full flex flex-col items-center justify-center">
-        {/* <Item /> */}
-      </div>
+      <div className="w-full h-full flex flex-col items-center justify-center">{/* <Item /> */}</div>
     </div>
   );
 };

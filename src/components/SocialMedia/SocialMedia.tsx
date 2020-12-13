@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components/macro";
+import React from 'react';
+import styled from 'styled-components/macro';
 
 const Wrapper = styled.div<any>`
   display: inline-flex;
   justify-content: center;
   height: auto;
-  margin-top: ${(props) => (props.marginTop ? props.marginTop : 0)}px;
-  margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)}px;
+  margin-top: ${props => (props.marginTop ? props.marginTop : 0)}px;
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : 0)}px;
 `;
 
 const SocialMediaList = styled.ul`
@@ -48,11 +48,7 @@ type SocialMediaProps = {
   children: any;
 };
 
-const SocialMedia = ({
-  marginTop,
-  marginBottom,
-  children,
-}: SocialMediaProps) => {
+const SocialMedia = ({ marginTop, marginBottom, children }: SocialMediaProps) => {
   return (
     <Wrapper marginTop={marginTop} marginBottom={marginBottom}>
       <SocialMediaList>{children}</SocialMediaList>
