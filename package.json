@@ -3,7 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "author": "Niklas Rydkvist",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && serve -s build",
+    "test": "react-scripts test"
+  },
   "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -13,22 +25,10 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
-    "particle.js": "^1.0.7",
-    "react": "^16.14.0",
-    "react-dom": "^16.13.1",
-    "react-particles-js": "^3.4.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "react-tsparticles": "^1.18.8",
-    "serve": "^11.3.2",
     "styled-components": "^5.1.1",
-    "tsparticles": "^1.18.8",
-    "typescript": "^3.9.7"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
+    "typescript": "^3.9.7",
+    "babel-plugin-styled-components": "^1.10.7",
+    "prettier": "^2.2.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,9 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7",
-    "prettier": "^2.2.1"
   }
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { appTitle } from '../config';
 
 const Home = () => {
-  window.document.title = `${appTitle}: Contact`;
+  window.document.title = `${appTitle}: Home`;
   return (
     <>
       <div className="container max-w-screen-lg mx-auto">

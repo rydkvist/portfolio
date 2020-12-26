@@ -8,7 +8,6 @@ import { Experience } from './experience';
 import { Stocks } from './stocks';
 import { Resume } from './resume';
 import { homeURL, contactURL, experienceURL } from './config';
-import { ParticlesComponent } from './components/Particles';
 
 const NavigationBar = lazy(() => import('./components/NavigationBar/NavigationBar'));
 
@@ -28,7 +27,6 @@ const App = () => {
   return (
     <Suspense fallback={<></>}>
       <Main role="main">
-        <ParticlesComponent />
         <NavigationBar />
         <Route component={scrollToTop} />
         <Switch>
