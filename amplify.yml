@@ -3,10 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
+        - npm install
     build:
       commands:
-        - CI= yarn build
+        - CI= npm build
   artifacts:
     baseDirectory: /build
     files:
