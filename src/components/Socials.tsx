@@ -9,7 +9,7 @@ const Wrapper = styled.div<any>`
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : 0)}px;
 `;
 
-const SocialMediaList = styled.ul`
+const SocialsList = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,7 +18,7 @@ const SocialMediaList = styled.ul`
   list-style: none;
 `;
 
-const SocialMediaItem = styled.li`
+const SocialsItem = styled.li`
   display: inline-flex;
   margin: 0;
   margin-right: 20px;
@@ -42,34 +42,32 @@ const CircleLink = styled.a`
   transition: 0.25s ease-in-out all;
 `;
 
-type SocialMediaProps = {
+type SocialsProps = {
   marginTop?: number;
   marginBottom?: number;
   children: any;
 };
 
-const SocialMedia = ({ marginTop, marginBottom, children }: SocialMediaProps) => {
+export const Socials = ({ marginTop, marginBottom, children }: SocialsProps) => {
   return (
     <Wrapper marginTop={marginTop} marginBottom={marginBottom}>
-      <SocialMediaList>{children}</SocialMediaList>
+      <SocialsList>{children}</SocialsList>
     </Wrapper>
   );
 };
 
-type SocialMediaItemProps = {
+type SocialsItemProps = {
   icon?: any;
   link: string;
   altText?: string;
 };
 
-SocialMedia.Item = ({ icon, link, altText }: SocialMediaItemProps) => {
+Socials.Item = ({ icon, link, altText }: SocialsItemProps) => {
   return (
-    <SocialMediaItem>
+    <SocialsItem>
       <CircleLink href={link} target="_blank" title={altText}>
         <span>{icon}</span>
       </CircleLink>
-    </SocialMediaItem>
+    </SocialsItem>
   );
 };
-
-export default SocialMedia;

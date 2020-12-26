@@ -9,8 +9,8 @@ const useMediaMax = (breakpoint: number): boolean => {
 
   useEffect(() => {
     const handler = () => setMatches(mediaQueryList.matches);
-    mediaQueryList.addListener(handler);
-    return () => mediaQueryList.removeListener(handler);
+    mediaQueryList.addEventListener('change', handler);
+    return () => mediaQueryList.removeEventListener('change', handler);
   }, []);
 
   return matches;
