@@ -1,29 +1,19 @@
-# Getting Started – Portfolio
+## About
 
-Welcome! This project was built with [Create React App](https://github.com/facebook/create-react-app) and TypeScript. To start the project, proceed by doing the following:
+Welcome! This project was built with [Create React App](https://github.com/facebook/create-react-app) and TypeScript. To start the project, proceed with following the steps below.
+## Getting Started
 
-### Install packages
+### Installation
 
-```
-npm install
-```
+Make sure to have installed one of the following dependencies:
 
-or
+- [NodeJS](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
 
-```
-yarn install
-```
+### Running
 
-### Start the project
+1. Clone the repository: `git clone git@github.com:Nojze/portfolio.git`
+2. Go into the directory of the project: `cd portfolio`
+3. Install packages: `npm install` or `yarn install`
+4. Start the project: `npm start` or `yarn start`
 
-```
-npm start
-```
-
-or
-
-```
-yarn start
-```
-
-Then open [http://localhost:3000/](http://localhost:3000/) to see the app! :)
