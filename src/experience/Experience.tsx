@@ -65,7 +65,7 @@ const Experience = () => {
     <div className="container max-w-screen-lg mx-auto">
       <div className="mt-8">
         <h1 className="text-3xl text-center mb-6 z-50">
-          Work in progress.,
+          Work in progress...
           {/* the moment (Add more, not done yet, maybe add
             skill level under?) */}
         </h1>

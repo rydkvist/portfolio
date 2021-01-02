@@ -8,7 +8,11 @@ const Home = () => {
       <div className="container max-w-screen-lg mx-auto">
         <div className="flex flex-col justify-center items-center px-8">
           <div className="mt-8 md:mt-4 z-10">
-            <img className="w-48 md:w-64 h-48 md:h-64 rounded-full border-2" src="/favicon.ico" alt="Niklas Rydkvist" />
+            <img
+              className="w-48 md:w-64 h-48 md:h-64 rounded-full border-2"
+              src="/NiklasGreenTree.png"
+              alt="Niklas Rydkvist"
+            />
           </div>
           <h1 className="text-3xl mt-4 text-center font-normal">Hey there! I'm Niklas.</h1>
           <h3

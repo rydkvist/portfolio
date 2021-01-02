@@ -43,7 +43,11 @@ const NavigationBar = () => {
           role="img"
           aria-label="Brand Logo – Niklas Rydkvist"
         >
-          <img className="w-12 h-12 border rounded-full mr-4 " src="/favicon.ico" alt="Brand Logo – Niklas Rydkvist" />
+          <img
+            className="w-12 h-12 border rounded-full mr-4 "
+            src="/NiklasGreenTree.png"
+            alt="Brand Logo – Niklas Rydkvist"
+          />
           <span className="text-xl self-center uppercase tracking-widest ">Niklas Rydkvist</span>
         </NavLink>
 

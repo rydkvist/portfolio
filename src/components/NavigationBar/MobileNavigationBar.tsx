@@ -80,7 +80,7 @@ const MobileNavigationBar = () => {
               borderColor: isOpen ? theme.colors.customBlack : theme.colors.white,
               transition: 'all 0.5s ease',
             }}
-            src="/favicon.ico"
+            src="/NiklasGreenTree.png"
             alt="Niklas Rydkvist"
           />
           <span
