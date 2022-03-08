@@ -5,7 +5,7 @@
   "author": "Niklas Rydkvist",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && serve -s build",
+    "build": "react-scripts build",
     "test": "react-scripts test"
   },
   "dependencies": {
