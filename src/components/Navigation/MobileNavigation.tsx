@@ -83,15 +83,15 @@ export const MobileNavigation = () => {
             href={APP_HOME_URL}
             className="inline-flex text-white hover:text-opacity-75"
           >
-            <img
-              className="w-12 h-12 border rounded-full mr-4"
-              src="/images/NiklasGreenTree.png"
-              alt="Niklas Rydkvist"
+            <div
+              className="w-12 h-12 border rounded-full mr-4 relative overflow-hidden"
               style={{
                 borderColor: isOpen ? theme.colors.customBlack : theme.colors.white,
                 transition: 'all 0.5s ease',
               }}
-            />
+            >
+              <Image src="/images/NiklasGreenTree.png" alt="Brand Logo – Niklas Rydkvist" layout="fill" />
+            </div>
 
             <span
               className="text-xl self-center uppercase tracking-widest m-0"

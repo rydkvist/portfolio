@@ -5,6 +5,7 @@ import theme from '../../styles';
 import { useMediaQuery } from '../../utils/useMediaQuery';
 import { MobileNavigation } from './MobileNavigation';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export const Navigation = () => {
   const isMobile = useMediaQuery('mobile');
@@ -42,12 +43,10 @@ export const Navigation = () => {
             role="img"
             aria-label="Brand Logo – Niklas Rydkvist"
           >
-            <img
-              className="w-12 h-12 border rounded-full mr-4 "
-              src="/images/NiklasGreenTree.png"
-              alt="Brand Logo – Niklas Rydkvist"
-            />
-            <span className="text-xl self-center uppercase tracking-widest ">Niklas Rydkvist</span>
+            <div className="w-12 h-12 border rounded-full mr-4 relative overflow-hidden">
+              <Image src="/images/NiklasGreenTree.png" alt="Brand Logo – Niklas Rydkvist" layout="fill" />
+            </div>
+            <span className="text-xl self-center uppercase tracking-widest">Niklas Rydkvist</span>
           </a>
         </Link>
 

@@ -1,5 +1,3 @@
-import { IonIcon } from '@ionic/react';
-
 type ItemProps = {
   label: string;
   value: string;
@@ -14,13 +12,15 @@ export const ContactItem = ({ label, value, href, iconName }: ItemProps) => (
       fontFamily: 'Source Sans Pro',
     }}
   >
-    <div className="text-4xl -mb-2 md:-mb-4">{/* <IonIcon name={iconName} /> */}</div>
+    <div className="text-4xl text-white -mb-1 md:-mb-2">
+      <ion-icon name={iconName}></ion-icon>
+    </div>
     <div className="text-center">
-      <h6 className="text-2xl hidden md:block">{label}</h6>
+      <h6 className="text-2xl text-white text-opacity-75 hidden md:block ">{label}</h6>
       <a
         href={href}
         title={value}
-        className="text-2xl mt-2 text-white text-opacity-75 md-text-opacity-50 hover:text-opacity-100 focus:text-opacity-100"
+        className="text-2xl mt-2 text-white md-text-opacity-50 hover:text-opacity-100 focus:text-opacity-100"
       >
         {value}
       </a>

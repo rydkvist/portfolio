@@ -7,21 +7,17 @@ const Home: NextPage = () => {
       <div className="container max-w-screen-lg mx-auto">
         <div className="flex flex-col justify-center items-center px-8">
           <div className="mt-8 md:mt-4 z-10">
-            <img
-              className="w-48 md:w-64 h-48 md:h-64 rounded-full border-2"
-              src="/images/NiklasGreenTree.png"
-              alt="Niklas Rydkvist"
-              width="100%"
-              height="100%"
-            />
+            <div className="w-48 md:w-64 h-48 md:h-64 border-2 overflow-hidden rounded-full relative">
+              <Image src="/images/NiklasGreenTree.png" alt="Picture of the author" layout="fill" priority />
+            </div>
           </div>
-          <h1 className="text-3xl mt-4 text-center font-normal">Hey there! I'm Niklas.</h1>
+          <h1 className="text-3xl mt-4 text-white text-center font-normal">Hey there! I&apos;m Niklas.</h1>
           <h3
-            className="text-2xl mt-4 md:mt-2 w-full text-center font-light leading-relaxed"
+            className="text-2xl text-white mt-4 md:mt-2 w-full text-center font-light leading-relaxed"
             style={{ fontFamily: 'Lato' }}
           >
-            I'm a passionate and driven self-taught <span className="font-medium">software developer</span> from Sweden
-            specializing in <span className="font-medium">front-end development</span> and{' '}
+            I&apos;m a passionate and driven self-taught <span className="font-medium">software developer</span> from
+            Sweden specializing in <span className="font-medium">front-end development</span> and{' '}
             <span className="font-medium">design</span>. I create professional web applications and design systems.
             {/* <br />
             <br /> I've been into programming since I was 14 years old, where I
