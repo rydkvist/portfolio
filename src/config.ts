@@ -1,7 +1,9 @@
 export const APP_HOME_URL = '/';
 export const APP_CONTACT_URL = '/contact';
+export const APP_PROJECTS_URL = '/projects';
 export const APP_WEBSITE_URL = 'https://rydkvist.com';
-export const APP_TITLE = 'Niklas Rydkvist';
+export const APP_TITLE_SUFFIX = 'Niklas Rydkvist';
+export const APP_SLOGAN = 'Software Engineer based in Stockholm, Sweden';
 export const APP_DESCRIPTION =
   'Niklas Rydkvist is a software engineer based in Stockholm, Sweden. He is passionate about building software that improves the lives of people.';
 
