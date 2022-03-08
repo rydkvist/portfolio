@@ -15,7 +15,9 @@ export const Navigation = () => {
     <li className="flex items-center m-0 mr-8">
       <Link href={href} passHref>
         <a
-          className={`border-b border-transparent hover:border-white ${router.pathname == href ? 'text-white' : ''}`}
+          className={`border-b border-transparent hover:border-white ${
+            router.asPath == href ? 'text-white border-white' : ''
+          }`}
           style={{ padding: '0rem 0.125rem', fontFamily: 'Source Sans Pro' }}
           target="_parent"
           title={title}

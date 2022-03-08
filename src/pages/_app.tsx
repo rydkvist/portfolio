@@ -8,7 +8,7 @@ import { Footer } from '../components/Footer';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <section role="main" style={{ height: '100%', minHeight: '100vh', display: 'block' }}>
+      <section role="main" className="min-h-full h-full block">
         <Navigation />
         <Component {...pageProps} />
         <Footer />

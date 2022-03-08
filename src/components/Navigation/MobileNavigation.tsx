@@ -13,13 +13,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-// const StyledListItem = styled.li`
-//   &:hover {
-//     background-color: ${theme.colors.cyanGreen30};
-//     color: ${theme.colors.white};
-//   }
-// `;
-
 export const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,7 +38,7 @@ export const MobileNavigation = () => {
           title={title}
           className={`flex flex-row align-center justify-center text-2xl p-0 py-6 w-full text-center`}
           style={
-            router.pathname === href
+            router.asPath === href
               ? { color: 'white', backgroundColor: theme.colors.cyanGreen30, textDecoration: 'underline' }
               : {}
           }

@@ -8,7 +8,14 @@ const Home: NextPage = () => {
         <div className="flex flex-col justify-center items-center px-8">
           <div className="mt-8 md:mt-4 z-10">
             <div className="w-48 md:w-64 h-48 md:h-64 border-2 overflow-hidden rounded-full relative">
-              <Image src="/images/NiklasGreenTree.png" alt="Picture of the author" layout="fill" priority />
+              <Image
+                src="/images/NiklasVaxholm.png"
+                alt="Picture of the author"
+                layout="fill"
+                objectFit="cover"
+                objectPosition={'0% 10%'}
+                priority
+              />
             </div>
           </div>
           <h1 className="text-3xl mt-4 text-white text-center font-normal">Hey there! I&apos;m Niklas.</h1>
