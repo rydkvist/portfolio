@@ -30,19 +30,19 @@ const TechList = styled.div`
   text-align: center;
 `;
 
-const Item = () => {
-  return (
-    <div className="container w-1/2 h-auto bg-blue-100 px-4 py-2 rounded" style={{ fontFamily: 'Source Sans Pro' }}>
-      <div className="flex flex-row justify-between items-center">
-        <h2 className="text-lg text-black font-semibold uppercase">Founder</h2>
-        <h3 className="text-sm text-gray-500">apr 2014 - may 2015</h3>
-      </div>
-      {/* <div className="rounded-md bg-blue-600 bg-opacity-75 py-1 px-2 inline-block mt-1">
-        <p className="text-white text-sm font-medium">SharkCraft</p>
-      </div> */}
-    </div>
-  );
-};
+// const Item = () => {
+//   return (
+//     <div className="container w-1/2 h-auto bg-blue-100 px-4 py-2 rounded" style={{ fontFamily: 'Source Sans Pro' }}>
+//       <div className="flex flex-row justify-between items-center">
+//         <h2 className="text-lg text-black font-semibold uppercase">Founder</h2>
+//         <h3 className="text-sm text-gray-500">apr 2014 - may 2015</h3>
+//       </div>
+//       {/* <div className="rounded-md bg-blue-600 bg-opacity-75 py-1 px-2 inline-block mt-1">
+//         <p className="text-white text-sm font-medium">SharkCraft</p>
+//       </div> */}
+//     </div>
+//   );
+// };
 
 const TechLink = ({ spin, children, href }: any) => {
   return (
