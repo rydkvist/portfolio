@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "plugins": [
+      {
+        "transform": "typescript-plugin-styled-components",
+        "type": "config",
+        "minify": true,
+        "pure": true,
+        "ssr": true
+      }
+    ],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
