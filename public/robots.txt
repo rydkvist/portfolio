@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://www.rydkvist.com
+
+# Sitemaps
+Sitemap: https://www.rydkvist.com/sitemap.xml
