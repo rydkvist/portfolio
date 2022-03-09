@@ -51,9 +51,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <Script src="https://kit.fontawesome.com/260eef81bd.js" crossOrigin="anonymous" />
         <Script
           async
+          id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
         />
         <Script
+          id={`dangerouslySetInnerHTML-id-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
