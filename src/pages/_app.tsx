@@ -49,6 +49,22 @@ const App = ({ Component, pageProps }: AppProps) => {
       />
       <section role="main" className="min-h-full h-full block">
         <Script src="https://kit.fontawesome.com/260eef81bd.js" crossOrigin="anonymous" />
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+        />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
         <Navigation />
         <Component {...pageProps} />
         <Footer />
