@@ -1,7 +1,7 @@
 export const APP_HOME_URL = '/';
 export const APP_CONTACT_URL = '/contact';
 export const APP_PROJECTS_URL = '/projects';
-export const APP_WEBSITE_URL = 'https://rydkvist.com';
+export const APP_WEBSITE_URL = 'https://www.rydkvist.com';
 export const APP_TITLE_SUFFIX = 'Niklas Rydkvist';
 export const APP_SLOGAN = 'Niklas Rydkvist';
 export const APP_DESCRIPTION =
