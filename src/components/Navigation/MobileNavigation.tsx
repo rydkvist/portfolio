@@ -83,7 +83,13 @@ export const MobileNavigation = () => {
                 transition: 'all 0.5s ease',
               }}
             >
-              <Image src="/images/NiklasGreenTree.png" alt="Brand Logo – Niklas Rydkvist" layout="fill" />
+              <Image
+                src="/images/NiklasVaxholm.png"
+                alt="Brand Logo – Niklas Rydkvist"
+                layout="fill"
+                objectFit="cover"
+                objectPosition={'0% 10%'}
+              />
             </div>
 
             <span

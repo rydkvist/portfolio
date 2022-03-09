@@ -1,5 +1,5 @@
 import { DefaultSeo } from 'next-seo';
-import Head from 'next/head';
+import Script from 'next/script';
 import React from 'react';
 import { ContactItem } from '../../components/Contact/ContactItem';
 import {
@@ -15,6 +15,7 @@ const Contact = () => {
   return (
     <div className="container max-w-screen-lg mx-auto">
       <DefaultSeo title={`Contact – ${APP_TITLE_SUFFIX}`} />
+      <Script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js" />
 
       <div className="flex flex-col md:flex-row justify-center max-w-screen-md mx-auto items-center mt-8 md:mt-12">
         <ContactItem label="E-mail" value={PERSONAL_EMAIL} href={`mailto:${PERSONAL_EMAIL}`} iconName="mail-outline" />

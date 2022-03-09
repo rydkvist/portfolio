@@ -18,7 +18,8 @@
     "next-seo": "^5.1.0",
     "prettier": "^2.5.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sharp": "^0.30.2"
   },
   "devDependencies": {
     "@types/node": "17.0.21",

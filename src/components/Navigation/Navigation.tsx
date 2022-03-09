@@ -46,7 +46,13 @@ export const Navigation = () => {
             aria-label="Brand Logo – Niklas Rydkvist"
           >
             <div className="w-12 h-12 border rounded-full mr-4 relative overflow-hidden">
-              <Image src="/images/NiklasGreenTree.png" alt="Brand Logo – Niklas Rydkvist" layout="fill" />
+              <Image
+                src="/images/NiklasVaxholm.png"
+                alt="Brand Logo – Niklas Rydkvist"
+                layout="fill"
+                objectFit="cover"
+                objectPosition={'0% 10%'}
+              />
             </div>
             <span className="text-xl self-center uppercase tracking-widest">Niklas Rydkvist</span>
           </a>
