@@ -4,7 +4,7 @@ export type Theme = 'light' | 'dark';
 
 type ThemeContextType = {
   theme: Theme;
-  setTheme: (_theme: Theme) => void;
+  toggleTheme: () => void;
 };
 
 const getBrowserTheme = (): Theme => {
@@ -27,15 +27,11 @@ const getInitialTheme = (): Theme => {
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: getBrowserTheme(),
-  setTheme: () => null,
+  toggleTheme: () => null,
 });
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(getBrowserTheme());
-
-  useEffect(() => {
-    onSetTheme(getInitialTheme());
-  }, []);
 
   const onSetTheme = (newTheme: Theme) => {
     setTheme(newTheme);
@@ -48,7 +44,16 @@ export const ThemeProvider = ({ children }) => {
     }
   };
 
-  return <ThemeContext.Provider value={{ theme, setTheme: onSetTheme }}>{children}</ThemeContext.Provider>;
+  useEffect(() => {
+    onSetTheme(getInitialTheme());
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    onSetTheme(newTheme);
+  };
+
+  return <ThemeContext.Provider value={{ theme, toggleTheme: toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => useContext(ThemeContext);

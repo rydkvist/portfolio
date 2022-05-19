@@ -13,7 +13,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="container max-w-screen-lg mx-auto">
+    <div className="mx-auto">
       <DefaultSeo title={`Contact – ${APP_TITLE_SUFFIX}`} />
       <Script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js" />
 
@@ -35,7 +35,7 @@ const Contact = () => {
       <ul className="flex flex-row justify-center m-0 mt-2 md:mt-8 list-none w-full p-8">
         <li className="mr-2">
           <a
-            className="p-4 text-white text-2xl hover:opacity-75"
+            className="p-4 text-black dark:text-white text-2xl hover:opacity-75"
             href={LINKEDIN_URL}
             title="LinkedIn – Niklas Rydkvist"
             target="_blank"
@@ -46,7 +46,7 @@ const Contact = () => {
         </li>
         <li>
           <a
-            className="p-4 text-white text-2xl hover:opacity-75"
+            className="p-4 text-black dark:text-white text-2xl hover:opacity-75"
             href={GITHUB_URL}
             title="GitHub – Nojze"
             target="_blank"

@@ -8,6 +8,7 @@ import { Footer } from '../components/Footer';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL, SHOW_NEW_DESIGN } from '../config';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from '../context/ThemeProvider';
+import { SideNavigation } from '../components/Navigation/SideNavigation';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -82,7 +83,13 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         {SHOW_NEW_DESIGN ? (
           <ThemeProvider>
-            <Component {...pageProps} />
+            <div className="flex min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800 ">
+              <SideNavigation />
+
+              <div className="flex w-full m-2 rounded-md overflow-scroll bg-neutral-100 dark:bg-neutral-900">
+                <Component {...pageProps} />
+              </div>
+            </div>
           </ThemeProvider>
         ) : (
           <>

@@ -3,11 +3,13 @@ import { APP_TITLE_SUFFIX } from '../../config';
 
 const Projects = () => {
   return (
-    <div className="container max-w-screen-lg mx-auto">
+    <div className="m-auto">
       <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />
 
-      <h1 className="text-3xl text-white text-center mb-8 z-50">Coming soon..</h1>
-      <h2 className="text-2xl text-white text-center px-8">Contact me otherwise to know more about my projects</h2>
+      <h1 className="text-3xl text-center mb-8 text-black dark:text-white">Coming soon..</h1>
+      <h2 className="text-2xl text-center px-8 text-black dark:text-white">
+        You may also contact me to know more about my projects and services.
+      </h2>
     </div>
   );
 };
