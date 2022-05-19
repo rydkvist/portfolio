@@ -5,8 +5,9 @@ import Script from 'next/script';
 import type { AppProps } from 'next/app';
 import { Navigation } from '../components/Navigation/Navigation';
 import { Footer } from '../components/Footer';
-import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL } from '../config';
+import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL, SHOW_NEW_DESIGN } from '../config';
 import { DefaultSeo } from 'next-seo';
+import { ThemeProvider } from '../context/ThemeProvider';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -55,6 +56,18 @@ const App = ({ Component, pageProps }: AppProps) => {
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
         />
         <Script
+          id="dark-mode-tailwind"
+          dangerouslySetInnerHTML={{
+            __html: `
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+            `,
+          }}
+        />
+        <Script
           id={`dangerouslySetInnerHTML-id-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           dangerouslySetInnerHTML={{
             __html: `
@@ -67,9 +80,17 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
           }}
         />
-        <Navigation />
-        <Component {...pageProps} />
-        <Footer />
+        {SHOW_NEW_DESIGN ? (
+          <ThemeProvider>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        ) : (
+          <>
+            <Navigation />
+            <Component {...pageProps} />
+            <Footer />
+          </>
+        )}
       </section>
     </>
   );
