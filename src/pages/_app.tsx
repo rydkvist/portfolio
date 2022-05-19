@@ -8,7 +8,8 @@ import { Footer } from '../components/Footer';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL, SHOW_NEW_DESIGN } from '../config';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from '../context/ThemeProvider';
-import { SideNavigation } from '../components/Navigation/SideNavigation';
+import { NavigationBrandLink, SideNavigation } from '../components/Navigation/SideNavigation';
+import { TabNavigation } from '../components/Navigation/TabNavigation';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -83,10 +84,19 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         {SHOW_NEW_DESIGN ? (
           <ThemeProvider>
-            <div className="flex min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800 ">
-              <SideNavigation />
+            <div className="flex flex-col sm:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
+              <div className="hidden sm:flex sm:order-1">
+                <SideNavigation />
+              </div>
+              <div className="flex order-3 sm:hidden overflow-x-scroll">
+                <TabNavigation />
+              </div>
 
-              <div className="flex w-full m-2 rounded-md overflow-scroll bg-neutral-100 dark:bg-neutral-900">
+              <div className="block sm:hidden dark:text-white text-black m-2">
+                <NavigationBrandLink />
+              </div>
+
+              <div className="flex order-2 rounded-lg sm:w-full m-1 sm:m-2 overflow-scroll bg-neutral-100 dark:bg-neutral-900">
                 <Component {...pageProps} />
               </div>
             </div>

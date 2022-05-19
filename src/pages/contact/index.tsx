@@ -17,7 +17,7 @@ const Contact = () => {
       <DefaultSeo title={`Contact – ${APP_TITLE_SUFFIX}`} />
       <Script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js" />
 
-      <div className="flex flex-col md:flex-row justify-center max-w-screen-md mx-auto items-center mt-8 md:mt-12">
+      <div className="flex flex-col md:flex-row justify-center max-w-screen-md mx-auto items-center pt-8 md:pt-12">
         <ContactItem label="E-mail" value={PERSONAL_EMAIL} href={`mailto:${PERSONAL_EMAIL}`} iconName="mail-outline" />
         <ContactItem
           label="Phone"
@@ -32,7 +32,7 @@ const Contact = () => {
           iconName="location-outline"
         />
       </div>
-      <ul className="flex flex-row justify-center m-0 mt-2 md:mt-8 list-none w-full p-8">
+      <ul className="flex flex-row justify-center mt-2 md:mt-8 list-none w-full p-8">
         <li className="mr-2">
           <a
             className="p-4 text-black dark:text-white text-2xl hover:opacity-75"

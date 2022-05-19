@@ -16,11 +16,12 @@ const Landing = () => (
       </div>
 
       <h1 className="text-3xl mt-4 text-black dark:text-white text-center font-normal">Hey there! I&apos;m Niklas.</h1>
-      <h3 className="text-2xl  mt-4 md:mt-2 w-full  text-black dark:text-white text-center text-center font-light leading-relaxed">
+      <h3 className="text-2xl  mt-4 md:mt-2 w-full  text-black dark:text-white  text-center font-light leading-relaxed">
         I&apos;m a passionate and driven self-taught <span className="font-medium">software developer</span> from Sweden
         specializing in <span className="font-medium">front-end development</span> and{' '}
         <span className="font-medium">design</span>. I create professional web applications and design systems.
       </h3>
+      <div style={{ paddingBottom: '300px' }} />
     </div>
   </div>
 );
