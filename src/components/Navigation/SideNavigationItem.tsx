@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { sideNavigationAccessibilityClass } from './SideNavigation';
-import ExternalLinkIcon from '../../../public/images/external-link.svg';
+import ExternalLinkIcon from '../../../public/images/feather/external-link.svg';
 import { NavigationIcon, NavigationIcons, NavigationLinks } from './NavigationIcons';
-import ToolIcon from '../../../public/images/tool.svg';
+import ToolIcon from '../../../public/images/feather/tool.svg';
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 
 type SideNavigationItemProps = {

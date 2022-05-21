@@ -1,7 +1,8 @@
 import { DefaultSeo } from 'next-seo';
 import Script from 'next/script';
-import React from 'react';
+import React, { useState } from 'react';
 import { ContactItem } from '../../components/Contact/ContactItem';
+import { ContactModal } from '../../components/Contact/ContactModal';
 import {
   APP_TITLE_SUFFIX,
   GITHUB_URL,
@@ -12,6 +13,8 @@ import {
 } from '../../config';
 
 const Contact = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="mx-auto">
       <DefaultSeo title={`Contact – ${APP_TITLE_SUFFIX}`} />
@@ -31,7 +34,12 @@ const Contact = () => {
           href={`https://maps.google.com/maps/search/${PERSONAL_ADDRESS}`}
           iconName="location-outline"
         />
+
+        <button onClick={() => setIsModalOpen(true)} data-modal-toggle="defaultModal">
+          Open modal
+        </button>
       </div>
+      <ContactModal />
       <ul className="flex flex-row justify-center mt-2 md:mt-8 list-none w-full p-8">
         <li className="mr-2">
           <a

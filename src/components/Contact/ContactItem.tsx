@@ -6,12 +6,7 @@ type ItemProps = {
 };
 
 export const ContactItem = ({ label, value, href, iconName }: ItemProps) => (
-  <div
-    className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mx-6"
-    style={{
-      fontFamily: 'Source Sans Pro',
-    }}
-  >
+  <div className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mx-6">
     <div className="text-4xl text-black dark:text-white -mb-1 md:-mb-2">
       <ion-icon name={iconName}></ion-icon>
     </div>

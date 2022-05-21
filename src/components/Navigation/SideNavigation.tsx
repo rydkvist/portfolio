@@ -40,6 +40,8 @@ export const SideNavigation = () => {
 
       <ul className="mt-2 mb-4">
         <SideNavigationItem label="contact" />
+        <SideNavigationItem label="github" target="_blank" />
+        <SideNavigationItem label="linkedin" target="_blank" />
         <SideNavigationItem label="twitter" target="_blank" />
       </ul>
 

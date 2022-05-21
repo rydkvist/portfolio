@@ -13,6 +13,8 @@ export const TabNavigation = () => {
         <TabNavigationItem label="investments" isUnderMaintenance />
         <TabNavigationItem label="music" isUnderMaintenance />
         <TabNavigationItem label="contact" />
+        <TabNavigationItem label="github" target="_blank" />
+        <TabNavigationItem label="linkedin" target="_blank" />
         <TabNavigationItem label="twitter" target="_blank" />
 
         <div className="ml-auto pr-2">
