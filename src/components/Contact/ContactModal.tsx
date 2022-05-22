@@ -1,5 +1,5 @@
 import React from 'react';
-import { GITHUB_URL, LINKEDIN_URL, PERSONAL_ADDRESS, PERSONAL_EMAIL, PERSONAL_PHONE_NUMBER } from '../../config';
+import { PERSONAL_ADDRESS, PERSONAL_EMAIL, PERSONAL_PHONE_NUMBER } from '../../config';
 import { useSettings } from '../../context/SettingsProvider';
 import { TabNavigationItem } from '../Navigation/TabNavigationItem';
 import { ContactItem } from './ContactItem';
@@ -16,8 +16,8 @@ export const ContactModal = () => {
       className={`overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 z-50 w-full h-full h-modal bg-black bg-opacity-70`}
     >
       <div className="relative p-4 w-full mx-auto max-w-2xl h-full">
-        <div className="relative bg-white rounded-lg shadow dark:bg-neutral-800">
-          <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-neutral-600">
+        <div className="relative bg-neutral-200 rounded-lg shadow dark:bg-neutral-800 ">
+          <div className="flex justify-between items-start p-4 rounded-t border-b border-neutral-300 dark:border-neutral-700">
             <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Contact – Niklas Rydkvist</h3>
             <button
               type="button"
@@ -63,7 +63,7 @@ export const ContactModal = () => {
             </ul>
           </div>
 
-          <div className="flex items-center p-6 space-x-2 rounded-b border-t border-neutral-200 dark:border-neutral-600">
+          <div className="flex items-center p-6 space-x-2 rounded-b border-t border-neutral-300 dark:border-neutral-700">
             <button
               type="button"
               onClick={closeModal}

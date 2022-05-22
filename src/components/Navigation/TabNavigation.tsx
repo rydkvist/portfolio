@@ -2,8 +2,8 @@ import { TabNavigationItem } from './TabNavigationItem';
 
 export const TabNavigation = () => {
   return (
-    <nav role="navigation" className="w-full max-h-64 bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white">
-      <ul className="inline-flex w-full mb-4 mx-2">
+    <nav role="navigation" className="w-full max-h-32 bg-neutral-200 text-black dark:text-white dark:bg-neutral-800">
+      <ul className="flex flex-row w-full p-2 pb-3 h-full overflow-x-scroll">
         <TabNavigationItem label="about-tab" />
         <TabNavigationItem label="projects-tab" isUnderMaintenance />
         <TabNavigationItem label="investments-tab" isUnderMaintenance />

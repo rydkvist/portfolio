@@ -49,7 +49,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           { rel: 'shortcut icon', href: '/favicons/favicon.ico' },
         ]}
       />
-      <section role="main" className="min-h-full h-full block">
+      <section role="main">
         <Script src="https://kit.fontawesome.com/260eef81bd.js" crossOrigin="anonymous" />
         <Script
           async
@@ -82,23 +82,24 @@ const App = ({ Component, pageProps }: AppProps) => {
           }}
         />
         <SettingsProvider>
-          <div className="flex flex-col sm:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
-            <div className="hidden sm:flex sm:order-1">
+          <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
+            <div className="hidden md:flex md:order-1">
               <SideNavigation />
             </div>
-            <div className="flex order-3 sm:hidden overflow-x-scroll">
-              <TabNavigation />
-            </div>
 
-            <div className="flex flex-row items-center justify-between mx-2 mt-2 sm:hidden dark:text-white text-black ">
+            <div className="md:hidden flex flex-row items-center justify-between p-2 dark:text-white text-black">
               <NavigationBrandLink />
               <div className="mr-2">
                 <ThemeToggler />
               </div>
             </div>
 
-            <div className="flex order-2 rounded-lg sm:w-full m-2 overflow-scroll bg-neutral-100 dark:bg-neutral-900">
+            <div className="flex md:w-full mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg overflow-scroll">
               <Component {...pageProps} />
+            </div>
+
+            <div className="md:hidden order-3">
+              <TabNavigation />
             </div>
           </div>
 

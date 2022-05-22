@@ -12,7 +12,7 @@ export const NavigationBrandLink = () => (
       className={`flex flex-col flex-wrap uppercase tracking-wide rounded-md font-medium px-2 break-words ${sideNavigationAccessibilityClass}`}
     >
       Niklas Rydkvist
-      <span className="block sm:hidden text-sm text-neutral-600 dark:text-neutral-400">
+      <span className="block md:hidden text-sm text-neutral-600 dark:text-neutral-400">
         © {new Date().getFullYear().toString()}
       </span>
     </a>

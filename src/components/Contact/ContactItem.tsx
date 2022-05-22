@@ -45,12 +45,12 @@ export const ContactItem = ({ label, value, href, iconName, showCopy = false }: 
   }
 
   return (
-    <div className="flex flex-col justify-center items-center mb-12 sm:mb-0 mr-0 sm:mx-6">
-      <div className="text-4xl text-black dark:text-white -mb-1 sm:-mb-2">
+    <div className="flex flex-col justify-center items-center mb-12 md:mb-0 mr-0 md:mx-6">
+      <div className="text-4xl text-black dark:text-white -mb-1 md:-mb-2">
         <ion-icon name={iconName}></ion-icon>
       </div>
       <div className="text-center">
-        <h6 className="text-2xl text-black dark:text-white text-opacity-75 hidden sm:block ">{label}</h6>
+        <h6 className="text-2xl text-black dark:text-white text-opacity-75 hidden md:block ">{label}</h6>
         <a
           href={href}
           title={value}

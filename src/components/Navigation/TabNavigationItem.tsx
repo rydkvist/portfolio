@@ -17,7 +17,7 @@ export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }:
   const title = getNavigationTitle(label);
   const hrefNavigationLink = NavigationLinks[label];
 
-  const itemClass = `flex items-center justify-center px-3 py-3 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition ${
+  const itemClass = `flex items-center justify-center p-3 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
   } ${sideNavigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
 
