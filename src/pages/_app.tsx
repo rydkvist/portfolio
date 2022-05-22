@@ -5,10 +5,13 @@ import type { AppProps } from 'next/app';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL } from '../config';
 import { DefaultSeo } from 'next-seo';
 import { SettingsProvider } from '../context/SettingsProvider';
-import { NavigationBrandLink, SideNavigation } from '../components/Navigation/SideNavigation';
+import { SideNavigation } from '../components/Navigation/SideNavigation';
 import { TabNavigation } from '../components/Navigation/TabNavigation';
 import { ContactModal } from '../components/Contact/ContactModal';
 import { ThemeToggler } from '../components/Navigation/ThemeToggler';
+import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
+
+// TODO: Add overall accessibility functionality on all buttons, links, images
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

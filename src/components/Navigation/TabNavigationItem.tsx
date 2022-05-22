@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useSettings } from '../../context/SettingsProvider';
-import { getNavigationTitle, NavigationIcon, NavigationIcons, NavigationLinks } from './NavigationIcons';
-import { sideNavigationAccessibilityClass } from './SideNavigation';
+import {
+  getNavigationTitle,
+  navigationAccessibilityClass,
+  NavigationIcon,
+  NavigationIcons,
+  NavigationLinks,
+} from './NavigationIcons';
 
 type TabNavigationItemProps = {
   label: NavigationIcon;
@@ -19,7 +24,7 @@ export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }:
 
   const itemClass = `flex items-center justify-center p-3 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-  } ${sideNavigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
+  } ${navigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
 
   return (
     <li className="mx-1">

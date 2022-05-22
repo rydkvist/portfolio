@@ -20,6 +20,7 @@ const Landing = () => (
         specializing in <span className="font-medium">front-end development</span> and{' '}
         <span className="font-medium">design</span>. I create professional web applications and design systems.
       </h3>
+      <div style={{ paddingBottom: '20rem' }} />
     </div>
   </div>
 );

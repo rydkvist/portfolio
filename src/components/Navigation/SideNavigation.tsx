@@ -1,23 +1,6 @@
-import Link from 'next/link';
-import { APP_HOME_URL } from '../../config';
+import { NavigationBrandLink } from './NavigationIcons';
 import { SideNavigationItem } from './SideNavigationItem';
 import { ThemeToggler } from './ThemeToggler';
-
-export const sideNavigationAccessibilityClass =
-  ' focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-600';
-
-export const NavigationBrandLink = () => (
-  <Link href={APP_HOME_URL} passHref>
-    <a
-      className={`flex flex-col flex-wrap uppercase tracking-wide rounded-md font-medium px-2 break-words ${sideNavigationAccessibilityClass}`}
-    >
-      Niklas Rydkvist
-      <span className="block md:hidden text-sm text-neutral-600 dark:text-neutral-400">
-        © {new Date().getFullYear().toString()}
-      </span>
-    </a>
-  </Link>
-);
 
 export const SideNavigation = () => {
   return (

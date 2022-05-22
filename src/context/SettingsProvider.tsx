@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { getBrowserTheme } from '../utils/helpers';
 
 export type Theme = 'light' | 'dark';
 
@@ -7,15 +8,6 @@ type SettingsContextType = {
   isContactModalOpen: boolean;
   toggleTheme: () => void;
   setIsContactModalOpen: (_isOpen: boolean) => void;
-};
-
-const getBrowserTheme = (): Theme => {
-  if (typeof window === 'undefined') {
-    return 'light';
-  }
-
-  const theme = window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  return theme;
 };
 
 const getInitialTheme = (): Theme => {

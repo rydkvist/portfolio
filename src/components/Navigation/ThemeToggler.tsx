@@ -1,5 +1,5 @@
 import { useSettings } from '../../context/SettingsProvider';
-import { sideNavigationAccessibilityClass } from './SideNavigation';
+import { navigationAccessibilityClass } from './NavigationIcons';
 
 export const ThemeToggler = () => {
   const { theme, toggleTheme } = useSettings();
@@ -9,12 +9,12 @@ export const ThemeToggler = () => {
       type="button"
       onClick={toggleTheme}
       title="Toggle Theme"
-      className={`text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 rounded-lg text-sm p-2.5 ${sideNavigationAccessibilityClass}`}
+      className={`text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 rounded-lg text-sm p-2.5 ${navigationAccessibilityClass}`}
     >
       {theme === 'light' ? (
         <svg
           id="theme-toggle-dark-icon"
-          className="w-5 h-5"
+          className="w-5 h-5 md:w-4 md:h-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ export const ThemeToggler = () => {
       ) : (
         <svg
           id="theme-toggle-light-icon"
-          className="w-5 h-5"
+          className="w-5 h-5 md:w-4 md:h-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"

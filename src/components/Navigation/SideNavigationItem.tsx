@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { sideNavigationAccessibilityClass } from './SideNavigation';
 import ExternalLinkIcon from '../../../public/images/feather/external-link.svg';
-import { getNavigationTitle, NavigationIcon, NavigationIcons, NavigationLinks } from './NavigationIcons';
+import {
+  getNavigationTitle,
+  navigationAccessibilityClass,
+  NavigationIcon,
+  NavigationIcons,
+  NavigationLinks,
+} from './NavigationIcons';
 import ToolIcon from '../../../public/images/feather/tool.svg';
 import { useSettings } from '../../context/SettingsProvider';
 
@@ -27,7 +32,7 @@ export const SideNavigationItem = ({
 
   const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-  } ${sideNavigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
+  } ${navigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
 
   const innerContent = () => (
     <>
