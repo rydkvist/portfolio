@@ -15,14 +15,14 @@ export const SideNavigation = () => {
         <SideNavigationItem label="projects-side" isUnderMaintenance />
       </ul>
 
-      <h3 className="px-2 text-sm text-neutral-500 font-medium dark:text-neutral-500 break-words">What I enjoy</h3>
+      <h3 className="px-2 text-sm text-neutral-600 font-medium dark:text-neutral-400 break-words">What I enjoy</h3>
 
       <ul className="mt-2 mb-4">
         <SideNavigationItem label="investments-side" isUnderMaintenance />
         <SideNavigationItem label="music-side" isUnderMaintenance />
       </ul>
 
-      <h3 className="px-2 text-sm text-neutral-500 font-medium dark:text-neutral-500 break-words">Stay in touch</h3>
+      <h3 className="px-2 text-sm text-neutral-600 font-medium dark:text-neutral-400 break-words">Stay in touch</h3>
 
       <ul className="mt-2 mb-4">
         <SideNavigationItem label="contact-side" />

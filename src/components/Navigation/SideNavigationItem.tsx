@@ -7,6 +7,7 @@ import {
   NavigationIcon,
   NavigationIcons,
   NavigationLinks,
+  underMaintenanceColorClass,
 } from './NavigationIcons';
 import ToolIcon from '../../../public/images/feather/tool.svg';
 import { useSettings } from '../../context/SettingsProvider';
@@ -32,7 +33,7 @@ export const SideNavigationItem = ({
 
   const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-  } ${navigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
+  } ${navigationAccessibilityClass} ${isUnderMaintenance && underMaintenanceColorClass}`;
 
   const innerContent = () => (
     <>
@@ -49,7 +50,13 @@ export const SideNavigationItem = ({
   return (
     <li className="my-1">
       {label === 'contact-side' ? (
-        <button role="dialog" onClick={() => setIsContactModalOpen(true)} className={itemClass} title={title}>
+        <button
+          role="dialog"
+          aria-label={title}
+          onClick={() => setIsContactModalOpen(true)}
+          className={itemClass}
+          title={title}
+        >
           {innerContent()}
         </button>
       ) : (
