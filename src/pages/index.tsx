@@ -1,28 +1,71 @@
 import Image from 'next/image';
+import { PageWrapper } from '../components/PageWrapper';
 
-const Landing = () => (
-  <div className="mx-auto mt-8 md:mt-4">
-    <div className="flex flex-col justify-center items-center px-8">
-      <div className="w-32 md:w-48 h-32 md:h-48 border-2 overflow-hidden rounded-full relative">
-        <Image
-          src="/images/NiklasVaxholm.png"
-          alt="Picture of the author"
-          layout="fill"
-          objectFit="cover"
-          objectPosition={'0% 10%'}
-          priority
-        />
-      </div>
+type TechnologyItemProps = {
+  value: string;
+  color?: string;
+};
 
-      <h1 className="text-3xl mt-4 text-black dark:text-white text-center font-normal">Hey there! I&apos;m Niklas.</h1>
-      <p className="text-2xl  mt-4 md:mt-2 w-full  text-black dark:text-white  text-center font-light leading-relaxed">
-        I&apos;m a passionate and driven self-taught <span className="font-medium">software developer</span> from Sweden
-        specializing in <span className="font-medium">front-end development</span> and{' '}
-        <span className="font-medium">design</span>. I create professional web applications and design systems.
-      </p>
-      <div style={{ paddingBottom: '20rem' }} />
-    </div>
-  </div>
-);
+const TechnologyItem = ({ value, color = 'bg-blue-400' }: TechnologyItemProps) => {
+  return (
+    <li className="flex flex-col items-center px-4 py-2">
+      <div className={`w-16 h-16 ${color} rounded-md mb-2`}></div>
+      <span>{value}</span>
+    </li>
+  );
+};
+
+const Landing = () => {
+  return (
+    <PageWrapper>
+      <>
+        <h1 className="text-3xl text-center font-normal mb-6">Hey there! I&apos;m Niklas 👋🏼</h1>
+
+        <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
+          <Image
+            src="/images/NiklasVaxholm.png"
+            alt="Picture of Niklas Rydkvist"
+            layout="fill"
+            objectFit="cover"
+            objectPosition={'0% 5%'}
+            priority
+          />
+        </div>
+
+        <p className="text-1xl leading-7 mt-6">
+          I&apos;m a passionate and driven <span className="font-semibold">Software Engineer</span> from Stockholm,
+          Sweden specializing in both <span className="font-semibold">web and app development</span>. I create
+          enterprise end-to-end applications by building scalable architectures with{' '}
+          <span className="font-semibold">great code quality</span> and{' '}
+          <span className="font-semibold">excellent user experience (UX/UI)</span>.
+          <br />
+          <br />
+          I&apos;m <span className="font-semibold">very product-oriented</span> and like to discuss different business
+          perspectives with the team in order to move the product forward in the right direction. Other than
+          experimenting with new technologies I also invest some of my time into the stock market, working out,
+          travelling and meeting new exciting people!
+          <br />
+          <p className="mt-4 mb-2">Technologies I use day-to-day:</p>
+          {/* TODO: Maybe show the technologies with a scrolling carousel? Like when companies show sponsors etc */}
+          {/* TODO: Add correct programming languages */}
+          <ul className="flex flex-row justify-center flex-wrap text-center">
+            <TechnologyItem value="TypeScript" />
+            <TechnologyItem value="React" color="bg-cyan-400" />
+            <TechnologyItem value="React Native" color="bg-cyan-400" />
+            <TechnologyItem value="Swift" color="bg-orange-400" />
+            <TechnologyItem value="SwiftUI" color="bg-red-400" />
+          </ul>
+          <p className="mt-4 mb-2">Other technologies / frameworks / concepts I&apos;m experienced with:</p>
+          <p className="italic mt-1">
+            JavaScript, HTML5, CSS3, NextJS, TailwindCSS, Cypress, Jest, End-to-end testing, Unit testing, Storybook,
+            Git, CI/CD, TDD, APIs, Redux, Figma, User Accessibility, QA (Quality Assurance), SEO, Copywriting,
+            multi-threading programming, SocketIO, WebRTC, Google Cloud, Docker, Test Flight, Azure DevOps, AWS and
+            Netlify.
+          </p>
+        </p>
+      </>
+    </PageWrapper>
+  );
+};
 
 export default Landing;

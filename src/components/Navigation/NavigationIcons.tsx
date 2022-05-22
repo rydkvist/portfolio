@@ -74,8 +74,8 @@ export const NavigationLinks: Record<NavigationIcon, string> = {
   'investments-tab': APP_INVESTMENTS_URL,
   'music-side': APP_MUSIC_URL,
   'music-tab': APP_MUSIC_URL,
-  'contact-side': '/contact',
-  'contact-tab': '/contact',
+  'contact-side': '',
+  'contact-tab': '',
   'github-side': GITHUB_URL,
   'github-tab': GITHUB_URL,
   'linkedin-side': LINKEDIN_URL,
@@ -108,7 +108,7 @@ export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
 export const navigationAccessibilityClass =
   ' focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-600';
 
-export const underMaintenanceColorClass = `text-orange-600 dark:text-yellow-400`;
+export const underMaintenanceColorClass = ` text-orange-500 dark:text-yellow-400`;
 
 export const NavigationBrandLink = () => (
   <Link href={APP_HOME_URL} passHref>
