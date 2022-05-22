@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import Script from 'next/script';
 
 import type { AppProps } from 'next/app';
-import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL, SHOW_NEW_DESIGN } from '../config';
+import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL } from '../config';
 import { DefaultSeo } from 'next-seo';
 import { SettingsProvider } from '../context/SettingsProvider';
 import { NavigationBrandLink, SideNavigation } from '../components/Navigation/SideNavigation';
