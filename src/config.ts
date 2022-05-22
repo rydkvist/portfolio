@@ -18,5 +18,5 @@ export const PERSONAL_EMAIL = 'niklas@rydkvist.com';
 export const PERSONAL_PHONE_NUMBER = '+46 70 377 11 04';
 export const PERSONAL_ADDRESS = 'Stockholm, Sweden';
 
-export const SHOW_INVESTMENTS_SUMMARY = true;
-export const SHOW_MUSIC_SUMMARY = true;
+export const SHOW_INVESTMENTS_SUMMARY = false;
+export const SHOW_MUSIC_SUMMARY = false;
