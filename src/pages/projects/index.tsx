@@ -2,6 +2,7 @@ import { DefaultSeo } from 'next-seo';
 import { APP_TITLE_SUFFIX } from '../../config';
 
 const Projects = () => {
+  // TODO: Add projects, following with a picture of the project, if possible a link to the repository, technologies used, and lessons learned
   return (
     <div className="m-auto py-8">
       <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />

@@ -1,8 +1,8 @@
-import { useTheme } from '../../context/ThemeProvider';
+import { useSettings } from '../../context/SettingsProvider';
 import { sideNavigationAccessibilityClass } from './SideNavigation';
 
 export const ThemeToggler = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useSettings();
 
   return (
     <button

@@ -1,5 +1,4 @@
 export const APP_HOME_URL = '/';
-export const APP_CONTACT_URL = '/contact';
 export const APP_ABOUT_URL = '/about';
 export const APP_PROJECTS_URL = '/projects';
 export const APP_INVESTMENTS_URL = '/investments';

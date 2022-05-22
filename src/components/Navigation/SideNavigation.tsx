@@ -9,9 +9,12 @@ export const sideNavigationAccessibilityClass =
 export const NavigationBrandLink = () => (
   <Link href={APP_HOME_URL} passHref>
     <a
-      className={`uppercase tracking-wide rounded-md font-medium px-2 break-words ${sideNavigationAccessibilityClass}`}
+      className={`flex flex-col flex-wrap uppercase tracking-wide rounded-md font-medium px-2 break-words ${sideNavigationAccessibilityClass}`}
     >
       Niklas Rydkvist
+      <span className="block sm:hidden text-sm text-neutral-600 dark:text-neutral-400">
+        © {new Date().getFullYear().toString()}
+      </span>
     </a>
   </Link>
 );
@@ -25,29 +28,31 @@ export const SideNavigation = () => {
       <NavigationBrandLink />
 
       <ul className="mt-2 mb-4">
-        <SideNavigationItem label="about" />
-        <SideNavigationItem label="projects" isUnderMaintenance />
+        <SideNavigationItem label="about-side" />
+        <SideNavigationItem label="projects-side" isUnderMaintenance />
       </ul>
 
       <h3 className="px-2 text-sm text-neutral-500 font-medium dark:text-neutral-500 break-words">What I enjoy</h3>
 
       <ul className="mt-2 mb-4">
-        <SideNavigationItem label="investments" isUnderMaintenance />
-        <SideNavigationItem label="music" isUnderMaintenance />
+        <SideNavigationItem label="investments-side" isUnderMaintenance />
+        <SideNavigationItem label="music-side" isUnderMaintenance />
       </ul>
 
       <h3 className="px-2 text-sm text-neutral-500 font-medium dark:text-neutral-500 break-words">Stay in touch</h3>
 
       <ul className="mt-2 mb-4">
-        <SideNavigationItem label="contact" />
-        <SideNavigationItem label="github" target="_blank" />
-        <SideNavigationItem label="linkedin" target="_blank" />
-        <SideNavigationItem label="twitter" target="_blank" />
+        <SideNavigationItem label="contact-side" />
+        <SideNavigationItem label="github-side" target="_blank" />
+        <SideNavigationItem label="linkedin-side" target="_blank" />
+        <SideNavigationItem label="twitter-side" target="_blank" />
       </ul>
 
       <div className="mt-auto flex items-end justify-between">
         <ThemeToggler />
-        <p className="ml-2 text-sm text-neutral-700 dark:text-neutral-200">Niklas Rydkvist © 2022</p>
+        <p className="ml-2 text-sm text-neutral-600 dark:text-neutral-400">
+          Niklas Rydkvist © {new Date().getFullYear().toString()}
+        </p>
       </div>
     </nav>
   );

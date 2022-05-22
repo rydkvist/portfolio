@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { sideNavigationAccessibilityClass } from './SideNavigation';
 import ExternalLinkIcon from '../../../public/images/feather/external-link.svg';
-import { NavigationIcon, NavigationIcons, NavigationLinks } from './NavigationIcons';
+import { getNavigationTitle, NavigationIcon, NavigationIcons, NavigationLinks } from './NavigationIcons';
 import ToolIcon from '../../../public/images/feather/tool.svg';
-import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
+import { useSettings } from '../../context/SettingsProvider';
 
 type SideNavigationItemProps = {
   label: NavigationIcon;
@@ -20,30 +20,40 @@ export const SideNavigationItem = ({
   isUnderMaintenance = false,
 }: SideNavigationItemProps) => {
   const router = useRouter();
+  const { setIsContactModalOpen } = useSettings();
 
-  const labelWithCapitalizedLetter = capitalizeFirstLetter(label);
+  const title = getNavigationTitle(label);
   const hrefNavigationLink = NavigationLinks[label];
+
+  const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
+    router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
+  } ${sideNavigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`;
+
+  const innerContent = () => (
+    <>
+      <span className="mr-2">{NavigationIcons[label]}</span>
+
+      {title}
+
+      <span className={`ml-auto pl-2`}>
+        {isUnderMaintenance ? <ToolIcon /> : target === '_blank' ? <ExternalLinkIcon /> : rightIcon}
+      </span>
+    </>
+  );
 
   return (
     <li className="my-1">
-      <Link passHref href={hrefNavigationLink}>
-        <a
-          href={hrefNavigationLink}
-          target={target}
-          title={labelWithCapitalizedLetter}
-          className={`flex items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
-            router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-          } ${sideNavigationAccessibilityClass} ${isUnderMaintenance && `text-orange-400 dark:text-yellow-400`}`}
-        >
-          <span className="mr-2">{NavigationIcons[label]}</span>
-
-          {labelWithCapitalizedLetter}
-
-          <span className={`ml-auto pl-2`}>
-            {isUnderMaintenance ? <ToolIcon /> : target === '_blank' ? <ExternalLinkIcon /> : rightIcon}
-          </span>
-        </a>
-      </Link>
+      {label === 'contact-side' ? (
+        <button role="dialog" onClick={() => setIsContactModalOpen(true)} className={itemClass} title={title}>
+          {innerContent()}
+        </button>
+      ) : (
+        <Link passHref href={hrefNavigationLink}>
+          <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
+            {innerContent()}
+          </a>
+        </Link>
+      )}
     </li>
   );
 };

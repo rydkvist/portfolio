@@ -2,9 +2,11 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 export type Theme = 'light' | 'dark';
 
-type ThemeContextType = {
+type SettingsContextType = {
   theme: Theme;
+  isContactModalOpen: boolean;
   toggleTheme: () => void;
+  setIsContactModalOpen: (_isOpen: boolean) => void;
 };
 
 const getBrowserTheme = (): Theme => {
@@ -25,13 +27,16 @@ const getInitialTheme = (): Theme => {
   }
 };
 
-export const ThemeContext = createContext<ThemeContextType>({
+export const SettingsContext = createContext<SettingsContextType>({
   theme: getBrowserTheme(),
+  isContactModalOpen: false,
   toggleTheme: () => null,
+  setIsContactModalOpen: () => null,
 });
 
-export const ThemeProvider = ({ children }) => {
+export const SettingsProvider = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(getBrowserTheme());
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const onSetTheme = (newTheme: Theme) => {
     setTheme(newTheme);
@@ -53,7 +58,11 @@ export const ThemeProvider = ({ children }) => {
     onSetTheme(newTheme);
   };
 
-  return <ThemeContext.Provider value={{ theme, toggleTheme: toggleTheme }}>{children}</ThemeContext.Provider>;
+  return (
+    <SettingsContext.Provider value={{ theme, isContactModalOpen, toggleTheme: toggleTheme, setIsContactModalOpen }}>
+      {children}
+    </SettingsContext.Provider>
+  );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export const useSettings = () => useContext(SettingsContext);

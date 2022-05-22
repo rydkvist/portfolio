@@ -1,15 +1,14 @@
 import '../styles/globals.css';
-import '../styles/hamburgers.css';
 import Script from 'next/script';
 
 import type { AppProps } from 'next/app';
-import { Navigation } from '../components/Navigation/Navigation';
-import { Footer } from '../components/Footer';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL, SHOW_NEW_DESIGN } from '../config';
 import { DefaultSeo } from 'next-seo';
-import { ThemeProvider } from '../context/ThemeProvider';
+import { SettingsProvider } from '../context/SettingsProvider';
 import { NavigationBrandLink, SideNavigation } from '../components/Navigation/SideNavigation';
 import { TabNavigation } from '../components/Navigation/TabNavigation';
+import { ContactModal } from '../components/Contact/ContactModal';
+import { ThemeToggler } from '../components/Navigation/ThemeToggler';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -82,32 +81,29 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
           }}
         />
-        {SHOW_NEW_DESIGN ? (
-          <ThemeProvider>
-            <div className="flex flex-col sm:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
-              <div className="hidden sm:flex sm:order-1">
-                <SideNavigation />
-              </div>
-              <div className="flex order-3 sm:hidden overflow-x-scroll">
-                <TabNavigation />
-              </div>
+        <SettingsProvider>
+          <div className="flex flex-col sm:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
+            <div className="hidden sm:flex sm:order-1">
+              <SideNavigation />
+            </div>
+            <div className="flex order-3 sm:hidden overflow-x-scroll">
+              <TabNavigation />
+            </div>
 
-              <div className="block sm:hidden dark:text-white text-black m-2">
-                <NavigationBrandLink />
-              </div>
-
-              <div className="flex order-2 rounded-lg sm:w-full m-1 sm:m-2 overflow-scroll bg-neutral-100 dark:bg-neutral-900">
-                <Component {...pageProps} />
+            <div className="flex flex-row items-center justify-between mx-2 mt-2 sm:hidden dark:text-white text-black ">
+              <NavigationBrandLink />
+              <div className="mr-2">
+                <ThemeToggler />
               </div>
             </div>
-          </ThemeProvider>
-        ) : (
-          <>
-            <Navigation />
-            <Component {...pageProps} />
-            <Footer />
-          </>
-        )}
+
+            <div className="flex order-2 rounded-lg sm:w-full m-2 overflow-scroll bg-neutral-100 dark:bg-neutral-900">
+              <Component {...pageProps} />
+            </div>
+          </div>
+
+          <ContactModal />
+        </SettingsProvider>
       </section>
     </>
   );
