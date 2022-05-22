@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Heading } from '../components/Heading';
 import { PageWrapper } from '../components/PageWrapper';
 
 type TechnologyItemProps = {
@@ -19,7 +20,7 @@ const Landing = () => {
   return (
     <PageWrapper>
       <>
-        <h1 className="text-3xl text-center font-normal mb-6">Hey there! I&apos;m Niklas 👋🏼</h1>
+        <Heading as="h1">Hey there! I&apos;m Niklas 👋🏼</Heading>
 
         <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
           <Image
@@ -32,7 +33,7 @@ const Landing = () => {
           />
         </div>
 
-        <h2 className="text-2xl w-full mt-8 mb-1">Who am I?</h2>
+        <Heading as="h2">Who am I?</Heading>
         <p>
           I&apos;m a passionate and driven <span className="font-semibold">Software Engineer</span> from Stockholm,
           Sweden specializing in both <span className="font-semibold">web and app development</span>. I create
@@ -44,11 +45,9 @@ const Landing = () => {
           perspectives with the team in order to move the product forward in the right direction. Other than
           experimenting with new technologies I also invest some of my time into the stock market, working out,
           travelling and meeting new exciting people!
-          <br />
         </p>
 
-        <h2 className="text-1xl text-2xl w-full mt-6 mb-2">My tech stack</h2>
-
+        <Heading as="h2">My tech stack</Heading>
         {/* TODO: Maybe show the technologies with a scrolling carousel? Like when companies show sponsors etc */}
         {/* TODO: Add correct programming languages */}
         <ul className="flex flex-row justify-center flex-wrap text-center">
@@ -59,7 +58,7 @@ const Landing = () => {
           <TechnologyItem value="SwiftUI" color="bg-red-400" />
         </ul>
 
-        <h2 className="text-2xl w-full mt-6 mb-2">More tech I&apos;m experienced with</h2>
+        <Heading as="h2">More tech I&apos;m experienced with</Heading>
         <p className="italic">
           JavaScript, HTML5, CSS3, NextJS, TailwindCSS, Cypress, Jest, End-to-end testing, Unit testing, Storybook, Git,
           CI/CD, TDD, APIs, Redux, Figma, User Accessibility, QA (Quality Assurance), SEO, Copywriting, multi-threading

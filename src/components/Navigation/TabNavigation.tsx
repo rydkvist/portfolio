@@ -1,3 +1,4 @@
+import { SHOW_INVESTMENTS_SUMMARY, SHOW_MUSIC_SUMMARY } from '../../config';
 import { TabNavigationItem } from './TabNavigationItem';
 
 export const TabNavigation = () => {
@@ -6,8 +7,8 @@ export const TabNavigation = () => {
       <ul className="flex flex-row w-full p-2 pb-3 h-full overflow-x-scroll">
         <TabNavigationItem label="about-tab" />
         <TabNavigationItem label="projects-tab" isUnderMaintenance />
-        <TabNavigationItem label="investments-tab" isUnderMaintenance />
-        <TabNavigationItem label="music-tab" isUnderMaintenance />
+        <TabNavigationItem label="investments-tab" isUnderMaintenance={!SHOW_INVESTMENTS_SUMMARY} />
+        <TabNavigationItem label="music-tab" isUnderMaintenance={!SHOW_MUSIC_SUMMARY} />
         <TabNavigationItem label="contact-tab" />
         <TabNavigationItem label="github-tab" target="_blank" />
         <TabNavigationItem label="linkedin-tab" target="_blank" />

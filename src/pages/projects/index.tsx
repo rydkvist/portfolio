@@ -1,4 +1,5 @@
 import { DefaultSeo } from 'next-seo';
+import { Heading } from '../../components/Heading';
 import { PageWrapper } from '../../components/PageWrapper';
 import { APP_TITLE_SUFFIX } from '../../config';
 
@@ -9,8 +10,10 @@ const Projects = () => {
     <PageWrapper>
       <>
         <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />
-        <h1 className="text-3xl text-center mb-8">Coming soon..</h1>
-        <h2 className="text-2xl text-center ">You may also contact me to know more about my projects and services.</h2>
+        <Heading as="h1">Coming soon..</Heading>
+        <Heading as="h2" className="text-center">
+          You may also contact me to know more about my projects and services.
+        </Heading>
       </>
     </PageWrapper>
   );

@@ -13,6 +13,7 @@ import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
 
 // TODO: Add overall accessibility functionality on all buttons, links, images
 
+// TODO: Add overall SEO
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>

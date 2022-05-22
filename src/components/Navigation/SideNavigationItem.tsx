@@ -60,6 +60,7 @@ export const SideNavigationItem = ({
           {innerContent()}
         </button>
       ) : (
+        // TODO: Add functionality to scroll to top when changing screen
         <Link passHref href={hrefNavigationLink}>
           <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
             {innerContent()}
