@@ -87,7 +87,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         <SettingsProvider>
           <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
-            <div className="hidden md:flex md:order-1">
+            <div className="hidden md:flex md:order-1 sticky top-0">
               <SideNavigation />
             </div>
 
