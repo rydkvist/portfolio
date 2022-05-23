@@ -4,13 +4,22 @@ import { PageWrapper } from '../components/PageWrapper';
 
 type TechnologyItemProps = {
   value: string;
-  color?: string;
+  technologySourceImage: string;
+  className?: string;
 };
 
-const TechnologyItem = ({ value, color = 'bg-blue-400' }: TechnologyItemProps) => {
+const TechnologyItem = ({ value, technologySourceImage, className }: TechnologyItemProps) => {
   return (
-    <li className="flex flex-col items-center px-4 py-2">
-      <div className={`w-16 h-16 ${color} rounded-md mb-2`}></div>
+    <li className={`flex flex-col items-center px-4 py-2`}>
+      <div className={`w-16 h-16 overflow-hidden rounded-md mb-2 relative ${className}`}>
+        <Image
+          src={`/images/technologies/${technologySourceImage}.png`}
+          alt={technologySourceImage}
+          layout="fill"
+          objectFit="contain"
+          priority
+        />
+      </div>
       <span>{value}</span>
     </li>
   );
@@ -49,13 +58,12 @@ const Landing = () => {
 
         <Heading as="h2">My tech stack</Heading>
         {/* TODO: Maybe show the technologies with a scrolling carousel? Like when companies show sponsors etc */}
-        {/* TODO: Add correct programming languages */}
         <ul className="flex flex-row justify-center flex-wrap text-center">
-          <TechnologyItem value="TypeScript" />
-          <TechnologyItem value="React" color="bg-cyan-400" />
-          <TechnologyItem value="React Native" color="bg-cyan-400" />
-          <TechnologyItem value="Swift" color="bg-orange-400" />
-          <TechnologyItem value="SwiftUI" color="bg-red-400" />
+          <TechnologyItem value="TypeScript" technologySourceImage="TypeScript" />
+          <TechnologyItem value="React" technologySourceImage="React" />
+          <TechnologyItem value="React Native" technologySourceImage="ReactNative" />
+          <TechnologyItem value="Swift" technologySourceImage="Swift" />
+          <TechnologyItem value="SwiftUI" technologySourceImage="SwiftUI" />
         </ul>
 
         <Heading as="h2">More tech I&apos;m experienced with</Heading>

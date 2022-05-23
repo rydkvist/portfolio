@@ -102,7 +102,7 @@ const App = ({ Component, pageProps }: AppProps) => {
               <Component {...pageProps} />
             </div>
 
-            <div className="md:hidden order-3">
+            <div className="md:hidden order-3 sticky">
               <TabNavigation />
             </div>
           </div>
