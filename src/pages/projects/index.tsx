@@ -1,14 +1,21 @@
 import { DefaultSeo } from 'next-seo';
+import { Heading } from '../../components/Heading';
+import { PageWrapper } from '../../components/PageWrapper';
 import { APP_TITLE_SUFFIX } from '../../config';
+
+// TODO: Add projects, following with a picture of the project, if possible a link to the repository, technologies used, and lessons learned
 
 const Projects = () => {
   return (
-    <div className="container max-w-screen-lg mx-auto">
-      <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />
-
-      <h1 className="text-3xl text-white text-center mb-8 z-50">Coming soon..</h1>
-      <h2 className="text-2xl text-white text-center px-8">Contact me otherwise to know more about my projects</h2>
-    </div>
+    <PageWrapper>
+      <>
+        <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />
+        <Heading as="h1">Coming soon..</Heading>
+        <Heading as="h2" className="text-center">
+          You may also contact me to know more about my projects and services.
+        </Heading>
+      </>
+    </PageWrapper>
   );
 };
 

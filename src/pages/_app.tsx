@@ -1,13 +1,19 @@
 import '../styles/globals.css';
-import '../styles/hamburgers.css';
 import Script from 'next/script';
 
 import type { AppProps } from 'next/app';
-import { Navigation } from '../components/Navigation/Navigation';
-import { Footer } from '../components/Footer';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL } from '../config';
 import { DefaultSeo } from 'next-seo';
+import { SettingsProvider } from '../context/SettingsProvider';
+import { SideNavigation } from '../components/Navigation/SideNavigation';
+import { TabNavigation } from '../components/Navigation/TabNavigation';
+import { ContactModal } from '../components/Contact/ContactModal';
+import { ThemeToggler } from '../components/Navigation/ThemeToggler';
+import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
 
+// TODO: Add overall accessibility functionality on all buttons, links, images
+
+// TODO: Add overall SEO
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
@@ -47,12 +53,24 @@ const App = ({ Component, pageProps }: AppProps) => {
           { rel: 'shortcut icon', href: '/favicons/favicon.ico' },
         ]}
       />
-      <section role="main" className="min-h-full h-full block">
+      <section role="main">
         <Script src="https://kit.fontawesome.com/260eef81bd.js" crossOrigin="anonymous" />
         <Script
           async
           id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+        />
+        <Script
+          id="dark-mode-tailwind"
+          dangerouslySetInnerHTML={{
+            __html: `
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+            `,
+          }}
         />
         <Script
           id={`dangerouslySetInnerHTML-id-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
@@ -67,9 +85,30 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
           }}
         />
-        <Navigation />
-        <Component {...pageProps} />
-        <Footer />
+        <SettingsProvider>
+          <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
+            <div className="hidden md:flex md:order-1">
+              <SideNavigation />
+            </div>
+
+            <div className="md:hidden flex flex-row items-center justify-between p-2 dark:text-white text-black">
+              <NavigationBrandLink />
+              <div className="mr-2">
+                <ThemeToggler />
+              </div>
+            </div>
+
+            <div className="flex md:w-full mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg overflow-scroll">
+              <Component {...pageProps} />
+            </div>
+
+            <div className="md:hidden order-3">
+              <TabNavigation />
+            </div>
+          </div>
+
+          <ContactModal />
+        </SettingsProvider>
       </section>
     </>
   );

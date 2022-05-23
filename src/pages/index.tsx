@@ -1,47 +1,72 @@
-import type { NextPage } from 'next';
 import Image from 'next/image';
+import { Heading } from '../components/Heading';
+import { PageWrapper } from '../components/PageWrapper';
 
-const Home: NextPage = () => {
+type TechnologyItemProps = {
+  value: string;
+  color?: string;
+};
+
+const TechnologyItem = ({ value, color = 'bg-blue-400' }: TechnologyItemProps) => {
   return (
-    <>
-      <div className="container max-w-screen-lg mx-auto">
-        <div className="flex flex-col justify-center items-center px-8">
-          <div className="mt-8 md:mt-4 z-10">
-            <div className="w-48 md:w-64 h-48 md:h-64 border-2 overflow-hidden rounded-full relative">
-              <Image
-                src="/images/NiklasVaxholm.png"
-                alt="Picture of the author"
-                layout="fill"
-                objectFit="cover"
-                objectPosition={'0% 10%'}
-                priority
-              />
-            </div>
-          </div>
-          <h1 className="text-3xl mt-4 text-white text-center font-normal">Hey there! I&apos;m Niklas.</h1>
-          <h3
-            className="text-2xl text-white mt-4 md:mt-2 w-full text-center font-light leading-relaxed"
-            style={{ fontFamily: 'Lato' }}
-          >
-            I&apos;m a passionate and driven self-taught <span className="font-medium">software developer</span> from
-            Sweden specializing in <span className="font-medium">front-end development</span> and{' '}
-            <span className="font-medium">design</span>. I create professional web applications and design systems.
-            {/* <br />
-            <br /> I've been into programming since I was 14 years old, where I
-            started by creating my own game server with a community of over{" "}
-            <span className="font-normal">10.000 users</span>. Today I develop
-            and design professional web applications for large enterprises with
-            over +<span className="font-normal">4 million users</span>. */}
-          </h3>
-          {/* <h3 className="text-2xl mt-8 w-full text-left md:text-center font-light leading-relaxed">
-            I'm a person who is comfortable working in stressful environments,
-            where it is vital to be transparent and to keep the moral of the
-            group up by being communicative, self-propelled, and analytical.
-          </h3> */}
-        </div>
-      </div>
-    </>
+    <li className="flex flex-col items-center px-4 py-2">
+      <div className={`w-16 h-16 ${color} rounded-md mb-2`}></div>
+      <span>{value}</span>
+    </li>
   );
 };
 
-export default Home;
+const Landing = () => {
+  return (
+    <PageWrapper>
+      <>
+        <Heading as="h1">Hey there! I&apos;m Niklas 👋🏼</Heading>
+
+        <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
+          <Image
+            src="/images/NiklasVaxholm.png"
+            alt="Picture of Niklas Rydkvist"
+            layout="fill"
+            objectFit="cover"
+            objectPosition={'0% 5%'}
+            priority
+          />
+        </div>
+
+        <Heading as="h2">Who am I?</Heading>
+        <p>
+          I&apos;m a passionate and driven <span className="font-semibold">Software Engineer</span> from Stockholm,
+          Sweden specializing in both <span className="font-semibold">web and app development</span>. I create
+          enterprise end-to-end applications by building scalable architectures with{' '}
+          <span className="font-semibold">great code quality</span> and{' '}
+          <span className="font-semibold">excellent user experience (UX/UI)</span>.
+          <br />
+          I&apos;m <span className="font-semibold">very product-oriented</span> and like to discuss different business
+          perspectives with the team in order to move the product forward in the right direction. Other than
+          experimenting with new technologies I also invest some of my time into the stock market, working out,
+          travelling and meeting new exciting people!
+        </p>
+
+        <Heading as="h2">My tech stack</Heading>
+        {/* TODO: Maybe show the technologies with a scrolling carousel? Like when companies show sponsors etc */}
+        {/* TODO: Add correct programming languages */}
+        <ul className="flex flex-row justify-center flex-wrap text-center">
+          <TechnologyItem value="TypeScript" />
+          <TechnologyItem value="React" color="bg-cyan-400" />
+          <TechnologyItem value="React Native" color="bg-cyan-400" />
+          <TechnologyItem value="Swift" color="bg-orange-400" />
+          <TechnologyItem value="SwiftUI" color="bg-red-400" />
+        </ul>
+
+        <Heading as="h2">More tech I&apos;m experienced with</Heading>
+        <p className="italic">
+          JavaScript, HTML5, CSS3, NextJS, TailwindCSS, Cypress, Jest, End-to-end testing, Unit testing, Storybook, Git,
+          CI/CD, TDD, APIs, Redux, Figma, User Accessibility, QA (Quality Assurance), SEO, Copywriting, multi-threading
+          programming, SocketIO, WebRTC, Google Cloud, Docker, Test Flight, Azure DevOps, AWS and Netlify.
+        </p>
+      </>
+    </PageWrapper>
+  );
+};
+
+export default Landing;
