@@ -3,6 +3,9 @@ import { PERSONAL_ADDRESS, PERSONAL_EMAIL, PERSONAL_PHONE_NUMBER } from '../../c
 import { useSettings } from '../../context/SettingsProvider';
 import { TabNavigationItem } from '../Navigation/TabNavigationItem';
 import { ContactItem } from './ContactItem';
+import MailIcon from '../../../public/images/feather/mail16x16.svg';
+import TelephoneIcon from '../../../public/images/feather/phone16x16.svg';
+import LocationIcon from '../../../public/images/feather/map-pin16x16.svg';
 
 export const ContactModal = () => {
   const { isContactModalOpen, setIsContactModalOpen } = useSettings();
@@ -39,21 +42,21 @@ export const ContactModal = () => {
               label="E-mail"
               value={PERSONAL_EMAIL}
               href={`mailto:${PERSONAL_EMAIL}`}
-              iconName="mail-outline"
+              icon={<MailIcon />}
               showCopy
             />
             <ContactItem
               label="Phone"
               value={PERSONAL_PHONE_NUMBER}
               href={`tel:${PERSONAL_PHONE_NUMBER}`}
-              iconName="call-outline"
+              icon={<TelephoneIcon />}
               showCopy
             />
             <ContactItem
               label="Location"
               value={PERSONAL_ADDRESS}
               href={`https://maps.google.com/maps/search/${PERSONAL_ADDRESS}`}
-              iconName="location-outline"
+              icon={<LocationIcon />}
             />
 
             <ul className="flex flex-row flex-wrap -ml-2 list-none">
