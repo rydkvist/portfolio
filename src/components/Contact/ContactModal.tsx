@@ -1,5 +1,10 @@
 import React from 'react';
-import { PERSONAL_ADDRESS, PERSONAL_EMAIL, PERSONAL_PHONE_NUMBER } from '../../config';
+import {
+  PERSONAL_ADDRESS,
+  PERSONAL_ADDRESS_WITH_GOOGLE_MAPS,
+  PERSONAL_EMAIL,
+  PERSONAL_PHONE_NUMBER,
+} from '../../config';
 import { useSettings } from '../../context/SettingsProvider';
 import { TabNavigationItem } from '../Navigation/TabNavigationItem';
 import { ContactItem } from './ContactItem';
@@ -60,7 +65,7 @@ export const ContactModal = () => {
             <ContactItem
               label="Location"
               value={PERSONAL_ADDRESS}
-              href={`https://maps.google.com/maps/search/${PERSONAL_ADDRESS}`}
+              href={PERSONAL_ADDRESS_WITH_GOOGLE_MAPS}
               icon={<LocationIcon />}
             />
 

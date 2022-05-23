@@ -1,7 +1,7 @@
 import { DefaultSeo } from 'next-seo';
-import { Heading } from '../components/Heading';
-import { PageWrapper } from '../components/PageWrapper';
-import { APP_TITLE_SUFFIX, SHOW_MUSIC_SUMMARY } from '../config';
+import { Heading } from '../../components/Heading';
+import { PageWrapper } from '../../components/PageWrapper';
+import { APP_TITLE_SUFFIX, SHOW_MUSIC_SUMMARY } from '../../config';
 
 // TODO: Add Spotify Tracker of current song I'm listening to, and most played playlists / artists
 const Music = () => {

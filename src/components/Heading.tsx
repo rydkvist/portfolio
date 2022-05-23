@@ -12,7 +12,7 @@ export const Heading = ({ as, className, children }: HeadingProps) => {
   }
 
   if (as === 'h2') {
-    return <h2 className={`text-2xl w-full mt-6 mb-2 ${className}`}>{children}</h2>;
+    return <h2 className={`text-2xl w-full mt-6 mb-1.5 ${className}`}>{children}</h2>;
   }
 
   return <h3 className={`text-xl w-full mt-4 mb-1 ${className}`}>{children}</h3>;

@@ -57,8 +57,7 @@ const Landing = () => {
         </p>
 
         <Heading as="h2">My tech stack</Heading>
-        {/* TODO: Maybe show the technologies with a scrolling carousel? Like when companies show sponsors etc */}
-        <ul className="flex flex-row justify-center flex-wrap text-center">
+        <ul className="flex flex-row justify-center flex-wrap text-center mb-2">
           <TechnologyItem value="TypeScript" technologySourceImage="TypeScript" />
           <TechnologyItem value="React" technologySourceImage="React" />
           <TechnologyItem value="React Native" technologySourceImage="ReactNative" />
@@ -66,11 +65,18 @@ const Landing = () => {
           <TechnologyItem value="SwiftUI" technologySourceImage="SwiftUI" />
         </ul>
 
+        <ul className="flex flex-row justify-center flex-wrap text-center">
+          <TechnologyItem value="JavaScript" technologySourceImage="JavaScript" />
+          <TechnologyItem value="HTML5" technologySourceImage="HTML5" />
+          <TechnologyItem value="CSS3" technologySourceImage="CSS3" />
+        </ul>
+
         <Heading as="h2">More tech I&apos;m experienced with</Heading>
+        {/* TODO: Maybe show the other technologies with a scrolling carousel? Like when companies show sponsors etc */}
         <p className="italic">
-          JavaScript, HTML5, CSS3, NextJS, TailwindCSS, Cypress, Jest, End-to-end testing, Unit testing, Storybook, Git,
-          CI/CD, TDD, APIs, Redux, Figma, User Accessibility, QA (Quality Assurance), SEO, Copywriting, multi-threading
-          programming, SocketIO, WebRTC, Google Cloud, Docker, Test Flight, Azure DevOps, AWS and Netlify.
+          NextJS, TailwindCSS, Cypress, Jest, End-to-end testing, Unit testing, Storybook, Git, CI/CD, TDD, APIs, UIKit,
+          Redux, Figma, User Accessibility, QA (Quality Assurance), SEO, Copywriting, multi-threading programming,
+          SocketIO, WebRTC, Google Cloud, Docker, Test Flight, Azure DevOps, AWS and Netlify.
         </p>
       </>
     </PageWrapper>
