@@ -57,7 +57,7 @@ const Landing = () => {
         </p>
 
         <Heading as="h2">My tech stack</Heading>
-        <ul className="flex flex-row justify-center flex-wrap text-center mb-2">
+        <ul className="flex flex-row justify-center flex-wrap text-center">
           <TechnologyItem value="TypeScript" technologySourceImage="TypeScript" />
           <TechnologyItem value="React" technologySourceImage="React" />
           <TechnologyItem value="React Native" technologySourceImage="ReactNative" />
