@@ -6,6 +6,7 @@ import { ContactItem } from './ContactItem';
 import MailIcon from '../../../public/images/feather/mail16x16.svg';
 import TelephoneIcon from '../../../public/images/feather/phone16x16.svg';
 import LocationIcon from '../../../public/images/feather/map-pin16x16.svg';
+import { navigationAccessibilityClass } from '../Navigation/NavigationIcons';
 
 export const ContactModal = () => {
   const { isContactModalOpen, setIsContactModalOpen } = useSettings();
@@ -14,18 +15,17 @@ export const ContactModal = () => {
 
   return (
     <div
-      tabIndex={-1}
       hidden={!isContactModalOpen}
       className={`overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 z-50 w-full h-full h-modal bg-black bg-opacity-70`}
     >
-      <div className="relative p-4 w-full mx-auto max-w-2xl h-full">
-        <div className="relative bg-neutral-200 rounded-lg shadow dark:bg-neutral-800 ">
-          <div className="flex justify-between items-start p-4 rounded-t border-b border-neutral-300 dark:border-neutral-700">
-            <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Contact – Niklas Rydkvist</h3>
+      <div className="relative p-4 w-full mx-auto max-w-lg h-full">
+        <div className="relative py-8 px-6 bg-neutral-200 rounded-xl shadow dark:bg-neutral-800">
+          <div className="flex justify-between items-start mt-0">
+            <h3 className="text-xl text-neutral-900 dark:text-white font-semibold">Contact</h3>
             <button
               type="button"
               onClick={closeModal}
-              className="text-neutral-400 bg-transparent hover:bg-neutral-200 hover:text-neutral-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-neutral-600 dark:hover:text-white"
+              className={`text-neutral-400 bg-transparent hover:bg-neutral-300 hover:text-neutral-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-neutral-600 dark:hover:text-white ${navigationAccessibilityClass}`}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -37,7 +37,7 @@ export const ContactModal = () => {
             </button>
           </div>
 
-          <div className="flex flex-col flex-wrap px-6 py-4 space-y-4">
+          <div className="flex flex-col flex-wrap py-6 space-y-4">
             <ContactItem
               label="E-mail"
               value={PERSONAL_EMAIL}
@@ -45,6 +45,8 @@ export const ContactModal = () => {
               icon={<MailIcon />}
               showCopy
             />
+            <hr className="w-full bg-neutral-300 dark:bg-neutral-700 opacity-10" />
+
             <ContactItem
               label="Phone"
               value={PERSONAL_PHONE_NUMBER}
@@ -52,12 +54,17 @@ export const ContactModal = () => {
               icon={<TelephoneIcon />}
               showCopy
             />
+
+            <hr className="w-full bg-neutral-300 dark:bg-neutral-700 opacity-10" />
+
             <ContactItem
               label="Location"
               value={PERSONAL_ADDRESS}
               href={`https://maps.google.com/maps/search/${PERSONAL_ADDRESS}`}
               icon={<LocationIcon />}
             />
+
+            <hr className="w-full bg-neutral-300 dark:bg-neutral-700 opacity-10" />
 
             <ul className="flex flex-row flex-wrap -ml-2 list-none">
               <TabNavigationItem label="github-tab" />
@@ -66,11 +73,11 @@ export const ContactModal = () => {
             </ul>
           </div>
 
-          <div className="flex items-center p-6 space-x-2 rounded-b border-t border-neutral-300 dark:border-neutral-700">
+          <div className="flex items-center">
             <button
               type="button"
               onClick={closeModal}
-              className="text-white dark:text-black bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-200 dark:hover:bg-neutral-300 font-medium rounded-md text-sm px-8 py-2.5 text-center"
+              className={`text-white dark:text-black bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-200 dark:hover:bg-neutral-300 font-medium rounded-md text-sm px-8 py-2.5 text-center ${navigationAccessibilityClass}`}
             >
               OK
             </button>
