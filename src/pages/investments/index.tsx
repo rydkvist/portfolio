@@ -2,8 +2,8 @@ import { DefaultSeo } from 'next-seo';
 import { Heading } from '../../components/Heading';
 import { PageWrapper } from '../../components/PageWrapper';
 import { APP_TITLE_SUFFIX, PERSONAL_ADDRESS_WITH_GOOGLE_MAPS } from '../../config';
-import { InvestmentItem } from './InvestmentItem';
 import HouseIcon40x40 from '../../../public/images/feather/home40x40.svg';
+import { InvestmentItem } from '../../components/InvestmentItem';
 
 // TODO: Add Image of every company
 const Investments = () => {
