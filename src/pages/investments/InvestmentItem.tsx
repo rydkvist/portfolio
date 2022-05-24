@@ -6,15 +6,29 @@ type InvestmentType = {
   description: string;
   companyImageSource?: string;
   companyHref?: string;
+  companyIcon?: JSX.Element;
   date?: string;
 };
 
-export const InvestmentItem = ({ companyName, description, companyHref, companyImageSource, date }: InvestmentType) => {
-  const imageWrapperClass = 'w-12 h-12 text-white overflow-hidden relative bg-neutral-500 mt-2 mr-4 rounded-md';
+export const InvestmentItem = ({
+  companyName,
+  description,
+  companyHref,
+  companyImageSource,
+  companyIcon,
+  date,
+}: InvestmentType) => {
+  const imageWrapperClass = 'w-20 h-20 text-black dark:text-white overflow-hidden relative mr-4 rounded-md';
 
   return (
-    <li className="flex flex-row items-start p-2">
-      {companyHref ? (
+    <li className="flex flex-row p-2">
+      {companyIcon && companyHref ? (
+        <Link href={companyHref} passHref>
+          <a title={companyName} className={imageWrapperClass}>
+            {companyIcon}
+          </a>
+        </Link>
+      ) : companyHref ? (
         <Link href={companyHref} passHref>
           <a title={companyName} className={imageWrapperClass}>
             <Image
