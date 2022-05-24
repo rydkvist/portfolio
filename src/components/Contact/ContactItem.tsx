@@ -29,16 +29,15 @@ export const ContactItem = ({ label, value, href, icon, showCopy = false }: Item
           {value}
         </a>
 
-        {showCopy && (
-          /** TODO: Add functionality */
-          // <button
-          //   type="button"
-          //   onClick={copyValueToClipboard}
-          //   className={`inline-flex items-center rounded-md text-sm text-black dark:text-white px-3 py-2 text-center bg-transparent border border-neutral-300 hover:bg-neutral-300 dark:border-neutral-600 hover:dark:bg-neutral-600 ${navigationAccessibilityClass}`}
-          // >
-          //   <CopyIcon /> <span className="ml-1.5">Copy</span>
-          // </button>
-        )}
+        {/* {showCopy && (
+          <button
+            type="button"
+            onClick={copyValueToClipboard}
+            className={`inline-flex items-center rounded-md text-sm text-black dark:text-white px-3 py-2 text-center bg-transparent border border-neutral-300 hover:bg-neutral-300 dark:border-neutral-600 hover:dark:bg-neutral-600 ${navigationAccessibilityClass}`}
+          >
+            <CopyIcon /> <span className="ml-1.5">Copy</span>
+          </button>
+        )} */}
       </div>
     </div>
   );
