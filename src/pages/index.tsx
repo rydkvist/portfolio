@@ -50,10 +50,10 @@ const Landing = () => {
           <span className="font-semibold">great code quality</span> and{' '}
           <span className="font-semibold">excellent user experience (UX/UI)</span>.
           <br />
-          I&apos;m <span className="font-semibold">very product-oriented</span> and like to discuss different business
-          perspectives with the team in order to move the product forward in the right direction. Other than
-          experimenting with new technologies I also invest some of my time into the stock market, working out,
-          travelling and meeting new exciting people!
+          I&apos;m <span className="font-semibold">highly product-oriented</span> and like to discuss different business
+          perspectives with the team in order to lead the product to the right direction. Other than experimenting with
+          new technologies I also invest some of my time into the stock market, working out, travelling and meeting new
+          exciting people!
         </p>
 
         <Heading as="h2">My tech stack</Heading>
