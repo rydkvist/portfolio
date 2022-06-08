@@ -1,12 +1,12 @@
-import { API_SPOTIFY_URL, getSpotifyPlaybackStateAccessToken } from '../spotify';
+import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../spotify';
 import { SpotifyDevice, SpotifyItem } from './current-playback.types';
 
-const CURRENT_PLAYBACK_ENDPOINT = `${API_SPOTIFY_URL}/me/player`;
+// https://developer.spotify.com/documentation/web-api/reference/#/operations/get-information-about-the-users-current-playback
 
 const getCurrentPlayback = async () => {
-  const { access_token } = await getSpotifyPlaybackStateAccessToken();
+  const { access_token } = await getSpotifyAccessToken('playback-state');
 
-  return fetch(CURRENT_PLAYBACK_ENDPOINT, {
+  return fetch(`${API_SPOTIFY_URL}/me/player`, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
