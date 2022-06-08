@@ -1,4 +1,3 @@
-import { SHOW_MUSIC_SUMMARY } from '../../config';
 import { TabNavigationItem } from './TabNavigationItem';
 
 export const TabNavigation = () => {
@@ -8,7 +7,7 @@ export const TabNavigation = () => {
         <TabNavigationItem label="about-tab" />
         <TabNavigationItem label="projects-tab" isUnderMaintenance />
         <TabNavigationItem label="investments-tab" />
-        <TabNavigationItem label="music-tab" isUnderMaintenance={!SHOW_MUSIC_SUMMARY} />
+        <TabNavigationItem label="music-tab" />
         <TabNavigationItem label="contact-tab" />
         <TabNavigationItem label="github-tab" target="_blank" />
         <TabNavigationItem label="linkedin-tab" target="_blank" />

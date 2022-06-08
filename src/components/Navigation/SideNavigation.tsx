@@ -1,4 +1,3 @@
-import { SHOW_MUSIC_SUMMARY } from '../../config';
 import { NavigationBrandLink } from './NavigationIcons';
 import { SideNavigationItem } from './SideNavigationItem';
 import { ThemeToggler } from './ThemeToggler';
@@ -20,7 +19,7 @@ export const SideNavigation = () => {
 
       <ul className="mt-2 mb-4">
         <SideNavigationItem label="investments-side" />
-        <SideNavigationItem label="music-side" isUnderMaintenance={!SHOW_MUSIC_SUMMARY} />
+        <SideNavigationItem label="music-side" />
       </ul>
 
       <h3 className="px-2 text-sm text-neutral-600 font-medium dark:text-neutral-400 break-words">Stay in touch</h3>
