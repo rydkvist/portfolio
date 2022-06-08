@@ -1,6 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import { Heading } from '../../components/Heading';
-import { SpotifyCurrentlyPlaying } from '../../components/Music/SpotifyCurrentlyPlaying';
+import { SpotifyCurrentPlayback } from '../../components/Music/SpotifyCurrentPlayback';
 import { PageWrapper } from '../../components/PageWrapper';
 import { APP_TITLE_SUFFIX } from '../../config';
 
@@ -11,7 +11,7 @@ const Music = () => {
         <DefaultSeo title={`Music – ${APP_TITLE_SUFFIX}`} />
 
         <Heading as="h1">Music</Heading>
-        <SpotifyCurrentlyPlaying />
+        <SpotifyCurrentPlayback />
 
         {/** TODO: Add a list of the most played songs for the last 4 weeks, or something else, with fade in animation */}
       </>
