@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import Script from 'next/script';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import type { AppProps } from 'next/app';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL } from '../config';
@@ -14,6 +15,9 @@ import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
 // TODO: Add overall accessibility functionality on all buttons, links, images
 
 // TODO: Add overall SEO
+
+const queryClient = new QueryClient();
+
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
@@ -85,30 +89,32 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
           }}
         />
-        <SettingsProvider>
-          <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
-            <div className="hidden md:flex md:order-1 sticky top-0">
-              <SideNavigation />
-            </div>
+        <QueryClientProvider client={queryClient}>
+          <SettingsProvider>
+            <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
+              <div className="hidden md:flex md:order-1 sticky top-0">
+                <SideNavigation />
+              </div>
 
-            <div className="md:hidden flex flex-row items-center justify-between p-2 dark:text-white text-black">
-              <NavigationBrandLink />
-              <div className="mr-2">
-                <ThemeToggler />
+              <div className="md:hidden flex flex-row items-center justify-between p-2 dark:text-white text-black">
+                <NavigationBrandLink />
+                <div className="mr-2">
+                  <ThemeToggler />
+                </div>
+              </div>
+
+              <div className="flex md:w-full mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg overflow-scroll">
+                <Component {...pageProps} />
+              </div>
+
+              <div className="md:hidden order-3 sticky bottom-0">
+                <TabNavigation />
               </div>
             </div>
 
-            <div className="flex md:w-full mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg overflow-scroll">
-              <Component {...pageProps} />
-            </div>
-
-            <div className="md:hidden order-3 sticky bottom-0">
-              <TabNavigation />
-            </div>
-          </div>
-
-          <ContactModal />
-        </SettingsProvider>
+            <ContactModal />
+          </SettingsProvider>
+        </QueryClientProvider>
       </section>
     </>
   );
