@@ -11,7 +11,6 @@ export type SpotifyItem = {
   url: string;
   durationMS: number;
   itemPreviewURL: string;
-  id: string;
 };
 
 export type SpotifyAlbum = {
