@@ -26,7 +26,7 @@ export const SpotifyCurrentPlayback = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [currentTime, data?.isPlaying, data?.progressMS, data?.item.id]);
+  }, [currentTime, data?.isPlaying, data?.progressMS]);
 
   if (isLoading)
     return (
