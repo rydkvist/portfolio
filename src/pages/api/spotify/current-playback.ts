@@ -1,5 +1,5 @@
 import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../spotify';
-import { SpotifyDevice, SpotifyItem } from './current-playback.types';
+import { SpotifyDevice, SpotifyItem } from './types';
 
 // https://developer.spotify.com/documentation/web-api/reference/#/operations/get-information-about-the-users-current-playback
 
@@ -47,6 +47,7 @@ const fetchCurrentPlayback = async (_, res): Promise<FetchCurrentPlaybackRespons
       url: responseJSON.item.external_urls.spotify,
       durationMS: responseJSON.item.duration_ms,
       itemPreviewURL: responseJSON.item.preview_url,
+      id: responseJSON.item.id,
     },
     progressMS: responseJSON.progress_ms,
     isPlaying: responseJSON.is_playing,

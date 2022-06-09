@@ -1,12 +1,24 @@
+import { toQueryString } from '../../../utils/helpers';
 import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../spotify';
-import { SpotifyItem } from './current-playback.types';
+import { SpotifyItem } from './types';
 
 // https://developer.spotify.com/documentation/web-api/reference/#/operations/get-users-top-artists-and-tracks
 
-const getTopTracks = async (type: 'artists' | 'tracks' = 'tracks', limit: number = 20) => {
+type TopTimeRange = 'short_term' | 'medium_term' | 'long_term';
+
+const getTopTracks = async (
+  type: 'artists' | 'tracks' = 'tracks',
+  timeRange: TopTimeRange = 'short_term',
+  limit: number = 20
+) => {
   const { access_token } = await getSpotifyAccessToken('top-read');
 
-  return fetch(`${API_SPOTIFY_URL}/me/top/${type}`, {
+  const queryParams = {
+    time_range: timeRange,
+    limit: limit,
+  };
+
+  return fetch(`${API_SPOTIFY_URL}/me/top/${type}${toQueryString(queryParams)}`, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },

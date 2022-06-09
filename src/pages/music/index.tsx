@@ -13,10 +13,7 @@ const Music = () => {
 
         <Heading as="h1">Music</Heading>
         <SpotifyCurrentPlayback />
-        <div className="mt-8" />
         <SpotifyTopTracks />
-
-        {/** TODO: Add a list of the most played songs for the last 4 weeks, or something else, with fade in animation */}
       </>
     </PageWrapper>
   );
