@@ -7,6 +7,8 @@ import { msDifferenceToPercentage, msToMinutesAndSeconds } from '../../utils/hel
 import { useEffect, useState } from 'react';
 import { navigationAccessibilityClass } from '../Navigation/NavigationIcons';
 
+// TODO: Fun feature – Let people queue songs for you, make some kind of notification too, or something to know that someone has queue a song from the website
+
 export const SpotifyCurrentPlayback = () => {
   const { isLoading, error, data } = useQuery('spotify-current-playback', () => {
     return fetch('/api/spotify/current-playback').then(res => res.json());
@@ -28,37 +30,7 @@ export const SpotifyCurrentPlayback = () => {
     return () => clearInterval(timer);
   }, [currentTime, data?.isPlaying, data?.progressMS]);
 
-  if (isLoading)
-    return (
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <div className="w-16 h-16 mb-4">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-            <circle
-              cx="50"
-              cy="50"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="8"
-              r="34"
-              strokeDasharray="164.93361431346415 56.97787143782138"
-              transform="rotate(325.906 50 50)"
-            >
-              <animateTransform
-                attributeName="transform"
-                type="rotate"
-                calcMode="linear"
-                values="0 50 50;360 50 50"
-                keyTimes="0;1"
-                dur="1.25s"
-                begin="0s"
-                repeatCount="indefinite"
-              />
-            </circle>
-          </svg>
-        </div>
-        <p className="text-center text-neutral-600 dark:text-neutral-400">Loading Spotify Tracker...</p>
-      </div>
-    );
+  if (isLoading) return <LoadingSpinner />;
 
   if (error) return <Heading as="h3" className="text-center">{`Could not show the Spotify Tracker: ${error}`}</Heading>;
 
@@ -99,8 +71,6 @@ export const SpotifyCurrentPlayback = () => {
               </div>
             </div>
 
-            {/* TODO: Add play button */}
-
             <div className="w-full h-1 bg-neutral-400 overflow-hidden rounded-sm">
               <div
                 className="w-full h-full bg-neutral-600 dark:bg-neutral-200"
@@ -109,7 +79,6 @@ export const SpotifyCurrentPlayback = () => {
                 }}
               />
             </div>
-
             <div className="flex flex-row mt-1 text-neutral-600 dark:text-neutral-400 text-sm">
               <p className="w-full mr-4">{msToMinutesAndSeconds(currentTime)}</p>
               <p>{msToMinutesAndSeconds(currentPlayback.item.durationMS)}</p>
@@ -122,3 +91,34 @@ export const SpotifyCurrentPlayback = () => {
     </a>
   );
 };
+
+const LoadingSpinner = () => (
+  <div className="flex flex-col items-center justify-center w-full h-full">
+    <div className="w-16 h-16 mb-4">
+      <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <circle
+          cx="50"
+          cy="50"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="8"
+          r="34"
+          strokeDasharray="164.93361431346415 56.97787143782138"
+          transform="rotate(325.906 50 50)"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            calcMode="linear"
+            values="0 50 50;360 50 50"
+            keyTimes="0;1"
+            dur="1.25s"
+            begin="0s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+    </div>
+    <p className="text-center text-neutral-600 dark:text-neutral-400">Loading Spotify Tracker...</p>
+  </div>
+);

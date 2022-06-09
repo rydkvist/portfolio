@@ -18,6 +18,7 @@ export type FetchCurrentPlaybackResponse = {
   item: SpotifyItem;
   progressMS: number;
   isPlaying: boolean;
+  volumePercent: number;
 };
 
 const fetchCurrentPlayback = async (_, res): Promise<FetchCurrentPlaybackResponse> => {
@@ -50,6 +51,7 @@ const fetchCurrentPlayback = async (_, res): Promise<FetchCurrentPlaybackRespons
     },
     progressMS: responseJSON.progress_ms,
     isPlaying: responseJSON.is_playing,
+    volumePercent: responseJSON.volume_percent,
   };
 
   return res.status(200).json(currentPlaybackResponse);
