@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import CopyIcon from '../../../public/images/feather/copy16x16.svg';
+import CheckIcon from '../../../public/images/feather/check16x16.svg';
 import { navigationAccessibilityClass } from '../Navigation/NavigationIcons';
 
 type ItemProps = {
@@ -10,8 +12,11 @@ type ItemProps = {
 };
 
 export const ContactItem = ({ label, value, href, icon, showCopy = false }: ItemProps) => {
+  const [hasCopied, setHasCopied] = useState(false);
+
   const copyValueToClipboard = () => {
-    // TODO: Add copy item value to clipboard
+    navigator.clipboard.writeText(value);
+    setHasCopied(true);
   };
 
   return (
@@ -29,15 +34,18 @@ export const ContactItem = ({ label, value, href, icon, showCopy = false }: Item
           {value}
         </a>
 
-        {/* {showCopy && (
+        {showCopy && (
           <button
             type="button"
             onClick={copyValueToClipboard}
-            className={`inline-flex items-center rounded-md text-sm text-black dark:text-white px-3 py-2 text-center bg-transparent border border-neutral-300 hover:bg-neutral-300 dark:border-neutral-600 hover:dark:bg-neutral-600 ${navigationAccessibilityClass}`}
+            onBlur={() => setHasCopied(false)}
+            className={`inline-flex items-center rounded-md text-sm text-black dark:text-white px-3 py-2 text-center bg-transparent border border-neutral-300 hover:bg-neutral-300 dark:border-neutral-600 hover:dark:bg-neutral-600 ${
+              hasCopied && `text-green-500 dark:text-green-300`
+            }`}
           >
-            <CopyIcon /> <span className="ml-1.5">Copy</span>
+            {hasCopied ? <CheckIcon /> : <CopyIcon />} <span className="ml-1.5">{hasCopied ? 'Copied' : 'Copy'}</span>
           </button>
-        )} */}
+        )}
       </div>
     </div>
   );

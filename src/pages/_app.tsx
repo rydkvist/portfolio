@@ -14,8 +14,6 @@ import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
 
 // TODO: Add overall accessibility functionality on all buttons, links, images
 
-// TODO: Add overall SEO
-
 const queryClient = new QueryClient();
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -37,7 +35,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           {
             property: 'keywords',
             content:
-              'niklas rydkvist, software engineer, ios engineer, frontend developer, portfolio, software dveloper, frontend engineer, niklas, rydkvist',
+              'niklas rydkvist, software engineer, ios engineer, frontend developer, portfolio, software developer, frontend engineer, niklas, rydkvist',
           },
           {
             property: 'viewport',

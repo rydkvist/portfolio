@@ -16,7 +16,7 @@ export const SpotifyTopRangePickerItem = ({
 
   return (
     <button
-      className={`text-sm rounded-md cursor-pointer px-5 py-1 transition-all ${
+      className={`text-sm rounded-md cursor-pointer px-5 py-1 transition-all hover:bg-neutral-50 dark:hover:bg-neutral-400 ${
         isSelected ? 'bg-neutral-100 dark:bg-neutral-500' : 'bg-inherit'
       }`}
       onClick={() => setSelectedTimeRange(timeRange)}

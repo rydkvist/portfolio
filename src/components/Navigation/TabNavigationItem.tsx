@@ -40,8 +40,7 @@ export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }:
           <span>{NavigationIcons[label]}</span>
         </button>
       ) : (
-        // TODO: Add functionality to scroll to top when changing screen
-        <Link passHref href={hrefNavigationLink}>
+        <Link passHref scroll={true} href={hrefNavigationLink}>
           <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
             <span>{NavigationIcons[label]}</span>
           </a>

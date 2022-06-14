@@ -111,7 +111,7 @@ export const navigationAccessibilityClass =
 export const underMaintenanceColorClass = ` text-orange-500 dark:text-yellow-400`;
 
 export const NavigationBrandLink = () => (
-  <Link href={APP_HOME_URL} passHref>
+  <Link href={APP_HOME_URL} passHref scroll>
     <a
       className={`flex flex-col flex-wrap uppercase text-lg md:text-base tracking-wide rounded-md font-medium px-2 break-words ${navigationAccessibilityClass}`}
     >

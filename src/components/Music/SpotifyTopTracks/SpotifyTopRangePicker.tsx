@@ -7,7 +7,7 @@ type SpotifyTopRangePickerProps = {
 };
 
 export const SpotifyTopRangePicker = ({ selectedTimeRange, setSelectedTimeRange }: SpotifyTopRangePickerProps) => (
-  <div className="flex bg-neutral-200 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 items-center justify-center p-1 rounded-lg shadow-sm">
+  <div className="flex bg-neutral-200 space-x-2 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 items-center justify-center p-1 rounded-lg shadow-sm">
     <SpotifyTopRangePickerItem
       timeRange="short_term"
       currentTimeRange={selectedTimeRange}
