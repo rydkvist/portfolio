@@ -16,7 +16,7 @@ type TabNavigationItemProps = {
   isUnderMaintenance?: boolean;
 };
 
-export const TabNavigationItem = ({ label, target = '_blank', isUnderMaintenance = false }: TabNavigationItemProps) => {
+export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }: TabNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 
@@ -40,7 +40,7 @@ export const TabNavigationItem = ({ label, target = '_blank', isUnderMaintenance
           <span>{NavigationIcons[label]}</span>
         </button>
       ) : (
-        <Link passHref scroll={true} href={hrefNavigationLink}>
+        <Link passHref href={hrefNavigationLink} scroll>
           <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
             <span>{NavigationIcons[label]}</span>
           </a>

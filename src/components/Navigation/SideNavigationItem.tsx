@@ -60,7 +60,7 @@ export const SideNavigationItem = ({
           {innerContent()}
         </button>
       ) : (
-        <Link passHref scroll href={hrefNavigationLink}>
+        <Link passHref href={hrefNavigationLink} scroll>
           <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
             {innerContent()}
           </a>

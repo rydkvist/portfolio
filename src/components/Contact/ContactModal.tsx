@@ -25,14 +25,10 @@ export const ContactModal = () => {
       hidden={!isContactModalOpen}
       aria-labelledby="Contact Niklas Rydkvist"
       aria-modal="true"
-      onClick={closeModal}
       className={`overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 z-50 w-full h-full h-modal bg-black bg-opacity-70`}
     >
       <div className="relative p-4 w-full mx-auto max-w-lg h-full">
-        <div
-          onClick={() => console.log('test')}
-          className="overflow-auto relative py-8 px-6 bg-neutral-200 rounded-xl shadow dark:bg-neutral-800"
-        >
+        <div className="overflow-auto relative py-8 px-6 bg-neutral-200 rounded-xl shadow dark:bg-neutral-800">
           <div className="flex justify-between items-start mt-0">
             <h3 className="text-xl text-neutral-900 dark:text-white font-semibold">Contact</h3>
             <button
