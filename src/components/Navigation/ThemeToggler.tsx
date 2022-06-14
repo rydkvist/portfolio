@@ -1,6 +1,5 @@
 import { useSettings } from '../../context/SettingsProvider';
 import { navigationAccessibilityClass } from './NavigationIcons';
-
 export const ThemeToggler = () => {
   const { theme, toggleTheme } = useSettings();
 
@@ -13,7 +12,6 @@ export const ThemeToggler = () => {
     >
       {theme === 'light' ? (
         <svg
-          id="theme-toggle-dark-icon"
           className="w-5 h-5 md:w-4 md:h-4"
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -23,7 +21,6 @@ export const ThemeToggler = () => {
         </svg>
       ) : (
         <svg
-          id="theme-toggle-light-icon"
           className="w-5 h-5 md:w-4 md:h-4"
           fill="currentColor"
           viewBox="0 0 20 20"

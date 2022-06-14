@@ -4,11 +4,13 @@ import Image from 'next/image';
 type InvestmentType = {
   companyName: string;
   description: string;
+  companyHref: string;
   companyImageSource?: string;
-  companyHref?: string;
   companyIcon?: JSX.Element;
   date?: string;
 };
+
+const imageWrapperClass = 'max-w-10 max-h-10 w-full h-full relative overflow-hidden';
 
 export const InvestmentItem = ({
   companyName,
@@ -18,39 +20,23 @@ export const InvestmentItem = ({
   companyIcon,
   date,
 }: InvestmentType) => {
-  const imageWrapperClass = 'w-20 h-20 text-black dark:text-white overflow-hidden relative mr-4 rounded-md';
-
   return (
-    <li className="flex flex-row p-2">
-      {companyIcon && companyHref ? (
-        <Link href={companyHref} passHref>
-          <a title={companyName} className={imageWrapperClass}>
-            {companyIcon}
-          </a>
-        </Link>
-      ) : companyHref ? (
-        <Link href={companyHref} passHref>
-          <a title={companyName} className={imageWrapperClass}>
-            <Image
-              src={`/images/companies/${companyImageSource}.png`}
-              alt={companyName}
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
-          </a>
-        </Link>
-      ) : (
-        <span title={companyName} className={imageWrapperClass}>
-          <Image
-            src={`/images/companies/${companyImageSource}.png`}
-            alt={companyName}
-            layout="fill"
-            objectFit="contain"
-            priority
-          />
-        </span>
-      )}
+    <li className="flex flex-row items-start p-2 text-black dark:text-white">
+      <div className="mr-4">
+        {companyIcon && companyHref ? (
+          <Link href={companyHref} passHref>
+            <a title={companyName} target="_blank" className={imageWrapperClass}>
+              {companyIcon}
+            </a>
+          </Link>
+        ) : (
+          <Link href={companyHref} passHref>
+            <a title={companyName} target="_blank" className={imageWrapperClass}>
+              <Image src={companyImageSource} alt={companyName} width={40} height={40} layout="fixed" />
+            </a>
+          </Link>
+        )}
+      </div>
 
       <div className="flex flex-col">
         <p className="inline-flex items-start justify-between text-neutral-700 dark:text-neutral-300">

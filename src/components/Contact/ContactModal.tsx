@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   PERSONAL_ADDRESS,
   PERSONAL_ADDRESS_WITH_GOOGLE_MAPS,
@@ -20,11 +20,19 @@ export const ContactModal = () => {
 
   return (
     <div
+      tabIndex={isContactModalOpen ? -1 : 0}
+      role="dialog"
       hidden={!isContactModalOpen}
+      aria-labelledby="Contact Niklas Rydkvist"
+      aria-modal="true"
+      onClick={closeModal}
       className={`overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 z-50 w-full h-full h-modal bg-black bg-opacity-70`}
     >
       <div className="relative p-4 w-full mx-auto max-w-lg h-full">
-        <div className="relative py-8 px-6 bg-neutral-200 rounded-xl shadow dark:bg-neutral-800">
+        <div
+          onClick={() => console.log('test')}
+          className="overflow-auto relative py-8 px-6 bg-neutral-200 rounded-xl shadow dark:bg-neutral-800"
+        >
           <div className="flex justify-between items-start mt-0">
             <h3 className="text-xl text-neutral-900 dark:text-white font-semibold">Contact</h3>
             <button
@@ -72,9 +80,9 @@ export const ContactModal = () => {
             <hr className="w-full bg-neutral-300 dark:bg-neutral-700 opacity-10" />
 
             <ul className="flex flex-row flex-wrap -ml-2 list-none">
-              <TabNavigationItem label="github-tab" />
-              <TabNavigationItem label="linkedin-tab" />
-              <TabNavigationItem label="twitter-tab" />
+              <TabNavigationItem label="github-tab" target="_blank" />
+              <TabNavigationItem label="linkedin-tab" target="_blank" />
+              <TabNavigationItem label="twitter-tab" target="_blank" />
             </ul>
           </div>
 

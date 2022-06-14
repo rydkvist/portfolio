@@ -16,7 +16,7 @@ type TabNavigationItemProps = {
   isUnderMaintenance?: boolean;
 };
 
-export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }: TabNavigationItemProps) => {
+export const TabNavigationItem = ({ label, target = '_blank', isUnderMaintenance = false }: TabNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 

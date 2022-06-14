@@ -19,7 +19,7 @@ const Investments = () => {
           Ordered by the time I started my position.
         </p>
 
-        <ul className="flex flex-col mt-8 ">
+        <ul className="flex flex-col mt-8">
           <InvestmentItem
             companyName="My Home"
             date="Aug 2021"
@@ -32,7 +32,8 @@ const Investments = () => {
           <InvestmentItem
             companyName="Cloudflare"
             date="June 2021"
-            companyImageSource="Cloudflare"
+            companyImageSource="/images/companies/Cloudflare.png"
+            companyHref="https://www.cloudflare.com"
             description="They have been in the industry of cybersecurity for quite a while now and I thought that the stock was undervalued, so I got in the ride."
           />
           <hr className="my-4 divide-neutral-400 dark:divide-neutral-200" />
@@ -40,16 +41,17 @@ const Investments = () => {
           <InvestmentItem
             companyName="Airbnb"
             date="Feb 2021"
-            companyImageSource="Airbnb"
-            description="An online marketplace to travel freely to anywhere at anytime. Built the position betting on travel resurgence and remote work mobility."
+            companyImageSource="/images/companies/Airbnb.png"
             companyHref="https://www.airbnb.com"
+            description="An online marketplace to travel freely to anywhere at anytime. Built the position betting on travel resurgence and remote work mobility."
           />
           <hr className="my-4 divide-neutral-800 dark:divide-neutral-200" />
 
           <InvestmentItem
             companyName="Ethereum"
             date="June 2020"
-            companyImageSource="Ethereum"
+            companyImageSource="/images/companies/Ethereum.png"
+            companyHref="https://ethereum.org"
             description="A decentralized blockchain with smart contract functionality. Betting on the long run where cryptocurrencies and Web 3 become mainstream in the upcoming years."
           />
           <hr className="my-4 divide-neutral-800 dark:divide-neutral-200" />
@@ -57,17 +59,10 @@ const Investments = () => {
           <InvestmentItem
             companyName="NVIDIA"
             date="Feb 2020"
-            companyImageSource="NVIDIA"
+            companyImageSource="/images/companies/NVIDIA.png"
+            companyHref="https://www.nvidia.com"
             description="They explore the field of quantum computers together with their vast knowledge and industry leading graphical cards. Currently undervalued with great forecast."
           />
-
-          {/* <hr className="my-4 divide-neutral-800 dark:divide-neutral-200" />
-
-          <InvestmentItem
-            companyName="Investor AB"
-            date="Jan 2020"
-            description="A well-known Swedish investment fund company that's always making good value with their money."
-          /> */}
         </ul>
       </>
     </PageWrapper>

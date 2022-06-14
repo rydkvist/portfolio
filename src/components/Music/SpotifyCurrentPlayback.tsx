@@ -47,17 +47,20 @@ export const SpotifyCurrentPlayback = () => {
       <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg">
         <div className="flex flex-row items-start">
           <p className={`w-full text-sm text-neutral-800 dark:text-neutral-200 mr-4`}>Currently listening to</p>
-          <Image src="/images/companies/Spotify.png" alt="Spotify Icon" objectFit="contain" width={32} height={32} />
+          <span className="w-8 h-8 relative">
+            <Image src="/images/companies/Spotify.png" alt="Spotify Icon" layout="fill" objectFit="contain" />
+          </span>
         </div>
 
         {currentPlayback.isPlaying ? (
           <>
             <div className="flex flex-row items-start mt-1 mb-3.5">
-              <span className="overflow-hidden rounded-sm mr-2">
-                <img
+              <span className="overflow-hidden rounded-sm w-20 h-20 relative mr-2">
+                <Image
                   src={currentPlayback.item.album.imageURL}
                   alt={currentPlayback.item.album.name}
-                  className={`w-20 h-auto`}
+                  layout="fill"
+                  objectFit="contain"
                 />
               </span>
 
