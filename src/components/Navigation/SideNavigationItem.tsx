@@ -31,7 +31,7 @@ export const SideNavigationItem = ({
   const title = getNavigationTitle(label);
   const hrefNavigationLink = NavigationLinks[label];
 
-  const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
+  const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
   } ${navigationAccessibilityClass} ${isUnderMaintenance && underMaintenanceColorClass}`;
 
