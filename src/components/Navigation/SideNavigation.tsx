@@ -26,9 +26,9 @@ export const SideNavigation = () => {
 
       <ul className="mt-2 mb-4">
         <SideNavigationItem label="contact-side" />
-        <SideNavigationItem label="github-side" target="_blank" />
-        <SideNavigationItem label="linkedin-side" target="_blank" />
-        <SideNavigationItem label="twitter-side" target="_blank" />
+        <SideNavigationItem label="github-side" isExternalLink />
+        <SideNavigationItem label="linkedin-side" isExternalLink />
+        <SideNavigationItem label="twitter-side" isExternalLink />
       </ul>
 
       <div className="mt-auto flex items-end justify-between">

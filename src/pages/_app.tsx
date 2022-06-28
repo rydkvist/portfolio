@@ -11,6 +11,7 @@ import { TabNavigation } from '../components/Navigation/TabNavigation';
 import { ContactModal } from '../components/Contact/ContactModal';
 import { ThemeToggler } from '../components/Navigation/ThemeToggler';
 import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
+import dynamic from 'next/dynamic';
 
 // TODO: Add overall accessibility functionality on all buttons, links, images
 

@@ -12,11 +12,15 @@ import {
 
 type TabNavigationItemProps = {
   label: NavigationIcon;
-  target?: '_parent' | '_blank';
   isUnderMaintenance?: boolean;
+  isExternalLink?: boolean;
 };
 
-export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }: TabNavigationItemProps) => {
+export const TabNavigationItem = ({
+  label,
+  isUnderMaintenance = false,
+  isExternalLink = false,
+}: TabNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 
@@ -41,7 +45,13 @@ export const TabNavigationItem = ({ label, target, isUnderMaintenance = false }:
         </button>
       ) : (
         <Link passHref href={hrefNavigationLink} scroll>
-          <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
+          <a
+            href={hrefNavigationLink}
+            rel="noreferrer"
+            target={isExternalLink ? '_blank' : '_self'}
+            title={title}
+            className={itemClass}
+          >
             <span>{NavigationIcons[label]}</span>
           </a>
         </Link>

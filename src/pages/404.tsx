@@ -1,6 +1,6 @@
 import { DefaultSeo } from 'next-seo';
-import { PageWrapper } from '../../components/PageWrapper';
-import { APP_TITLE_SUFFIX } from '../../config';
+import { PageWrapper } from '../components/PageWrapper';
+import { APP_TITLE_SUFFIX } from '../config';
 
 const PageNotFound = () => {
   return (

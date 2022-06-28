@@ -1,7 +1,7 @@
 import { DefaultSeo } from 'next-seo';
-import { Heading } from '../../components/Heading';
-import { PageWrapper } from '../../components/PageWrapper';
-import { APP_TITLE_SUFFIX } from '../../config';
+import { Heading } from '../components/Heading';
+import { PageWrapper } from '../components/PageWrapper';
+import { APP_TITLE_SUFFIX } from '../config';
 
 // TODO: Add projects, following with a picture of the project, if possible a link to the repository, technologies used, and lessons learned
 

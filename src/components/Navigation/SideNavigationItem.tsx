@@ -17,13 +17,14 @@ type SideNavigationItemProps = {
   target?: '_parent' | '_blank';
   rightIcon?: JSX.Element;
   isUnderMaintenance?: boolean;
+  isExternalLink?: boolean;
 };
 
 export const SideNavigationItem = ({
   label,
-  target = '_parent',
   rightIcon,
   isUnderMaintenance = false,
+  isExternalLink = false,
 }: SideNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
@@ -42,7 +43,7 @@ export const SideNavigationItem = ({
       {title}
 
       <span className={`ml-auto pl-2`}>
-        {isUnderMaintenance ? <ToolIcon /> : target === '_blank' ? <ExternalLinkIcon /> : rightIcon}
+        {isUnderMaintenance ? <ToolIcon /> : isExternalLink ? <ExternalLinkIcon /> : rightIcon}
       </span>
     </>
   );
@@ -61,7 +62,13 @@ export const SideNavigationItem = ({
         </button>
       ) : (
         <Link passHref href={hrefNavigationLink} scroll>
-          <a href={hrefNavigationLink} target={target} title={title} className={itemClass}>
+          <a
+            href={hrefNavigationLink}
+            rel="noreferrer"
+            target={isExternalLink ? '_blank' : '_self'}
+            title={title}
+            className={itemClass}
+          >
             {innerContent()}
           </a>
         </Link>
