@@ -7,25 +7,17 @@ import {
   NavigationIcon,
   NavigationIcons,
   NavigationLinks,
-  underMaintenanceColorClass,
 } from './NavigationIcons';
-import ToolIcon from '../../../public/images/feather/tool.svg';
 import { useSettings } from '../../context/SettingsProvider';
 
 type SideNavigationItemProps = {
   label: NavigationIcon;
   target?: '_parent' | '_blank';
   rightIcon?: JSX.Element;
-  isUnderMaintenance?: boolean;
   isExternalLink?: boolean;
 };
 
-export const SideNavigationItem = ({
-  label,
-  rightIcon,
-  isUnderMaintenance = false,
-  isExternalLink = false,
-}: SideNavigationItemProps) => {
+export const SideNavigationItem = ({ label, rightIcon, isExternalLink = false }: SideNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 
@@ -34,7 +26,7 @@ export const SideNavigationItem = ({
 
   const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-  } ${navigationAccessibilityClass} ${isUnderMaintenance && underMaintenanceColorClass}`;
+  } ${navigationAccessibilityClass}`;
 
   const innerContent = () => (
     <>
@@ -42,9 +34,7 @@ export const SideNavigationItem = ({
 
       {title}
 
-      <span className={`ml-auto pl-2`}>
-        {isUnderMaintenance ? <ToolIcon /> : isExternalLink ? <ExternalLinkIcon /> : rightIcon}
-      </span>
+      <span className={`ml-auto pl-2`}>{isExternalLink ? <ExternalLinkIcon /> : rightIcon}</span>
     </>
   );
 

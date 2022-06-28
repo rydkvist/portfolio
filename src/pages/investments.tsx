@@ -14,10 +14,7 @@ const Investments = () => {
           Investments
         </Heading>
 
-        <p>
-          Below are my current investments holdings. They range from 15% of my investable asset to as small as $1K.
-          Ordered by the time I started my position.
-        </p>
+        <p>Below are my current investments holdings. They range from 15% of my investable asset to as small as $1K.</p>
 
         <ul className="flex flex-col mt-8">
           <InvestmentItem
