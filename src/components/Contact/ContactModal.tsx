@@ -76,9 +76,9 @@ export const ContactModal = () => {
             <hr className="w-full bg-neutral-300 dark:bg-neutral-700 opacity-10" />
 
             <ul className="flex flex-row flex-wrap -ml-2 list-none">
-              <TabNavigationItem label="github-tab" target="_blank" />
-              <TabNavigationItem label="linkedin-tab" target="_blank" />
-              <TabNavigationItem label="twitter-tab" target="_blank" />
+              <TabNavigationItem label="github-tab" isExternalLink />
+              <TabNavigationItem label="linkedin-tab" isExternalLink />
+              <TabNavigationItem label="twitter-tab" isExternalLink />
             </ul>
           </div>
 
