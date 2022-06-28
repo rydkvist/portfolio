@@ -23,4 +23,4 @@ Make sure to have installed the following dependency:
 Niklas Rydkvist: [niklas@rydkvist.com](mailto:niklas@rydkvist.com)
 
 ## License
-Nojze's Portfolio is available under the [MIT license](https://github.com/Nojze/borsjakten/blob/main/LICENSE).
+Nojze's Portfolio is available under the [MIT license](https://github.com/Nojze/portfolio/blob/main/LICENSE).
