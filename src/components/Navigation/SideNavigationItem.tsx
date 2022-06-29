@@ -24,9 +24,12 @@ export const SideNavigationItem = ({ label, rightIcon }: SideNavigationItemProps
   const hrefNavigationLink = NavigationLinks[label];
   const isExternalLink = hrefNavigationLink.startsWith('http');
 
-  const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
-    router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-  } ${navigationAccessibilityClass}`;
+  const backgroundColorEffectClass =
+    router.asPath == hrefNavigationLink
+      ? `bg-neutral-300 dark:bg-neutral-700`
+      : `hover:bg-neutral-300/50 hover:dark:bg-neutral-700/50`;
+
+  const itemClass = `flex w-full transition-colors items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  rounded-lg cursor-pointer text-sm ${backgroundColorEffectClass} ${navigationAccessibilityClass}`;
 
   const innerContent = () => (
     <>
@@ -39,7 +42,7 @@ export const SideNavigationItem = ({ label, rightIcon }: SideNavigationItemProps
   );
 
   return (
-    <li className="my-1">
+    <li className="my-1 active:scale-97 transition-transform">
       {label === 'contact-side' ? (
         <button
           role="dialog"

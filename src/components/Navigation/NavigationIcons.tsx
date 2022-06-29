@@ -105,8 +105,7 @@ export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
   }
 };
 
-export const navigationAccessibilityClass =
-  ' focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-600';
+export const navigationAccessibilityClass = ''; //' focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-600';
 
 export const NavigationBrandLink = () => (
   <Link href={APP_HOME_URL} passHref scroll>

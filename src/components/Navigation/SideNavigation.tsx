@@ -6,7 +6,7 @@ export const SideNavigation = () => {
   return (
     <nav
       role="navigation"
-      className={`flex flex-col justify-start px-4 pt-6 pb-2 w-72 overflow-scroll bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white`}
+      className={`flex flex-col justify-start px-4 pt-6 pb-2 w-64 overflow-scroll text-black  dark:text-white`}
     >
       <NavigationBrandLink />
 

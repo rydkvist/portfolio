@@ -55,7 +55,7 @@ export const ProjectItem = ({
             <div className="flex flex-row items-center">
               <p>{title}</p>
               {isExternalLink && (
-                <span className="ml-1.5 opacity-0 group-hover:opacity-100 transition-all">
+                <span className="ml-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <ExternalLinkIcon />
                 </span>
               )}
