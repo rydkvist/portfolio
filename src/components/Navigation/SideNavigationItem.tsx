@@ -14,15 +14,15 @@ type SideNavigationItemProps = {
   label: NavigationIcon;
   target?: '_parent' | '_blank';
   rightIcon?: JSX.Element;
-  isExternalLink?: boolean;
 };
 
-export const SideNavigationItem = ({ label, rightIcon, isExternalLink = false }: SideNavigationItemProps) => {
+export const SideNavigationItem = ({ label, rightIcon }: SideNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 
   const title = getNavigationTitle(label);
   const hrefNavigationLink = NavigationLinks[label];
+  const isExternalLink = hrefNavigationLink.startsWith('http');
 
   const itemClass = `flex w-full items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer text-sm transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``

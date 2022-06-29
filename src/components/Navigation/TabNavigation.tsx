@@ -9,9 +9,9 @@ export const TabNavigation = () => {
         <TabNavigationItem label="investments-tab" />
         <TabNavigationItem label="music-tab" />
         <TabNavigationItem label="contact-tab" />
-        <TabNavigationItem label="github-tab" isExternalLink />
-        <TabNavigationItem label="linkedin-tab" isExternalLink />
-        <TabNavigationItem label="twitter-tab" isExternalLink />
+        <TabNavigationItem label="github-tab" />
+        <TabNavigationItem label="linkedin-tab" />
+        <TabNavigationItem label="twitter-tab" />
       </ul>
     </nav>
   );

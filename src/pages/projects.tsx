@@ -1,19 +1,53 @@
 import { DefaultSeo } from 'next-seo';
 import { Heading } from '../components/Heading';
 import { PageWrapper } from '../components/PageWrapper';
+import { ProjectItem } from '../components/Projects/ProjectItem';
 import { APP_TITLE_SUFFIX } from '../config';
-
-// TODO: Add projects, following with a picture of the project, if possible a link to the repository, technologies used, and lessons learned
 
 const Projects = () => {
   return (
-    <PageWrapper>
+    <PageWrapper withTopInset>
       <>
         <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />
-        <Heading as="h1">Coming soon..</Heading>
-        <Heading as="h2" className="text-center">
-          You may also contact me to know more about my projects and services.
+        <Heading as="h1" className="mr-auto">
+          Projects
         </Heading>
+
+        <p className="w-full mb-8">
+          I usually spend most of my time improving the product development of the companies I work for, but when I feel
+          like trying new technologies or ideas, I usually create a side project where I can experiment. It varies from
+          projects involving E-commerce, Stock Market, Investing, Math Equations, and more. Check out my GitHub to see
+          more of my projects.
+        </p>
+
+        <ProjectItem
+          title="Börsjakten"
+          description="A Swedish Personal Finance mobile app where one can learn the main concepts of investing and personal finance, such as the Stock Market, Real Estate, Cryptocurrencies, Savings, and Bank Loans. One can play around with a Stock Market sandbox too, where you can buy and sells stocks with fictional money."
+          date="March 2022"
+          imagePath="/images/projects/borsjakten-showcase.png"
+          link="https://github.com/Nojze/borsjakten"
+          technologies="Side Project · Swift & SwiftUI"
+        />
+
+        <ProjectItem
+          title="Buysimple"
+          description="The concept of this work was to create an online store where the UX/UI of the website is suitable for all users, mainly focusing on the distribution of information, accessibility, and functionality of the website."
+          date="May 2019"
+          videoURL="https://www.youtube.com/embed/0MWcuDOwWu8"
+          link="https://github.com/Nojze/buysimple"
+          technologies="Side Project · HTML, CSS, Bootstrap, JavaScript, PHP"
+          imageClassName="bg-neutral-50"
+        />
+
+        <ProjectItem
+          title="Mandelbrot Set"
+          description="A math programming project where I re-create the pattern of a Mandelbrot set using the knowledge I had in discrete mathematics and complex numbers."
+          date="April 2019"
+          imagePath="/images/projects/mandelbrot-showcase.jpeg"
+          link="https://github.com/Nojze/mandelbrot"
+          technologies="Side Project · C#, Windows Forms .NET"
+          imageClassName="bg-slate-900"
+        />
       </>
     </PageWrapper>
   );

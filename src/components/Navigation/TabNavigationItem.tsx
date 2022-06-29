@@ -11,15 +11,15 @@ import {
 
 type TabNavigationItemProps = {
   label: NavigationIcon;
-  isExternalLink?: boolean;
 };
 
-export const TabNavigationItem = ({ label, isExternalLink = false }: TabNavigationItemProps) => {
+export const TabNavigationItem = ({ label }: TabNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 
   const title = getNavigationTitle(label);
   const hrefNavigationLink = NavigationLinks[label];
+  const isExternalLink = hrefNavigationLink.startsWith('http');
 
   const itemClass = `flex items-center justify-center p-3 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
