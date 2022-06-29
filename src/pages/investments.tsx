@@ -14,9 +14,8 @@ const Investments = () => {
           Investments
         </Heading>
 
-        <p>
+        <p className="text-neutral-600 dark:text-neutral-400">
           Below are my current investments holdings. They range from 15% of my investable asset to as small as $1K.
-          Ordered by the time I started my position.
         </p>
 
         <ul className="flex flex-col mt-8">
@@ -25,7 +24,7 @@ const Investments = () => {
             date="Aug 2021"
             companyHref={PERSONAL_ADDRESS_WITH_GOOGLE_MAPS}
             companyIcon={<HouseIcon40x40 />}
-            description="An apartment in the heart of Stockholm, an asset that I can rent out later on in order to start my private real estate career"
+            description="An apartment in the center of Stockholm, an asset that I can rent out later on in order to start a form of private real estate."
           />
           <hr className="my-4 divide-neutral-800 dark:divide-neutral-200" />
 

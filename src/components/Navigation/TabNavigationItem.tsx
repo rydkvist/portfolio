@@ -7,32 +7,26 @@ import {
   NavigationIcon,
   NavigationIcons,
   NavigationLinks,
-  underMaintenanceColorClass,
 } from './NavigationIcons';
 
 type TabNavigationItemProps = {
   label: NavigationIcon;
-  isUnderMaintenance?: boolean;
-  isExternalLink?: boolean;
 };
 
-export const TabNavigationItem = ({
-  label,
-  isUnderMaintenance = false,
-  isExternalLink = false,
-}: TabNavigationItemProps) => {
+export const TabNavigationItem = ({ label }: TabNavigationItemProps) => {
   const router = useRouter();
   const { setIsContactModalOpen } = useSettings();
 
   const title = getNavigationTitle(label);
   const hrefNavigationLink = NavigationLinks[label];
+  const isExternalLink = hrefNavigationLink.startsWith('http');
 
-  const itemClass = `flex items-center justify-center p-3 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition ${
+  const itemClass = `flex items-center justify-center p-3 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded-lg cursor-pointer transition-colors ${
     router.asPath == hrefNavigationLink ? `bg-neutral-300 dark:bg-neutral-700` : ``
-  } ${navigationAccessibilityClass} ${isUnderMaintenance && underMaintenanceColorClass}`;
+  } ${navigationAccessibilityClass}`;
 
   return (
-    <li className="mx-1">
+    <li className="mx-1 active:scale-97 transition-transform">
       {label === 'contact-tab' ? (
         <button
           role="dialog"

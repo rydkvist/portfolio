@@ -42,7 +42,7 @@ export const SpotifyCurrentPlayback = () => {
       rel="noreferrer"
       href={currentPlayback.isPlaying ? currentPlayback.item.album.url : SPOTIFY_URL}
       title={currentPlayback.isPlaying ? 'See the track on Spotify' : 'Visit my Spotify profile'}
-      className={`w-full md:w-96 transition-all rounded-md focus:scale-105 hover:scale-105 shadow-lg ${navigationAccessibilityClass}`}
+      className={`w-full md:w-96 transition-transform rounded-md focus:scale-105 hover:scale-105 shadow-lg ${navigationAccessibilityClass}`}
     >
       <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg">
         <div className="flex flex-row items-start">

@@ -8,7 +8,7 @@ export const ThemeToggler = () => {
       type="button"
       onClick={toggleTheme}
       title="Toggle Theme"
-      className={`text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 rounded-lg text-sm p-2.5 ${navigationAccessibilityClass}`}
+      className={`text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 rounded-lg text-sm p-2.5 transition-transform active:scale-95 ${navigationAccessibilityClass}`}
     >
       {theme === 'light' ? (
         <svg
