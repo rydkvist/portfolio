@@ -11,11 +11,10 @@ const Landing = () => {
 
         <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
           <Image
-            src="/images/NiklasVaxholm.png"
+            src="/images/NiklasRectangle.png"
             alt="Picture of Niklas Rydkvist"
             layout="fill"
             objectFit="cover"
-            objectPosition={'0% 5%'}
             priority
           />
         </div>
