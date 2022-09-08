@@ -18,7 +18,7 @@ export const TechnologyItem = ({ value, technologySourceImage, className }: Tech
           priority
         />
       </div>
-      <span>{value}</span>
+      <span style={{ maxWidth: '0.75rem', display: 'flex', justifyContent: 'center' }}>{value}</span>
     </li>
   );
 };

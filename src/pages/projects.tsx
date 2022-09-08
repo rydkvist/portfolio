@@ -14,9 +14,9 @@ const Projects = () => {
         </Heading>
 
         <p className="w-full mb-8 text-neutral-600 dark:text-neutral-400">
-          I usually spend most of my time improving the product development of the companies I work for, but when I feel
-          like trying new technologies or ideas, I usually create a side project where I can experiment. It varies from
-          projects involving E-commerce, Stock Market, Investing, Math Equations, and more...
+          I usually spend most of my time improving the product development of the companies I work for. Still, when I
+          feel like testing new technologies or ideas, I typically create a side project that I can experiment with and
+          build on. The projects vary from E-commerce, Stock Market, Investing, Math Equations, and more...
         </p>
 
         <ProjectItem

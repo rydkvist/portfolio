@@ -8,7 +8,7 @@ export const APP_WEBSITE_URL = 'https://www.rydkvist.com';
 export const APP_TITLE_SUFFIX = 'Niklas Rydkvist';
 export const APP_SLOGAN = 'Niklas Rydkvist';
 export const APP_DESCRIPTION =
-  'Niklas Rydkvist is a software engineer based in Stockholm, Sweden. He is passionate about building software that facilitates the day-to-day life of people.';
+  'Niklas Rydkvist is a Software Engineer based in Stockholm, Sweden. He is passionate about building software that facilitates the day-to-day life of people.';
 
 export const GITHUB_URL = 'https://github.com/Nojze';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/niklasrydkvist/';

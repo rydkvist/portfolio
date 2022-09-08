@@ -11,7 +11,7 @@ const Landing = () => {
 
         <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
           <Image
-            src="/images/NiklasRectangle.png"
+            src="/images/me/NiklasRectangle.png"
             alt="Picture of Niklas Rydkvist"
             layout="fill"
             objectFit="cover"
@@ -22,15 +22,21 @@ const Landing = () => {
         <Heading as="h2">Who am I?</Heading>
         <p>
           I&apos;m a passionate and driven <span className="font-semibold">Software Engineer</span> from Stockholm,
-          Sweden specializing in both <span className="font-semibold">web and app development</span>. I create
+          Sweden specializing in <span className="font-semibold">web and mobile application development</span>. I create
           enterprise end-to-end applications by building scalable architectures with{' '}
           <span className="font-semibold">great code quality</span> and{' '}
           <span className="font-semibold">excellent user experience (UX/UI)</span>.
           <br />
+          <br />
           I&apos;m <span className="font-semibold">highly product-oriented</span> and like to discuss different business
-          perspectives with the team in order to lead the product to the right direction. Other than experimenting with
-          new technologies I also invest some of my time into the stock market, working out, travelling and meeting new
-          exciting people!
+          perspectives with the team in order to lead the product forward in the right direction. I always strive to see
+          the bigger picture in what I develop, such as who the end user is, how the user experiences something, and how
+          the root problem can be solved most beneficially for the business and the users. I quickly settle into new
+          tasks and is happy to take overall responsibility for design, requirements, and develpoment.
+          <br />
+          <br />
+          Other than building and trying out innovative technologies, I also invest some of my time into the stock
+          market, working out, travelling and meeting new exciting people!
         </p>
 
         <Heading as="h2">My tech stack</Heading>
@@ -51,9 +57,10 @@ const Landing = () => {
         <Heading as="h2">More tech I&apos;m experienced with</Heading>
         {/* TODO: Maybe show the other technologies with a scrolling carousel? Like when companies show sponsors etc */}
         <p className="italic">
-          NextJS, TailwindCSS, Cypress, Jest, End-to-end testing, Unit testing, Storybook, Git, CI/CD, TDD, APIs, UIKit,
-          Redux, Figma, User Accessibility, QA (Quality Assurance), SEO, Copywriting, multi-threading programming,
-          SocketIO, WebRTC, Google Cloud, Docker, Test Flight, Azure DevOps, AWS and Netlify.
+          NextJS, TailwindCSS, Cypress, Jest, Styled Components, Sass, End-to-end testing, Unit testing, Storybook, C#
+          .NET, Git, CI/CD, TDD, APIs, UIKit, Redux, Figma, UX/UI, User Accessibility, QA (Quality Assurance), SEO,
+          Copywriting, multi-threading programming, SocketIO, WebRTC, Azure, Google Cloud, Docker, Test Flight, DevOps,
+          AWS and Netlify.
         </p>
       </>
     </PageWrapper>
