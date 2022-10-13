@@ -25,6 +25,8 @@ export const SpotifyCurrentPlayback = () => {
   const [currentTime, setCurrentTime] = useState<number | undefined>(undefined);
 
   useEffect(() => {
+    if (!currentPlayback) return;
+
     const hasOngoingTrack = currentTime === undefined && currentPlayback?.progressMS;
 
     if (hasOngoingTrack) {
@@ -32,7 +34,7 @@ export const SpotifyCurrentPlayback = () => {
     }
 
     const timer = setInterval(() => {
-      if (!currentPlayback || !currentPlayback.isPlaying) return;
+      if (!currentPlayback.isPlaying) return;
       /* The miliseconds between currenttime and durationMS may differ on the accurracy, to avoid this issue
        * I decided to verify that a track is finished when currentTime reaches durationMS on the MM:SS format
        */
@@ -51,89 +53,103 @@ export const SpotifyCurrentPlayback = () => {
     return () => clearInterval(timer);
   }, [currentPlayback, currentTime, refetch]);
 
-  if (isLoading) return <Spinner />;
-
-  if (error) return <Heading as="h3" className="text-center">{`Could not show the Spotify Tracker: ${error}`}</Heading>;
-
   return (
     <div className={`w-full md:w-96 scale-105 rounded-md shadow-lg`}>
       <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg relative">
         <span className="w-8 h-8 absolute right-4 top-2">
           <Image src="/images/companies/Spotify.png" alt="Spotify Icon" layout="fill" objectFit="contain" />
         </span>
-        <p className={`w-full text-sm text-neutral-800 dark:text-neutral-200`}>Currently listening to</p>
 
-        {currentPlayback.isPlaying ? (
+        {isLoading && (
+          <div className="flex flex-col items-center justify-center w-full h-full">
+            <Spinner />
+            <p className="text-center mt-4 text-neutral-600 dark:text-neutral-400">Loading Spotify Tracker...</p>
+          </div>
+        )}
+
+        {error && (
           <>
-            <div className="flex flex-row mt-1 mb-2">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={currentPlayback.item.album.url}
-                title={currentPlayback.item.name}
-                className={`overflow-hidden rounded-sm w-20 h-20 relative mr-2 transition-transform focus:scale-110 hover:scale-110`}
-              >
-                <Image
-                  src={currentPlayback.item.album.imageURL}
-                  alt={currentPlayback.item.album.name}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </a>
+            <p className="w-full text-sm text-neutral-800 dark:text-neutral-200">Could not show the Spotify Tracker:</p>
+            <p>{error}</p>
+          </>
+        )}
 
-              <div className="flex flex-col overflow-hidden w-full">
-                <p className="font-semibold text-neutral-900 truncate dark:text-neutral-100">
-                  {currentPlayback.item.name}
-                </p>
-                <p className="text-sm text-neutral-700 dark:text-neutral-300 overflow-hidden max-h-12 text-ellipsis">
-                  {currentPlayback.item.artists}
-                </p>
-              </div>
-            </div>
-
-            <div className="w-full h-1 bg-neutral-400 overflow-hidden rounded-sm">
-              <div
-                className="w-full h-full transition-all ease-linear bg-neutral-600 dark:bg-neutral-200"
-                style={{
-                  width: `${
-                    currentTime === undefined
-                      ? '0'
-                      : msDifferenceToPercentage(currentTime, currentPlayback.item.durationMS)
-                  }%`,
-                }}
-              />
-            </div>
-            <div
-              className={`flex flex-row mt-1 text-neutral-600 dark:text-neutral-400 text-sm ${
-                currentTime ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <p className="w-full mr-4">{msToMinutesAndSeconds(currentTime)}</p>
-              <p>{msToMinutesAndSeconds(currentPlayback.item.durationMS)}</p>
-            </div>
-
-            {currentPlayback.trackQueue && (
-              <div className="w-full inline-flex items-center justify-end mt-2">
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 mr-auto mt-auto self-end">
-                  Coming up next
-                </p>
-                {currentPlayback.trackQueue.map((track, index) => (
+        {currentPlayback && (
+          <>
+            <p className={`w-full text-sm text-neutral-800 dark:text-neutral-200 mb-1`}>Currently listening to</p>
+            {currentPlayback.isPlaying ? (
+              <>
+                <div className="flex flex-row mb-2">
                   <a
-                    key={index + track.id}
                     target="_blank"
                     rel="noreferrer"
-                    href={track.album.url}
-                    title={track.name}
-                    className={`overflow-hidden mr-2 shadow-md last:mr-0 rounded-sm relative w-8 h-8 z-0 transition-transform focus:scale-125 hover:scale-125`}
+                    href={currentPlayback.item.album.url}
+                    title={currentPlayback.item.name}
+                    className={`overflow-hidden rounded-sm w-20 h-20 relative mr-2 transition-transform focus:scale-110 hover:scale-110`}
                   >
-                    <Image src={track.album.imageURL} alt={track.album.name} layout="fill" objectFit="contain" />
+                    <Image
+                      src={currentPlayback.item.album.imageURL}
+                      alt={currentPlayback.item.album.name}
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </a>
-                ))}
-              </div>
+
+                  <div className="flex flex-col overflow-hidden w-full">
+                    <p className="font-semibold text-neutral-900 truncate dark:text-neutral-100">
+                      {currentPlayback.item.name}
+                    </p>
+                    <p className="text-sm text-neutral-700 dark:text-neutral-300 overflow-hidden max-h-12 text-ellipsis">
+                      {currentPlayback.item.artists}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="w-full h-1 bg-neutral-400 overflow-hidden rounded-sm">
+                  <div
+                    className="w-full h-full transition-all ease-linear bg-neutral-600 dark:bg-neutral-200"
+                    style={{
+                      width: `${
+                        currentTime === undefined
+                          ? '0'
+                          : msDifferenceToPercentage(currentTime, currentPlayback.item.durationMS)
+                      }%`,
+                    }}
+                  />
+                </div>
+                <div
+                  className={`flex flex-row mt-1 text-neutral-600 dark:text-neutral-400 text-sm ${
+                    currentTime ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <p className="w-full mr-4">{msToMinutesAndSeconds(currentTime)}</p>
+                  <p>{msToMinutesAndSeconds(currentPlayback.item.durationMS)}</p>
+                </div>
+
+                {currentPlayback.trackQueue && (
+                  <div className="w-full inline-flex items-center justify-end mt-2">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400 mr-auto mt-auto self-end">
+                      Coming up next
+                    </p>
+                    {currentPlayback.trackQueue.map((track, index) => (
+                      <a
+                        key={index + track.id}
+                        target="_blank"
+                        rel="noreferrer"
+                        href={track.album.url}
+                        title={track.name}
+                        className={`overflow-hidden mr-2 shadow-md last:mr-0 rounded-sm relative w-8 h-8 z-0 transition-transform focus:scale-125 hover:scale-125`}
+                      >
+                        <Image src={track.album.imageURL} alt={track.album.name} layout="fill" objectFit="contain" />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <p className={`w-full text-lg text-neutral-700 dark:text-neutral-300 mr-4`}>Offline</p>
             )}
           </>
-        ) : (
-          <p className={`w-full text-lg text-neutral-700 dark:text-neutral-300 mr-4`}>Offline</p>
         )}
       </div>
     </div>
