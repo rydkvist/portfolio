@@ -3,58 +3,71 @@ import { SpotifyDevice, SpotifyItem } from './types';
 
 // https://developer.spotify.com/documentation/web-api/reference/#/operations/get-information-about-the-users-current-playback
 
-const getCurrentPlayback = async () => {
-  const { access_token } = await getSpotifyAccessToken('playback-state');
-
-  return fetch(`${API_SPOTIFY_URL}/me/player`, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
-
-export type FetchCurrentPlaybackResponse = {
+export type GetCurrentPlaybackResponse = {
   device: SpotifyDevice;
   item: SpotifyItem;
   progressMS: number;
   isPlaying: boolean;
   volumePercent: number;
+  trackQueue: SpotifyItem[];
 };
 
-const fetchCurrentPlayback = async (_, res): Promise<FetchCurrentPlaybackResponse> => {
-  const response = await getCurrentPlayback();
+const getCurrentPlayback = async (_, res): Promise<GetCurrentPlaybackResponse> => {
+  const { access_token: spotifyToken } = await getSpotifyAccessToken('playback-state');
+
+  const response = await fetch(`${API_SPOTIFY_URL}/me/player`, {
+    headers: {
+      Authorization: `Bearer ${spotifyToken}`,
+    },
+  });
 
   if (response.status === 204 || response.status > 400) {
     return res.status(200).json({ isPlaying: false });
   }
 
-  const responseJSON = await response.json();
+  const trackQueueResponse = await fetch(`${API_SPOTIFY_URL}/me/player/queue`, {
+    headers: {
+      Authorization: `Bearer ${spotifyToken}`,
+    },
+  });
 
-  const currentPlaybackResponse: FetchCurrentPlaybackResponse = {
+  const responseJSON = await response.json();
+  const trackQueueJSON = await trackQueueResponse.json();
+
+  const currentPlaybackResponse: GetCurrentPlaybackResponse = {
     device: {
       name: responseJSON.device.name,
       type: responseJSON.device.type,
       volume: responseJSON.device.volume_percent,
     },
-    item: {
-      album: {
-        name: responseJSON.item.album.name,
-        artists: responseJSON.item.album.artists.map(artist => artist.name).join(', '),
-        url: responseJSON.item.album.external_urls.spotify,
-        imageURL: responseJSON.item.album.images[0].url,
-      },
-      name: responseJSON.item.name,
-      artists: responseJSON.item.artists.map(artist => artist.name).join(', '),
-      url: responseJSON.item.external_urls.spotify,
-      durationMS: responseJSON.item.duration_ms,
-      itemPreviewURL: responseJSON.item.preview_url,
-    },
+    item: formatSpotifyItem(responseJSON.item),
     progressMS: responseJSON.progress_ms,
     isPlaying: responseJSON.is_playing,
     volumePercent: responseJSON.volume_percent,
+    trackQueue:
+      trackQueueJSON.queue.length > 0
+        ? trackQueueJSON.queue.slice(0, 5).map((item: any) => formatSpotifyItem(item))
+        : [],
   };
 
   return res.status(200).json(currentPlaybackResponse);
 };
 
-export default fetchCurrentPlayback;
+const formatSpotifyItem = (item: any): SpotifyItem => {
+  return {
+    id: item.id,
+    album: {
+      name: item.album.name,
+      artists: item.album.artists.map(artist => artist.name).join(', '),
+      url: item.album.external_urls.spotify,
+      imageURL: item.album.images[0].url,
+    },
+    name: item.name,
+    artists: item.artists.map(artist => artist.name).join(', '),
+    url: item.external_urls.spotify,
+    durationMS: item.duration_ms,
+    itemPreviewURL: item.preview_url,
+  };
+};
+
+export default getCurrentPlayback;

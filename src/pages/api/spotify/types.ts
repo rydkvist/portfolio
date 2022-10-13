@@ -5,6 +5,7 @@ export type SpotifyDevice = {
 };
 
 export type SpotifyItem = {
+  id: string;
   album?: SpotifyAlbum;
   name: string;
   artists: [string];

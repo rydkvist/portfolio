@@ -1,127 +1,141 @@
 import { useQuery } from 'react-query';
-import { FetchCurrentPlaybackResponse } from '../../pages/api/spotify/current-playback';
+import { GetCurrentPlaybackResponse } from '../../pages/api/spotify/current-playback';
 import { Heading } from '../Heading';
 import Image from 'next/image';
 import { SPOTIFY_URL } from '../../config';
 import { msDifferenceToPercentage, msToMinutesAndSeconds } from '../../utils/helpers';
 import { useEffect, useState } from 'react';
-import { navigationAccessibilityClass } from '../Navigation/NavigationIcons';
+import { SpotifyItem } from '../../pages/api/spotify/types';
+import { SpotifyTopTracksItem } from './SpotifyTopTracks/SpotifyTopTracksItem';
+import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../../pages/api/spotify';
+import { Spinner } from '../Spinner';
 
 // TODO: Fun feature – Let people queue songs for you, make some kind of notification too, or something to know that someone has queue a song from the website
 
 export const SpotifyCurrentPlayback = () => {
-  const { isLoading, error, data } = useQuery('spotify-current-playback', () => {
+  const {
+    isLoading,
+    error,
+    data: currentPlayback,
+    refetch,
+  } = useQuery<any, unknown, GetCurrentPlaybackResponse>('spotify-current-playback', () => {
     return fetch('/api/spotify/current-playback').then(res => res.json());
   });
 
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentTime, setCurrentTime] = useState<number | undefined>(undefined);
 
   useEffect(() => {
-    if (data?.progressMS !== undefined && currentTime === 0) {
-      setCurrentTime(data.progressMS);
+    const hasOngoingTrack = currentTime === undefined && currentPlayback?.progressMS;
+
+    if (hasOngoingTrack) {
+      setCurrentTime(currentPlayback?.progressMS);
     }
 
     const timer = setInterval(() => {
-      if (data?.isPlaying) {
+      if (!currentPlayback || !currentPlayback.isPlaying) return;
+      /* The miliseconds between currenttime and durationMS may differ on the accurracy, to avoid this issue
+       * I decided to verify that a track is finished when currentTime reaches durationMS on the MM:SS format
+       */
+      const hasFinishedTrack =
+        msToMinutesAndSeconds(currentTime) === msToMinutesAndSeconds(currentPlayback?.item.durationMS);
+
+      if (hasFinishedTrack) {
+        refetch().then(() => {
+          setCurrentTime(undefined);
+        });
+      } else {
         setCurrentTime(currentTime + 1000);
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [currentTime, data?.isPlaying, data?.progressMS]);
+  }, [currentPlayback, currentTime, refetch]);
 
-  if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <Spinner />;
 
   if (error) return <Heading as="h3" className="text-center">{`Could not show the Spotify Tracker: ${error}`}</Heading>;
 
-  const currentPlayback = data as FetchCurrentPlaybackResponse;
-
   return (
-    <a
-      target="_blank"
-      rel="noreferrer"
-      href={currentPlayback.isPlaying ? currentPlayback.item.album.url : SPOTIFY_URL}
-      title={currentPlayback.isPlaying ? 'See the track on Spotify' : 'Visit my Spotify profile'}
-      className={`w-full md:w-96 transition-transform rounded-md focus:scale-105 hover:scale-105 shadow-lg ${navigationAccessibilityClass}`}
-    >
-      <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg">
-        <div className="flex flex-row items-start">
-          <p className={`w-full text-sm text-neutral-800 dark:text-neutral-200 mr-4`}>Currently listening to</p>
-          <span className="w-8 h-8 relative">
-            <Image src="/images/companies/Spotify.png" alt="Spotify Icon" layout="fill" objectFit="contain" />
-          </span>
-        </div>
+    <div className={`w-full md:w-96 scale-105 rounded-md shadow-lg`}>
+      <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg relative">
+        <span className="w-8 h-8 absolute right-4 top-2">
+          <Image src="/images/companies/Spotify.png" alt="Spotify Icon" layout="fill" objectFit="contain" />
+        </span>
+        <p className={`w-full text-sm text-neutral-800 dark:text-neutral-200`}>Currently listening to</p>
 
         {currentPlayback.isPlaying ? (
           <>
-            <div className="flex flex-row items-start mt-1 mb-3.5">
-              <span className="overflow-hidden rounded-sm w-20 h-20 relative mr-2">
+            <div className="flex flex-row mt-1 mb-2">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={currentPlayback.item.album.url}
+                title={currentPlayback.item.name}
+                className={`overflow-hidden rounded-sm w-20 h-20 relative mr-2 transition-transform focus:scale-110 hover:scale-110`}
+              >
                 <Image
                   src={currentPlayback.item.album.imageURL}
                   alt={currentPlayback.item.album.name}
                   layout="fill"
                   objectFit="contain"
                 />
-              </span>
+              </a>
 
-              <div className="flex-col items-start overflow-hidden">
+              <div className="flex flex-col overflow-hidden w-full">
                 <p className="font-semibold text-neutral-900 truncate dark:text-neutral-100">
-                  {currentPlayback.isPlaying ? currentPlayback.item.name : 'Offline'}
+                  {currentPlayback.item.name}
                 </p>
-                <p className="text-xs text-neutral-700 dark:text-neutral-300">
-                  {currentPlayback.isPlaying ? currentPlayback.item.artists : 'Spotify'}
+                <p className="text-sm text-neutral-700 dark:text-neutral-300 overflow-hidden max-h-12 text-ellipsis">
+                  {currentPlayback.item.artists}
                 </p>
               </div>
             </div>
 
             <div className="w-full h-1 bg-neutral-400 overflow-hidden rounded-sm">
               <div
-                className="w-full h-full bg-neutral-600 dark:bg-neutral-200"
+                className="w-full h-full transition-all ease-linear bg-neutral-600 dark:bg-neutral-200"
                 style={{
-                  width: `${msDifferenceToPercentage(currentTime, currentPlayback.item.durationMS)}%`,
+                  width: `${
+                    currentTime === undefined
+                      ? '0'
+                      : msDifferenceToPercentage(currentTime, currentPlayback.item.durationMS)
+                  }%`,
                 }}
               />
             </div>
-            <div className="flex flex-row mt-1 text-neutral-600 dark:text-neutral-400 text-sm">
+            <div
+              className={`flex flex-row mt-1 text-neutral-600 dark:text-neutral-400 text-sm ${
+                currentTime ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
               <p className="w-full mr-4">{msToMinutesAndSeconds(currentTime)}</p>
               <p>{msToMinutesAndSeconds(currentPlayback.item.durationMS)}</p>
             </div>
+
+            {currentPlayback.trackQueue && (
+              <div className="w-full inline-flex items-center justify-end mt-2">
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mr-auto mt-auto self-end">
+                  Coming up next
+                </p>
+                {currentPlayback.trackQueue.map((track, index) => (
+                  <a
+                    key={index + track.id}
+                    target="_blank"
+                    rel="noreferrer"
+                    href={track.album.url}
+                    title={track.name}
+                    className={`overflow-hidden mr-2 shadow-md last:mr-0 rounded-sm relative w-8 h-8 z-0 transition-transform focus:scale-125 hover:scale-125`}
+                  >
+                    <Image src={track.album.imageURL} alt={track.album.name} layout="fill" objectFit="contain" />
+                  </a>
+                ))}
+              </div>
+            )}
           </>
         ) : (
           <p className={`w-full text-lg text-neutral-700 dark:text-neutral-300 mr-4`}>Offline</p>
         )}
       </div>
-    </a>
+    </div>
   );
 };
-
-const LoadingSpinner = () => (
-  <div className="flex flex-col items-center justify-center w-full h-full">
-    <div className="w-16 h-16 mb-4">
-      <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-        <circle
-          cx="50"
-          cy="50"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="8"
-          r="34"
-          strokeDasharray="164.93361431346415 56.97787143782138"
-          transform="rotate(325.906 50 50)"
-        >
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            calcMode="linear"
-            values="0 50 50;360 50 50"
-            keyTimes="0;1"
-            dur="1.25s"
-            begin="0s"
-            repeatCount="indefinite"
-          />
-        </circle>
-      </svg>
-    </div>
-    <p className="text-center text-neutral-600 dark:text-neutral-400">Loading Spotify Tracker...</p>
-  </div>
-);
