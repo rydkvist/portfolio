@@ -10,10 +10,15 @@ type SettingsContextType = {
   setIsContactModalOpen: (_isOpen: boolean) => void;
 };
 
-const getInitialTheme = (): Theme => {
+const getLastSelectedTheme = (): Theme => {
   if (typeof window !== 'undefined') {
     const lastStoredTheme = localStorage.getItem('theme') as Theme;
-    return lastStoredTheme;
+
+    if (lastStoredTheme) {
+      return lastStoredTheme;
+    } else {
+      return getBrowserTheme();
+    }
   } else {
     return getBrowserTheme();
   }
@@ -27,12 +32,12 @@ export const SettingsContext = createContext<SettingsContextType>({
 });
 
 export const SettingsProvider = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(getBrowserTheme());
+  const [theme, setTheme] = useState<Theme>('light');
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const onSetTheme = (newTheme: Theme) => {
-    setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
+    setTheme(newTheme);
 
     if (newTheme === 'light') {
       document.documentElement.classList.remove('dark');
@@ -42,12 +47,11 @@ export const SettingsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    onSetTheme(getInitialTheme());
+    onSetTheme(getLastSelectedTheme());
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    onSetTheme(newTheme);
+    onSetTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
