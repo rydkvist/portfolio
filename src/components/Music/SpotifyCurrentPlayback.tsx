@@ -35,11 +35,8 @@ export const SpotifyCurrentPlayback = () => {
 
     const timer = setInterval(() => {
       if (!currentPlayback.isPlaying) return;
-      /* The miliseconds between currenttime and durationMS may differ on the accurracy, to avoid this issue
-       * I decided to verify that a track is finished when currentTime reaches durationMS on the MM:SS format
-       */
-      const hasFinishedTrack =
-        msToMinutesAndSeconds(currentTime) === msToMinutesAndSeconds(currentPlayback?.item.durationMS);
+      /* The miliseconds between currenttime and durationMS may differ on the accurracy */
+      const hasFinishedTrack = currentTime >= currentPlayback?.item.durationMS;
 
       if (hasFinishedTrack) {
         refetch().then(() => {
@@ -147,7 +144,9 @@ export const SpotifyCurrentPlayback = () => {
                 )}
               </>
             ) : (
-              <p className={`w-full text-lg text-neutral-700 dark:text-neutral-300 mr-4`}>Offline</p>
+              <p className={`w-full text-lg text-neutral-700 dark:text-neutral-300 mr-4`}>
+                {currentPlayback.isPlayingPodcast ? 'Podcast (Unknown Name)' : 'Offline'}
+              </p>
             )}
           </>
         )}

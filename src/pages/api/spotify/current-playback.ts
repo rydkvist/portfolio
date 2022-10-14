@@ -5,9 +5,10 @@ import { SpotifyDevice, SpotifyItem } from './types';
 
 export type GetCurrentPlaybackResponse = {
   device: SpotifyDevice;
-  item: SpotifyItem;
+  item: SpotifyItem | null;
   progressMS: number;
   isPlaying: boolean;
+  isPlayingPodcast: boolean;
   volumePercent: number;
   trackQueue: SpotifyItem[];
 };
@@ -34,20 +35,24 @@ const getCurrentPlayback = async (_, res): Promise<GetCurrentPlaybackResponse> =
   const responseJSON = await response.json();
   const trackQueueJSON = await trackQueueResponse.json();
 
+  const isPlayingPodcast = responseJSON.currently_playing_type === 'episode';
+
   const currentPlaybackResponse: GetCurrentPlaybackResponse = {
     device: {
       name: responseJSON.device.name,
       type: responseJSON.device.type,
       volume: responseJSON.device.volume_percent,
     },
-    item: formatSpotifyItem(responseJSON.item),
+    item: responseJSON.item ? formatSpotifyItem(responseJSON.item) : null,
     progressMS: responseJSON.progress_ms,
     isPlaying: responseJSON.is_playing,
     volumePercent: responseJSON.volume_percent,
-    trackQueue:
-      trackQueueJSON.queue.length > 0
-        ? trackQueueJSON.queue.slice(0, 5).map((item: any) => formatSpotifyItem(item))
-        : [],
+    isPlayingPodcast,
+    trackQueue: isPlayingPodcast
+      ? []
+      : trackQueueJSON.queue.length > 0
+      ? trackQueueJSON.queue.slice(0, 5).map((item: any) => formatSpotifyItem(item))
+      : [],
   };
 
   return res.status(200).json(currentPlaybackResponse);
