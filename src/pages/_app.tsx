@@ -75,7 +75,10 @@ const App = ({ Component, pageProps }: AppProps) => {
             `,
           }}
         />
-        <Script src={`https://www.googleoptimize.com/optimize.js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`} />
+        <Script
+          id={process.env.NEXT_PUBLIC_GOOGLE_OPTIMIZE_ID}
+          src={`https://www.googleoptimize.com/optimize.js?id=${process.env.NEXT_PUBLIC_GOOGLE_OPTIMIZE_ID}`}
+        />
         <Script
           id={`dangerouslySetInnerHTML-id-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           dangerouslySetInnerHTML={{
