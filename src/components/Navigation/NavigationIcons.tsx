@@ -10,8 +10,6 @@ import TrendingUpIcon16x16 from '../../../public/images/feather/trending-up16x16
 import TrendingUpIcon20x20 from '../../../public/images/feather/trending-up20x20.svg';
 import CodeIcon16x16 from '../../../public/images/feather/code16x16.svg';
 import CodeIcon20x20 from '../../../public/images/feather/code20x20.svg';
-import TwitterIcon16x16 from '../../../public/images/feather/twitter16x16.svg';
-import TwitterIcon20x20 from '../../../public/images/feather/twitter20x20.svg';
 import GitHubIcon16x16 from '../../../public/images/feather/github16x16.svg';
 import GitHubIcon20x20 from '../../../public/images/feather/github20x20.svg';
 import LinkedInIcon16x16 from '../../../public/images/feather/linkedin16x16.svg';
@@ -24,7 +22,6 @@ import {
   APP_PROJECTS_URL,
   GITHUB_URL,
   LINKEDIN_URL,
-  TWITTER_URL,
 } from '../../config';
 import Link from 'next/link';
 
@@ -42,9 +39,7 @@ export type NavigationIcon =
   | 'github-side'
   | 'github-tab'
   | 'linkedin-side'
-  | 'linkedin-tab'
-  | 'twitter-side'
-  | 'twitter-tab';
+  | 'linkedin-tab';
 
 export const NavigationIcons: Record<NavigationIcon, JSX.Element> = {
   'about-side': <UserIcon16x16 />,
@@ -61,8 +56,6 @@ export const NavigationIcons: Record<NavigationIcon, JSX.Element> = {
   'github-tab': <GitHubIcon20x20 />,
   'linkedin-side': <LinkedInIcon16x16 />,
   'linkedin-tab': <LinkedInIcon20x20 />,
-  'twitter-side': <TwitterIcon16x16 />,
-  'twitter-tab': <TwitterIcon20x20 />,
 };
 
 export const NavigationLinks: Record<NavigationIcon, string> = {
@@ -80,8 +73,6 @@ export const NavigationLinks: Record<NavigationIcon, string> = {
   'github-tab': GITHUB_URL,
   'linkedin-side': LINKEDIN_URL,
   'linkedin-tab': LINKEDIN_URL,
-  'twitter-side': TWITTER_URL,
-  'twitter-tab': TWITTER_URL,
 };
 
 export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
@@ -100,8 +91,6 @@ export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
       return 'GitHub';
     case 'linkedin-side' || 'linkedin-tab':
       return 'LinkedIn';
-    case 'twitter-side' || 'twitter-tab':
-      return 'Twitter';
   }
 };
 

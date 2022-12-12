@@ -78,7 +78,6 @@ export const ContactModal = () => {
             <ul className="flex flex-row flex-wrap -ml-2 list-none">
               <TabNavigationItem label="github-tab" />
               <TabNavigationItem label="linkedin-tab" />
-              <TabNavigationItem label="twitter-tab" />
             </ul>
           </div>
 

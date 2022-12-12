@@ -12,7 +12,6 @@ export const APP_DESCRIPTION =
 
 export const GITHUB_URL = 'https://github.com/Nojze';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/niklasrydkvist/';
-export const TWITTER_URL = 'https://www.twitter.com';
 export const SPOTIFY_URL = 'https://open.spotify.com/user/1123710739';
 
 export const PERSONAL_EMAIL = 'niklas@rydkvist.com';

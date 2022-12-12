@@ -28,7 +28,6 @@ export const SideNavigation = () => {
         <SideNavigationItem label="contact-side" />
         <SideNavigationItem label="github-side" />
         <SideNavigationItem label="linkedin-side" />
-        <SideNavigationItem label="twitter-side" />
       </ul>
 
       <div className="mt-auto flex items-end justify-between">
