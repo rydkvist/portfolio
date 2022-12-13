@@ -24,16 +24,12 @@ export const InvestmentItem = ({
     <li className="flex flex-row items-start p-2 text-black dark:text-white">
       <div className="mr-4">
         {companyIcon && companyHref ? (
-          <Link href={companyHref} passHref>
-            <a title={companyName} target="_blank" className={imageWrapperClass}>
-              {companyIcon}
-            </a>
+          <Link className={imageWrapperClass} href={companyHref} target="_blank">
+            {companyIcon}
           </Link>
         ) : (
-          <Link href={companyHref} passHref>
-            <a title={companyName} target="_blank" className={imageWrapperClass}>
-              <Image src={companyImageSource} alt={companyName} width={40} height={40} layout="fixed" />
-            </a>
+          <Link className={imageWrapperClass} title={companyName} href={companyHref} target="_blank">
+            <Image src={companyImageSource} alt={companyName} width={40} height={40} layout="fixed" />
           </Link>
         )}
       </div>

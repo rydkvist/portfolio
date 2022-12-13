@@ -11,7 +11,9 @@ const Music = () => {
       <>
         <DefaultSeo title={`Music – ${APP_TITLE_SUFFIX}`} />
 
-        <Heading as="h1">Music</Heading>
+        <Heading as="h1" className="text-center">
+          Music
+        </Heading>
         <SpotifyCurrentPlayback />
 
         <hr className="my-2 divide-neutral-800 dark:divide-neutral-200" />

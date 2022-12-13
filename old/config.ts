@@ -1,3 +1,5 @@
+'server-only';
+
 export const APP_HOME_URL = '/';
 export const APP_ABOUT_URL = '/about';
 export const APP_PROJECTS_URL = '/projects';

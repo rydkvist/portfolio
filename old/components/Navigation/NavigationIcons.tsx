@@ -97,14 +97,14 @@ export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
 export const navigationAccessibilityClass = ''; //' focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-600';
 
 export const NavigationBrandLink = () => (
-  <Link href={APP_HOME_URL} passHref scroll>
-    <a
-      className={`flex flex-col flex-wrap uppercase text-lg md:text-base tracking-wide rounded-md font-medium px-2 break-words ${navigationAccessibilityClass}`}
-    >
-      Niklas Rydkvist
-      <span className="block md:hidden text-sm text-neutral-600 dark:text-neutral-400">
-        © {new Date().getFullYear().toString()}
-      </span>
-    </a>
+  <Link
+    className={`flex flex-col flex-wrap uppercase text-lg md:text-base tracking-wide rounded-md font-medium px-2 break-words ${navigationAccessibilityClass}`}
+    href={APP_HOME_URL}
+    scroll
+  >
+    Niklas Rydkvist
+    <span className="block md:hidden text-sm text-neutral-600 dark:text-neutral-400">
+      © {new Date().getFullYear().toString()}
+    </span>
   </Link>
 );

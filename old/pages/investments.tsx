@@ -10,7 +10,7 @@ const Investments = () => {
     <PageWrapper withTopInset>
       <>
         <DefaultSeo title={`Investments – ${APP_TITLE_SUFFIX}`} />
-        <Heading as="h1" className="mr-auto">
+        <Heading as="h1" className="mr-auto text-center">
           Investments
         </Heading>
 

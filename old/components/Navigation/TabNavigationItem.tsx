@@ -38,16 +38,15 @@ export const TabNavigationItem = ({ label }: TabNavigationItemProps) => {
           <span>{NavigationIcons[label]}</span>
         </button>
       ) : (
-        <Link passHref href={hrefNavigationLink} scroll>
-          <a
-            href={hrefNavigationLink}
-            rel="noreferrer"
-            target={isExternalLink ? '_blank' : '_self'}
-            title={title}
-            className={itemClass}
-          >
-            <span>{NavigationIcons[label]}</span>
-          </a>
+        <Link
+          href={hrefNavigationLink}
+          rel="noreferrer"
+          target={isExternalLink ? '_blank' : '_self'}
+          title={title}
+          className={itemClass}
+          scroll
+        >
+          <span>{NavigationIcons[label]}</span>
         </Link>
       )}
     </li>
