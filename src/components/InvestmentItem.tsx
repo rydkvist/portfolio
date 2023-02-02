@@ -31,7 +31,7 @@ export const InvestmentItem = ({ name, description, url, imageSrc, investmentDat
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-2 px-6 rounded-lg"
+              className="border-blue-500 border text-blue-500 transition-all shadow-md hover:bg-blue-500 hover:text-white  text-sm py-2 px-6 rounded-lg"
             >
               View Stock Graph
             </a>

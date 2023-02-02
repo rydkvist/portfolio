@@ -11,7 +11,7 @@ const Landing = () => {
 
         <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
           <Image
-            src="/images/me/NiklasRectangle.png"
+            src="/images/me/NiklasMalmo.png"
             alt="Picture of Niklas Rydkvist"
             layout="fill"
             objectFit="cover"
@@ -21,22 +21,16 @@ const Landing = () => {
 
         <Heading as="h2">Who am I?</Heading>
         <p>
-          I&apos;m a passionate and driven <span className="font-semibold">Software Engineer</span> from Stockholm,
-          Sweden specializing in <span className="font-semibold">web and mobile application development</span>. I create
-          enterprise end-to-end applications by building scalable architectures with{' '}
-          <span className="font-semibold">great code quality</span> and{' '}
-          <span className="font-semibold">excellent user experience (UX/UI)</span>.
+          I&apos;m a Software Engineer with 5 years of experience under my belt, bringing a unique mix of technical
+          skills, problem-solving abilities, and a passion for innovation to every project I work on. I&apos;m all about
+          front-end and iOS development technologies like React, TypeScript, Next.js, React Native, Swift, SwiftUI and
+          more. I love paying attention to detail and always strive to deliver the best user experience (UX/UI)
+          possible, while also keeping accessibility and test automation in mind.
           <br />
           <br />
-          I&apos;m <span className="font-semibold">highly product-oriented</span> and like to discuss different business
-          perspectives with the team in order to lead the product forward in the right direction. I always strive to see
-          the bigger picture in what I develop, such as who the end user is, how the user experiences something, and how
-          the root problem can be solved most beneficially for the business and the users. I quickly settle into new
-          tasks and is happy to take overall responsibility for design, requirements, and develpoment.
-          <br />
-          <br />
-          Other than building and trying out innovative technologies, I also invest some of my time into the stock
-          market, working out, travelling and meeting new exciting people!
+          When I&apos;m not knacking front-end code, you can find me keeping an eye on the stock market, hitting the
+          gym, exploring new destinations, or making connections with interesting individuals. I believe in a balanced
+          approach to life and work, and make sure to allocate time for activities that keep me inspired and energized.
         </p>
 
         <Heading as="h2">My Tech Stack</Heading>
@@ -54,7 +48,7 @@ const Landing = () => {
           <TechnologyItem value="CSS3" technologySourceImage="CSS3" />
         </ul>
 
-        <Heading as="h2">More tech I&apos;m experienced with</Heading>
+        <Heading as="h2">More Tech I&apos;m experienced with</Heading>
         {/* TODO: Maybe show the other technologies with a scrolling carousel? Like when companies show sponsors etc */}
         <p className="italic">
           NextJS, TailwindCSS, Cypress, Jest, Styled Components, Svelte, Sass, End-to-end testing, Unit testing,

@@ -53,7 +53,7 @@ export const ProjectItem = ({
         </div>
 
         <div className="flex-col px-4 py-3 text-neutral-600 dark:text-neutral-400">
-          <div className="flex flex-row justify-between text-neutral-700 dark:text-neutral-300 items-center mb-0.5">
+          <div className="flex flex-row justify-between text-neutral-700 dark:text-neutral-300 items-start mb-0.5">
             <div className="flex flex-row items-center">
               <p>{title}</p>
               {isExternalLink && (
@@ -63,7 +63,7 @@ export const ProjectItem = ({
               )}
             </div>
 
-            <p className="text-sm">{date}</p>
+            <p className="text-sm text-right pl-2">{date}</p>
           </div>
 
           <p className="text-sm leading-relaxed">{description}</p>

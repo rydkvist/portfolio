@@ -37,13 +37,13 @@ export const SpotifyCurrentPlayback = () => {
   const currentPlayback = data as FetchCurrentPlaybackResponse;
 
   return (
-    <div className="flex flex-col justify-center items-center w-full sm:w-96 md:w-2/5">
+    <div className="flex flex-col justify-center items-center w-full ">
       <a
         target="_blank"
         rel="noreferrer"
         href={currentPlayback.isPlaying ? currentPlayback.item.album.url : SPOTIFY_URL}
         title={currentPlayback.isPlaying ? 'See the track on Spotify' : 'Visit my Spotify profile'}
-        className={`w-full transition-transform rounded-md focus:scale-105 hover:scale-105 shadow-lg ${navigationAccessibilityClass}`}
+        className={`w-full sm:w-96 transition-transform rounded-md focus:scale-105 hover:scale-105 shadow-lg ${navigationAccessibilityClass}`}
       >
         <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg">
           <div className="flex flex-row items-start">
@@ -97,15 +97,17 @@ export const SpotifyCurrentPlayback = () => {
       {currentPlayback.isPlaying && (
         <a
           href={currentPlayback.isPlaying ? currentPlayback.item.url : SPOTIFY_URL}
-          className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-1 px-5 mt-8 mb-2 rounded"
+          className="border-green-500 border text-green-500 transition-all shadow-md hover:bg-green-500 hover:text-white mt-4 text-sm py-2 px-6 rounded-lg"
           target="_blank"
           rel="noreferrer"
         >
-          Listen to Song in Spotify
+          Listen to song in Spotify
         </a>
       )}
-      <p className="text-neutral-700 text-center text-sm dark:text-neutral-300 mb-2">
-        {currentPlayback.isPlaying ? 'Enjoying the song so far? 👀' : "Come back again when I'm listening to live!"}
+      <p className="text-neutral-700 text-center text-sm dark:text-neutral-300 mt-4">
+        {currentPlayback.isPlaying
+          ? 'What do you think of the song so far? 👀'
+          : "Come back again when I'm listening to live!"}
       </p>
     </div>
   );
