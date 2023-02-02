@@ -39,7 +39,7 @@ const Landing = () => {
           market, working out, travelling and meeting new exciting people!
         </p>
 
-        <Heading as="h2">My tech stack</Heading>
+        <Heading as="h2">My Tech Stack</Heading>
         <ul className="flex flex-row justify-center flex-wrap text-center">
           <TechnologyItem value="TypeScript" technologySourceImage="TypeScript" />
           <TechnologyItem value="React" technologySourceImage="React" />
@@ -57,10 +57,10 @@ const Landing = () => {
         <Heading as="h2">More tech I&apos;m experienced with</Heading>
         {/* TODO: Maybe show the other technologies with a scrolling carousel? Like when companies show sponsors etc */}
         <p className="italic">
-          NextJS, TailwindCSS, Cypress, Jest, Styled Components, Sass, End-to-end testing, Unit testing, Storybook, C#
-          .NET, Git, CI/CD, TDD, APIs, UIKit, Redux, Figma, UX/UI, User Accessibility, QA (Quality Assurance), SEO,
-          Copywriting, multi-threading programming, SocketIO, WebRTC, Azure, Google Cloud, Docker, Test Flight, DevOps,
-          AWS and Netlify.
+          NextJS, TailwindCSS, Cypress, Jest, Styled Components, Svelte, Sass, End-to-end testing, Unit testing,
+          Storybook, C# .NET, Git, CI/CD, TDD, APIs, UIKit, Redux, Figma, UX/UI, User Accessibility, QA (Quality
+          Assurance), SEO, Copywriting, multi-threading programming, SocketIO, WebRTC, Azure, Google Cloud, Docker, Test
+          Flight, DevOps, AWS and Netlify.
         </p>
       </>
     </PageWrapper>

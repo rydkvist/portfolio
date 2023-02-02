@@ -94,20 +94,19 @@ export const SpotifyCurrentPlayback = () => {
         </div>
       </a>
 
-      <p className="text-neutral-700 text-center text-sm dark:text-neutral-300 mt-4">
-        {currentPlayback.isPlaying ? 'Enjoying the song so far? 👀' : "Come back again when I'm listening to live!"}
-      </p>
-
       {currentPlayback.isPlaying && (
         <a
           href={currentPlayback.isPlaying ? currentPlayback.item.url : SPOTIFY_URL}
-          className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-1 px-5 mt-2 mb-4 rounded"
+          className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-1 px-5 mt-4 mb-2 rounded"
           target="_blank"
           rel="noreferrer"
         >
-          Listen Song in Spotify
+          Listen to Song in Spotify
         </a>
       )}
+      <p className="text-neutral-700 text-center text-sm dark:text-neutral-300 mb-2">
+        {currentPlayback.isPlaying ? 'Enjoying the song so far? 👀' : "Come back again when I'm listening to live!"}
+      </p>
     </div>
   );
 };

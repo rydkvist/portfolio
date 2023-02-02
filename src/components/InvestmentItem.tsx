@@ -26,15 +26,15 @@ export const InvestmentItem = ({ name, description, url, imageSrc, investmentDat
 
         {url && (
           <div className="inline-flex">
-            <Link href={url} passHref>
-              <a
-                title={urlTitle}
-                target="_blank"
-                className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-2 px-6 rounded-lg"
-              >
-                View Stock Graph
-              </a>
-            </Link>
+            <a
+              title={urlTitle}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-2 px-6 rounded-lg"
+            >
+              View Stock Graph
+            </a>
           </div>
         )}
       </div>
