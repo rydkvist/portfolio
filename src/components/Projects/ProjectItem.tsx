@@ -10,6 +10,7 @@ type ProjectItemProps = {
   link: string;
   technologies: string;
   imageClassName?: string;
+  style?: {};
 };
 
 export const ProjectItem = ({
@@ -21,6 +22,7 @@ export const ProjectItem = ({
   link,
   technologies,
   imageClassName = 'bg-neutral-300',
+  style,
 }: ProjectItemProps) => {
   const isExternalLink = link.startsWith('http');
 
@@ -32,7 +34,7 @@ export const ProjectItem = ({
         rel="noreferrer"
         className="flex-col group w-full rounded-lg overflow-hidden ring-1 shadow-md ring-neutral-200 dark:ring-neutral-700 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 hover:dark:bg-neutral-700 hover:pointer transition-colors"
       >
-        <div className={`w-full h-80 relative rounded-t-lg mx-auto ${imageClassName}`}>
+        <div className={`w-full h-80 relative rounded-t-lg mx-auto ${imageClassName}`} style={style}>
           {imagePath ? (
             <Image src={imagePath} alt="Showcasing Börsjakten" layout="fill" objectFit="contain" priority />
           ) : (

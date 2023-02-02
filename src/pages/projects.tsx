@@ -14,14 +14,16 @@ const Projects = () => {
         </Heading>
 
         <p className="w-full mb-8 text-neutral-600 dark:text-neutral-400">
-          I usually spend most of my time improving the product development of the companies I work for. Still, when I
-          feel like testing new technologies or ideas, I typically create a side project that I can experiment with and
-          build on. The projects vary from E-commerce, Stock Market, Investing, Math Equations, and more...
+          Get a glimpse into the various projects I&apos;ve tackled. From personal finance apps to voice-controlled
+          to-do lists, I bring a unique blend of technical know-how and creative flair to every project I take on.
+          Whether I&apos;m building an accessible online store or uncovering the beauty of mathematical patterns, I am
+          always seeking to challenge myself and bring my ideas to life. So have a look, and see for yourself the
+          projects that embody a bit of my passions and skills.
         </p>
 
         <ProjectItem
           title="Börsjakten"
-          description="A Swedish Personal Finance mobile app where one can learn the main concepts of investing and personal finance, such as the Stock Market, Real Estate, Cryptocurrencies, Savings, and Bank Loans. One can play around with a Stock Market sandbox too, where you can buy and sells stocks with fictional money."
+          description="Embark on a financial journey with Börsjakten, a personal finance mobile app designed to educate and entertain. Explore the world of investing and personal finance, from the stock market to real estate and everything in between, all while playing in a stock market sandbox with virtual funds. Built with Swift and SwiftUI, Börsjakten is the perfect tool for anyone looking to take control of their financial future."
           date="March 2022"
           imagePath="/images/projects/borsjakten-showcase.png"
           link="https://github.com/Nojze/borsjakten"
@@ -29,18 +31,19 @@ const Projects = () => {
         />
 
         <ProjectItem
-          title="Voice Recognition To-Do List"
-          description="In order to play around with the voice recognition technology I created a simple Voice Recognition To-Do List application where you can add, remove, and finish tasks with your voice (or manually)."
+          title="Voice-Controlled Productivity: A To-Do List App with Speech Recognition"
+          description="Simplify your task management with this cutting-edge voice recognition application. Add, remove, and mark tasks as done, all with the power of your voice. Built with React, TypeScript, and Styled Components, this to-do list app is the perfect blend of convenience and innovation."
           date="December 2020"
           imagePath="/images/projects/voice-recognition-todo-list-showcase.png"
           link="https://voice-todo.rydkvist.com/"
           technologies="Side Project · React, TypeScript, Styled Components"
           imageClassName="bg-neutral-100 dark:bg-neutral-800"
+          style={{ backgroundColor: '#70C9CD' }}
         />
 
         <ProjectItem
           title="Buysimple"
-          description="The concept of this work was to create an online store where the UX/UI of the website is suitable for all users, mainly focusing on the distribution of information, accessibility, and functionality of the website."
+          description="Experience seamless online shopping with Buysimple, a user-friendly e-commerce platform designed with accessibility and functionality in mind. With an emphasis on clear information distribution and intuitive navigation, Buysimple is the perfect destination for anyone looking for a smooth and enjoyable shopping experience. Built with HTML, CSS, Bootstrap, JavaScript, and PHP."
           date="May 2019"
           videoURL="https://www.youtube.com/embed/u7r7hiHJaS8"
           link="https://github.com/Nojze/buysimple"
@@ -49,13 +52,14 @@ const Projects = () => {
         />
 
         <ProjectItem
-          title="Mandelbrot Set"
-          description="A math programming project where I re-create the pattern of a Mandelbrot set using the knowledge I had in discrete mathematics and complex numbers."
+          title="Fractal Wonders: A Mandelbrot Set Exploration"
+          description="Dive into the world of mathematics with this programming project that re-creates the stunning patterns of the Mandelbrot set. Using my knowledge of discrete mathematics and complex numbers, I brought this intricate fractal to life with the help of C# and Windows Forms .NET. A true testament to the beauty and power of mathematics."
           date="April 2019"
           imagePath="/images/projects/mandelbrot-showcase.jpeg"
           link="https://github.com/Nojze/mandelbrot"
           technologies="Side Project · C#, Windows Forms .NET"
           imageClassName="bg-neutral-100 dark:bg-neutral-800"
+          style={{ backgroundColor: '#020B64' }}
         />
       </>
     </PageWrapper>

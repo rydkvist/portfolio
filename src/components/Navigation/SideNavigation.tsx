@@ -12,12 +12,12 @@ export const SideNavigation = () => {
 
       <ul className="mt-2 mb-4">
         <SideNavigationItem label="about-side" />
-        <SideNavigationItem label="projects-side" />
       </ul>
 
       <h3 className="px-2 text-sm text-neutral-600 font-medium dark:text-neutral-400 break-words">What I enjoy</h3>
 
       <ul className="mt-2 mb-4">
+        <SideNavigationItem label="projects-side" />
         <SideNavigationItem label="investments-side" />
         <SideNavigationItem label="music-side" />
       </ul>

@@ -6,7 +6,7 @@ import { InvestmentItem } from '../components/InvestmentItem';
 
 const Investments = () => {
   return (
-    <PageWrapper withTopInset className="lg:px-8 xl:px-32">
+    <PageWrapper withTopInset className="container px-8 md:px-16 lg:px-8 xl:px-32">
       <>
         <DefaultSeo title={`Investments – ${APP_TITLE_SUFFIX}`} />
         <Heading as="h1" className="mr-auto">
@@ -17,7 +17,7 @@ const Investments = () => {
           Below are some of my current investment holdings – some may be outdated.
         </p>
 
-        <Heading as="h2" className="mr-auto mb-4">
+        <Heading as="h2" className="mr-auto pb-4">
           Stocks
         </Heading>
 
@@ -27,7 +27,7 @@ const Investments = () => {
           ))}
         </ul>
 
-        <Heading as="h2" className="mr-auto mb-4">
+        <Heading as="h2" className="mr-auto pb-4">
           Funds
         </Heading>
 

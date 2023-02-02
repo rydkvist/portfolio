@@ -9,8 +9,8 @@ export const InvestmentItem = ({ name, description, url, imageSrc, investmentDat
   const urlTitle = `Visit ${name} website`;
 
   return (
-    <li className="flex flex-row items-start mb-8 pr-2 w-full lg:max-w-sm text-black dark:text-white">
-      <div className="mr-4 float-left">
+    <li className="flex flex-row items-start pb-8 pr-2 w-full lg:max-w-sm text-black dark:text-white">
+      <div className="mr-4">
         <div className={imageWrapperClass}>
           <Image src={imageSrc} alt={imageAlternativeText} layout="fill" />
         </div>
