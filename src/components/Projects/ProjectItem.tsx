@@ -10,6 +10,7 @@ type ProjectItemProps = {
   link: string;
   technologies: string;
   imageClassName?: string;
+  style?: {};
 };
 
 export const ProjectItem = ({
@@ -21,6 +22,7 @@ export const ProjectItem = ({
   link,
   technologies,
   imageClassName = 'bg-neutral-300',
+  style,
 }: ProjectItemProps) => {
   const isExternalLink = link.startsWith('http');
 
@@ -32,7 +34,7 @@ export const ProjectItem = ({
         rel="noreferrer"
         className="flex-col group w-full rounded-lg overflow-hidden ring-1 shadow-md ring-neutral-200 dark:ring-neutral-700 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 hover:dark:bg-neutral-700 hover:pointer transition-colors"
       >
-        <div className={`w-full h-80 relative rounded-t-lg mx-auto ${imageClassName}`}>
+        <div className={`w-full h-80 relative rounded-t-lg mx-auto ${imageClassName}`} style={style}>
           {imagePath ? (
             <Image src={imagePath} alt="Showcasing Börsjakten" layout="fill" objectFit="contain" priority />
           ) : (
@@ -51,7 +53,7 @@ export const ProjectItem = ({
         </div>
 
         <div className="flex-col px-4 py-3 text-neutral-600 dark:text-neutral-400">
-          <div className="flex flex-row justify-between text-neutral-700 dark:text-neutral-300 items-center mb-0.5">
+          <div className="flex flex-row justify-between text-neutral-700 dark:text-neutral-300 items-start mb-0.5">
             <div className="flex flex-row items-center">
               <p>{title}</p>
               {isExternalLink && (
@@ -61,7 +63,7 @@ export const ProjectItem = ({
               )}
             </div>
 
-            <p className="text-sm">{date}</p>
+            <p className="text-sm text-right pl-2">{date}</p>
           </div>
 
           <p className="text-sm leading-relaxed">{description}</p>
