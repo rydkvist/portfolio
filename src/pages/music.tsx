@@ -7,19 +7,15 @@ import { APP_TITLE_SUFFIX } from '../config';
 
 const Music = () => {
   return (
-    <PageWrapper>
+    <PageWrapper withTopInset>
       <>
         <DefaultSeo title={`Music – ${APP_TITLE_SUFFIX}`} />
         <Heading as="h1">Music</Heading>
-        <p className="text-neutral-700 text-center dark:text-neutral-300 mb-4">
-          Music I listen to 🎧 using the Spotify API
-          <br />
+        <p className="text-neutral-700 text-center dark:text-neutral-300 mb-8">
+          Find your next musical discovery with me 🎧 <br />
+          My Top 20 playlists updated via the Spotify API.
         </p>
         <SpotifyCurrentPlayback />
-
-        <p className="text-neutral-700 text-center text-sm dark:text-neutral-300 mt-8">
-          Maybe you caught me red-handed listening to something right now...?
-        </p>
 
         <hr className="my-2 divide-neutral-800 dark:divide-neutral-200" />
         <SpotifyTopTracks />

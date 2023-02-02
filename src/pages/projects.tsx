@@ -14,7 +14,7 @@ const Projects = () => {
         </Heading>
 
         <p className="w-full mb-8 text-neutral-600 dark:text-neutral-400">
-          Get a glimpse into the various projects I&apos;ve tackled. From personal finance apps to voice-controlled
+          Get a glimpse into the various side projects I&apos;ve tackled. From personal finance apps to voice-controlled
           to-do lists, I bring a unique blend of technical know-how and creative flair to every project I take on.
           Whether I&apos;m building an accessible online store or uncovering the beauty of mathematical patterns, I am
           always seeking to challenge myself and bring my ideas to life. So have a look, and see for yourself the

@@ -5,7 +5,7 @@ import { PageWrapper } from '../components/PageWrapper';
 
 const Landing = () => {
   return (
-    <PageWrapper>
+    <PageWrapper withTopInset>
       <>
         <Heading as="h1">Hey there! I&apos;m Niklas 👋🏼</Heading>
 

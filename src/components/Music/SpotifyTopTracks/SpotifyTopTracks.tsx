@@ -40,8 +40,8 @@ export const SpotifyTopTracks = () => {
   return (
     <div className="flex flex-col mt-4 w-full">
       <div className="flex flex-col justify-between items-center mb-6 md:mb-4">
-        <Heading as="h2" className="mb-3 text-center">
-          Top 20 Songs
+        <Heading as="h3" className="mb-3 text-center">
+          Discover my favorite tracks
         </Heading>
         <SpotifyTopRangePicker selectedTimeRange={selectedTimeRange} setSelectedTimeRange={setSelectedTimeRange} />
       </div>

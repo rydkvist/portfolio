@@ -32,7 +32,7 @@ export const InvestmentItem = ({ name, description, url, imageSrc, investmentDat
                 target="_blank"
                 className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-2 px-6 rounded-lg"
               >
-                See Stock Graph
+                View Stock Graph
               </a>
             </Link>
           </div>

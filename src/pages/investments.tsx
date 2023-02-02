@@ -14,7 +14,7 @@ const Investments = () => {
         </Heading>
 
         <p className="text-neutral-700 dark:text-neutral-300 mr-auto mb-4">
-          Below are some of my current investment holdings – some may be outdated.
+          This section showcases some of my current investment holdings, which may be subject to change over time.
         </p>
 
         <Heading as="h2" className="mr-auto pb-4">
