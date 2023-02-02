@@ -1,50 +1,42 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { InvestmentType } from '../config';
 
-type InvestmentType = {
-  companyName: string;
-  description: string;
-  companyHref: string;
-  companyImageSource?: string;
-  companyIcon?: JSX.Element;
-  date?: string;
-};
+const imageWrapperClass = 'w-10 h-10 relative overflow-hidden';
 
-const imageWrapperClass = 'max-w-10 max-h-10 w-full h-full relative overflow-hidden';
+export const InvestmentItem = ({ name, description, url, imageSrc, investmentDate }: InvestmentType) => {
+  const imageAlternativeText = `${name} logo`;
+  const urlTitle = `Visit ${name} website`;
 
-export const InvestmentItem = ({
-  companyName,
-  description,
-  companyHref,
-  companyImageSource,
-  companyIcon,
-  date,
-}: InvestmentType) => {
   return (
-    <li className="flex flex-row items-start p-2 text-black dark:text-white">
-      <div className="mr-4">
-        {companyIcon && companyHref ? (
-          <Link href={companyHref} passHref>
-            <a title={companyName} target="_blank" className={imageWrapperClass}>
-              {companyIcon}
-            </a>
-          </Link>
-        ) : (
-          <Link href={companyHref} passHref>
-            <a title={companyName} target="_blank" className={imageWrapperClass}>
-              <Image src={companyImageSource} alt={companyName} width={40} height={40} layout="fixed" />
-            </a>
-          </Link>
-        )}
+    <li className="flex flex-row items-start mb-8 pr-2 w-full lg:max-w-sm text-black dark:text-white">
+      <div className="mr-4 float-left">
+        <div className={imageWrapperClass}>
+          <Image src={imageSrc} alt={imageAlternativeText} layout="fill" />
+        </div>
       </div>
 
-      <div className="flex flex-col">
-        <p className="inline-flex items-start justify-between text-neutral-700 dark:text-neutral-300">
-          <span>{companyName}</span>
-
-          {date && <span className="text-xs">{date}</span>}
+      <div className="flex flex-col h-full">
+        <p className="leading-5 mb-1 text-neutral-700 dark:text-neutral-300">
+          <span className="font-medium text-ellipsis">{name}</span>
+          <br />
+          <span className="text-xs text-neutral-600 dark:text-neutral-400">invested since @ {investmentDate}</span>
         </p>
-        <p className="text-black dark:text-white">{description}</p>
+        <p className="text-black dark:text-white pb-4">{description}</p>
+
+        {url && (
+          <div className="inline-flex">
+            <Link href={url} passHref>
+              <a
+                title={urlTitle}
+                target="_blank"
+                className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-2 px-6 rounded-lg"
+              >
+                See Stock Graph
+              </a>
+            </Link>
+          </div>
+        )}
       </div>
     </li>
   );
