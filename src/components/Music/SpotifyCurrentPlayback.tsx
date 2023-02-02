@@ -97,7 +97,7 @@ export const SpotifyCurrentPlayback = () => {
       {currentPlayback.isPlaying && (
         <a
           href={currentPlayback.isPlaying ? currentPlayback.item.url : SPOTIFY_URL}
-          className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-1 px-5 mt-4 mb-2 rounded"
+          className="bg-blue-500 transition-all shadow-md hover:bg-blue-400 text-white text-sm py-1 px-5 mt-8 mb-2 rounded"
           target="_blank"
           rel="noreferrer"
         >
