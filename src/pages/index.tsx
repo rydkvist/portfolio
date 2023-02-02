@@ -7,9 +7,7 @@ const Landing = () => {
   return (
     <PageWrapper>
       <>
-        <Heading as="h1" className="text-center">
-          Hey there! I&apos;m Niklas 👋🏼
-        </Heading>
+        <Heading as="h1">Hey there! I&apos;m Niklas 👋🏼</Heading>
 
         <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
           <Image

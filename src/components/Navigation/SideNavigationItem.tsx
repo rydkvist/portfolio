@@ -54,15 +54,16 @@ export const SideNavigationItem = ({ label, rightIcon }: SideNavigationItemProps
           {innerContent()}
         </button>
       ) : (
-        <Link
-          href={hrefNavigationLink}
-          rel="noreferrer"
-          target={isExternalLink ? '_blank' : '_self'}
-          title={title}
-          className={itemClass}
-          scroll
-        >
-          {innerContent()}
+        <Link passHref href={hrefNavigationLink} scroll>
+          <a
+            href={hrefNavigationLink}
+            rel="noreferrer"
+            target={isExternalLink ? '_blank' : '_self'}
+            title={title}
+            className={itemClass}
+          >
+            {innerContent()}
+          </a>
         </Link>
       )}
     </li>
