@@ -107,7 +107,7 @@ export const SpotifyCurrentPlayback = () => {
       <p className="text-neutral-700 text-center text-sm dark:text-neutral-300 mt-4">
         {currentPlayback.isPlaying
           ? 'What do you think of the song so far? 👀'
-          : "Come back again when I'm listening to live!"}
+          : "Try coming back again when I'm listening something live!"}
       </p>
     </div>
   );

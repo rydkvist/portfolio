@@ -1,7 +1,5 @@
 import UserIcon16x16 from '../../../public/images/feather/user16x16.svg';
 import UserIcon20x20 from '../../../public/images/feather/user20x20.svg';
-import HomeIcon16x16 from '../../../public/images/feather/home16x16.svg';
-import HomeIcon20x20 from '../../../public/images/feather/home20x20.svg';
 import MessageCircleIcon16x16 from '../../../public/images/feather/message-circle16x16.svg';
 import MessageCircleIcon20x20 from '../../../public/images/feather/message-circle20x20.svg';
 import MusicIcon16x16 from '../../../public/images/feather/music16x16.svg';
