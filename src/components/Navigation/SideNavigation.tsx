@@ -3,8 +3,6 @@ import { SideNavigationItem } from './SideNavigationItem';
 import { ThemeToggler } from './ThemeToggler';
 
 export const SideNavigation = () => {
-  console.log('re-render');
-
   return (
     <nav
       role="navigation"
