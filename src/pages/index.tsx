@@ -27,9 +27,9 @@ const Landing = () => (
         while also keeping accessibility and test automation in mind.
         <br />
         <br />
-        When I&apos;m not knacking code, you can find me keeping an eye on the stock market, hitting the gym, exploring
-        new destinations, or making connections with interesting individuals. I believe in a balanced approach to life
-        and work, and make sure to allocate time for activities that keep me inspired and energized.
+        When I&apos;m not working on code, you can find me keeping an eye on the stock market, hitting the gym,
+        exploring new destinations, or making connections with interesting individuals. I believe in a balanced approach
+        to life and work, and make sure to allocate time for activities that keep me inspired and energized.
       </p>
 
       <Heading as="h2">My Tech Stack</Heading>
