@@ -48,7 +48,7 @@ const Landing = () => {
           <TechnologyItem value="CSS3" technologySourceImage="CSS3" />
         </ul>
 
-        <Heading as="h2">More Tech I&apos;m experienced with</Heading>
+        <Heading as="h2">Further Tech I&apos;m experienced in</Heading>
         {/* TODO: Maybe show the other technologies with a scrolling carousel? Like when companies show sponsors etc */}
         <p className="italic">
           NextJS, TailwindCSS, Cypress, Jest, Styled Components, Svelte, Sass, End-to-end testing, Unit testing,
