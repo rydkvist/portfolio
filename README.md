@@ -1,6 +1,6 @@
 # Portfolio
 
-My [portfolio website](https://www.rydkvist.com/), built with React, TypeScript, NextJS, and TailwindCSS.
+My [personal website](https://www.rydkvist.com/), built with React, TypeScript, Next.js, and TailwindCSS.
 
 ## Getting Started
 
