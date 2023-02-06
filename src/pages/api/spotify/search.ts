@@ -12,6 +12,8 @@ interface SpotifySearchRequest {
   offset: number;
 }
 
+// TODO: Implementation for Spotify Search in app
+
 export const spotifySearch = async (request: SpotifySearchRequest): Promise<any> => {
   const { access_token } = await getSpotifyAccessToken('private');
 
