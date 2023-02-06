@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import ExternalLinkIcon from '../../public/images/feather/external-link.svg';
-import { ProjectType } from '../db';
+import ExternalLinkIcon from '../../../public/images/feather/external-link.svg';
+import { ProjectType } from '../../db';
 
 export const ProjectItem = ({
   title,
@@ -16,7 +16,7 @@ export const ProjectItem = ({
   const isExternalLink = link.startsWith('http');
 
   return (
-    <div className="flex flex-col items-start mb-16">
+    <li className="flex flex-col items-start mb-16">
       <a
         href={link}
         target={isExternalLink ? '_blank' : '_self'}
@@ -59,6 +59,6 @@ export const ProjectItem = ({
           {technologies && <p className="text-xs mt-2">{technologies}</p>}
         </div>
       </a>
-    </div>
+    </li>
   );
 };

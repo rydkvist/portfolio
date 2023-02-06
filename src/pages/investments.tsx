@@ -2,42 +2,26 @@ import { DefaultSeo } from 'next-seo';
 import { Heading } from '../components/Heading';
 import { PageWrapper } from '../components/PageWrapper';
 import { APP_TITLE_SUFFIX } from '../config';
-import { InvestmentItem } from '../components/InvestmentItem';
-import { fundHoldings, stockHoldings } from '../db';
+import { StockList } from '../components/Investments/StockList';
+import { FundList } from '../components/Investments/FundList';
+import { Description } from '../components/Description';
 
-const Investments = () => (
-  <PageWrapper>
-    <>
-      <DefaultSeo title={`Investments – ${APP_TITLE_SUFFIX}`} />
-      <Heading as="h1" className="mr-auto">
-        Investments
-      </Heading>
+const Investments = () => {
+  const pageTitle = `Investments – ${APP_TITLE_SUFFIX}`;
 
-      <p className="text-neutral-700 dark:text-neutral-300 mr-auto mb-4">
+  return (
+    <PageWrapper>
+      <DefaultSeo title={pageTitle} />
+
+      <Heading as="h1">Investments</Heading>
+      <Description>
         This section showcases some of my current investment holdings, which may be subject to change over time.
-      </p>
+      </Description>
 
-      <Heading as="h2" className="mr-auto pb-4">
-        Stocks
-      </Heading>
-
-      <ul className="flex flex-wrap lg:justify-between">
-        {stockHoldings.map(investment => (
-          <InvestmentItem key={investment.name} {...investment} />
-        ))}
-      </ul>
-
-      <Heading as="h2" className="mr-auto pb-4">
-        Funds
-      </Heading>
-
-      <ul className="flex flex-wrap lg:justify-between">
-        {fundHoldings.map(investment => (
-          <InvestmentItem key={investment.name} {...investment} />
-        ))}
-      </ul>
-    </>
-  </PageWrapper>
-);
+      <StockList />
+      <FundList />
+    </PageWrapper>
+  );
+};
 
 export default Investments;

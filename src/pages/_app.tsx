@@ -12,8 +12,6 @@ import { ContactModal } from '../components/Contact/ContactModal';
 import { ThemeToggler } from '../components/Navigation/ThemeToggler';
 import { NavigationBrandLink } from '../components/Navigation/NavigationIcons';
 
-// TODO: Add overall accessibility functionality on all buttons, links, images
-
 const queryClient = new QueryClient();
 
 const App = ({ Component, pageProps }: AppProps) => {

@@ -8,7 +8,7 @@ type HeadingProps = {
 
 export const Heading = ({ as, className, children }: HeadingProps) => {
   if (as === 'h1') {
-    return <h1 className={`text-3xl text-center font-bold mb-6 ${className}`}>{children}</h1>;
+    return <h1 className={`text-3xl w-full font-bold mb-6 ${className}`}>{children}</h1>;
   }
 
   if (as === 'h2') {

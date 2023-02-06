@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { InvestmentType } from '../db';
+import { InvestmentType } from '../../db';
 
 const imageWrapperClass = 'w-12 h-12 relative overflow-hidden';
 
