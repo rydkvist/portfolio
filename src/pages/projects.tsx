@@ -1,63 +1,28 @@
 import { DefaultSeo } from 'next-seo';
+import { Description } from '../components/Description';
 import { Heading } from '../components/Heading';
 import { PageWrapper } from '../components/PageWrapper';
-import { ProjectItem } from '../components/Projects/ProjectItem';
+import { ProjectsList } from '../components/Projects/ProjectsList';
 import { APP_TITLE_SUFFIX } from '../config';
 
 const Projects = () => {
+  const pageTitle = `Projects – ${APP_TITLE_SUFFIX}`;
+
   return (
-    <PageWrapper withTopInset>
-      <>
-        <DefaultSeo title={`Projects – ${APP_TITLE_SUFFIX}`} />
-        <Heading as="h1" className="mr-auto">
-          Projects
-        </Heading>
+    <PageWrapper>
+      <DefaultSeo title={pageTitle} />
 
-        <p className="w-full mb-8 text-neutral-600 dark:text-neutral-400">
-          I usually spend most of my time improving the product development of the companies I work for. Still, when I
-          feel like testing new technologies or ideas, I typically create a side project that I can experiment with and
-          build on. The projects vary from E-commerce, Stock Market, Investing, Math Equations, and more...
-        </p>
+      <Heading as="h1">Projects</Heading>
 
-        <ProjectItem
-          title="Börsjakten"
-          description="A Swedish Personal Finance mobile app where one can learn the main concepts of investing and personal finance, such as the Stock Market, Real Estate, Cryptocurrencies, Savings, and Bank Loans. One can play around with a Stock Market sandbox too, where you can buy and sells stocks with fictional money."
-          date="March 2022"
-          imagePath="/images/projects/borsjakten-showcase.png"
-          link="https://github.com/Nojze/borsjakten"
-          technologies="Side Project · Swift & SwiftUI"
-        />
+      <Description>
+        Get a glimpse into the various side projects I&apos;ve tackled. From personal finance apps to voice-controlled
+        to-do lists, I bring a unique blend of technical know-how and creative flair to every project I take on. Whether
+        I&apos;m building an accessible online store or uncovering the beauty of mathematical patterns, I am always
+        seeking to challenge myself and bring my ideas to life. So have a look, and see for yourself the projects that
+        embody a bit of my passions and skills.
+      </Description>
 
-        <ProjectItem
-          title="Voice Recognition To-Do List"
-          description="In order to play around with the voice recognition technology I created a simple Voice Recognition To-Do List application where you can add, remove, and finish tasks with your voice (or manually)."
-          date="December 2020"
-          imagePath="/images/projects/voice-recognition-todo-list-showcase.png"
-          link="https://voice-todo.rydkvist.com/"
-          technologies="Side Project · React, TypeScript, Styled Components"
-          imageClassName="bg-neutral-100 dark:bg-neutral-800"
-        />
-
-        <ProjectItem
-          title="Buysimple"
-          description="The concept of this work was to create an online store where the UX/UI of the website is suitable for all users, mainly focusing on the distribution of information, accessibility, and functionality of the website."
-          date="May 2019"
-          videoURL="https://www.youtube.com/embed/u7r7hiHJaS8"
-          link="https://github.com/Nojze/buysimple"
-          technologies="Side Project · HTML, CSS, Bootstrap, JavaScript, PHP"
-          imageClassName="bg-neutral-50"
-        />
-
-        <ProjectItem
-          title="Mandelbrot Set"
-          description="A math programming project where I re-create the pattern of a Mandelbrot set using the knowledge I had in discrete mathematics and complex numbers."
-          date="April 2019"
-          imagePath="/images/projects/mandelbrot-showcase.jpeg"
-          link="https://github.com/Nojze/mandelbrot"
-          technologies="Side Project · C#, Windows Forms .NET"
-          imageClassName="bg-neutral-100 dark:bg-neutral-800"
-        />
-      </>
+      <ProjectsList />
     </PageWrapper>
   );
 };

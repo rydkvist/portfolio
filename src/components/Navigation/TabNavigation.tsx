@@ -11,7 +11,6 @@ export const TabNavigation = () => {
         <TabNavigationItem label="contact-tab" />
         <TabNavigationItem label="github-tab" />
         <TabNavigationItem label="linkedin-tab" />
-        <TabNavigationItem label="twitter-tab" />
       </ul>
     </nav>
   );

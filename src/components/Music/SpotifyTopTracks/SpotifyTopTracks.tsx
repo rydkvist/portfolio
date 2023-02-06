@@ -38,11 +38,15 @@ export const SpotifyTopTracks = () => {
   ) as FetchTopTracksResponse;
 
   return (
-    <div className="flex flex-col mt-4 w-full">
+    <div className="flex flex-col mt-6 w-full">
       <div className="flex flex-col justify-between items-center mb-6 md:mb-4">
-        <Heading as="h2" className="mb-3 text-center">
-          Top 20 Songs
+        <Heading as="h3" className="mb-3 text-center">
+          Discover my favorite tracks
         </Heading>
+
+        <p className="text-neutral-700 text-sm text-center mb-4 dark:text-neutral-300">
+          My Top 20 playlists updated via the Spotify API.
+        </p>
         <SpotifyTopRangePicker selectedTimeRange={selectedTimeRange} setSelectedTimeRange={setSelectedTimeRange} />
       </div>
 

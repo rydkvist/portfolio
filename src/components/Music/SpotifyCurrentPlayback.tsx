@@ -1,16 +1,9 @@
 import { useQuery } from 'react-query';
 import { GetCurrentPlaybackResponse } from '../../pages/api/spotify/current-playback';
-import { Heading } from '../Heading';
 import Image from 'next/image';
-import { SPOTIFY_URL } from '../../config';
 import { msDifferenceToPercentage, msToMinutesAndSeconds } from '../../utils/helpers';
 import { useEffect, useState } from 'react';
-import { SpotifyItem } from '../../pages/api/spotify/types';
-import { SpotifyTopTracksItem } from './SpotifyTopTracks/SpotifyTopTracksItem';
-import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../../pages/api/spotify';
 import { Spinner } from '../Spinner';
-
-// TODO: Fun feature – Let people queue songs for you, make some kind of notification too, or something to know that someone has queue a song from the website
 
 export const SpotifyCurrentPlayback = () => {
   const {
@@ -35,7 +28,6 @@ export const SpotifyCurrentPlayback = () => {
 
     const timer = setInterval(() => {
       if (!currentPlayback.isPlaying) return;
-      /* The miliseconds between currenttime and durationMS may differ on the accurracy */
       const hasFinishedTrack = currentTime >= currentPlayback?.item.durationMS;
 
       if (hasFinishedTrack) {
@@ -73,10 +65,10 @@ export const SpotifyCurrentPlayback = () => {
 
         {currentPlayback && (
           <>
-            <p className={`w-full text-sm text-neutral-800 dark:text-neutral-200 mb-1`}>Currently listening to</p>
+            <p className={`w-full font-medium text-sm text-neutral-800 dark:text-neutral-200 mb-1`}>Now playing</p>
             {currentPlayback.isPlaying ? (
               <>
-                <div className="flex flex-row mb-2">
+                <div className="flex flex-row mb-2 ">
                   <a
                     target="_blank"
                     rel="noreferrer"
