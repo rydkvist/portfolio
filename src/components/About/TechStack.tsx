@@ -8,9 +8,10 @@ export type TechStackType = {
 };
 
 const webDevTechnologies: Array<TechStackType> = [
+  { value: 'React', imageSrc: 'React' },
+  { value: 'Next.js', imageSrc: 'Next' },
   { value: 'TypeScript', imageSrc: 'TypeScript' },
   { value: 'JavaScript', imageSrc: 'JavaScript' },
-  { value: 'React', imageSrc: 'React' },
   { value: 'HTML5', imageSrc: 'HTML5' },
   { value: 'CSS3', imageSrc: 'CSS3' },
 ];
@@ -26,7 +27,7 @@ export const TechStack = () => {
     <>
       <Heading as="h2">My Tech Stack</Heading>
 
-      <Description>Web Development</Description>
+      <Description className="mt-8">Web Development</Description>
       <ul className="flex flex-row justify-center flex-wrap mb-8">
         {webDevTechnologies.map(technology => (
           <TechStackItem key={technology.value} {...technology} />
