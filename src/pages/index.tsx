@@ -23,13 +23,7 @@ const Landing = () => {
 const ProfilePicture = () => {
   return (
     <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full relative">
-      <Image
-        src="/images/me/NiklasMalmo.png"
-        alt="Picture of Niklas Rydkvist"
-        layout="fill"
-        objectFit="cover"
-        priority
-      />
+      <Image src="/images/me/Niklas.png" alt="Picture of Niklas Rydkvist" layout="fill" objectFit="cover" priority />
     </div>
   );
 };
