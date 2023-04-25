@@ -104,7 +104,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                 </div>
               </div>
 
-              <div className="flex md:w-full justify-center mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg overflow-scroll md:shadow-lg">
+              <div className="flex md:w-full justify-center mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg hide-scrollbar overflow-scroll md:shadow-lg">
                 <Component {...pageProps} />
               </div>
 
