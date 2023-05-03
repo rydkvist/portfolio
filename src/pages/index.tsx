@@ -4,6 +4,7 @@ import { FurtherTech } from '../components/About/FurtherTech';
 import { TechStack } from '../components/About/TechStack';
 import { Heading } from '../components/Heading';
 import { PageWrapper } from '../components/PageWrapper';
+import Link from 'next/link';
 
 const Landing = () => {
   return (
@@ -11,6 +12,19 @@ const Landing = () => {
       <Heading as="h1" className="text-center">
         Hey there! I&apos;m Niklas 👋🏼
       </Heading>
+
+      <Link href="/csr">
+        CSR page
+      </Link>
+      <Link href="/ssr">
+        SSR page
+      </Link>
+      <Link href="/ssg">
+        SSG page
+      </Link>
+      <Link href="/isr">
+        ISR page
+      </Link>
 
       <ProfilePicture />
       <Myself />

@@ -18,3 +18,6 @@ export const PERSONAL_EMAIL = 'niklas@rydkvist.com';
 export const PERSONAL_PHONE_NUMBER = '+46 70 377 11 04';
 export const PERSONAL_ADDRESS = 'Stockholm, Sweden';
 export const PERSONAL_ADDRESS_WITH_GOOGLE_MAPS = `https://maps.google.com/maps/search/${PERSONAL_ADDRESS}`;
+
+const isDevelopment = process.env.VERCEL_ENV === 'development';
+export const ABSOLUTE_WEBSITE_URL = isDevelopment ? 'http:/localhost:3000' : 'https://www.rydkvist.com';
