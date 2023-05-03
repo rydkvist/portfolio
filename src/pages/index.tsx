@@ -13,19 +13,6 @@ const Landing = () => {
         Hey there! I&apos;m Niklas 👋🏼
       </Heading>
 
-      <Link href="/csr">
-        CSR page
-      </Link>
-      <Link href="/ssr">
-        SSR page
-      </Link>
-      <Link href="/ssg">
-        SSG page
-      </Link>
-      <Link href="/isr">
-        ISR page
-      </Link>
-
       <ProfilePicture />
       <Myself />
       <TechStack />
