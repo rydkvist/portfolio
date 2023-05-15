@@ -88,17 +88,6 @@ export const projects: Array<ProjectType> = [
     technologies: 'Side Project · Swift & SwiftUI',
   },
   {
-    title: 'Voice-Controlled Productivity: A To-Do List App with Speech Recognition',
-    description:
-      'Simplify your task management with this cutting-edge voice recognition application. Add, remove, and mark tasks as done, all with the power of your voice. Built with React, TypeScript, and Styled Components, this to-do list app is the perfect blend of convenience and innovation.',
-    date: 'December 2020',
-    imagePath: '/images/projects/voice-recognition-todo-list-showcase.png',
-    link: 'https://voice-todo.rydkvist.com/',
-    technologies: 'Side Project · React, TypeScript, Styled Components',
-    imageClassName: 'bg-neutral-100 dark:bg-neutral-800',
-    style: { backgroundColor: '#70C9CD' },
-  },
-  {
     title: 'Buysimple',
     description:
       'Experience seamless online shopping with Buysimple, a user-friendly e-commerce platform designed with accessibility and functionality in mind. With an emphasis on clear information distribution and intuitive navigation, Buysimple is the perfect destination for anyone looking for a smooth and enjoyable shopping experience. Built with HTML, CSS, Bootstrap, JavaScript, and PHP.',
