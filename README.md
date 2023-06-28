@@ -1,26 +1,9 @@
-# Portfolio
+Hej Niklas,
+Compileit är ett mindre bolag som är grundat av två utvecklare, sök efter Jonathan Ortheden och Isak Utegård på Linkedin om du är nyfiken på vilka de är.
 
-My [personal website](https://www.rydkvist.com/), built with React, TypeScript, Next.js, and TailwindCSS.
+Jag tror din erfarenhet som utvecklare skulle passa perfekt in hos oss samt dina kunskaper inom TypeScript, React.js och Node.js! Vi ställs dagligen inför nya problem som jag tror kan vara utmanande för någon med din bakgrund.
 
-## Getting Started
+Vad säger du om att ta ett digitalt möte med Isak (grundare & CTO) för att prata vidare nästa vecka?
 
-### Installation
-
-Make sure to have installed the following dependency:
-
-- [NodeJS](https://nodejs.org/)
-
-### Running
-
-1. Clone the repository: `git clone git@github.nojze/portfolio.git`
-2. Go into the directory of the project: `cd portfolio`
-3. Install packages: `npm install`
-4. Start the project: `npm run dev`
-5. Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-## Author
-
-Niklas Rydkvist: [niklas@rydkvist.com](mailto:niklas@rydkvist.com)
-
-## License
-Nojze's Portfolio is available under the [MIT license](https://github.com/Nojze/portfolio/blob/main/LICENSE).
+Allt gott, Victoria Norling på Compiliet
+Victoria.norling@compileit.com
