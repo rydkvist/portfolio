@@ -95,7 +95,7 @@ export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
 export const navigationAccessibilityClass = ''; //' focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-600';
 
 export const NavigationBrandLink = () => (
-  <Link href={APP_HOME_URL} passHref scroll>
+  <Link legacyBehavior={true} href={APP_HOME_URL} passHref scroll>
     <a
       className={`flex flex-col flex-wrap uppercase text-lg md:text-base tracking-wide rounded-md font-medium px-2 break-words ${navigationAccessibilityClass}`}
     >

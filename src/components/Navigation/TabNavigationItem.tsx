@@ -38,7 +38,7 @@ export const TabNavigationItem = ({ label }: TabNavigationItemProps) => {
           <span>{NavigationIcons[label]}</span>
         </button>
       ) : (
-        <Link passHref href={hrefNavigationLink} scroll>
+        <Link legacyBehavior={true} passHref href={hrefNavigationLink} scroll>
           <a
             href={hrefNavigationLink}
             rel="noreferrer"

@@ -54,7 +54,7 @@ export const SideNavigationItem = ({ label, rightIcon }: SideNavigationItemProps
           {innerContent()}
         </button>
       ) : (
-        <Link passHref href={hrefNavigationLink} scroll>
+        <Link legacyBehavior={true} passHref href={hrefNavigationLink} scroll>
           <a
             href={hrefNavigationLink}
             rel="noreferrer"
