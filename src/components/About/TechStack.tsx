@@ -8,18 +8,16 @@ export type TechStackType = {
 };
 
 const webDevTechnologies: Array<TechStackType> = [
+  { value: 'JavaScript', imageSrc: 'JavaScript' },
+  { value: 'TypeScript', imageSrc: 'TypeScript' },
   { value: 'React', imageSrc: 'React' },
   { value: 'Next.js', imageSrc: 'Next' },
-  { value: 'TypeScript', imageSrc: 'TypeScript' },
-  { value: 'JavaScript', imageSrc: 'JavaScript' },
-  { value: 'HTML5', imageSrc: 'HTML5' },
-  { value: 'CSS3', imageSrc: 'CSS3' },
 ];
 
 const appDevTechnologies: Array<TechStackType> = [
+  { value: 'React Native', imageSrc: 'React' },
   { value: 'Swift', imageSrc: 'Swift' },
   { value: 'SwiftUI', imageSrc: 'SwiftUI' },
-  { value: 'React Native', imageSrc: 'ReactNative' },
 ];
 
 export const TechStack = () => {
@@ -27,15 +25,15 @@ export const TechStack = () => {
     <>
       <Heading as="h2">My Tech Stack</Heading>
 
-      <Description className="mt-8">Web Development</Description>
-      <ul className="flex flex-row justify-center flex-wrap mb-8">
+      <Description className="mt-8">Web Applications</Description>
+      <ul className="flex flex-row justify-center gap-1 flex-wrap mb-8">
         {webDevTechnologies.map(technology => (
           <TechStackItem key={technology.value} {...technology} />
         ))}
       </ul>
 
-      <Description>App Development</Description>
-      <ul className="flex flex-row justify-center flex-wrap">
+      <Description>Mobile Applications</Description>
+      <ul className="flex flex-row justify-center gap-1 flex-wrap">
         {appDevTechnologies.map(technology => (
           <TechStackItem key={technology.value} {...technology} />
         ))}

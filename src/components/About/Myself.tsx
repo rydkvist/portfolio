@@ -1,20 +1,42 @@
 import { Description } from '../Description';
 import { Heading } from '../Heading';
 
+const totalYearsOfExperience = new Date().getFullYear() - 2018;
+
 export const Myself = () => (
   <>
-    <Heading as="h2">Who am I?</Heading>
+    <Heading as="h2">My Story</Heading>
     <Description>
-      I&apos;m a Software Engineer with 5 years of experience under my belt, bringing a unique mix of technical skills,
-      problem-solving abilities, and a passion for innovation to every project I work on. I&apos;m all about front-end
-      and iOS development technologies like React, TypeScript, Next.js, React Native, Swift, SwiftUI and more. I love
-      paying attention to detail and always strive to deliver the best user experience (UX/UI) possible, while also
-      keeping accessibility and test automation in mind.
+      Hi, I’m Niklas. My tech journey began in the pixelated landscapes of Habbo Hotel and Minecraft servers when I was
+      younger, where I first experienced the thrill of creating servers and building communities. These formative
+      experiences, from leading staff teams in virtual worlds to running my own Minecraft server with a 10,000-strong
+      user base and its online webstore, laid the groundwork for my career in software development, focusing on frontend
+      expertise.
       <br />
       <br />
-      When I&apos;m not working on code, you can find me keeping an eye on the stock market, hitting the gym, exploring
-      new destinations, or making connections with interesting individuals. I believe in a balanced approach to life and
-      work, and make sure to allocate time for activities that keep me inspired and energized.
+      With over {totalYearsOfExperience} years of professional experience, I’ve transitioned from those playful
+      beginnings to mastering technologies within the web and mobile landscapes, such as TypeScript, React, Node.js,
+      Next.js, React Native, Swift, and many more. My approach to software development is deeply rooted in putting the
+      user first, a perspective honed from my early experiences in creating engaging online communities. This
+      user-focused mindset, coupled with a keen eye for UX/UI, drives me to craft interfaces that are intuitive,
+      functional, and visually appealing.
+      <br />
+      <br />
+      My work today is a reflection of that journey: a blend of creative innovation and technical skills. It&apos;s
+      shaped by a lifelong curiosity and a dedication to personal and professional growth, adapting and thriving in the
+      rapidly advancing world of software development.
+    </Description>
+    <Heading as="h2">Outside of Work</Heading>
+    <Description>
+      When I step away from my computer, there&apos; always something going on. Beyond keeping up with the latest tech
+      trends, I&apos;m all about enjoying the world outside. You might find me exploring new places, working out, or
+      updating my stock portfolio. I love trying out different cuisines, immersing myself in new environments, and just
+      hanging out, exchanging stories and experiences with people I meet along the way.
+      <br />
+      <br />
+      Growing up with the internet, playing games, and building things as a kid, my love for tech has always been a big
+      part of my life. It&apos;s this love that keeps me excited about every new project I tackle, ensuring that I put
+      my all into the work I do and the life I live.
     </Description>
   </>
 );

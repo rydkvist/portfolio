@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import { Myself } from '../components/About/Myself';
-import { FurtherTech } from '../components/About/FurtherTech';
+import { MoreTech } from '../components/About/MoreTech';
 import { TechStack } from '../components/About/TechStack';
 import { Heading } from '../components/Heading';
 import { PageWrapper } from '../components/PageWrapper';
-import Link from 'next/link';
 
 const Landing = () => {
   return (
@@ -16,7 +15,7 @@ const Landing = () => {
       <ProfilePicture />
       <Myself />
       <TechStack />
-      <FurtherTech />
+      <MoreTech />
     </PageWrapper>
   );
 };
@@ -24,7 +23,7 @@ const Landing = () => {
 const ProfilePicture = () => {
   return (
     <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full border-black dark:border-white border relative">
-      <Image src="/images/me/Niklas.png" alt="Picture of Niklas Rydkvist" layout="fill" objectFit="cover" priority />
+      <Image src="/images/about/Niklas.png" alt="Picture of Niklas Rydkvist" layout="fill" objectFit="cover" priority />
     </div>
   );
 };

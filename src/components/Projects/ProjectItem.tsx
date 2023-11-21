@@ -54,9 +54,12 @@ export const ProjectItem = ({
 
             <p className="text-sm text-right pl-2">{date}</p>
           </div>
-
           <p className="text-sm leading-relaxed">{description}</p>
-          {technologies && <p className="text-xs mt-2">{technologies}</p>}
+          {technologies && (
+            <p className="text-xs mt-2">
+              <b>Technologies:</b> {technologies}
+            </p>
+          )}
         </div>
       </a>
     </li>

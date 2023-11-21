@@ -31,10 +31,16 @@ export const stockHoldings: Array<InvestmentType> = [
     investmentDate: 'June 2021',
   },
   {
-    name: 'SBB',
-    imageSrc: '/images/companies/SBB.png',
-    url: 'https://www.avanza.se/aktier/om-aktien.html/517316/samhallsbyggnadsbo--i-norden-b',
-    investmentDate: 'July 2022',
+    name: 'Avanza',
+    imageSrc: '/images/companies/Avanza.png',
+    url: 'https://www.avanza.se/aktier/om-aktien.html/5361/avanza-bank-holding',
+    investmentDate: 'July 2023',
+  },
+  {
+    name: 'Volvo Cars',
+    imageSrc: '/images/companies/VolvoCars.jpeg',
+    url: 'https://www.avanza.se/aktier/om-aktien.html/1296604/volvo-car-b',
+    investmentDate: 'May 2023',
   },
   {
     name: 'Ethereum',
@@ -52,16 +58,16 @@ export const fundHoldings: Array<InvestmentType> = [
     investmentDate: 'January 2020',
   },
   {
+    name: 'Swedbank Robur Technology A',
+    imageSrc: '/images/companies/Swedbank.png',
+    url: 'https://www.avanza.se/fonder/om-fonden.html/363/swedbank-robur-technology-a',
+    investmentDate: 'May 2023',
+  },
+  {
     name: 'Handelsbanken Hållbar Energi A1 SEK',
     imageSrc: '/images/companies/Handelsbanken.png',
     url: 'https://www.avanza.se/fonder/om-fonden.html/512559/handelsbanken-hallbar-energi-a1-sek',
     investmentDate: 'January 2020',
-  },
-  {
-    name: 'TIN Ny Teknik A',
-    imageSrc: '/images/companies/TIN.png',
-    url: 'https://www.avanza.se/fonder/om-fonden.html/927735/tin-ny-teknik-a',
-    investmentDate: 'July 2021',
   },
 ];
 
@@ -79,33 +85,31 @@ export type ProjectType = {
 
 export const projects: Array<ProjectType> = [
   {
+    title: 'TripPlanner',
+    description:
+      "Unveil the ease of travel with TripPlanner, an AI-powered itinerary genius that simplifies your voyage planning. Born during the AI boom, this tool harnesses the power of Next.js, React, and OpenAI to transform your travel queries into comprehensive, actionable plans. Whether you're dreaming of the beaches in Thailand, the bustling streets of Vietnam, or the majestic landscapes of South Africa, TripPlanner takes your destination and crafts a personalized journey just for you. Dive into the future of travel and let your next adventure begin with a click.",
+    date: 'May 2023',
+    link: 'https://trip-planner.rydkvist.com/',
+    imagePath: '/images/projects/trip-planner-showcase.jpg',
+    technologies: 'Next.js, React, OpenAI',
+  },
+  {
     title: 'Börsjakten',
     description:
       'Embark on a financial journey with Börsjakten, a personal finance mobile app designed to educate and entertain. Explore the world of investing and personal finance, from the stock market to real estate and everything in between, all while playing in a stock market sandbox with virtual funds. Built with Swift and SwiftUI, Börsjakten is the perfect tool for anyone looking to take control of their financial future.',
     date: 'March 2022',
     imagePath: '/images/projects/borsjakten-showcase.png',
     link: 'https://github.com/Nojze/borsjakten',
-    technologies: 'Side Project · Swift & SwiftUI',
+    technologies: 'Swift, SwiftUI, Stock Market',
   },
   {
     title: 'Buysimple',
     description:
       'Experience seamless online shopping with Buysimple, a user-friendly e-commerce platform designed with accessibility and functionality in mind. With an emphasis on clear information distribution and intuitive navigation, Buysimple is the perfect destination for anyone looking for a smooth and enjoyable shopping experience. Built with HTML, CSS, Bootstrap, JavaScript, and PHP.',
-    date: 'May 2019',
+    date: 'May 2018',
     videoURL: 'https://www.youtube.com/embed/u7r7hiHJaS8',
     link: 'https://github.com/Nojze/buysimple',
-    technologies: 'Side Project · HTML, CSS, Bootstrap, JavaScript, PHP',
+    technologies: 'HTML, CSS, Bootstrap, JavaScript, PHP',
     imageClassName: 'bg-neutral-50',
-  },
-  {
-    title: 'Fractal Wonders: A Mandelbrot Set Exploration',
-    description:
-      'Dive into the world of mathematics with this programming project that re-creates the stunning patterns of the Mandelbrot set. Using my knowledge of discrete mathematics and complex numbers, I brought this intricate fractal to life with the help of C# and Windows Forms .NET. A true testament to the beauty and power of mathematics.',
-    date: 'April 2019',
-    imagePath: '/images/projects/mandelbrot-showcase.jpeg',
-    link: 'https://github.com/Nojze/mandelbrot',
-    technologies: 'Side Project · C#, Windows Forms .NET',
-    imageClassName: 'bg-neutral-100 dark:bg-neutral-800',
-    style: { backgroundColor: '#020B64' },
   },
 ];

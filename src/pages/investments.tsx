@@ -6,22 +6,20 @@ import { StockList } from '../components/Investments/StockList';
 import { FundList } from '../components/Investments/FundList';
 import { Description } from '../components/Description';
 
-const Investments = () => {
-  const pageTitle = `Investments – ${APP_TITLE_SUFFIX}`;
+const pageTitle = `Investments – ${APP_TITLE_SUFFIX}`;
 
-  return (
-    <PageWrapper>
-      <DefaultSeo title={pageTitle} />
+const Investments = () => (
+  <PageWrapper>
+    <DefaultSeo title={pageTitle} />
 
-      <Heading as="h1">Investments</Heading>
-      <Description>
-        This section showcases some of my current investment holdings, which may be subject to change over time.
-      </Description>
+    <Heading as="h1">Investments</Heading>
+    <Description>
+      This section showcases some of my current investment holdings, which may change over time.
+    </Description>
 
-      <StockList />
-      <FundList />
-    </PageWrapper>
-  );
-};
+    <StockList />
+    <FundList />
+  </PageWrapper>
+);
 
 export default Investments;
