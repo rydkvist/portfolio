@@ -31,7 +31,7 @@ export const getSpotifyAccessToken = async (scope: SpotifyAccessTokenScope) => {
       break;
   }
 
-  const response = await fetch(TOKEN_ENDPOINT, {
+  const token = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
       Authorization: `Basic ${basic}`,
@@ -43,5 +43,5 @@ export const getSpotifyAccessToken = async (scope: SpotifyAccessTokenScope) => {
     }),
   });
 
-  return response.json();
+  return token.json();
 };

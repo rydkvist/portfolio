@@ -14,8 +14,17 @@ export type GetCurrentPlaybackResponse = {
   trackQueue: SpotifyItem[];
 };
 
+
 const getCurrentPlayback = async (_: NextApiRequest, res: NextApiResponse) => {
   const { access_token: spotifyToken } = await getSpotifyAccessToken('playback-state');
+
+  if (!spotifyToken) {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('No Spotify token found');
+    } else {
+      res.status(200).json({ isPlaying: false });
+    }
+  }
 
   const response = await fetch(`${API_SPOTIFY_URL}/me/player`, {
     headers: {

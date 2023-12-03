@@ -23,17 +23,15 @@ export const msDifferenceToPercentage = (ms1: number, ms2: number) => {
   return (ms1 / ms2) * 100;
 };
 
-type Parameter = string | number | Date;
-
-export const toQueryString = (keyValuePairs: Record<string, Parameter | undefined>): string => {
+export function toQueryString<T>(keyValuePairs: Record<string, T>): string {
   if (!keyValuePairs) {
     return '';
   }
-  const entries = Object.entries(keyValuePairs).filter(
-    ([, value]) => typeof value !== 'undefined' && value !== null
-  ) as [string, Parameter][];
-  if (entries.length === 0) {
-    return '';
+
+  const entries = Object.entries(keyValuePairs).filter(([, value]) => value !== undefined && value !== null);
+  if (entries.length > 0) {
+    return `?${entries.map(([key, value]) => `${key}=${value}`).join('&')}`;
   }
-  return `?${entries.map(([key, value]: [string, Parameter]) => `${key}=${value}`).join('&')}`;
-};
+
+  return '';
+}
