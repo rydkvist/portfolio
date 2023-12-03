@@ -5,10 +5,12 @@ type PageWrapperProps = {
 };
 
 export const PageWrapper = ({ children }: PageWrapperProps) => {
-  const pageWrapper = useRef(null);
+  const pageWrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    pageWrapper.current.scrollIntoView();
+    if (pageWrapper.current) {
+      pageWrapper.current.scrollIntoView();
+    }
   }, []);
 
   return (

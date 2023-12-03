@@ -1,5 +1,6 @@
 import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../spotify';
-import { SpotifyDevice, SpotifyItem } from './types';
+import { ServerSpotifyItem, SpotifyDevice, SpotifyItem } from './types';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 // https://developer.spotify.com/documentation/web-api/reference/#/operations/get-information-about-the-users-current-playback
 
@@ -13,7 +14,7 @@ export type GetCurrentPlaybackResponse = {
   trackQueue: SpotifyItem[];
 };
 
-const getCurrentPlayback = async (_, res): Promise<GetCurrentPlaybackResponse> => {
+const getCurrentPlayback = async (_: NextApiRequest, res: NextApiResponse) => {
   const { access_token: spotifyToken } = await getSpotifyAccessToken('playback-state');
 
   const response = await fetch(`${API_SPOTIFY_URL}/me/player`, {
@@ -23,7 +24,7 @@ const getCurrentPlayback = async (_, res): Promise<GetCurrentPlaybackResponse> =
   });
 
   if (response.status === 204 || response.status > 400) {
-    return res.status(200).json({ isPlaying: false });
+    res.status(200).json({ isPlaying: false });
   }
 
   const trackQueueResponse = await fetch(`${API_SPOTIFY_URL}/me/player/queue`, {
@@ -55,10 +56,12 @@ const getCurrentPlayback = async (_, res): Promise<GetCurrentPlaybackResponse> =
       : [],
   };
 
-  return res.status(200).json(currentPlaybackResponse);
+  res.status(200).json(currentPlaybackResponse);
 };
 
-const formatSpotifyItem = (item: any): SpotifyItem => {
+// Lots of refactoring to do, and better use of better typings in the codebase overall
+
+const formatSpotifyItem = (item: ServerSpotifyItem): SpotifyItem => {
   return {
     id: item.id,
     album: {

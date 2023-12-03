@@ -18,7 +18,9 @@ export const SpotifyTopTracksItem = ({ track, index }: SpotifyTopTracksItemProps
       className={`flex flex-row w-full md:w-64 items-start bg-neutral-200 dark:bg-neutral-700 shadow-sm p-2 rounded-md mt-1 mb-4 mr-0 md:mr-6 transition-all focus:scale-105 hover:scale-105 ${navigationAccessibilityClass}`}
     >
       <span className="overflow-hidden rounded-sm w-12 h-12 relative mr-2">
-        <Image src={track.album.imageURL} alt={track.name} layout="fill" objectFit="contain" />
+        {track.album?.imageURL && (
+          <Image src={track.album.imageURL} alt={track.name} layout="fill" objectFit="contain" />
+        )}
       </span>
 
       <div className="flex flex-col">

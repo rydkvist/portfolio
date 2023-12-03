@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Script from 'next/script';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import type { AppProps } from 'next/app';
 import { APP_DESCRIPTION, APP_SLOGAN, APP_TITLE_SUFFIX, APP_WEBSITE_URL } from '../config';

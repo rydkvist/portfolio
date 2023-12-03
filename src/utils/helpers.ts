@@ -9,7 +9,11 @@ export const getBrowserTheme = (): Theme => {
   return theme;
 };
 
-export const msToMinutesAndSeconds = (ms: number) => {
+export const msToMinutesAndSeconds = (ms?: number) => {
+  if (!ms) {
+    return '0:00';
+  }
+
   const minutes = Math.floor(ms / 60000);
   const seconds = ((ms % 60000) / 1000).toFixed(0);
   return `${minutes}:${Number(seconds) < 10 ? '0' : ''}${seconds}`;

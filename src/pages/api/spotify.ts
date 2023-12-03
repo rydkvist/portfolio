@@ -9,7 +9,7 @@ const TOKEN_ENDPOINT = `${ACCOUNTS_SPOTIFY_URL}/api/token`;
 type SpotifyAccessTokenScope = 'playback-state' | 'recently-played' | 'currently-playing' | 'top-read' | 'private';
 
 export const getSpotifyAccessToken = async (scope: SpotifyAccessTokenScope) => {
-  var processEnvRefreshToken = '';
+  let processEnvRefreshToken;
 
   switch (scope) {
     case 'playback-state':
