@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { getBrowserTheme } from '../utils/helpers';
 
 export type Theme = 'light' | 'dark';
@@ -31,7 +31,7 @@ export const SettingsContext = createContext<SettingsContextType>({
   setIsContactModalOpen: () => null,
 });
 
-export const SettingsProvider = ({ children }) => {
+export const SettingsProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('light');
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 

@@ -7,11 +7,12 @@ export const Myself = () => (
   <>
     <Heading as="h2">My Story</Heading>
     <Description>
-      Hi, I’m Niklas. My tech journey began in the pixelated landscapes of Habbo Hotel and Minecraft servers when I was
-      younger, where I first experienced the thrill of creating servers and building communities. These formative
-      experiences, from leading staff teams in virtual worlds to running my own Minecraft server with a 10,000-strong
-      user base and its online webstore, laid the groundwork for my career in software development, focusing on frontend
-      expertise.
+      Hey there! I&apos;m a Software Engineer based in Stockholm, with roots stretching all the way to the southern
+      coast of Spain. My journey began in the pixelated landscapes of Minecraft Servers and Habbo Hotel, where I first
+      experienced the thrill of building multiplayer servers and online communities. These early experiences, from
+      leading staff teams in virtual worlds to running my own Minecraft server with a 10,000-strong user base and its
+      online webstore, laid the groundwork for my career in software development, focusing on web and mobile app
+      development.
       <br />
       <br />
       With over {totalYearsOfExperience} years of professional experience, I’ve transitioned from those playful

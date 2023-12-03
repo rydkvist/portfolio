@@ -9,7 +9,7 @@ const Landing = () => {
   return (
     <PageWrapper>
       <Heading as="h1" className="text-center">
-        Hey there! I&apos;m Niklas 👋🏼
+        Hi! I&apos;m Niklas 👋🏼
       </Heading>
 
       <ProfilePicture />

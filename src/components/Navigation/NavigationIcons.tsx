@@ -39,7 +39,7 @@ export type NavigationIcon =
   | 'linkedin-side'
   | 'linkedin-tab';
 
-export const NavigationIcons: Record<NavigationIcon, JSX.Element> = {
+export const NavigationIcons = {
   'about-side': <UserIcon16x16 />,
   'about-tab': <UserIcon20x20 />,
   'projects-side': <CodeIcon16x16 />,
@@ -54,9 +54,9 @@ export const NavigationIcons: Record<NavigationIcon, JSX.Element> = {
   'github-tab': <GitHubIcon20x20 />,
   'linkedin-side': <LinkedInIcon16x16 />,
   'linkedin-tab': <LinkedInIcon20x20 />,
-};
+} as const;
 
-export const NavigationLinks: Record<NavigationIcon, string> = {
+export const NavigationLinks = {
   'about-side': APP_HOME_URL,
   'about-tab': APP_HOME_URL,
   'projects-side': APP_PROJECTS_URL,
@@ -71,9 +71,9 @@ export const NavigationLinks: Record<NavigationIcon, string> = {
   'github-tab': GITHUB_URL,
   'linkedin-side': LINKEDIN_URL,
   'linkedin-tab': LINKEDIN_URL,
-};
+} as const;
 
-export const getNavigationTitle = (navigationIcon: NavigationIcon): string => {
+export const getNavigationTitle = (navigationIcon: NavigationIcon) => {
   switch (navigationIcon) {
     case 'about-side' || 'about-tab':
       return 'About';

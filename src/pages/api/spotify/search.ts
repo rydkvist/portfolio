@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import { toQueryString } from '../../../utils/helpers';
 import { API_SPOTIFY_URL, getSpotifyAccessToken } from '../spotify';
 
@@ -31,19 +32,25 @@ export const spotifySearch = async (request: SpotifySearchRequest): Promise<any>
   });
 };
 
-const getSpotifySearch = async (req, res): Promise<any> => {
-  const request = req.query as SpotifySearchRequest;
-  const response = await spotifySearch(request);
+const getSpotifySearch = async (req: NextApiRequest, res: NextApiResponse) => {
+  const request = req.query;
+
+  const response = await spotifySearch({
+    searchQuery: request.searchQuery as string,
+    type: request.type as SpotifySearchType,
+    limit: parseInt(request.limit as string),
+    offset: parseInt(request.offset as string),
+  });
 
   if (response.status === 204 || response.status > 400) {
-    return res.status(200).json({});
+    res.status(200).json({});
   }
 
   const responseJSON = await response.json();
 
   const searchResponse: any = { ...responseJSON };
 
-  return res.status(200).json(searchResponse);
+  res.status(200).json(searchResponse);
 };
 
 export default getSpotifySearch;
