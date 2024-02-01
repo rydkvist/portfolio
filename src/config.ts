@@ -10,7 +10,7 @@ export const APP_SLOGAN = 'Niklas Rydkvist';
 export const APP_DESCRIPTION =
   'Niklas Rydkvist is a Software Engineer based in Stockholm, Sweden. He is passionate about building software that facilitates the day-to-day life of people.';
 
-export const GITHUB_URL = 'https://github.com/Nojze';
+export const GITHUB_URL = 'https://github.com/rydkvist';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/niklasrydkvist/';
 export const SPOTIFY_URL = 'https://open.spotify.com/user/1123710739';
 

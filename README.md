@@ -12,7 +12,7 @@ Make sure to have installed the following dependency:
 
 ### Running
 
-1. Clone the repository: `git clone git@github.nojze/portfolio.git`
+1. Clone the repository: `git clone git@github.rydkvist/portfolio.git`
 2. Go into the directory of the project: `cd portfolio`
 3. Install packages: `npm install`
 4. Start the project: `npm run dev`
@@ -23,4 +23,4 @@ Make sure to have installed the following dependency:
 Niklas Rydkvist: [niklas@rydkvist.com](mailto:niklas@rydkvist.com)
 
 ## License
-Nojze's Portfolio is available under the [MIT license](https://github.com/Nojze/portfolio/blob/main/LICENSE).
+Rydkvist's Portfolio is available under the [MIT license](https://github.com/rydkvist/portfolio/blob/main/LICENSE).

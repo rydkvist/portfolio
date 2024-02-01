@@ -99,7 +99,7 @@ export const projects: Array<ProjectType> = [
       'Embark on a financial journey with Börsjakten, a personal finance mobile app designed to educate and entertain. Explore the world of investing and personal finance, from the stock market to real estate and everything in between, all while playing in a stock market sandbox with virtual funds. Built with Swift and SwiftUI, Börsjakten is the perfect tool for anyone looking to take control of their financial future.',
     date: 'March 2022',
     imagePath: '/images/projects/borsjakten-showcase.png',
-    link: 'https://github.com/Nojze/borsjakten',
+    link: 'https://github.com/rydkvist/borsjakten',
     technologies: 'Swift, SwiftUI, Stock Market',
   },
   {
@@ -108,7 +108,7 @@ export const projects: Array<ProjectType> = [
       'Experience seamless online shopping with Buysimple, a user-friendly e-commerce platform designed with accessibility and functionality in mind. With an emphasis on clear information distribution and intuitive navigation, Buysimple is the perfect destination for anyone looking for a smooth and enjoyable shopping experience. Built with HTML, CSS, Bootstrap, JavaScript, and PHP.',
     date: 'May 2018',
     videoURL: 'https://www.youtube.com/embed/u7r7hiHJaS8',
-    link: 'https://github.com/Nojze/buysimple',
+    link: 'https://github.com/rydkvist/buysimple',
     technologies: 'HTML, CSS, Bootstrap, JavaScript, PHP',
     imageClassName: 'bg-neutral-50',
   },
