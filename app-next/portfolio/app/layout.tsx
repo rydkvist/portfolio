@@ -6,6 +6,10 @@ import { SideNavigation } from './_domains/sitewide/SideNavigation';
 import { common } from './_lib/labels/common';
 import Script from 'next/script';
 import { ReactNode } from 'react';
+import { MobileOnly } from './_components/MobileOnly';
+import { TabNavigation } from './_domains/sitewide/TabNavigation';
+import { BrandLink } from './_domains/sitewide/BrandLink';
+import { ToggleTheme } from './_components/ToggleTheme';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -34,9 +38,20 @@ export default function RootLayout({
               <SideNavigation />
             </div>
 
+            <MobileOnly tag="header">
+              <BrandLink />
+              <div className="mr-2">
+                <ToggleTheme />
+              </div>
+            </MobileOnly>
+
             <main className="flex md:w-full justify-center mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg hide-scrollbar overflow-scroll md:shadow-lg">
               <MainPageWrapper>{children}</MainPageWrapper>
             </main>
+
+            <MobileOnly className="order-3 sticky bottom-0">
+              <TabNavigation />
+            </MobileOnly>
           </div>
         </div>
       </body>

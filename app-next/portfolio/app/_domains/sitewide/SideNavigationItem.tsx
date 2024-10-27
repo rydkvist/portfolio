@@ -4,7 +4,7 @@ import { cva } from 'class-variance-authority';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon?: string }) => {
+export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon: string }) => {
   const isExternal = href.startsWith('http');
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -13,12 +13,12 @@ export const SideNavigationItem = ({ label, href, icon }: { label: string; href:
     <li className="my-1 active:scale-97 transition-transform">
       <Link
         href={href}
-        scroll
+        title={label}
         rel="noreferrer"
         target={isExternal ? '_blank' : '_self'}
         className={styles.linkWrapper({ isActive })}
       >
-        {icon && <span className="mr-2">{icon}</span>}
+        <span className="mr-2 w-4 h-4">{icon}</span>
         {label}
         <span className="ml-auto pl-2">{isExternal ? 'external' : icon}</span>
       </Link>
