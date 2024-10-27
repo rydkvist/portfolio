@@ -2,7 +2,7 @@ import React from 'react';
 import Check16 from '../public/icons/check16x16.svg';
 import Code16 from '../public/icons/code16x16.svg';
 import Copy16 from '../public/icons/copy16x16.svg';
-import ExternalLink16 from '../public/icons/external-link.svg';
+import ExternalLink16 from '../public/icons/external-link16x16.svg';
 import GitHub16 from '../public/icons/github16x16.svg';
 import LinkedIn16 from '../public/icons/linkedin16x16.svg';
 import Mail16 from '../public/icons/mail16x16.svg';
