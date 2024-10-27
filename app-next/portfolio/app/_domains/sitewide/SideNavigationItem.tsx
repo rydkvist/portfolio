@@ -4,7 +4,7 @@ import { cva } from 'class-variance-authority';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon: string }) => {
+export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon?: string }) => {
   const isExternal = href.startsWith('http');
   const pathname = usePathname();
   const isActive = pathname === href;
