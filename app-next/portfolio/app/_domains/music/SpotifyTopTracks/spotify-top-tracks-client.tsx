@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { SpotifyItem, SpotifyTopTimeRange } from '@/_lib/spotify/types';
-import { Heading } from '../../../_components/Heading';
+import { Heading } from '../../../_components/old/Heading';
 import { SpotifyTopTracksRangePicker } from './spotify-top-tracks-range-picker';
 import { SpotifyTopTracksItem } from './spotify-top-tracks-item';
 

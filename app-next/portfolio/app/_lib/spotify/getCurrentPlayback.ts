@@ -6,7 +6,6 @@ export async function getCurrentPlayback(): Promise<GetCurrentPlaybackResponse> 
   try {
     const spotifyToken = await getSpotifyToken('playback-state');
 
-    console.log('spotifytoken', spotifyToken);
     const [playbackResponse, queueResponse] = await Promise.all([
       fetch(`${API_SPOTIFY_URL}/me/player`, {
         headers: {

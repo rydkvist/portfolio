@@ -1,6 +1,6 @@
 import { getTopTracks } from '@/_lib/spotify/getTopTracks';
 import { SpotifyItem, SpotifyTopTimeRange } from '@/_lib/spotify/types';
-import { Heading } from '@/_components/Heading';
+import { Heading } from '@/_components/old/Heading';
 import SpotifyTopTracksClient from './spotify-top-tracks-client';
 
 export default async function SpotifyTopTracks() {
