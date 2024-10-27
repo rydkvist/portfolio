@@ -1,10 +1,11 @@
 'use client';
 
+import { Icon, IconName } from '@/_components/Icon';
 import { cva } from 'class-variance-authority';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon?: string }) => {
+export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon: IconName }) => {
   const isExternal = href.startsWith('http');
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -18,9 +19,15 @@ export const SideNavigationItem = ({ label, href, icon }: { label: string; href:
         target={isExternal ? '_blank' : '_self'}
         className={styles.linkWrapper({ isActive })}
       >
-        <span className="mr-2 w-4 h-4">{icon}</span>
+        <span className="mr-2 w-4 h-4">
+          <Icon name={icon} />
+        </span>
         {label}
-        <span className="ml-auto pl-2">{isExternal ? 'external' : icon}</span>
+        {isExternal && (
+          <span className="ml-auto pl-2">
+            <Icon name="externalLink" />
+          </span>
+        )}
       </Link>
     </li>
   );

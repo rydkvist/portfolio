@@ -10,6 +10,7 @@ import { MobileOnly } from './_components/MobileOnly';
 import { TabNavigation } from './_domains/sitewide/TabNavigation';
 import { BrandLink } from './_domains/sitewide/BrandLink';
 import { ToggleTheme } from './_components/ToggleTheme';
+import { Icon } from './_components/Icon';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -35,9 +36,7 @@ export default function RootLayout({
         <div>
           <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
             <div className="hidden md:flex md:order-1 sticky top-0">
-              <header>
-                <SideNavigation />
-              </header>
+              <SideNavigation />
             </div>
 
             <MobileOnly
