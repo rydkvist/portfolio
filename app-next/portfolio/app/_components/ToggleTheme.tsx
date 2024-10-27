@@ -1,15 +1,19 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 
 type ThemeType = 'dark' | 'light';
 
 export const ToggleTheme = () => {
-  const userStoredPreference = storageGetPreference();
-  const browserPreference = window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-  const [theme, setTheme] = useState<ThemeType>(userStoredPreference || browserPreference);
+  const [theme, setTheme] = useState<ThemeType>('light');
   const label = theme === 'dark' ? 'Toggle to light mode' : 'Toggle to dark mode';
+
+  useEffect(() => {
+    const userStoredPreference = storageGetPreference();
+    const browserPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+    const clientTheme = userStoredPreference || browserPreference;
+    setTheme(clientTheme);
+  }, []);
 
   useEffect(() => {
     updateDocumentTheme(theme);
@@ -33,8 +37,13 @@ export const ToggleTheme = () => {
   );
 };
 
-const storageStorePreference = (preference: ThemeType) => localStorage.setItem('theme', preference);
-const storageGetPreference = () => localStorage.getItem('theme') as ThemeType;
+const storageStorePreference = (preference: ThemeType) => {
+  return localStorage.setItem('theme', preference);
+};
+
+const storageGetPreference = () => {
+  return localStorage.getItem('theme') as ThemeType | undefined;
+};
 
 const updateDocumentTheme = (newTheme: ThemeType) => {
   if (newTheme === 'light') {

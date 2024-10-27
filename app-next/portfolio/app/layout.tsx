@@ -4,7 +4,6 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { SideNavigation } from './_domains/sitewide/SideNavigation';
 import { common } from './_lib/labels/common';
-import Head from 'next/head';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
