@@ -12,9 +12,10 @@ List of TODOs before finish migration:
 - Add browser theme on page load, see tailwind for inspiration or astro-portfolio
 
 Future work after migration:
+
 - Implement working keyboard navigation with nice UI outlines
 - Install a11y linter and apply more aria tags where it belongs
   - Investigate if we can remove the double <header> tags based on device type. Today the desktop and mobile header tags are visible at the same time – it's not optimal?
 - Implement search functionality with Spotify to let visitng users queue songs for me
-- Check if it's alright by nextjs to move @domain folders into inside the page folder, i.e. app/music/_components instead of having app/music/page.tsx import components from app/_domains/music/...
+- Check if it's alright by nextjs to move @domain folders into inside the page folder, i.e. app/music/\_components instead of having app/music/page.tsx import components from app/\_domains/music/...
 - Extract static data (copy content i.e. about content or projects) into a db in this project, to showcase a frontend-to-backend architecture in a next app. the content will be statically rendered on build time and we can set a revalidate time of 1 month

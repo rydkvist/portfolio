@@ -10,7 +10,7 @@ import { GetCurrentPlaybackResponse } from '../server/types';
 import { Spinner } from '@/components/Spinner';
 import { calculateProgressPercentage, formatDuration } from '@/utils/helpers';
 
-const fetchCurrentPlayback = async (endpoint: string): Promise<GetCurrentPlaybackResponse> => {
+const fetchCurrentPlayback = async (endpoint: string): Promise => {
   try {
     const res = await fetch(endpoint);
     if (!res.ok) {
@@ -25,9 +25,9 @@ const fetchCurrentPlayback = async (endpoint: string): Promise<GetCurrentPlaybac
 
 export default function SpotifyPlayback() {
   return (
-    <div className="w-full md:w-96 scale-105 rounded-md shadow-lg">
-      <div className="w-full h-auto p-4 flex-col items-start bg-neutral-200 dark:bg-neutral-800 rounded-lg relative">
-        <span className="w-8 h-8 absolute right-4 top-2">
+    <div className="w-full scale-105 rounded-md shadow-lg md:w-96">
+      <div className="relative h-auto w-full flex-col items-start rounded-lg bg-neutral-200 p-4 dark:bg-neutral-800">
+        <span className="absolute right-4 top-2 h-8 w-8">
           <Image src="/images/companies/Spotify.png" alt="Spotify Icon" layout="fill" objectFit="contain" />
         </span>
         <Content />
@@ -87,9 +87,9 @@ function Content() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center w-full h-full">
+      <div className="flex h-full w-full flex-col items-center justify-center">
         <Spinner />
-        <p className="text-center mt-4 text-neutral-600 dark:text-neutral-400">Loading Spotify Tracker...</p>
+        <p className="mt-4 text-center text-neutral-600 dark:text-neutral-400">Loading Spotify Tracker...</p>
       </div>
     );
   }
@@ -109,44 +109,44 @@ function Content() {
 
     return (
       <div>
-        <p className="w-full font-medium text-sm text-neutral-800 dark:text-neutral-200 mb-1">Now playing</p>
-        <div className="flex flex-row mb-2">
+        <p className="mb-1 w-full text-sm font-medium text-neutral-800 dark:text-neutral-200">Now playing</p>
+        <div className="mb-2 flex flex-row">
           <a
             target="_blank"
             rel="noreferrer"
             href={item.album?.url}
             title={item.name}
-            className="overflow-hidden rounded-sm w-20 h-20 relative mr-2 transition-transform focus:scale-110 hover:scale-110"
+            className="relative mr-2 h-20 w-20 overflow-hidden rounded-sm transition-transform hover:scale-110 focus:scale-110"
           >
             {item.album?.imageURL && (
               <Image src={item.album.imageURL} alt={item.album.name} layout="fill" objectFit="cover" />
             )}
           </a>
 
-          <div className="flex flex-col overflow-hidden w-full">
-            <p className="font-semibold text-neutral-900 truncate dark:text-neutral-100">{item.name}</p>
-            <p className="text-sm text-neutral-700 dark:text-neutral-300 overflow-hidden max-h-12 text-ellipsis">
+          <div className="flex w-full flex-col overflow-hidden">
+            <p className="truncate font-semibold text-neutral-900 dark:text-neutral-100">{item.name}</p>
+            <p className="max-h-12 overflow-hidden text-ellipsis text-sm text-neutral-700 dark:text-neutral-300">
               {item.artists}
             </p>
           </div>
         </div>
 
-        <div className="w-full h-1 bg-neutral-400 overflow-hidden rounded-sm">
+        <div className="h-1 w-full overflow-hidden rounded-sm bg-neutral-400">
           <div
-            className="h-full transition-all ease-linear bg-neutral-600 dark:bg-neutral-200"
+            className="h-full bg-neutral-600 transition-all ease-linear dark:bg-neutral-200"
             style={{
               width: `${progressPercentage}%`,
             }}
           />
         </div>
-        <div className="flex flex-row mt-1 text-neutral-600 dark:text-neutral-400 text-sm">
-          <p className="w-full mr-4">{formatDuration(playback?.time)}</p>
+        <div className="mt-1 flex flex-row text-sm text-neutral-600 dark:text-neutral-400">
+          <p className="mr-4 w-full">{formatDuration(playback?.time)}</p>
           <p>{formatDuration(item.durationMS)}</p>
         </div>
 
         {data.trackQueue && data.trackQueue.length > 0 && (
-          <div className="w-full inline-flex items-center justify-end mt-2">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mr-auto mt-auto self-end">Coming up next</p>
+          <div className="mt-2 inline-flex w-full items-center justify-end">
+            <p className="mr-auto mt-auto self-end text-sm text-neutral-600 dark:text-neutral-400">Coming up next</p>
             {data.trackQueue.map(track => (
               <a
                 key={track.id}
@@ -154,7 +154,7 @@ function Content() {
                 rel="noreferrer"
                 href={track.album?.url ?? ''}
                 title={track.name}
-                className="overflow-hidden mr-2 shadow-md last:mr-0 rounded-sm relative w-8 h-8 z-0 transition-transform focus:scale-125 hover:scale-125"
+                className="relative z-0 mr-2 h-8 w-8 overflow-hidden rounded-sm shadow-md transition-transform last:mr-0 hover:scale-125 focus:scale-125"
               >
                 {track.album?.imageURL && (
                   <Image src={track.album.imageURL} alt={track.album.name} layout="fill" objectFit="cover" />
@@ -167,7 +167,7 @@ function Content() {
     );
   } else {
     return (
-      <p className="w-full text-lg text-neutral-700 dark:text-neutral-300 mr-4">
+      <p className="mr-4 w-full text-lg text-neutral-700 dark:text-neutral-300">
         {data?.isPlayingPodcast ? 'Listening to a podcast' : 'Offline'}
       </p>
     );

@@ -11,7 +11,7 @@ export const TabNavigationItem = ({ href, icon, label }: { label: string; href: 
   const isActive = pathname === href;
 
   return (
-    <li className="flex-1 active:scale-97 transition-transform">
+    <li className="flex-1 transition-transform active:scale-97">
       <Link
         className={styles.linkWrapper({ isActive })}
         target={isExternal ? '_blank' : '_self'}
@@ -19,7 +19,7 @@ export const TabNavigationItem = ({ href, icon, label }: { label: string; href: 
         rel="noreferrer"
         href={href}
       >
-        <span className="w-5 h-5">
+        <span className="h-5 w-5">
           <Icon name={icon} height={20} width={20} />
         </span>
       </Link>
@@ -37,6 +37,6 @@ const styles = {
           false: '',
         },
       },
-    }
+    },
   ),
 };

@@ -11,7 +11,7 @@ export const SideNavigationItem = ({ label, href, icon }: { label: string; href:
   const isActive = pathname === href;
 
   return (
-    <li className="my-1 active:scale-97 transition-transform">
+    <li className="my-1 transition-transform active:scale-97">
       <Link
         href={href}
         title={label}
@@ -19,7 +19,7 @@ export const SideNavigationItem = ({ label, href, icon }: { label: string; href:
         target={isExternal ? '_blank' : '_self'}
         className={styles.linkWrapper({ isActive })}
       >
-        <span className="mr-2 w-4 h-4">
+        <span className="mr-2 h-4 w-4">
           <Icon name={icon} />
         </span>
         {label}
@@ -43,6 +43,6 @@ const styles = {
           false: 'hover:bg-neutral-300/50 hover:dark:bg-neutral-700/50',
         },
       },
-    }
+    },
   ),
 };

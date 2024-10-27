@@ -6,16 +6,16 @@ export const InvestmentItem = ({ name, url, imageSrc, investedSince }: Investmen
   const urlTitle = `Visit ${name} website`;
 
   return (
-    <li className="flex flex-row w-full md:max-w-xs items-start pr-2 pb-8 text-black dark:text-white">
+    <li className="flex w-full flex-row items-start pb-8 pr-2 text-black md:max-w-xs dark:text-white">
       <div className="mr-4">
-        <div className="w-12 h-12 relative overflow-hidden">
+        <div className="relative h-12 w-12 overflow-hidden">
           <Image src={imageSrc} alt={altText} width={48} height={48} />
         </div>
       </div>
 
-      <div className="flex flex-col h-full">
-        <p className="leading-5 mb-1 text-neutral-700 dark:text-neutral-300">
-          <span className="font-medium text-ellipsis text-lg">{name}</span>
+      <div className="flex h-full flex-col">
+        <p className="mb-1 leading-5 text-neutral-700 dark:text-neutral-300">
+          <span className="text-ellipsis text-lg font-medium">{name}</span>
           <br />
           <span className="text-xs text-neutral-600 dark:text-neutral-400">invested since @ {investedSince}</span>
         </p>
@@ -27,7 +27,7 @@ export const InvestmentItem = ({ name, url, imageSrc, investedSince }: Investmen
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-blue-500 border text-blue-500 transition-all shadow-md hover:bg-blue-500 hover:text-white text-xs py-2 mt-2 px-5 rounded-lg"
+              className="mt-2 rounded-lg border border-blue-500 px-5 py-2 text-xs text-blue-500 shadow-md transition-all hover:bg-blue-500 hover:text-white"
             >
               View Stock Graph
             </a>

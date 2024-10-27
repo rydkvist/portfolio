@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -19,18 +20,18 @@ html, body {
 
 @layer components {
   .size-xxl {
-    @apply text-3xl w-full font-bold mb-6
+    @apply mb-6 w-full text-3xl font-bold;
   }
 
   .size-xl {
-    @apply text-2xl w-full mt-6 mb-1.5 font-medium
+    @apply mb-1.5 mt-6 w-full text-2xl font-medium;
   }
 
   .size-lg {
-    @apply text-xl w-full mt-4 mb-1
+    @apply mb-1 mt-4 w-full text-xl;
   }
 
   .description {
-    @apply text-neutral-700 dark:text-neutral-300 mb-4
+    @apply mb-4 text-neutral-700 dark:text-neutral-300;
   }
 }

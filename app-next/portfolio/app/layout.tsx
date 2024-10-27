@@ -24,11 +24,7 @@ export const metadata: Metadata = {
   description: common.seo.description,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly) {
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
