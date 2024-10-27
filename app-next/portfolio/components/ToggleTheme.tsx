@@ -30,7 +30,7 @@ export const ToggleTheme = () => {
       type="button"
       onClick={onToggle}
       title={label}
-      className="text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 rounded-lg text-sm p-2.5 transition-transform active:scale-95"
+      className="text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600 rounded-lg text-sm p-2.5 transition-all ease-in-out active:scale-95"
     >
       {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
     </button>

@@ -1,53 +1,24 @@
-'use client';
 import { Icon, IconName } from '@/components/Icon';
-import { useState } from 'react';
 
 type ItemProps = {
   label: string;
   value: string;
   href: string;
   icon: IconName;
-  showCopy?: boolean;
 };
 
-export const ContactItem = ({ label, value, href, icon, showCopy = false }: ItemProps) => {
-  const [hasCopied, setHasCopied] = useState(false);
+export const ContactItem = ({ label, value, href, icon }: ItemProps) => (
+  <div className="flex w-full flex-row items-baseline justify-start gap-2">
+    <span aria-label={label} className="self-center font-medium text-neutral-700 dark:text-neutral-300">
+      <Icon name={icon} width={18} height={18} />
+    </span>
 
-  const copyValueToClipboard = () => {
-    navigator.clipboard.writeText(value);
-    setHasCopied(true);
-  };
-
-  return (
-    <div className="flex flex-col items-start justify-start">
-      <div className="flex flex-row gap-1.5 items-center text-base leading-relaxed text-neutral-500 dark:text-neutral-300">
-        <Icon name={icon} />
-        <span>{label}</span>
-      </div>
-
-      <div className="flex flex-row w-full flex-wrap justify-between items-center">
-        <a
-          href={href}
-          title={value}
-          className={`text-lg font-medium leading-relaxed text-neutral-600 dark:text-neutral-200 mr-3`}
-        >
-          {value}
-        </a>
-
-        {showCopy && (
-          <button
-            type="button"
-            onClick={copyValueToClipboard}
-            onBlur={() => setHasCopied(false)}
-            className={`inline-flex items-center rounded-md text-sm text-black dark:text-white px-3 py-2 text-center bg-transparent border border-neutral-300 hover:bg-neutral-300 dark:border-neutral-600 hover:dark:bg-neutral-600 ${
-              hasCopied && `text-green-500 dark:text-green-300`
-            }`}
-          >
-            {hasCopied ? <Icon name="check" /> : <Icon name="copy" />}{' '}
-            <span className="ml-1.5">{hasCopied ? 'Copied' : 'Copy'}</span>
-          </button>
-        )}
-      </div>
-    </div>
-  );
-};
+    <a
+      href={href}
+      title={value}
+      className="text-md font-sans font-semibold text-neutral-800 hover:underline dark:text-neutral-200"
+    >
+      {value}
+    </a>
+  </div>
+);

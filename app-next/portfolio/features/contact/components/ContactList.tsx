@@ -1,29 +1,28 @@
-import { TabNavigationItem } from '@/features/sitewide/TabNavigationItem';
 import { ContactItem } from './ContactItem';
 import { common } from '@/lib/common';
-import { appLinks } from '@/lib/app-links';
+import Image from 'next/image';
 
 const { myself } = common;
-const { linkedin, github } = appLinks;
 
 export const ContactList = () => {
-  const hrClassname = 'w-full bg-neutral-300 dark:bg-neutral-700 opacity-100 dark:opacity-30';
-
   return (
-    <div className="border-neutral-300 dark:border-neutral-700 border flex flex-col flex-wrap pb-8 pt-10 gap-3 shadow-lg px-8 rounded-xl transition-all ease-in hover:-translate-y-2">
-      <ContactItem label="E-mail" value={myself.email} href={`mailto:${myself.email}`} icon="mail" showCopy />
-      <hr className={hrClassname} />
+    <div className="flex flex-row flex-wrap justify-center gap-7 rounded-xl border border-neutral-300 px-8 py-12 shadow-lg shadow-neutral-300 md:gap-9 md:px-12 md:py-10 dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-neutral-700">
+      <div className="flex items-center self-center">
+        <div className="relative overflow-hidden rounded-full border border-slate-500">
+          <Image src="/images/about/NiklasKrakowSquare.jpg" alt="Niklas Rydkvist" width={132} height={132} />
+        </div>
+      </div>
 
-      <ContactItem label="Phone" value={myself.phoneNumber} href={`tel:${myself.phoneNumber}`} icon="phone" showCopy />
-      <hr className={hrClassname} />
+      <div className="flex flex-col">
+        <h2 className="text-xl font-bold">{myself.fullName}</h2>
+        <h3 className="text-md font-semibold leading-6">{myself.currentRole}</h3>
 
-      <ContactItem label="Location" value={myself.location} href={myself.googleMapsLocation} icon="mapPin" />
-      <hr className={hrClassname} />
-
-      <ul className="flex flex-row flex-wrap">
-        <TabNavigationItem label={github.name} href={github.href} icon="github" />
-        <TabNavigationItem label={linkedin.name} href={linkedin.href} icon="linkedin" />
-      </ul>
+        <div className="mt-3 flex flex-col items-start justify-center gap-2 md:mt-2 md:gap-1">
+          <ContactItem label="E-mail" value={myself.email} href={`mailto:${myself.email}`} icon="mail" />
+          <ContactItem label="Phone" value={myself.phoneNumber} href={`tel:${myself.phoneNumber}`} icon="phone" />
+          <ContactItem label="Location" value={myself.location} href={myself.googleMapsLocation} icon="mapPin" />
+        </div>
+      </div>
     </div>
   );
 };

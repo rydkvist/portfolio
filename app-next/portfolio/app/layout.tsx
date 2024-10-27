@@ -33,13 +33,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
         <div>
-          <div className="flex flex-col md:flex-row min-h-screen max-h-screen bg-neutral-200 dark:bg-neutral-800">
-            <div className="hidden md:flex md:order-1 sticky top-0">
+          <div className="flex max-h-screen min-h-screen flex-col bg-neutral-200 md:flex-row dark:bg-neutral-800">
+            <div className="sticky top-0 hidden md:order-1 md:flex">
               <SideNavigation />
             </div>
 
             <MobileOnly
-              className="flex flex-row items-center justify-between p-2 dark:text-white text-black"
+              className="flex flex-row items-center justify-between p-2 text-black dark:text-white"
               tag="header"
             >
               <BrandLink />
@@ -48,11 +48,11 @@ export default function RootLayout({
               </div>
             </MobileOnly>
 
-            <main className="flex md:w-full justify-center mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg hide-scrollbar overflow-scroll md:shadow-lg">
+            <main className="hide-scrollbar order-2 mx-2 flex justify-center overflow-scroll rounded-lg bg-neutral-100 md:m-2 md:w-full md:shadow-lg dark:bg-neutral-900">
               <MainPageWrapper>{children}</MainPageWrapper>
             </main>
 
-            <MobileOnly className="order-3 sticky bottom-0">
+            <MobileOnly className="sticky bottom-0 order-3">
               <TabNavigation />
             </MobileOnly>
           </div>
@@ -84,7 +84,7 @@ export default function RootLayout({
 
 const MainPageWrapper = ({ children }: { children: ReactNode }) => (
   <div className="container px-8 md:px-16 lg:px-32 xl:px-64">
-    <div className="flex flex-col min-h-screen pb-32 md:pb-8 pt-8 md:pt-16 items-center text-1xl leading-7 text-black dark:text-white">
+    <div className="text-1xl flex min-h-screen flex-col items-center pb-32 pt-8 leading-7 text-black md:pb-8 md:pt-16 dark:text-white">
       {children}
     </div>
   </div>
