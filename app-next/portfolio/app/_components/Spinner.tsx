@@ -1,5 +1,6 @@
 export const Spinner = () => (
-  <div className="w-16 h-16">
+  <div className="w-16 h-16" role="status" aria-live="polite">
+    <span className="sr-only">Loading...</span>
     <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
       <circle
         cx="50"
