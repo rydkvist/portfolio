@@ -37,7 +37,7 @@ const iconMap = {
   user: User16,
 };
 
-export const Icon: React.FC = ({ name, width = 16, height = 16 }) => {
+export const Icon: React.FC<IconProps> = ({ name, width = 16, height = 16 }) => {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
