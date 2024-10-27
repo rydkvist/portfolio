@@ -11,7 +11,7 @@ export const TabNavigationItem = ({ href, icon, label }: { label: string; href: 
   const isActive = pathname === href;
 
   return (
-    <li className="mx-1 active:scale-97 transition-transform">
+    <li className="flex-1 active:scale-97 transition-transform">
       <Link
         className={styles.linkWrapper({ isActive })}
         target={isExternal ? '_blank' : '_self'}
