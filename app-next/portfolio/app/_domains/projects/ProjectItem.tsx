@@ -24,7 +24,7 @@ export const ProjectItem = ({
       >
         <div className={`w-full h-80 relative rounded-t-lg mx-auto ${imageClassName}`}>
           {imagePath ? (
-            <Image src={imagePath} alt="Showcasing Börsjakten" layout="fill" objectFit="contain" priority />
+            <Image src={imagePath} alt={title} layout="fill" objectFit="contain" priority />
           ) : (
             videoURL && (
               <iframe
@@ -32,7 +32,6 @@ export const ProjectItem = ({
                 height="320px"
                 src={videoURL}
                 title={title}
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

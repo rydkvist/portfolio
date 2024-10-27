@@ -10,7 +10,6 @@ import { MobileOnly } from './_components/MobileOnly';
 import { TabNavigation } from './_domains/sitewide/TabNavigation';
 import { BrandLink } from './_domains/sitewide/BrandLink';
 import { ToggleTheme } from './_components/ToggleTheme';
-import { Icon } from './_components/Icon';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -30,6 +29,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // TODO: investigate how to add dark mode on initial app start
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>

@@ -1,24 +1,7 @@
 import Image from 'next/image';
+import { mobileTechStack, skills, TechStack, webTechStack } from './_domains/about/about.config';
 
 const yearsOfExperience = new Date().getFullYear() - 2018;
-
-export type TechStack = {
-  value: string;
-  imageSrc: string;
-};
-
-const webDevTechnologies: Array<TechStack> = [
-  { value: 'JavaScript', imageSrc: 'JavaScript' },
-  { value: 'TypeScript', imageSrc: 'TypeScript' },
-  { value: 'React', imageSrc: 'React' },
-  { value: 'Next.js', imageSrc: 'Next' },
-];
-
-const appDevTechnologies: Array<TechStack> = [
-  { value: 'React Native', imageSrc: 'React' },
-  { value: 'Swift', imageSrc: 'Swift' },
-  { value: 'SwiftUI', imageSrc: 'SwiftUI' },
-];
 
 const About = () => {
   return (
@@ -27,10 +10,10 @@ const About = () => {
 
       <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full border-black dark:border-white border relative">
         <Image
-          src="/images/about/Niklas.png"
+          src="/images/about/NiklasKrakowSquare.jpg"
           alt="Picture of Niklas Rydkvist"
-          layout="fill"
-          objectFit="cover"
+          width={192}
+          height={192}
           priority
         />
       </div>
@@ -73,39 +56,32 @@ const About = () => {
       <h2 className="size-xl">Tech Stack</h2>
 
       <p className="description mt-8">Web Applications</p>
-      <ul className="flex flex-row justify-center gap-1 flex-wrap mb-8">
-        {webDevTechnologies.map(technology => (
-          <TechStackItem key={technology.value} {...technology} />
+      <ul className="flex flex-row justify-center gap-2 flex-wrap mb-8">
+        {webTechStack.map(technology => (
+          <TechStackItem key={technology.name} {...technology} />
         ))}
       </ul>
 
       <p className="description">Mobile Applications</p>
-      <ul className="flex flex-row justify-center gap-1 flex-wrap">
-        {appDevTechnologies.map(technology => (
-          <TechStackItem key={technology.value} {...technology} />
+      <ul className="flex flex-row justify-center gap-2 flex-wrap">
+        {mobileTechStack.map(technology => (
+          <TechStackItem key={technology.name} {...technology} />
         ))}
       </ul>
 
       <h2 className="size-xl">More Tech I&apos;m experienced in</h2>
-      <p className="description italic">
-        HTML5, CSS3, TailwindCSS, Cypress, Jest, Styled Components, Svelte, Sass, End-to-end testing, Unit testing,
-        Storybook, C# .NET, Git, CI/CD, TDD, APIs, UIKit, Redux, Figma, UX/UI, User Accessibility, QA (Quality
-        Assurance), SEO, Copywriting, multi-threading programming, SocketIO, WebRTC, Azure, Google Cloud, Docker, Test
-        Flight, DevOps, AWS and Netlify.
-      </p>
+      <p className="description italic">{skills.join(', ')}</p>
     </>
   );
 };
 
-const TechStackItem = ({ value, imageSrc }: TechStack) => {
-  return (
-    <li className={`flex flex-col items-center px-4 py-2`}>
-      <div className={`w-16 h-16 overflow-hidden rounded-md mb-2 relative`}>
-        <Image src={`/images/technologies/${imageSrc}.png`} alt={imageSrc} layout="fill" objectFit="contain" priority />
-      </div>
-      <span style={{ maxWidth: '0.75rem', display: 'flex', justifyContent: 'center' }}>{value}</span>
-    </li>
-  );
-};
+const TechStackItem = ({ name, imageSrc }: TechStack) => (
+  <li className="flex flex-col items-center px-4 py-2">
+    <div className="w-16 h-16 overflow-hidden rounded-md mb-2 relative">
+      <Image src={imageSrc} alt={name} width={64} height={64} />
+    </div>
+    <span className="max-w-[0.75rem] flex justify-center">{name}</span>
+  </li>
+);
 
 export default About;
