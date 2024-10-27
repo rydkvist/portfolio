@@ -55,7 +55,6 @@ export const getSpotifyToken = async (scope: SpotifyAccessTokenScope) => {
   }
 
   const body = createSpotifyTokenBody('refresh_token', scopeRefreshToken);
-  console.log('body', body);
   const response = await fetch(`${SPOTIFY_ACCOUNTS_API_URL}/api/token`, {
     method: 'POST',
     headers: {

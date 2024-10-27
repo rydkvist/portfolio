@@ -18,3 +18,5 @@ export const formatDuration = (milliseconds?: number): string => {
 
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 };
+
+export const currentYear = new Date().getFullYear().toString();

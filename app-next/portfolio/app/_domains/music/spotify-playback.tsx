@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { GetCurrentPlaybackResponse } from '@/_lib/spotify/types';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Spinner } from '@/_components/Spinner';
+import { Spinner } from '@/_components/old/Spinner';
 import { calculateProgressPercentage, formatDuration } from '@/_utils/helpers';
 
 const fetchCurrentPlayback = async (endpoint: string): Promise<GetCurrentPlaybackResponse> => {
