@@ -29,4 +29,8 @@ html, body {
   .size-lg {
     @apply text-xl w-full mt-4 mb-1
   }
+
+  .description {
+    @apply text-neutral-700 dark:text-neutral-300 mb-4
+  }
 }

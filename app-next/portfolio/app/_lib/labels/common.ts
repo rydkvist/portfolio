@@ -32,10 +32,12 @@ export const common = {
   github: {
     name: 'GitHub',
     href: 'https://github.com/rydkvist',
+    tabIcon: '',
   },
   linkedin: {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/niklasrydkvist/',
+    tabIcon: '',
   },
   mySpotify: {
     name: 'My Spotify',
