@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { mobileTechStack, skills, TechStack, webTechStack } from './_domains/about/about.config';
 
 const yearsOfExperience = new Date().getFullYear() - 2018;
 
@@ -83,5 +82,60 @@ const TechStackItem = ({ name, imageSrc }: TechStack) => (
     <span className="max-w-[0.75rem] flex justify-center">{name}</span>
   </li>
 );
+
+type TechStack = {
+  name: string;
+  imageSrc: string;
+};
+
+const webTechStack: TechStack[] = [
+  { name: 'Next.js', imageSrc: '/images/technologies/Next.png' },
+  { name: 'React', imageSrc: '/images/technologies/React.png' },
+  { name: 'TypeScript', imageSrc: '/images/technologies/TypeScript.png' },
+  { name: 'JavaScript', imageSrc: '/images/technologies/JavaScript.png' },
+];
+
+const mobileTechStack: TechStack[] = [
+  { name: 'Swift', imageSrc: '/images/technologies/Swift.png' },
+  { name: 'SwiftUI', imageSrc: '/images/technologies/SwiftUI.png' },
+  { name: 'React Native', imageSrc: '/images/technologies/React.png' },
+];
+
+const skills = [
+  'HTML5',
+  'CSS3',
+  'TailwindCSS',
+  'Cypress',
+  'Jest',
+  'Styled Components',
+  'Svelte',
+  'Sass',
+  'End-to-end testing',
+  'Unit testing',
+  'Storybook',
+  'C# .NET',
+  'Git',
+  'CI/CD',
+  'TDD',
+  'APIs',
+  'UIKit',
+  'Redux',
+  'Figma',
+  'UX/UI',
+  'User Accessibility',
+  'QA (Quality Assurance)',
+  'SEO',
+  'Copywriting',
+  'Multi-threading programming',
+  'SocketIO',
+  'WebRTC',
+  'Azure',
+  'Google Cloud',
+  'Docker',
+  'Test Flight',
+  'DevOps',
+  'AWS',
+  'Netlify',
+];
 
 export default About;

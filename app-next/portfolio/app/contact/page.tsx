@@ -1,4 +1,4 @@
-import { ContactList } from '@/_domains/contact/ContactList';
+import { ContactList } from '@/features/contact/components/ContactList';
 
 const Page = () => {
   return (
