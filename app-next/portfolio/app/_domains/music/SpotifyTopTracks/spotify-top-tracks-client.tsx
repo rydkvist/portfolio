@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { SpotifyItem, SpotifyTopTimeRange } from '@/_lib/spotify/types';
-import { Heading } from '../../../_components/old/Heading';
 import { SpotifyTopTracksRangePicker } from './spotify-top-tracks-range-picker';
 import { SpotifyTopTracksItem } from './spotify-top-tracks-item';
 
@@ -17,9 +16,7 @@ export default function SpotifyTopTracksClient({ topTracksData }: SpotifyTopTrac
   return (
     <div className="flex flex-col mt-6 w-full">
       <div className="flex flex-col justify-between items-center mb-6 md:mb-4">
-        <Heading as="h3" className="mb-3 text-center">
-          Discover my favorite tracks
-        </Heading>
+        <h3 className="size-lg mb-3 text-center">Discover my favorite tracks</h3>
         <p className="text-neutral-700 text-sm text-center mb-4 dark:text-neutral-300">
           My Top 20 playlists updated via the Spotify API.
         </p>

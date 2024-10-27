@@ -1,6 +1,5 @@
 import { getTopTracks } from '@/_lib/spotify/getTopTracks';
 import { SpotifyItem, SpotifyTopTimeRange } from '@/_lib/spotify/types';
-import { Heading } from '@/_components/old/Heading';
 import SpotifyTopTracksClient from './spotify-top-tracks-client';
 
 export default async function SpotifyTopTracks() {
@@ -22,9 +21,9 @@ export default async function SpotifyTopTracks() {
     console.error('Error fetching top tracks:', error);
     return (
       <div className="flex flex-col items-center">
-        <Heading as="h3" className="text-center">
+        <h3 className="size-lg text-center">
           Could not show Top 20 songs: {error instanceof Error ? error.message : String(error)}
-        </Heading>
+        </h3>
       </div>
     );
   }

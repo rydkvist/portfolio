@@ -5,6 +5,7 @@ import './globals.css';
 import { SideNavigation } from './_domains/sitewide/SideNavigation';
 import { common } from './_lib/labels/common';
 import Script from 'next/script';
+import { ReactNode } from 'react';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -34,7 +35,7 @@ export default function RootLayout({
             </div>
 
             <main className="flex md:w-full justify-center mx-2 md:m-2 bg-neutral-100 dark:bg-neutral-900 order-2 rounded-lg hide-scrollbar overflow-scroll md:shadow-lg">
-              {children}
+              <MainPageWrapper>{children}</MainPageWrapper>
             </main>
           </div>
         </div>
@@ -62,3 +63,11 @@ export default function RootLayout({
     </html>
   );
 }
+
+const MainPageWrapper = ({ children }: { children: ReactNode }) => (
+  <div className="container px-8 md:px-16 lg:px-32 xl:px-64">
+    <div className="flex flex-col min-h-screen pb-32 md:pb-8 pt-8 md:pt-16 items-center text-1xl leading-7 text-black dark:text-white">
+      {children}
+    </div>
+  </div>
+);

@@ -13,6 +13,12 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      scale: {
+        97: '0.97',
+      },
+      'max-w': {
+        3: '0.75rem',
+      },
     },
   },
   plugins: [],
