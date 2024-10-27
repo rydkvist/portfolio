@@ -1,82 +1,111 @@
 import Image from 'next/image';
 
-export default async function Home() {
+const yearsOfExperience = new Date().getFullYear() - 2018;
+
+export type TechStack = {
+  value: string;
+  imageSrc: string;
+};
+
+const webDevTechnologies: Array<TechStack> = [
+  { value: 'JavaScript', imageSrc: 'JavaScript' },
+  { value: 'TypeScript', imageSrc: 'TypeScript' },
+  { value: 'React', imageSrc: 'React' },
+  { value: 'Next.js', imageSrc: 'Next' },
+];
+
+const appDevTechnologies: Array<TechStack> = [
+  { value: 'React Native', imageSrc: 'React' },
+  { value: 'Swift', imageSrc: 'Swift' },
+  { value: 'SwiftUI', imageSrc: 'SwiftUI' },
+];
+
+const About = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <>
+      <h1 className="size-xxl text-center">Hi! I&apos;m Niklas 👋🏼</h1>
+
+      <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full border-black dark:border-white border relative">
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/images/about/Niklas.png"
+          alt="Picture of Niklas Rydkvist"
+          layout="fill"
+          objectFit="cover"
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{' '}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </div>
 
-        {/* {JSON.stringify(topTracks)} */}
+      <h2 className="size-xl">My Story</h2>
+      <p className="description">
+        Hey there! I&apos;m a Software Engineer based in Stockholm, with roots stretching all the way to the southern
+        coast of Spain. My journey began in the pixelated landscapes of Minecraft Servers and Habbo Hotel, where I first
+        experienced the thrill of building multiplayer servers and online communities. These early experiences, from
+        leading staff teams in virtual worlds to running my own Minecraft server with a 10,000-strong user base and its
+        online webstore, laid the groundwork for my career in software development, focusing on web and mobile app
+        development.
+        <br />
+        <br />
+        With over {yearsOfExperience} years of professional experience, I’ve transitioned from those playful beginnings
+        to mastering technologies within the web and mobile landscapes, such as TypeScript, React, Node.js, Next.js,
+        React Native, Swift, and many more. My approach to software development is deeply rooted in putting the user
+        first, a perspective honed from my early experiences in creating engaging online communities. This user-focused
+        mindset, coupled with a keen eye for UX/UI, drives me to craft interfaces that are intuitive, functional, and
+        visually appealing.
+        <br />
+        <br />
+        My work today is a reflection of that journey: a blend of creative innovation and technical skills. It&apos;s
+        shaped by a lifelong curiosity and a dedication to personal and professional growth, adapting and thriving in
+        the rapidly advancing world of software development.
+      </p>
+      <h2 className="size-xl">Outside of Work</h2>
+      <p className="description">
+        When I step away from my computer, there&apos; always something going on. Beyond keeping up with the latest tech
+        trends, I&apos;m all about enjoying the world outside. You might find me exploring new places, working out, or
+        updating my stock portfolio. I love trying out different cuisines, immersing myself in new environments, and
+        just hanging out, exchanging stories and experiences with people I meet along the way.
+        <br />
+        <br />
+        Growing up with the internet, playing games, and building things as a kid, my love for tech has always been a
+        big part of my life. It&apos;s this love that keeps me excited about every new project I tackle, ensuring that I
+        put my all into the work I do and the life I live.
+      </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="https://nextjs.org/icons/file.svg" alt="File icon" width={16} height={16} />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="https://nextjs.org/icons/window.svg" alt="Window icon" width={16} height={16} />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="https://nextjs.org/icons/globe.svg" alt="Globe icon" width={16} height={16} />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <h2 className="size-xl">Tech Stack</h2>
+
+      <p className="description mt-8">Web Applications</p>
+      <ul className="flex flex-row justify-center gap-1 flex-wrap mb-8">
+        {webDevTechnologies.map(technology => (
+          <TechStackItem key={technology.value} {...technology} />
+        ))}
+      </ul>
+
+      <p className="description">Mobile Applications</p>
+      <ul className="flex flex-row justify-center gap-1 flex-wrap">
+        {appDevTechnologies.map(technology => (
+          <TechStackItem key={technology.value} {...technology} />
+        ))}
+      </ul>
+
+      <h2 className="size-xl">More Tech I&apos;m experienced in</h2>
+      <p className="description italic">
+        HTML5, CSS3, TailwindCSS, Cypress, Jest, Styled Components, Svelte, Sass, End-to-end testing, Unit testing,
+        Storybook, C# .NET, Git, CI/CD, TDD, APIs, UIKit, Redux, Figma, UX/UI, User Accessibility, QA (Quality
+        Assurance), SEO, Copywriting, multi-threading programming, SocketIO, WebRTC, Azure, Google Cloud, Docker, Test
+        Flight, DevOps, AWS and Netlify.
+      </p>
+    </>
   );
-}
+};
+
+const TechStackItem = ({ value, imageSrc }: TechStack) => {
+  return (
+    <li className={`flex flex-col items-center px-4 py-2`}>
+      <div className={`w-16 h-16 overflow-hidden rounded-md mb-2 relative`}>
+        <Image src={`/images/technologies/${imageSrc}.png`} alt={imageSrc} layout="fill" objectFit="contain" priority />
+      </div>
+      <span style={{ maxWidth: '0.75rem', display: 'flex', justifyContent: 'center' }}>{value}</span>
+    </li>
+  );
+};
+
+export default About;
