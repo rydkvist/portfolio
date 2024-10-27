@@ -23,7 +23,6 @@ const SpotifyTokenSchema = z.object({
   scope: z.string(),
 });
 
-// TODO: Implementation for Spotify Search in app
 const SCOPE_REFRESH_TOKEN_MAP: Record<SpotifyAccessTokenScope, string | undefined> = {
   'playback-state': process.env.SPOTIFY_PLAYBACK_STATE_REFRESH_TOKEN,
   'recently-played': process.env.SPOTIFY_RECENTLY_PLAYED_REFRESH_TOKEN,

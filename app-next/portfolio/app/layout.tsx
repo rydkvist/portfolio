@@ -29,7 +29,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // TODO: investigate how to add dark mode on initial app start
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>

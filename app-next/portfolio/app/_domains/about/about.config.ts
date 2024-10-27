@@ -16,7 +16,6 @@ export const mobileTechStack: TechStack[] = [
   { name: 'React Native', imageSrc: '/images/technologies/React.png' },
 ];
 
-// TODO: Update with more relevant and up-to-date skills
 export const skills = [
   'HTML5',
   'CSS3',
