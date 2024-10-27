@@ -1,5 +1,5 @@
-import { Funds } from '@/_domains/investments/Funds';
-import { Stocks } from '@/_domains/investments/Stocks';
+import { Funds } from '@/features/investments/components/Funds';
+import { Stocks } from '@/features/investments/components/Stocks';
 
 const Investments = () => {
   return (

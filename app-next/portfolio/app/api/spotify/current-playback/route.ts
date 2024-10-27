@@ -1,5 +1,5 @@
+import { getCurrentPlayback } from '@/features/spotify/server/getCurrentPlayback';
 import { NextResponse } from 'next/server';
-import { getCurrentPlayback } from '@/_lib/spotify/getCurrentPlayback';
 
 export const revalidate = 1;
 

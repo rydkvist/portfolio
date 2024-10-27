@@ -1,4 +1,4 @@
-import { Projects } from '@/_domains/projects/Projects';
+import { Projects } from '@/features/projects/components/Projects';
 
 const Page = () => (
   <>

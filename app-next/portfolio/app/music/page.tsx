@@ -1,5 +1,5 @@
-import SpotifyPlayback from '@/_domains/music/spotify-playback';
-import SpotifyTopTracks from '@/_domains/music/SpotifyTopTracks/spotify-top-tracks';
+import SpotifyPlayback from '@/features/spotify/components/spotify-playback';
+import SpotifyTopTracks from '@/features/spotify/components/SpotifyTopTracks/spotify-top-tracks';
 
 const Music = () => {
   return (

@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
 import './globals.css';
-import { SideNavigation } from './_domains/sitewide/SideNavigation';
-import { common } from './_lib/labels/common';
 import Script from 'next/script';
 import { ReactNode } from 'react';
-import { MobileOnly } from './_components/MobileOnly';
-import { TabNavigation } from './_domains/sitewide/TabNavigation';
-import { BrandLink } from './_domains/sitewide/BrandLink';
-import { ToggleTheme } from './_components/ToggleTheme';
+import { SideNavigation } from '@/features/sitewide/SideNavigation';
+import { BrandLink } from '@/features/sitewide/BrandLink';
+import { TabNavigation } from '@/features/sitewide/TabNavigation';
+import { MobileOnly } from '@/components/MobileOnly';
+import { ToggleTheme } from '@/components/ToggleTheme';
+import { common } from '@/lib/common';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
