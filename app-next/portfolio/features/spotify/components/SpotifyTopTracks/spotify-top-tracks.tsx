@@ -10,7 +10,7 @@ export default async function SpotifyTopTracks() {
       getTopTracks('long_term'),
     ]);
 
-    const topTracksData: Record<SpotifyTopTimeRange, SpotifyItem[]> = {
+    const topTracksData: Record = {
       short_term: shortTermTracks,
       medium_term: mediumTermTracks,
       long_term: longTermTracks,

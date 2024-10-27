@@ -5,7 +5,7 @@ import { SpotifyTopTracksItem } from './spotify-top-tracks-item';
 import { SpotifyItem, SpotifyTopTimeRange } from '../../server/types';
 
 interface SpotifyTopTracksClientProps {
-  topTracksData: Record<SpotifyTopTimeRange, SpotifyItem[]>;
+  topTracksData: Record;
 }
 
 export default function SpotifyTopTracksClient({ topTracksData }: SpotifyTopTracksClientProps) {
@@ -14,10 +14,10 @@ export default function SpotifyTopTracksClient({ topTracksData }: SpotifyTopTrac
   const topTracks = topTracksData[selectedTimeRange];
 
   return (
-    <div className="flex flex-col mt-6 w-full">
-      <div className="flex flex-col justify-between items-center mb-6 md:mb-4">
+    <div className="mt-6 flex w-full flex-col">
+      <div className="mb-6 flex flex-col items-center justify-between md:mb-4">
         <h2 className="size-lg mb-3 text-center">Discover my favorite tracks</h2>
-        <p className="text-neutral-700 text-sm text-center mb-4 dark:text-neutral-300">
+        <p className="mb-4 text-center text-sm text-neutral-700 dark:text-neutral-300">
           My Top 20 playlists updated via the Spotify API.
         </p>
         <SpotifyTopTracksRangePicker

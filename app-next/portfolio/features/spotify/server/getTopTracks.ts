@@ -2,10 +2,7 @@ import { getSpotifyToken } from './getSpotifyToken';
 import { API_SPOTIFY_URL, formatSpotifyItem } from './utils';
 import { SpotifyItem, SpotifyTopTimeRange, SpotifyTopTracksSchema } from './types';
 
-export async function getTopTracks(
-  timeRange: SpotifyTopTimeRange = 'short_term',
-  limit: number = 20
-): Promise<SpotifyItem[]> {
+export async function getTopTracks(timeRange: SpotifyTopTimeRange = 'short_term', limit: number = 20): Promise {
   try {
     const spotifyToken = await getSpotifyToken('top-read');
 
@@ -22,7 +19,7 @@ export async function getTopTracks(
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(
-        `Failed to fetch top tracks: ${response.status} ${response.statusText} - ${JSON.stringify(errorData)}`
+        `Failed to fetch top tracks: ${response.status} ${response.statusText} - ${JSON.stringify(errorData)}`,
       );
     }
 

@@ -10,27 +10,27 @@ const { projects, investments, about, music, contact, github, linkedin } = appLi
 
 export const SideNavigation = () => {
   return (
-    <div className="flex flex-col justify-start px-4 pt-6 pb-2 w-64 hide-scrollbar overflow-scroll text-black dark:text-white">
+    <div className="hide-scrollbar flex w-64 flex-col justify-start overflow-scroll px-4 pb-2 pt-6 text-black dark:text-white">
       <header>
         <BrandLink />
       </header>
 
       <nav>
-        <ul className="mt-2 mb-4">
+        <ul className="mb-4 mt-2">
           <SideNavigationItem label={about.name} href={about.href} icon="user" />
         </ul>
 
-        <h3 className="px-2 text-sm text-neutral-600 font-medium dark:text-neutral-400 break-words">What I enjoy</h3>
+        <h3 className="break-words px-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">What I enjoy</h3>
 
-        <ul className="mt-2 mb-4">
+        <ul className="mb-4 mt-2">
           <SideNavigationItem label={projects.name} href={projects.href} icon="code" />
           <SideNavigationItem label={investments.name} href={investments.href} icon="trendingUp" />
           <SideNavigationItem label={music.name} href={music.href} icon="music" />
         </ul>
 
-        <h3 className="px-2 text-sm text-neutral-600 font-medium dark:text-neutral-400 break-words">Stay in touch</h3>
+        <h3 className="break-words px-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">Stay in touch</h3>
 
-        <ul className="mt-2 mb-4">
+        <ul className="mb-4 mt-2">
           <SideNavigationItem label={contact.name} href={contact.href} icon="messageCircle" />
           <SideNavigationItem label={github.name} href={github.href} icon="github" />
           <SideNavigationItem label={linkedin.name} href={linkedin.href} icon="linkedin" />

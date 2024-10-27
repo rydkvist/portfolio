@@ -13,7 +13,7 @@ export type SpotifyAccessTokenScope =
 const SPOTIFY_ACCOUNTS_API_URL = 'https://accounts.spotify.com';
 
 const authorizationClientID = Buffer.from(
-  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
 ).toString('base64');
 
 const SpotifyTokenSchema = z.object({
@@ -23,7 +23,7 @@ const SpotifyTokenSchema = z.object({
   scope: z.string(),
 });
 
-const SCOPE_REFRESH_TOKEN_MAP: Record<SpotifyAccessTokenScope, string | undefined> = {
+const SCOPE_REFRESH_TOKEN_MAP: Record = {
   'playback-state': process.env.SPOTIFY_PLAYBACK_STATE_REFRESH_TOKEN,
   'recently-played': process.env.SPOTIFY_RECENTLY_PLAYED_REFRESH_TOKEN,
   'currently-playing': process.env.SPOTIFY_CURRENTLY_PLAYING_REFRESH_TOKEN,
@@ -66,7 +66,7 @@ export const getSpotifyToken = async (scope: SpotifyAccessTokenScope) => {
   if (!response.ok) {
     const errorData = await response.json();
     throw new Error(
-      `Failed to fetch Spotify access token: ${response.status} ${response.statusText} - ${JSON.stringify(errorData)}`
+      `Failed to fetch Spotify access token: ${response.status} ${response.statusText} - ${JSON.stringify(errorData)}`,
     );
   }
 

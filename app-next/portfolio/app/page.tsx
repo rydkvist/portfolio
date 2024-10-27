@@ -7,7 +7,7 @@ const About = () => {
     <>
       <h1 className="size-xxl text-center">Hi! I&apos;m Niklas 👋🏼</h1>
 
-      <div className="w-40 md:w-48 h-40 md:h-48 overflow-hidden rounded-full border-black dark:border-white border relative">
+      <div className="relative h-40 w-40 overflow-hidden rounded-full border border-black md:h-48 md:w-48 dark:border-white">
         <Image
           src="/images/about/NiklasKrakowSquare.jpg"
           alt="Picture of Niklas Rydkvist"
@@ -55,14 +55,14 @@ const About = () => {
       <h2 className="size-xl">Tech Stack</h2>
 
       <p className="description mt-8">Web Applications</p>
-      <ul className="flex flex-row justify-center gap-2 flex-wrap mb-8">
+      <ul className="mb-8 flex flex-row flex-wrap justify-center gap-2">
         {webTechStack.map(technology => (
           <TechStackItem key={technology.name} {...technology} />
         ))}
       </ul>
 
       <p className="description">Mobile Applications</p>
-      <ul className="flex flex-row justify-center gap-2 flex-wrap">
+      <ul className="flex flex-row flex-wrap justify-center gap-2">
         {mobileTechStack.map(technology => (
           <TechStackItem key={technology.name} {...technology} />
         ))}
@@ -76,10 +76,10 @@ const About = () => {
 
 const TechStackItem = ({ name, imageSrc }: TechStack) => (
   <li className="flex flex-col items-center px-4 py-2">
-    <div className="w-16 h-16 overflow-hidden rounded-md mb-2 relative">
+    <div className="relative mb-2 h-16 w-16 overflow-hidden rounded-md">
       <Image src={imageSrc} alt={name} width={64} height={64} />
     </div>
-    <span className="max-w-[0.75rem] flex justify-center">{name}</span>
+    <span className="flex max-w-[0.75rem] justify-center">{name}</span>
   </li>
 );
 
