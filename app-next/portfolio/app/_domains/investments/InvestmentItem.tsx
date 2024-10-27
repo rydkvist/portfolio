@@ -2,14 +2,14 @@ import { Investment } from '@/_lib/config';
 import Image from 'next/image';
 
 export const InvestmentItem = ({ name, url, imageSrc, investedSince }: Investment) => {
-  const imageAlternativeText = `${name} logo`;
+  const altText = `${name} logo`;
   const urlTitle = `Visit ${name} website`;
 
   return (
     <li className="flex flex-row w-full md:max-w-xs items-start pr-2 pb-8 text-black dark:text-white">
       <div className="mr-4">
         <div className="w-12 h-12 relative overflow-hidden">
-          <Image src={imageSrc} alt={imageAlternativeText} layout="fill" />
+          <Image src={imageSrc} alt={altText} width={48} height={48} />
         </div>
       </div>
 

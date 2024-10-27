@@ -1,17 +1,17 @@
 import React from 'react';
-import Check16 from '../public/icons/check16x16.svg';
-import Code16 from '../public/icons/code16x16.svg';
-import Copy16 from '../public/icons/copy16x16.svg';
-import ExternalLink16 from '../public/icons/external-link16x16.svg';
-import GitHub16 from '../public/icons/github16x16.svg';
-import LinkedIn16 from '../public/icons/linkedin16x16.svg';
-import Mail16 from '../public/icons/mail16x16.svg';
-import MapPin16 from '../public/icons/map-pin16x16.svg';
-import MessageCircle16 from '../public/icons/message-circle16x16.svg';
-import Music16 from '../public/icons/music16x16.svg';
-import Phone16 from '../public/icons/phone16x16.svg';
-import TrendingUp16 from '../public/icons/trending-up16x16.svg';
-import User16 from '../public/icons/user16x16.svg';
+import Check16 from '../../public/icons/check16x16.svg';
+import Code16 from '../../public/icons/code16x16.svg';
+import Copy16 from '../../public/icons/copy16x16.svg';
+import ExternalLink16 from '../../public/icons/external-link16x16.svg';
+import GitHub16 from '../../public/icons/github16x16.svg';
+import LinkedIn16 from '../../public/icons/linkedin16x16.svg';
+import Mail16 from '../../public/icons/mail16x16.svg';
+import MapPin16 from '../../public/icons/map-pin16x16.svg';
+import MessageCircle16 from '../../public/icons/message-circle16x16.svg';
+import Music16 from '../../public/icons/music16x16.svg';
+import Phone16 from '../../public/icons/phone16x16.svg';
+import TrendingUp16 from '../../public/icons/trending-up16x16.svg';
+import User16 from '../../public/icons/user16x16.svg';
 
 export type IconName = keyof typeof iconMap;
 

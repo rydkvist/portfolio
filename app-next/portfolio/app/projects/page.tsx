@@ -2,7 +2,7 @@ import { Projects } from '@/_domains/projects/Projects';
 
 const Page = () => (
   <>
-    <h1 className="size-xxl">Personal Projects</h1>
+    <h1 className="size-xxl text-center">Personal Projects</h1>
 
     <p className="description">
       Get a glimpse into some of the side projects I&apos;ve tackled lately, including a personal finance mobile app, an
