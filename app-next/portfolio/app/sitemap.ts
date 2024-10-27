@@ -5,14 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.rydkvist.com',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
-    {
-      url: 'https://www.rydkvist.com/about',
-      lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 1,
     },
     {
       url: 'https://www.rydkvist.com/projects',
