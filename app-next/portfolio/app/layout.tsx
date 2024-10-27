@@ -38,7 +38,10 @@ export default function RootLayout({
               <SideNavigation />
             </div>
 
-            <MobileOnly tag="header">
+            <MobileOnly
+              className="flex flex-row items-center justify-between p-2 dark:text-white text-black"
+              tag="header"
+            >
               <BrandLink />
               <div className="mr-2">
                 <ToggleTheme />
