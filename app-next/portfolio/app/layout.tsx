@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { SideNavigation } from './_domains/sitewide/SideNavigation';
 import { common } from './_lib/labels/common';
+import Script from 'next/script';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -38,6 +39,26 @@ export default function RootLayout({
           </div>
         </div>
       </body>
+
+      <Script
+        strategy="afterInteractive"
+        id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      />
+      <Script
+        id={`dangerouslySetInnerHTML-id-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
