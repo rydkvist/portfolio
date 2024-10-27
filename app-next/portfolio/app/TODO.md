@@ -3,6 +3,8 @@ List of TODOs before finish migration:
 - Investigate current UI of Music page and make it the same/or better than what it is today in rydkvist.com
   - for example light theme is a bit buggy
 - Tweak UI for contact page so it's good in both dark and light and the copy button dont cause layout shift
+  - Cool idea: make the contact look like a silver plated card, like a pokemon card holographic effect
+  - https://poke-holo.simey.me/
 - Tweak UI in investment page for View stock graph button
   - update the page content, old investments
 - Update copy content of About page to be more up to date

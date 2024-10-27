@@ -21,9 +21,9 @@ export default async function SpotifyTopTracks() {
     console.error('Error fetching top tracks:', error);
     return (
       <div className="flex flex-col items-center">
-        <h3 className="size-lg text-center">
+        <p className="size-lg text-center">
           Could not show Top 20 songs: {error instanceof Error ? error.message : String(error)}
-        </h3>
+        </p>
       </div>
     );
   }
