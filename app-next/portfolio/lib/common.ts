@@ -7,6 +7,7 @@ export const common = {
     firstName: 'Niklas',
     lastName: 'Rydkvist',
     fullName: 'Niklas Rydkvist',
+    currentRole: 'Senior Frontend Engineer',
     email: 'niklas@rydkvist.com',
     phoneNumber: '+46 70 377 11 04',
     location: 'Stockholm, Sweden',
