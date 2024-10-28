@@ -33,6 +33,12 @@ document.documentElement.classList.toggle('dark',
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: avoidThemeFOUCHTMLScript,
+        }}
+      />
       <body className={`${poppins.className} antialiased`}>
         <div>
           <div className="flex max-h-screen min-h-screen flex-col bg-neutral-200 md:flex-row dark:bg-neutral-800">
@@ -64,12 +70,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         strategy="afterInteractive"
         id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: avoidThemeFOUCHTMLScript,
-        }}
       />
       <Script
         id={`dangerouslySetInnerHTML-id-${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
