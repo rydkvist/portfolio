@@ -3,15 +3,12 @@
 import { cva } from 'class-variance-authority';
 import { SpotifyTopTimeRange } from '../../server/types';
 
-interface SpotifyTopTracksRangePickerProps {
+interface RangePickerProps {
   selectedTimeRange: SpotifyTopTimeRange;
   setSelectedTimeRange: (timeRange: SpotifyTopTimeRange) => void;
 }
 
-export const SpotifyTopTracksRangePicker = ({
-  selectedTimeRange,
-  setSelectedTimeRange,
-}: SpotifyTopTracksRangePickerProps) => {
+export const RangePicker = ({ selectedTimeRange, setSelectedTimeRange }: RangePickerProps) => {
   const timeRanges: SpotifyTopTimeRange[] = ['short_term', 'medium_term', 'long_term'];
 
   const getSpotifyTopTimeRangeLabel = (timeRange: SpotifyTopTimeRange): string => {

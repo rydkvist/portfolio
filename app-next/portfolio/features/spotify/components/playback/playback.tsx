@@ -1,12 +1,10 @@
 'use client';
 
 import useSWR from 'swr';
-const fetcher = (url: string) => fetch(url).then(res => res.json());
 
-import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { GetCurrentPlaybackResponse } from '../server/types';
+import { GetCurrentPlaybackResponse } from '../../server/types';
 import { Spinner } from '@/components/Spinner';
 import { calculateProgressPercentage, formatDuration } from '@/utils/helpers';
 
@@ -23,7 +21,7 @@ const fetchCurrentPlayback = async (endpoint: string): Promise<GetCurrentPlaybac
   }
 };
 
-export default function SpotifyPlayback() {
+export default function Playback() {
   return (
     <div className="w-full scale-105 rounded-md shadow-lg md:w-96">
       <div className="relative h-auto w-full flex-col items-start rounded-lg bg-neutral-200 p-4 dark:bg-neutral-800">

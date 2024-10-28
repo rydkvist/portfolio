@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { SpotifyItem } from '../../server/types';
 
-type SpotifyTopTracksItemProps = {
+type TopTracksItemProps = {
   track: SpotifyItem;
   index: number;
 };
 
-export const SpotifyTopTracksItem = ({ track }: SpotifyTopTracksItemProps) => {
+export const TopTracksItem = ({ track }: TopTracksItemProps) => {
   return (
     <a
       href={track.url}

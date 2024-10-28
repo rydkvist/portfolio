@@ -1,8 +1,8 @@
-import SpotifyTopTracksClient from './spotify-top-tracks-client';
+import TopTracksClient from './top-tracks-client';
 import { getTopTracks } from '../../server/getTopTracks';
 import { SpotifyItem, SpotifyTopTimeRange } from '../../server/types';
 
-export default async function SpotifyTopTracks() {
+export default async function TopTracks() {
   try {
     const [shortTermTracks, mediumTermTracks, longTermTracks] = await Promise.all([
       getTopTracks('short_term'),
@@ -16,7 +16,7 @@ export default async function SpotifyTopTracks() {
       long_term: longTermTracks,
     };
 
-    return <SpotifyTopTracksClient topTracksData={topTracksData} />;
+    return <TopTracksClient topTracksData={topTracksData} />;
   } catch (error) {
     console.error('Error fetching top tracks:', error);
     return (
