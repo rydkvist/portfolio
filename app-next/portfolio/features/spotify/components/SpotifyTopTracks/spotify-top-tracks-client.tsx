@@ -5,7 +5,7 @@ import { SpotifyTopTracksItem } from './spotify-top-tracks-item';
 import { SpotifyItem, SpotifyTopTimeRange } from '../../server/types';
 
 interface SpotifyTopTracksClientProps {
-  topTracksData: Record;
+  topTracksData: Record<SpotifyTopTimeRange, SpotifyItem[]>;
 }
 
 export default function SpotifyTopTracksClient({ topTracksData }: SpotifyTopTracksClientProps) {
