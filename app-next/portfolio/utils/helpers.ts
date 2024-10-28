@@ -20,3 +20,10 @@ export const formatDuration = (milliseconds?: number): string => {
 };
 
 export const currentYear = new Date().getFullYear().toString();
+
+export const isExternalLink = (href: string) => {
+  if (!href) return false;
+
+  const isExternal = href.startsWith('http');
+  return isExternal;
+};

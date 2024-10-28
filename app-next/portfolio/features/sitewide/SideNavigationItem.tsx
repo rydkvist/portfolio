@@ -1,12 +1,13 @@
 'use client';
 
 import { Icon, IconName } from '@/components/Icon';
+import { isExternalLink } from '@/utils/helpers';
 import { cva } from 'class-variance-authority';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export const SideNavigationItem = ({ label, href, icon }: { label: string; href: string; icon: IconName }) => {
-  const isExternal = href.startsWith('http');
+  const isExternal = isExternalLink(href);
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -42,7 +43,7 @@ const styles = {
       variants: {
         isActive: {
           true: 'bg-neutral-300 dark:bg-neutral-700',
-          false: 'hover:bg-neutral-300/50 hover:dark:bg-neutral-700/50',
+          false: 'hocus:bg-neutral-300/50 hocus:dark:bg-neutral-700/50',
         },
       },
     },

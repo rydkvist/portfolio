@@ -18,17 +18,17 @@ export const SideNavigation = () => {
       <nav>
         <ul className="mb-4 mt-2">
           <SideNavigationItem label={about.name} href={about.href} icon="user" />
+          <SideNavigationItem label={projects.name} href={projects.href} icon="code" />
         </ul>
 
-        <h3 className="break-words px-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">What I enjoy</h3>
+        <p className="break-words px-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">What I enjoy</p>
 
         <ul className="mb-4 mt-2">
-          <SideNavigationItem label={projects.name} href={projects.href} icon="code" />
           <SideNavigationItem label={investments.name} href={investments.href} icon="trendingUp" />
           <SideNavigationItem label={music.name} href={music.href} icon="music" />
         </ul>
 
-        <h3 className="break-words px-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">Stay in touch</h3>
+        <p className="break-words px-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">Stay in touch</p>
 
         <ul className="mb-4 mt-2">
           <SideNavigationItem label={contact.name} href={contact.href} icon="messageCircle" />
