@@ -7,28 +7,34 @@ export type Investment = {
 
 export const stockHoldings: Investment[] = [
   {
-    name: 'Airbnb',
-    imageSrc: '/images/companies/Airbnb.png',
-    url: 'https://finance.yahoo.com/quote/ABNB/',
-    investedSince: 'IPO (December 2020)',
-  },
-  {
     name: 'NVIDIA',
     imageSrc: '/images/companies/NVIDIA.png',
     url: 'https://finance.yahoo.com/quote/NVDA/',
     investedSince: 'Feb 2020',
   },
   {
-    name: 'Microsoft',
-    imageSrc: '/images/companies/Microsoft.png',
-    url: 'https://finance.yahoo.com/quote/MSFT/',
-    investedSince: 'January 2023',
+    name: 'Airbnb',
+    imageSrc: '/images/companies/Airbnb.png',
+    url: 'https://finance.yahoo.com/quote/ABNB/',
+    investedSince: 'December 2020',
   },
   {
     name: 'Cloudflare',
     imageSrc: '/images/companies/Cloudflare.png',
     url: 'https://finance.yahoo.com/quote/NET',
     investedSince: 'June 2021',
+  },
+  {
+    name: 'AstraZeneca',
+    imageSrc: '/images/companies/AstraZeneca.png',
+    url: 'https://finance.yahoo.com/quote/AZN',
+    investedSince: 'July 2023',
+  },
+  {
+    name: 'Microsoft',
+    imageSrc: '/images/companies/Microsoft.png',
+    url: 'https://finance.yahoo.com/quote/MSFT/',
+    investedSince: 'January 2023',
   },
   {
     name: 'Avanza',
@@ -62,6 +68,12 @@ export const fundHoldings: Investment[] = [
     imageSrc: '/images/companies/Swedbank.png',
     url: 'https://www.avanza.se/fonder/om-fonden.html/363/swedbank-robur-technology-a',
     investedSince: 'May 2023',
+  },
+  {
+    name: 'Handelsbanken USA Ind Crit A1 SEK',
+    imageSrc: '/images/companies/Handelsbanken.png',
+    url: 'https://www.avanza.se/fonder/om-fonden.html/315115/handelsbanken-usa-ind-crit-a1-sek',
+    investedSince: 'July 2023',
   },
   {
     name: 'Handelsbanken Hållbar Energi A1 SEK',

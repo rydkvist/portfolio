@@ -1,3 +1,4 @@
+import { Icon } from '@/components/Icon';
 import { Investment } from '../config';
 import Image from 'next/image';
 
@@ -27,9 +28,9 @@ export const InvestmentItem = ({ name, url, imageSrc, investedSince }: Investmen
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 rounded-lg border border-blue-500 px-5 py-2 text-xs text-blue-500 shadow-md transition-all hover:bg-blue-500 hover:text-white"
+              className="hocus:bg-blue-500 hocus:text-white mt-2 inline-flex gap-2 rounded-lg border border-blue-500 px-5 py-2 text-xs text-blue-500 shadow-md transition-all"
             >
-              View Stock Graph
+              View graph <Icon name="externalLink" />
             </a>
           </div>
         )}

@@ -2,14 +2,11 @@ List of TODOs before finish migration:
 
 - Investigate current UI of Music page and make it the same/or better than what it is today in rydkvist.com
   - for example light theme is a bit buggy
-- Tweak UI in investment page for View stock graph button
-  - update the page content, old investments
-- Update Projects page
-- Update copy content of About page to be more up to date
-  - Update with more relevant and up-to-date skills
 
 Future work after migration:
 
+- - Update copy content of About page to be more up to date
+  - Update with more relevant and up-to-date skills
 - Implement working keyboard navigation with nice UI outlines
 - Install a11y linter and apply more aria tags where it belongs
   - Investigate if we can remove the double <header> tags based on device type. Today the desktop and mobile header tags are visible at the same time – it's not optimal?
