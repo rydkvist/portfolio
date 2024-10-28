@@ -1,5 +1,5 @@
-import SpotifyPlayback from '@/features/spotify/components/spotify-playback';
-import SpotifyTopTracks from '@/features/spotify/components/SpotifyTopTracks/spotify-top-tracks';
+import Playback from '@/features/spotify/components/playback/playback';
+import TopTracks from '@/features/spotify/components/top-tracks/top-tracks';
 
 const Music = () => {
   return (
@@ -7,8 +7,8 @@ const Music = () => {
       <h1 className="size-xxl text-center">Music</h1>
       <p className="description w-100 mb-4 text-neutral-700 dark:text-neutral-300">Explore some of my music taste 🎧</p>
 
-      <SpotifyPlayback />
-      <SpotifyTopTracks />
+      <Playback />
+      <TopTracks />
     </>
   );
 };
