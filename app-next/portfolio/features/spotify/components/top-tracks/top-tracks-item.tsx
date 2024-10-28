@@ -16,7 +16,9 @@ export const TopTracksItem = ({ track }: TopTracksItemProps) => {
       className="mb-4 mr-0 mt-1 flex w-full flex-row items-start rounded-md bg-neutral-200 p-2 shadow-sm transition-transform hover:scale-105 focus:scale-105 md:mr-6 md:w-64 dark:bg-neutral-700"
     >
       <span className="relative mr-2 h-12 w-12 overflow-hidden rounded-sm">
-        {track.album?.imageURL && <Image src={track.album.imageURL} alt={track.name} layout="fill" objectFit="cover" />}
+        {track.album?.imageURL && (
+          <Image src={track.album.imageURL} alt={track.name} height={48} width={48} style={{ objectFit: 'cover' }} />
+        )}
       </span>
 
       <div className="flex flex-col">
