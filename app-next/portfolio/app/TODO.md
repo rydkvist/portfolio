@@ -1,9 +1,4 @@
-List of TODOs before finish migration:
-
-- Investigate current UI of Music page and make it the same/or better than what it is today in rydkvist.com
-  - for example light theme is a bit buggy
-
-Future work after migration:
+Future TODO:
 
 - - Update copy content of About page to be more up to date
   - Update with more relevant and up-to-date skills

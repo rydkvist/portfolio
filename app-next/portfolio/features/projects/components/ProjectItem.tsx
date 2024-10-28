@@ -16,7 +16,7 @@ export const ProjectItem = ({ title, description, date, imageSrc, videoURL, link
       >
         <div className="relative mx-auto h-80 w-full rounded-t-lg bg-neutral-300">
           {imageSrc ? (
-            <Image src={imageSrc} alt={title} layout="fill" objectFit="contain" priority />
+            <Image src={imageSrc} alt={title} layout="fill" priority style={{ objectFit: 'contain' }} />
           ) : videoURL ? (
             <iframe
               width="100%"

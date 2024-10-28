@@ -8,6 +8,7 @@ const Music = () => {
       <p className="description w-100 mb-4 text-neutral-700 dark:text-neutral-300">Explore some of my music taste 🎧</p>
 
       <Playback />
+      <hr className="my-2" />
       <TopTracks />
     </>
   );

@@ -1,5 +1,11 @@
-export const Spinner = () => (
-  <div className="h-16 w-16" role="status" aria-live="polite">
+import { cva } from 'class-variance-authority';
+
+type Props = {
+  size?: 'small' | 'medium' | 'semi-large' | 'large';
+};
+
+export const Spinner = ({ size = 'medium' }: Props) => (
+  <div className={styles.spinner({ size })} role="status" aria-live="polite">
     <span className="sr-only">Loading...</span>
     <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
       <circle
@@ -26,3 +32,16 @@ export const Spinner = () => (
     </svg>
   </div>
 );
+
+const styles = {
+  spinner: cva([], {
+    variants: {
+      size: {
+        large: 'h-16 w-16',
+        'semi-large': 'h-12 w-12',
+        medium: 'h-8 w-8',
+        small: 'h-4 w-4',
+      },
+    },
+  }),
+};
