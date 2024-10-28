@@ -31,7 +31,6 @@ export const usePlayback = () => {
     id: string;
   } | null>(null);
 
-  const isPlaying = data?.isPlaying;
   const timeElapsedOnLoad = data?.progressMS;
   const song = data?.item;
 
