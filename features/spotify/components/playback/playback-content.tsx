@@ -59,9 +59,9 @@ export function PlaybackContent() {
           />
         </a>
 
-        <div className="max-w-2xl flex-1">
-          <p className="w-full font-semibold text-neutral-900 dark:text-neutral-100">{item.name}</p>
-          <p className="w-full text-sm text-neutral-700 dark:text-neutral-300">{item.artists}</p>
+        <div className="max-w-2xl flex-1 overflow-hidden">
+          <p className="font-semibold leading-6 text-neutral-900 dark:text-neutral-100">{item.name}</p>
+          <p className="w-full truncate text-sm text-neutral-700 dark:text-neutral-300">{item.artists}</p>
         </div>
       </div>
 
