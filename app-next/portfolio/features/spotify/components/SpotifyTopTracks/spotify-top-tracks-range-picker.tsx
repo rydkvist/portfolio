@@ -1,5 +1,6 @@
 'use client';
 
+import { cva } from 'class-variance-authority';
 import { SpotifyTopTimeRange } from '../../server/types';
 
 interface SpotifyTopTracksRangePickerProps {
@@ -27,7 +28,7 @@ export const SpotifyTopTracksRangePicker = ({
   };
 
   return (
-    <div className="flex space-x-2">
+    <div className="flex items-center justify-center space-x-2 rounded-lg bg-neutral-200 p-1 text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-neutral-100">
       {timeRanges.map(timeRange => {
         const isSelected = selectedTimeRange === timeRange;
 
@@ -35,9 +36,7 @@ export const SpotifyTopTracksRangePicker = ({
           <button
             key={timeRange}
             onClick={() => setSelectedTimeRange(timeRange)}
-            className={`cursor-pointer rounded-md px-5 py-1 text-sm transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-400 ${
-              isSelected ? 'bg-neutral-100 dark:bg-neutral-500' : 'bg-inherit'
-            }`}
+            className={styles.buttonWrapper({ isActive: isSelected })}
             aria-pressed={isSelected}
             aria-label={getSpotifyTopTimeRangeLabel(timeRange)}
           >
@@ -47,4 +46,18 @@ export const SpotifyTopTracksRangePicker = ({
       })}
     </div>
   );
+};
+
+const styles = {
+  buttonWrapper: cva(
+    'text-sm rounded-md cursor-pointer px-5 py-1 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-400',
+    {
+      variants: {
+        isActive: {
+          true: 'bg-neutral-100 dark:bg-neutral-500',
+          false: 'bg-inherit',
+        },
+      },
+    },
+  ),
 };
