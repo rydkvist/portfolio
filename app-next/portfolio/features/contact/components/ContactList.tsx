@@ -15,7 +15,7 @@ export const ContactList = () => {
 
       <div className="flex flex-col">
         <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">{myself.fullName}</h2>
-        <h3 className="text-md font-semibold leading-5 text-neutral-800 dark:text-neutral-200">{myself.currentRole}</h3>
+        <h3 className="text-md font-medium leading-5 text-neutral-800 dark:text-neutral-200">{myself.currentRole}</h3>
 
         <div className="mt-3 flex flex-col items-start justify-center gap-2 md:mt-3">
           <ContactItem label="E-mail" value={myself.email} href={`mailto:${myself.email}`} icon="mail" />
@@ -43,7 +43,7 @@ const ContactItem = ({ label, value, href, icon }: ItemProps) => (
     <a
       href={href}
       title={value}
-      className="text-md group relative font-sans font-semibold text-neutral-800 dark:text-neutral-200"
+      className="text-md group relative font-sans font-medium text-neutral-900 dark:text-neutral-100"
     >
       {value}
       <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-neutral-600 duration-300 group-hover:w-full group-hover:transition-all group-focus:w-full group-focus:transition-all dark:bg-neutral-400" />
