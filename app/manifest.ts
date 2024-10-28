@@ -5,8 +5,6 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Niklas Rydkvist Portfolio',
     short_name: 'Niklas R.',
     display: 'standalone',
-    background_color: '#fff',
-    theme_color: '#fff',
     icons: [
       {
         src: '/web-app-manifest-192x192.png',
