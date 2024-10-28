@@ -22,7 +22,9 @@ export const SideNavigationItem = ({ label, href, icon }: { label: string; href:
         <span className="mr-2 h-4 w-4">
           <Icon name={icon} />
         </span>
+
         {label}
+
         {isExternal && (
           <span className="ml-auto pl-2">
             <Icon name="externalLink" />
@@ -35,7 +37,7 @@ export const SideNavigationItem = ({ label, href, icon }: { label: string; href:
 
 const styles = {
   linkWrapper: cva(
-    'flex w-full transition-colors items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300  rounded-lg cursor-pointer text-sm',
+    'flex w-full transition-colors items-center px-3 py-1.5 text-neutral-700 dark:text-neutral-300 rounded-lg cursor-pointer text-sm',
     {
       variants: {
         isActive: {
