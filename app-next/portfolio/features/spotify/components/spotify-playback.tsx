@@ -10,7 +10,7 @@ import { GetCurrentPlaybackResponse } from '../server/types';
 import { Spinner } from '@/components/Spinner';
 import { calculateProgressPercentage, formatDuration } from '@/utils/helpers';
 
-const fetchCurrentPlayback = async (endpoint: string): Promise => {
+const fetchCurrentPlayback = async (endpoint: string): Promise<GetCurrentPlaybackResponse> => {
   try {
     const res = await fetch(endpoint);
     if (!res.ok) {

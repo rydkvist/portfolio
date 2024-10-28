@@ -2,7 +2,7 @@ import { getSpotifyToken } from './getSpotifyToken';
 import { API_SPOTIFY_URL, formatSpotifyItem } from './utils';
 import { GetCurrentPlaybackResponse, SpotifyPlaybackSchema, SpotifyQueueSchema } from './types';
 
-export async function getCurrentPlayback(): Promise {
+export async function getCurrentPlayback(): Promise<GetCurrentPlaybackResponse> {
   try {
     const spotifyToken = await getSpotifyToken('playback-state');
 

@@ -2,7 +2,10 @@ import { getSpotifyToken } from './getSpotifyToken';
 import { API_SPOTIFY_URL, formatSpotifyItem } from './utils';
 import { SpotifyItem, SpotifyTopTimeRange, SpotifyTopTracksSchema } from './types';
 
-export async function getTopTracks(timeRange: SpotifyTopTimeRange = 'short_term', limit: number = 20): Promise {
+export async function getTopTracks(
+  timeRange: SpotifyTopTimeRange = 'short_term',
+  limit: number = 20,
+): Promise<SpotifyItem[]> {
   try {
     const spotifyToken = await getSpotifyToken('top-read');
 
