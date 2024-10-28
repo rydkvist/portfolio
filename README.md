@@ -1,6 +1,6 @@
 # Portfolio
 
-My [personal website](https://www.rydkvist.com/), built with React, TypeScript, Next.js, and TailwindCSS.
+My [personal website](https://www.rydkvist.com/), built with Next.js, TypeScript, React, and TailwindCSS.
 
 ## Getting Started
 
@@ -23,4 +23,5 @@ Make sure to have installed the following dependency:
 Niklas Rydkvist: [niklas@rydkvist.com](mailto:niklas@rydkvist.com)
 
 ## License
+
 Rydkvist's Portfolio is available under the [MIT license](https://github.com/rydkvist/portfolio/blob/main/LICENSE).
