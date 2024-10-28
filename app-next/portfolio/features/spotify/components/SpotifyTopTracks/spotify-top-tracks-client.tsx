@@ -16,8 +16,9 @@ export default function SpotifyTopTracksClient({ topTracksData }: SpotifyTopTrac
   return (
     <div className="mt-6 flex w-full flex-col">
       <div className="mb-6 flex flex-col items-center justify-between md:mb-4">
-        <h2 className="size-lg mb-3 text-center">Discover my favorite tracks</h2>
-        <p className="mb-4 text-center text-sm text-neutral-700 dark:text-neutral-300">
+        <h3 className="size-lg mb-3 text-center">Discover my favorite tracks</h3>
+
+        <p className="description mb-4 text-center text-sm text-neutral-700 dark:text-neutral-300">
           My Top 20 playlists updated via the Spotify API.
         </p>
         <SpotifyTopTracksRangePicker
@@ -26,7 +27,7 @@ export default function SpotifyTopTracksClient({ topTracksData }: SpotifyTopTrac
         />
       </div>
 
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-row flex-wrap justify-center">
         {topTracks.map((track, index) => (
           <SpotifyTopTracksItem key={`${track.id}-${index}`} track={track} index={index} />
         ))}
