@@ -19,6 +19,14 @@ body {
 }
 
 @layer components {
+
+  .main-page-wrapper {
+    @apply flex min-h-screen flex-col items-center pb-32 leading-7 text-black md:pb-8 dark:text-white
+  }
+  .main-page-wrapper > h1 {
+    @apply pt-8 md:pt-16
+  }
+
   .size-xxl {
     @apply mb-6 w-full text-3xl font-bold;
   }

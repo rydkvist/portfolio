@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
 
             <MobileOnly
-              className="flex flex-row items-center justify-between p-2 text-black dark:text-white"
+              className="flex h-full max-h-16 flex-row items-center justify-between p-2 text-black dark:text-white"
               tag="header"
             >
               <BrandLink />
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </MobileOnly>
 
-            <main className="hide-scrollbar order-2 mx-2 flex justify-center overflow-scroll rounded-lg bg-neutral-100 md:m-2 md:w-full md:shadow-lg dark:bg-neutral-900">
+            <main className="hide-scrollbar order-2 mx-2 my-0 flex justify-center overflow-scroll rounded-lg bg-neutral-100 md:m-2 md:w-full md:shadow-lg dark:bg-neutral-900">
               <MainPageWrapper>{children}</MainPageWrapper>
             </main>
 
@@ -92,8 +92,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 const MainPageWrapper = ({ children }: { children: ReactNode }) => (
   <div className="container px-8 md:px-16 lg:px-32 xl:px-64">
-    <div className="text-1xl flex min-h-screen flex-col items-center pb-32 pt-8 leading-7 text-black md:pb-8 md:pt-16 dark:text-white">
-      {children}
-    </div>
+    <div className="main-page-wrapper">{children}</div>
   </div>
 );
