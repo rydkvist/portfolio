@@ -1,6 +1,5 @@
 Future TODO:
 
-- quickfix: add seo based on page title
 - - Update copy content of About page to be more up to date
   - Update with more relevant and up-to-date skills
 - Implement working keyboard navigation with nice UI outlines
