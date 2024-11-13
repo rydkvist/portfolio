@@ -2,12 +2,6 @@ import Image from 'next/image';
 
 const currentDate = new Date();
 
-const birthDate = new Date('2001-11-04');
-let yearsOfLife = currentDate.getFullYear() - birthDate.getFullYear();
-if (currentDate < new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate())) {
-  yearsOfLife--;
-}
-
 const startOfExperience = new Date('2018-08-01');
 let yearsOfExperience = currentDate.getFullYear() - startOfExperience.getFullYear();
 if (currentDate < new Date(currentDate.getFullYear(), startOfExperience.getMonth(), startOfExperience.getDate())) {
@@ -80,9 +74,7 @@ const About = () => {
       <hr className="mt-4" />
       <h2 className="size-xl">Looking Ahead</h2>
       <p className="description">
-        At {yearsOfLife}, I&apos;m excited about what’s next. I&apos;m aiming to step into roles where I can share my
-        knowledge, contribute to meaningful projects, and explore new ways to innovate. I&apos;m excited to tackle new
-        challenges that push my limits in product engineering and leadership
+        I’m excited about what’s next in my career. I’m aiming to step into roles where I can share my knowledge, contribute to meaningful projects, and continue to explore new ways to innovate. Tackling challenges that push my limits in product engineering and leadership keeps me motivated to keep growing.
       </p>
 
       <hr className="mt-4" />
