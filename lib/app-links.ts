@@ -4,7 +4,7 @@ export const appLinks = {
     href: '/',
   },
   projects: {
-    name: 'Projects',
+    name: 'Hobby Projects',
     href: '/projects',
   },
   investments: {

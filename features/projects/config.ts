@@ -27,13 +27,4 @@ export const projects: Project[] = [
     link: 'https://github.com/rydkvist/borsjakten',
     technologies: 'Swift, SwiftUI, Stock Market',
   },
-  {
-    title: 'Buysimple',
-    description:
-      'Experience seamless online shopping with Buysimple, a user-friendly e-commerce platform designed with accessibility and functionality in mind. With an emphasis on clear information distribution and intuitive navigation, Buysimple is the perfect destination for anyone looking for a smooth and enjoyable shopping experience. Built with HTML, CSS, Bootstrap, JavaScript, and PHP.',
-    date: 'May 2018',
-    videoURL: 'https://www.youtube.com/embed/u7r7hiHJaS8',
-    link: 'https://github.com/rydkvist/buysimple',
-    technologies: 'HTML, CSS, Bootstrap, JavaScript, PHP',
-  },
 ];

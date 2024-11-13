@@ -1,5 +1,10 @@
 import { Funds } from '@/features/investments/components/Funds';
 import { Stocks } from '@/features/investments/components/Stocks';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Investments',
+};
 
 const Investments = () => {
   return (

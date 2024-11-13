@@ -18,7 +18,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: common.seo.title,
+  title: {
+    default: 'Portfolio',
+    template: `%s – Niklas Rydkvist`,
+  },
   creator: common.myself.fullName,
   keywords: common.seo.keywords,
   description: common.seo.description,

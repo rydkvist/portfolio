@@ -1,5 +1,10 @@
 import Playback from '@/features/spotify/components/playback/playback';
 import TopTracks from '@/features/spotify/components/top-tracks/top-tracks';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Music',
+};
 
 const Music = () => {
   return (
