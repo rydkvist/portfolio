@@ -19,6 +19,13 @@ body {
 }
 
 @layer components {
+  ul, li {
+    @apply text-neutral-700 dark:text-neutral-300;
+  }
+
+  hr {
+    @apply w-full border-neutral-700 dark:border-neutral-300 opacity-10
+  }
 
   .main-page-wrapper {
     @apply flex min-h-screen flex-col items-center pb-32 leading-7 text-black md:pb-8 dark:text-white
@@ -40,6 +47,6 @@ body {
   }
 
   .description {
-    @apply mb-4 text-neutral-700 dark:text-neutral-300;
+    @apply mb-4 text-neutral-700 dark:text-neutral-300 w-full leading-[1.875];
   }
 }

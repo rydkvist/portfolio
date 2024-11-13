@@ -10,10 +10,12 @@ const Music = () => {
   return (
     <>
       <h1 className="size-xxl text-center">Music</h1>
-      <p className="description w-100 mb-4 text-neutral-700 dark:text-neutral-300">Explore some of my music taste 🎧</p>
+      <p className="description mb-4 text-center text-neutral-700 dark:text-neutral-300">
+        Explore some of my music taste 🎧
+      </p>
 
       <Playback />
-      <hr className="my-2" />
+      <div className="my-2" />
       <TopTracks />
     </>
   );
