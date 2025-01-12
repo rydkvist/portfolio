@@ -18,7 +18,7 @@ const PostSchema = z.object({
   prompt: z.string().min(1, 'Prompt must be a non-empty string'),
 });
 
-export async function GET(req: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
     if (!isValidRequest(req)) {
       return NextResponse.json({ error: 'Unauthorized request' }, { status: 400 });

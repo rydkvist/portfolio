@@ -7,7 +7,7 @@ const Page = async ({ params }: { params: { password: string } }) => {
   return (
     <>
       <h1>Admin Page</h1>
-      <hr />
+      <hr className="my-8" />
       <VoiceRecorder />
     </>
   );

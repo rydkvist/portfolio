@@ -12,7 +12,7 @@ export function VoiceRecorder() {
   };
 
   return (
-    <div className="flex w-full flex-col items-center p-4">
+    <div className="flex w-full flex-col items-center">
       {/* If we don't have a finalTranscript yet, show the editor */}
       {!finalTranscript && <VoiceEditor onConfirm={handleEditorConfirm} />}
 

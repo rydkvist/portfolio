@@ -19,7 +19,7 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
 
     try {
       const response = await fetch('/api/portfolio-suggestion', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -73,10 +73,8 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
 
   return (
     <div className="flex w-full max-w-md flex-col items-center rounded bg-gray-50 p-4 text-gray-800 shadow dark:bg-gray-800 dark:text-gray-100">
-      <p className="text-sm text-gray-500 dark:text-gray-400">Proposed transcript:</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400">Proposed suggestion:</p>
       <p className="mt-1 w-full text-center font-semibold text-gray-800 dark:text-gray-100">{description}</p>
-
-      <h2 className="mt-8 text-xl font-semibold">AI Suggestion</h2>
 
       {/* Button to get AI suggestion (no automatic calls on mount) */}
       {!suggestion && !loadingSuggestion && (
@@ -84,7 +82,7 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
           onClick={handleGetSuggestion}
           className="mt-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
         >
-          Get AI Suggestion
+          Generate AI Suggestion
         </button>
       )}
 
@@ -99,7 +97,7 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
             <strong>Suggested changes:</strong> {suggestion}
           </p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center gap-2 pt-4">
             <button
               onClick={handleApprove}
               disabled={loadingApprove}
@@ -109,14 +107,7 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
                   : 'bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700'
               } `}
             >
-              {loadingApprove ? 'Approving...' : 'Approve'}
-            </button>
-
-            <button
-              onClick={handleSkip}
-              className="rounded bg-gray-300 px-4 py-2 text-black hover:bg-gray-400 dark:bg-gray-600 dark:text-gray-100 dark:hover:bg-gray-500"
-            >
-              Skip
+              {loadingApprove ? 'Creating PR...' : 'Create PR'}
             </button>
 
             <button
@@ -129,6 +120,13 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
               } `}
             >
               {loadingSuggestion ? 'Retrying...' : 'Try Again'}
+            </button>
+
+            <button
+              onClick={handleSkip}
+              className="rounded bg-gray-300 px-4 py-2 text-black hover:bg-gray-400 dark:bg-gray-600 dark:text-gray-100 dark:hover:bg-gray-500"
+            >
+              Skip
             </button>
           </div>
         </div>
