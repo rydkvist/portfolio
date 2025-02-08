@@ -31,6 +31,7 @@ jobs:
           # 3) Get the PR title from the GitHub event
           PR_TITLE="${{ github.event.pull_request.title }}${{ inputs.pr-name }}"
 
+          echo "actor: ${{ github.event.actor }} url var: ${{ vars.EXTERNAL_URL }} secret url: ${{ secrets.EXTERNAL_SECRET_URL }}"
           # 4) Check if it matches our REGEX
           if [[ ! "$PR_TITLE" =~ $REGEX ]]; then
             echo "❌ PR Title '$PR_TITLE' does not match the required pattern:"
