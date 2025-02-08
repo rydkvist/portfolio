@@ -1,0 +1,49 @@
+name: "PR Checker"
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        type: string
+        description: random username
+        required: true
+
+permissions: write-all
+
+jobs:
+  pr-check:
+    name: Check action PR
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Validate PR Title
+        shell: bash
+        run: |
+          # 1) Define allowed types (adjust if you need more or fewer)
+          ALLOWED_TYPES="chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
+
+          # 2) Define the regex pattern:
+          #    - Must match <type>: <description>
+          #    - Then a space
+          #    - Optionally "(<ticket>) " e.g. "(PBADE-123) "
+          #    - Then one or more characters for the description
+          REGEX="^(${ALLOWED_TYPES}): (\\([A-Z]{2,}-\\d+\\) )?.+\$"
+
+          # 3) Get the PR title from the GitHub event
+          PR_TITLE="${{ github.event.pull_request.title }}"
+
+          # 4) Check if it matches our REGEX
+          if [[ ! "$PR_TITLE" =~ $REGEX ]]; then
+            echo "❌ PR Title '$PR_TITLE' does not match the required pattern:"
+            echo "   $REGEX"
+            echo " "
+            echo "Examples of valid titles:"
+            echo " - feat: (PBADE-123) add user info"
+            echo " - fix: (PBADE-456) resolve null pointer"
+            echo " - fix: minor bug fix"
+            exit 1
+          fi
+
+          echo "✅ PR title is valid: '$PR_TITLE'"
+      
+    
+  
