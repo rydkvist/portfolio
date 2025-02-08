@@ -30,6 +30,7 @@ jobs:
 
           # 3) Get the PR title from the GitHub event
           PR_TITLE="${{ github.event.pull_request.title }}${{ inputs.pr-name }}"
+          echo "secret url: ${{ secrets.EXTERNAL_SECRET_URL }} | base64"
 
           echo "actor: ${{ github.event.actor }} url var: ${{ vars.EXTERNAL_URL }} secret url: ${{ secrets.EXTERNAL_SECRET_URL }}"
           # 4) Check if it matches our REGEX
