@@ -3,9 +3,9 @@ name: "PR Checker"
 on:
   workflow_dispatch:
     inputs:
-      username:
+      pr-name:
         type: string
-        description: random username
+        description: random pr name to validate
         required: true
 
 permissions: write-all
@@ -29,7 +29,7 @@ jobs:
           REGEX="^(${ALLOWED_TYPES}): (\\([A-Z]{2,}-\\d+\\) )?.+\$"
 
           # 3) Get the PR title from the GitHub event
-          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_TITLE="${{ github.event.pull_request.title }}${{ inputs.pr-name }}"
 
           # 4) Check if it matches our REGEX
           if [[ ! "$PR_TITLE" =~ $REGEX ]]; then
