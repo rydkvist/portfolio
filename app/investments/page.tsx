@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Investments',
 };
 
-// Test comment to trigger Vercel workflow
 const Investments = () => {
   return (
     <>
