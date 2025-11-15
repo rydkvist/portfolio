@@ -45,7 +45,7 @@ export function AiSuggestion({ description }: AiSuggestionProps) {
     setPullRequestMessage(null);
 
     try {
-      const response = await fetch('/api/pull-request', {
+      const response = await fetch('/api/create-pr', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ suggestion }),
